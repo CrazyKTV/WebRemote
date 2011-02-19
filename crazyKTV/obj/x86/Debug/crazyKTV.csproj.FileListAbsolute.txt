@@ -11,7 +11,6 @@ C:\Users\bob yang\Documents\_MSmesh_\(my documents)\__PROJECTS__\crazyKTV\crazyK
 C:\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\crazyKTV.exe
 C:\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\crazyKTV.pdb
 C:\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\crazyKTV.Form1.resources
 C:\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\crazyKTV.Properties.Resources.resources
 C:\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\ResGen.read.1.tlog
 C:\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\ResGen.write.1.tlog
@@ -25,3 +24,9 @@ C:\__PROJECTS__\crazyKTV\crazyKTV\bin\Debug\DevExpress.XtraEditors.v10.2.dll
 C:\__PROJECTS__\crazyKTV\crazyKTV\bin\Debug\DevExpress.Data.v10.2.xml
 C:\__PROJECTS__\crazyKTV\crazyKTV\bin\Debug\DevExpress.Utils.v10.2.xml
 C:\__PROJECTS__\crazyKTV\crazyKTV\bin\Debug\DevExpress.XtraEditors.v10.2.xml
+\\tsclient\C\_MSmesh_\(my documents)\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\crazyKTV.exe
+\\tsclient\C\_MSmesh_\(my documents)\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\crazyKTV.pdb
+\\tsclient\C\_MSmesh_\(my documents)\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\__PROJECTS__\crazyKTV\crazyKTV\bin\Debug\crazyKTV.exe.config
+C:\__PROJECTS__\crazyKTV\crazyKTV\bin\Debug\DevExpress.BonusSkins.v10.2.dll
+C:\__PROJECTS__\crazyKTV\crazyKTV\bin\Debug\DevExpress.OfficeSkins.v10.2.dll

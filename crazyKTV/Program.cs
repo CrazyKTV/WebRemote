@@ -13,8 +13,12 @@ namespace crazyKTV
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+
+            DevExpress.UserSkins.OfficeSkins.Register();
+    DevExpress.UserSkins.BonusSkins.Register();
+     DevExpress.Skins.SkinManager.EnableFormSkins();
             Application.Run(new XtraForm1());
         }
     }
