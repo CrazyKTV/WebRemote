@@ -10,7 +10,8 @@
     <!--Mobile specific meta goodness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
     <!--css-->
-    <link rel="stylesheet" href="styles.css">
+
+    <link href="css/computer.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <script src="IE9html5.js"></script>
@@ -18,12 +19,19 @@
     <!-- Favicons-->
     <!--<link rel="shortcut icon" href="img/favicon.ico">-->
     <script src="jquery-1.8.3.min.js"></script>
-    <meta charset="utf-8">  
+    <meta charset="utf-8" />  
     <title>Main Page</title>
 </head>
-<body>    <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
+<body dir='<asp:Literal runat="server" Text='<%$Resources: GlobalMessages, directionltr %>'></asp:Literal>'>
+
     <form id="form1" runat="server">
+           <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1">
+            <asp:ListItem meta:resourcekey="ListItemResource1" Value="en-US">english</asp:ListItem>
+            <asp:ListItem meta:resourcekey="ListItemResource2" Value="tw">繁體中文</asp:ListItem>
+           </asp:DropDownList>
     <div>
     
     

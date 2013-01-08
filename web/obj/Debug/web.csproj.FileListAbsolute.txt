@@ -1,5 +1,4 @@
 C:\__PROJECTS__\CrazyKTV\web\bin\web.dll
 C:\__PROJECTS__\CrazyKTV\web\bin\web.pdb
-C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.csprojResolveAssemblyReference.cache
 C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.dll
 C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.pdb

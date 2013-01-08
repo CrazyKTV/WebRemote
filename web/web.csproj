@@ -69,6 +69,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\GlobalMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalMessages.resx</DependentUpon>
+    </Compile>
     <Compile Include="currentList.ascx.cs">
       <DependentUpon>currentList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,6 +107,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\default.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\events.ascx.tw.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\GlobalMessages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>GlobalMessages.Designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\events.ascx.resx" />

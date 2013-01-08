@@ -117,82 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Button1Resource1.Text" xml:space="preserve">
-    <value>按鈕1</value>
+  <data name="directionltr" xml:space="preserve">
+    <value>ltr</value>
   </data>
-  <data name="Button1Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Button2Resource1.Text" xml:space="preserve">
-    <value>Button</value>
-  </data>
-  <data name="Button2Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Button4Resource1.Text" xml:space="preserve">
-    <value>Button</value>
-  </data>
-  <data name="Button4Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CutResource1.Text" xml:space="preserve">
-    <value>Cut</value>
-  </data>
-  <data name="CutResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FastBackwardResource1.Text" xml:space="preserve">
-    <value>FastBackward</value>
-  </data>
-  <data name="FastBackwardResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FastFowardResource1.Text" xml:space="preserve">
-    <value>FastFoward</value>
-  </data>
-  <data name="FastFowardResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MuteResource1.Text" xml:space="preserve">
-    <value>Mute</value>
-  </data>
-  <data name="MuteResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="PauseResource1.Text" xml:space="preserve">
-    <value>暫停</value>
-  </data>
-  <data name="PauseResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="PlayResource1.Text" xml:space="preserve">
-    <value>Play</value>
-  </data>
-  <data name="PlayResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RepeatResource1.Text" xml:space="preserve">
-    <value>Mute</value>
-  </data>
-  <data name="RepeatResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ToneBackResource1.Text" xml:space="preserve">
-    <value>ToneBack</value>
-  </data>
-  <data name="ToneBackResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ToneDownResource1.Text" xml:space="preserve">
-    <value>ToneDown</value>
-  </data>
-  <data name="ToneDownResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ToneUpResource1.Text" xml:space="preserve">
-    <value>ToneUp</value>
-  </data>
-  <data name="ToneUpResource1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="directionrtl" xml:space="preserve">
+    <value>rtl</value>
   </data>
 </root>

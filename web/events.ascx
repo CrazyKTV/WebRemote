@@ -15,6 +15,5 @@
 <asp:Button ID="Button4" runat="server" Text="Button" meta:resourcekey="Button4Resource1" />
 <asp:Button ID="Button1" runat="server" Text="Button" meta:resourcekey="Button1Resource1" />
 <asp:Button ID="Button2" runat="server" Text="Button" meta:resourcekey="Button2Resource1" />
-<asp:Button ID="Button3" runat="server" Text="Button" meta:resourcekey="Button3Resource1" />
 
 <div></div>
