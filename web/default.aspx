@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="web._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="web._default" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <%@ Register src="currentList.ascx" tagname="currentList" tagprefix="uc1" %>
 <%@ Register src="events.ascx" tagname="events" tagprefix="uc2" %>
