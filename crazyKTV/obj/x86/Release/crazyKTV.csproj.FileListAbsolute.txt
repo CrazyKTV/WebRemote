@@ -1,1 +1,0 @@
-\\tsclient\C\_MSmesh_\(my documents)\__PROJECTS__\crazyKTV\crazyKTV\obj\x86\Release\ResolveAssemblyReference.cache
