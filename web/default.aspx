@@ -9,9 +9,9 @@
 <head runat="server">
     <!--Mobile specific meta goodness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
-    <!--css-->
+    <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
 
-    <link href="css/computer.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <script src="IE9html5.js"></script>

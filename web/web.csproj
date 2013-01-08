@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\computer.css" />
+    <Content Include="css\layout.css" />
     <Content Include="css\mobile.css" />
     <Content Include="css\tablet.css" />
     <Content Include="currentList.ascx" />
