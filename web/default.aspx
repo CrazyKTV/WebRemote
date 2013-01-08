@@ -28,17 +28,49 @@
            <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
 
-        <asp:DropDownList ID="language" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1">
+        <header id="masthead">
+			<h3>CrazyKTV</h3>
+			<nav>    
+            <asp:DropDownList ID="language" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1">
             <asp:ListItem meta:resourcekey="ListItemResource1" Value="en-US">English</asp:ListItem>
             <asp:ListItem meta:resourcekey="ListItemResource2" Value="zh-CHT">繁體中文</asp:ListItem>
            </asp:DropDownList>
+			</nav>
+		</header>
+    
            <br />
            <br />
            <br />
     <div>
     
-    
+    <article id="Action">
+			<section class="events">
+			
         <uc2:events ID="events1" runat="server" />
+
+			</section>
+			
+			<section>
+
+				<p>...</p>
+
+			</section>
+			
+			<aside id="testside">
+				<h4>test side</h4>
+				<ul>
+					<li>
+						test1
+					</li>
+					<li>
+						test2
+					</li>
+				</ul>
+			</aside>
+			
+		</article>
+
+
     
     
     </div>
