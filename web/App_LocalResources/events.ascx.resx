@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Button1Resource1.Text" xml:space="preserve">
-    <value>按鈕1</value>
+    <value>b1</value>
   </data>
   <data name="Button1Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -160,7 +160,7 @@
     <value />
   </data>
   <data name="PauseResource1.Text" xml:space="preserve">
-    <value>暫停</value>
+    <value>Pause</value>
   </data>
   <data name="PauseResource1.ToolTip" xml:space="preserve">
     <value />

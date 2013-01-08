@@ -28,15 +28,18 @@
            <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
 
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1">
-            <asp:ListItem meta:resourcekey="ListItemResource1" Value="en-US">english</asp:ListItem>
-            <asp:ListItem meta:resourcekey="ListItemResource2" Value="tw">繁體中文</asp:ListItem>
+        <asp:DropDownList ID="language" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1">
+            <asp:ListItem meta:resourcekey="ListItemResource1" Value="en-US">English</asp:ListItem>
+            <asp:ListItem meta:resourcekey="ListItemResource2" Value="zh-CHT">繁體中文</asp:ListItem>
            </asp:DropDownList>
+           <br />
+           <br />
+           <br />
     <div>
     
     
-    
         <uc2:events ID="events1" runat="server" />
+    
     
     </div>
     </form>

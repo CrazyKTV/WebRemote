@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DropDownList1Resource1.ToolTip" xml:space="preserve">
-    <value>Languages</value>
+    <value />
   </data>
   <data name="ListItemResource1.Text" xml:space="preserve">
-    <value>english</value>
+    <value>English</value>
   </data>
   <data name="ListItemResource1.Value" xml:space="preserve">
     <value>en-US</value>
@@ -130,7 +130,7 @@
     <value>繁體中文</value>
   </data>
   <data name="ListItemResource2.Value" xml:space="preserve">
-    <value>tw</value>
+    <value>zh-CHT</value>
   </data>
   <data name="PageResource1.Title" xml:space="preserve">
     <value>Main Page</value>

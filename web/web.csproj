@@ -109,7 +109,7 @@
     <Content Include="App_LocalResources\default.aspx.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\events.ascx.tw.resx" />
+    <Content Include="App_LocalResources\events.ascx.zh-CHT.resx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\GlobalMessages.resx">

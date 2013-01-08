@@ -9,7 +9,7 @@ namespace web
 {
     public partial class _default : System.Web.UI.Page
     {
-        /*
+        
         protected override void InitializeCulture()
         {
 
@@ -35,7 +35,7 @@ namespace web
             base.InitializeCulture();
 
         }
-         * */
+         
 
         protected void Page_Load(object sender, EventArgs e)
         {

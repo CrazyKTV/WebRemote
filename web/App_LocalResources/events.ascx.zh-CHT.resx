@@ -142,7 +142,7 @@
     <value />
   </data>
   <data name="CutResource1.Text" xml:space="preserve">
-    <value>Cut</value>
+    <value>切歌</value>
   </data>
   <data name="CutResource1.ToolTip" xml:space="preserve">
     <value />
@@ -172,13 +172,13 @@
     <value />
   </data>
   <data name="PlayResource1.Text" xml:space="preserve">
-    <value>Play</value>
+    <value>播放</value>
   </data>
   <data name="PlayResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="RepeatResource1.Text" xml:space="preserve">
-    <value>Mute</value>
+    <value>靜音</value>
   </data>
   <data name="RepeatResource1.ToolTip" xml:space="preserve">
     <value />
