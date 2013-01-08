@@ -21,9 +21,12 @@
     <meta charset="utf-8">  
     <title>Main Page</title>
 </head>
-<body>
+<body>    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
     <form id="form1" runat="server">
     <div>
+    
+    
     
         <uc2:events ID="events1" runat="server" />
     
