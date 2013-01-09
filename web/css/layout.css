@@ -14,9 +14,10 @@ dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figure, figcaption, hgroup, 
 menu, footer, header, nav, section, summary, time, mark, audio, video {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	border: 0;
+
 }
 
 article, aside, canvas, figure, figure img, figcaption, hgroup,
@@ -87,7 +88,7 @@ px      68    160    252    344    436    528    620    712    804    896    */
 
 body {
 	width: 896px;
-	padding: 72px 48px 84px;
+	padding: 15px 5px 5px;
 	background: rgb(232,232,232);
 	color: rgb(60,60,60);
 	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
@@ -107,7 +108,7 @@ px      68    160    252    344    436    528    620    712    */
 	
 	body {
 		width: 712px;
-		padding: 48px 28px 60px;
+		padding: 5px 5px 5px;
 	}
 }
 
@@ -125,7 +126,7 @@ px      68    160    252    */
 	
 	body {
 		width: 252px;
-		padding: 48px 34px 60px;
+		padding: 5px 5px 5px;
 	}
 	
 }
@@ -144,7 +145,7 @@ px      68    160    252    344    436    */
 	
 	body {
 		width: 436px;
-		padding: 36px 22px 48px;
+		padding: 5px 5px 5px;
 	}
 	
 }

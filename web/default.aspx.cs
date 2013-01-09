@@ -12,33 +12,23 @@ namespace web
         
         protected override void InitializeCulture()
         {
-
+            // dropdown change languages
             if (Request.Form["language"] != null)
             {
-
                 String selectedLanguage = Request.Form["language"];
-
                 UICulture = selectedLanguage;
-
                 Culture = selectedLanguage;
-
-                System.Threading.Thread.CurrentThread.CurrentCulture =
-
-                System.Globalization.CultureInfo.CreateSpecificCulture(selectedLanguage);
-
-                System.Threading.Thread.CurrentThread.CurrentUICulture = new
-
-                System.Globalization.CultureInfo(selectedLanguage);
-
+                System.Threading.Thread.CurrentThread.CurrentCulture =  System.Globalization.CultureInfo.CreateSpecificCulture(selectedLanguage);
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(selectedLanguage);
             }
-
             base.InitializeCulture();
-
         }
          
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (UICulture == null)
+                language.Visible = false;
 
         }
 

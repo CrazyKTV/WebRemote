@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="events.ascx.cs" Inherits="web.events" %>
+
 <asp:Button ID="Pause" runat="server" Text="Pause" meta:resourcekey="PauseResource1" /> 
 &nbsp;<asp:Button ID="Play" runat="server" Text="Play" meta:resourcekey="PlayResource1" /> 
 &nbsp;<asp:Button ID="Cut" runat="server" Text="Cut" meta:resourcekey="CutResource1" /> 

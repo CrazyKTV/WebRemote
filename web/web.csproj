@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="actionsMain.ascx" />
     <Content Include="css\computer.css" />
     <Content Include="css\layout.css" />
     <Content Include="css\mobile.css" />
@@ -70,6 +71,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="actionsMain.ascx.cs">
+      <DependentUpon>actionsMain.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="actionsMain.ascx.designer.cs">
+      <DependentUpon>actionsMain.ascx</DependentUpon>
+    </Compile>
     <Compile Include="App_GlobalResources\GlobalMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -3,6 +3,8 @@
 <%@ Register src="currentList.ascx" tagname="currentList" tagprefix="uc1" %>
 <%@ Register src="events.ascx" tagname="events" tagprefix="uc2" %>
 
+<%@ Register src="actionsMain.ascx" tagname="actionsMain" tagprefix="uc3" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,12 +31,17 @@
         </asp:ScriptManager>
 
         <header id="masthead">
-			<h3>CrazyKTV</h3>
-			<nav>    
-            <asp:DropDownList ID="language" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1">
+			 <nav>   
+                 <asp:Label ID="Label1" runat="server" Text="Language: "></asp:Label>
+&nbsp;<asp:DropDownList ID="language" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1">
             <asp:ListItem meta:resourcekey="ListItemResource1" Value="en-US">English</asp:ListItem>
             <asp:ListItem meta:resourcekey="ListItemResource2" Value="zh-CHT">繁體中文</asp:ListItem>
+                     <asp:ListItem Value="zh-CHS">简体中文</asp:ListItem>
+                     <asp:ListItem Value="JP">日本語</asp:ListItem>
+                     <asp:ListItem Value="KN">한국의</asp:ListItem>
+                     <asp:ListItem Value="THAI">ภาษาไทย</asp:ListItem>
            </asp:DropDownList>
+			    <uc3:actionsMain ID="actionsMain1" runat="server" />
 			</nav>
 		</header>
     
@@ -42,7 +49,10 @@
            <br />
            <br />
     <div>
-    
+    <article id="MainDisplay">
+    </article>
+
+
     <article id="Action">
 			<section class="events">
 			
@@ -55,7 +65,7 @@
 				<p>...</p>
 
 			</section>
-			
+			<!--
 			<aside id="testside">
 				<h4>test side</h4>
 				<ul>
@@ -67,7 +77,7 @@
 					</li>
 				</ul>
 			</aside>
-			
+			-->
 		</article>
 
 
