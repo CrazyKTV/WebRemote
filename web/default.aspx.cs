@@ -27,10 +27,20 @@ namespace web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*
             if (UICulture == null)
                 language.Visible = false;
+             */
+           // System.Threading.Thread.Sleep(1000);
 
         }
+
+        protected void language_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
 
     }
 }

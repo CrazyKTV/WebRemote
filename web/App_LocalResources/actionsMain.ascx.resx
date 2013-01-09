@@ -117,52 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DropDownList1Resource1.ToolTip" xml:space="preserve">
+  <data name="DDActionsResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label1Resource1.Text" xml:space="preserve">
-    <value>語言:</value>
+    <value>Functions: </value>
   </data>
   <data name="Label1Resource1.ToolTip" xml:space="preserve">
-    <value>Please select the language</value>
+    <value />
   </data>
   <data name="ListItemResource1.Text" xml:space="preserve">
-    <value>English</value>
+    <value>Find</value>
   </data>
   <data name="ListItemResource1.Value" xml:space="preserve">
-    <value>en-US</value>
+    <value>Find</value>
   </data>
   <data name="ListItemResource2.Text" xml:space="preserve">
-    <value>繁體中文</value>
+    <value>Waiting List</value>
   </data>
   <data name="ListItemResource2.Value" xml:space="preserve">
-    <value>zh-CHT</value>
+    <value>Waiting List</value>
   </data>
   <data name="ListItemResource3.Text" xml:space="preserve">
-    <value>简体中文</value>
+    <value>Video</value>
   </data>
   <data name="ListItemResource3.Value" xml:space="preserve">
-    <value>zh-CHS</value>
+    <value>Video</value>
   </data>
   <data name="ListItemResource4.Text" xml:space="preserve">
-    <value>日本語</value>
+    <value>Volume</value>
   </data>
   <data name="ListItemResource4.Value" xml:space="preserve">
-    <value>ja-JP</value>
+    <value>Volume</value>
   </data>
   <data name="ListItemResource5.Text" xml:space="preserve">
-    <value>한국의</value>
+    <value>Tune</value>
   </data>
   <data name="ListItemResource5.Value" xml:space="preserve">
-    <value>ko-KR</value>
+    <value>Tune</value>
   </data>
   <data name="ListItemResource6.Text" xml:space="preserve">
-    <value>ภาษาไทย</value>
+    <value>Advance</value>
   </data>
   <data name="ListItemResource6.Value" xml:space="preserve">
-    <value>th-TH</value>
-  </data>
-  <data name="PageResource1.Title" xml:space="preserve">
-    <value>CrazyKTV</value>
+    <value>Advance</value>
   </data>
 </root>

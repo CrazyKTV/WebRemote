@@ -74,7 +74,14 @@ body {
 ::-moz-selection 	{background: rgb(255,255,158);}
 img::selection 		{background: transparent;}
 img::-moz-selection	{background: transparent;}
-body {-webkit-tap-highlight-color: rgb(255,255,158);}
+body {-webkit-tap-highlight-color: rgb(255,255,158);
+      background-image:url('/images/Basic.jpg');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(0,0,0);
+      color: rgb(255, 255, 255);
+}
 
 
 
@@ -89,8 +96,6 @@ px      68    160    252    344    436    528    620    712    804    896    */
 body {
 	width: 896px;
 	padding: 15px 5px 5px;
-	background: rgb(232,232,232);
-	color: rgb(60,60,60);
 	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
