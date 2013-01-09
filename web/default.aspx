@@ -38,8 +38,8 @@
                     <nav>
 
                         <div style="float: left; width: 50%;">
-                            <asp:Label ID="Label1" runat="server" Text="Language: " meta:resourcekey="Label1Resource1"></asp:Label>
-                            &nbsp;<asp:DropDownList ID="language" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1" OnSelectedIndexChanged="language_SelectedIndexChanged">
+                            <asp:Label ID="Label1" runat="server" Text="Language: " meta:resourcekey="Label1Resource1" CssClass="label1"></asp:Label>
+                            &nbsp;<asp:DropDownList ID="language" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1">
                                 <asp:ListItem meta:resourcekey="ListItemResource1" Value="en-US"></asp:ListItem>
                                 <asp:ListItem meta:resourcekey="ListItemResource2" Value="zh-CHT"></asp:ListItem>
                                 <asp:ListItem Value="zh-CHS" meta:resourcekey="ListItemResource3">简体中文</asp:ListItem>
@@ -71,8 +71,8 @@
                         <p />
 
                     </section>
-                    <!--
-			<aside id="testside">
+                    
+<%--			<aside id="testside">
 				<h4>test side</h4>
 				<ul>
 					<li>
@@ -83,7 +83,7 @@
 					</li>
 				</ul>
 			</aside>
-			-->
+			--%>
                 </article>
 
 

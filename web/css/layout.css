@@ -84,6 +84,7 @@ body {-webkit-tap-highlight-color: rgb(255,255,158);
 }
 
 
+/****************default Start******/
 
 /*		Default Layout: 992px. 
 		Gutters: 24px.
@@ -99,6 +100,11 @@ body {
 	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
+.dropdown1 {
+    font-size: 100%;
+}
+
+/****************default end******/
 
 
 /*		Tablet Layout: 768px.
