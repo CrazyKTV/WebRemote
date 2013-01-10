@@ -46,21 +46,13 @@
                 <header id="masterheader">
                     <nav>
                         <div style="display:block">
-                        <div style="float: left; width: 50%; display:block">
-                            <asp:Label ID="lLanguage" runat="server" Text="Language: " CssClass="label1" meta:resourcekey="lLanguageResource1"></asp:Label>
-                            <asp:DropDownList ID="ddlanguage" runat="server" AutoPostBack="True" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1" meta:resourcekey="ddlanguageResource1">
-                                <asp:ListItem Value="en-US" Text="English" meta:resourcekey="ListItemResource14"></asp:ListItem>
-                                <asp:ListItem Value="zh-CHT" Text="繁體中文" meta:resourcekey="ListItemResource15"></asp:ListItem>
-                                <asp:ListItem Value="zh-CHS" Text="简体中文" meta:resourcekey="ListItemResource16"></asp:ListItem>
-                                <asp:ListItem Value="ja-JP" Text="日本語" meta:resourcekey="ListItemResource17"></asp:ListItem>
-                                <asp:ListItem Value="ko-KR" Text="한국의" meta:resourcekey="ListItemResource18"></asp:ListItem>
-                                <asp:ListItem Value="th-TH" Text="ภาษาไทย" meta:resourcekey="ListItemResource19"></asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
+
+                        
              
-                        <div style="float: right; width: 50%; display:block">                           
+                        <div style="float: left; width: 50%; display:block">                           
                             <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" ></asp:Label>
                             <asp:DropDownList ID="ddActions" runat="server" AutoPostBack="True" CssClass="dropdown1" meta:resourcekey="ddActionsResource1" OnSelectedIndexChanged="ddActions_SelectedIndexChanged">
+                            <asp:ListItem meta:resourcekey="ListItemResource30">---------</asp:ListItem>
                             <asp:ListItem meta:resourcekey="ListItemResource20">Find</asp:ListItem>
                             <asp:ListItem meta:resourcekey="ListItemResource21">Song Number</asp:ListItem>
                             <asp:ListItem meta:resourcekey="ListItemResource22">Waiting List</asp:ListItem>
@@ -71,6 +63,17 @@
                             </asp:DropDownList>
                         </div>
 
+                            <div style="float: right; width: 50%; display:block">
+                            <asp:Label ID="lLanguage" runat="server" Text="Language: " CssClass="label1" meta:resourcekey="lLanguageResource1"></asp:Label>
+                            <asp:DropDownList ID="ddlanguage" runat="server" AutoPostBack="True" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1" meta:resourcekey="ddlanguageResource1">
+                                <asp:ListItem Value="en-US" Text="English" meta:resourcekey="ListItemResource14"></asp:ListItem>
+                                <asp:ListItem Value="zh-CHT" Text="繁體中文" meta:resourcekey="ListItemResource15"></asp:ListItem>
+                                <asp:ListItem Value="zh-CHS" Text="简体中文" meta:resourcekey="ListItemResource16"></asp:ListItem>
+                                <asp:ListItem Value="ja-JP" Text="日本語" meta:resourcekey="ListItemResource17"></asp:ListItem>
+                                <asp:ListItem Value="ko-KR" Text="한국의" meta:resourcekey="ListItemResource18"></asp:ListItem>
+                                <asp:ListItem Value="th-TH" Text="ภาษาไทย" meta:resourcekey="ListItemResource19"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
 
                       </div>
                     </nav>

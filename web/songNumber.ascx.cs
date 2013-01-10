@@ -11,7 +11,20 @@ namespace web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            tSongNumber.Text = "";
+        }
+
+        private void AddSong()
+        { 
+        // add to the list
+        }
+
+        protected void bAdd_Click(object sender, EventArgs e)
+        {
 
         }
+
+
+
     }
 }
