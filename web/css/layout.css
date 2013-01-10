@@ -74,8 +74,7 @@ body {
 ::-moz-selection 	{background: rgb(255,255,158);}
 img::selection 		{background: transparent;}
 img::-moz-selection	{background: transparent;}
-body
-{
+body {
     -webkit-tap-highlight-color: rgb(255,255,158);
     background-image: url('/images/Basic.jpg');
     background-size: 100% auto;
@@ -83,6 +82,7 @@ body
     background-position: center top;
     background-color: rgb(0,0,0);
     color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
 
@@ -107,26 +107,42 @@ body
     font-size: 100%;
 }
 
-.button1
-{
-    background-image: url('/images/Button1.jpg');
-    background-repeat: no-repeat;
+.button1 {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin: 5px;
+    /*background-image: url('/images/Button1.jpg');
+    background-repeat: repeat;
     background-attachment: fixed;
-    background-position: center center;
+    background-position: center center;*/
     color: #FFFFFF;
-    font-weight: bold;
-    /*position:relative;*/
-    display:block;
-    float:left; /* optional */
+    font-weight: bold; /*position:relative;*/
+    display: block; /*float: left;*/ /*padding: 0px;*/
+    height: 38px;
+    width: 200px;
+    background-color: #AAA;
 }
 
 
-.button1Text
+/*.button1Text
 {
     position: relative; top:-40px; left:50px;
     display:block;
     width:120px;
-    /*float:left;*/ /* optional */
+
+}*/
+
+#mainarea {
+    border: thin groove #C0C0C0;
+    width:100%;
+    float:left;
+    display:block;
+    margin-top: 10px;
+
+    /*position: relative;
+    margin-top: 50px;
+    display:block;*/
 }
 
 

@@ -1,9 +1,18 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="web._default" Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 
-<%@ Register Src="currentList.ascx" TagName="currentList" TagPrefix="uc1" %>
-<%@ Register Src="events.ascx" TagName="events" TagPrefix="uc2" %>
+<%@ Register Src="~/songNumber.ascx" TagPrefix="uc1" TagName="songNumber" %>
+<%@ Register src="~/currentList.ascx" tagname="currentList" tagprefix="uc2" %>
+<%@ Register Src="~/video.ascx" TagPrefix="uc3" TagName="video" %>
+<%@ Register Src="~/volume.ascx" TagPrefix="uc4" TagName="volume" %>
+<%@ Register Src="~/tune.ascx" TagPrefix="uc5" TagName="tune" %>
+<%@ Register Src="~/find.ascx" TagPrefix="uc0" TagName="find" %>
 
-<%@ Register Src="actionsMain.ascx" TagName="actionsMain" TagPrefix="uc3" %>
+
+
+
+
+
+
 
 <!DOCTYPE html>
 
@@ -23,7 +32,7 @@
     <!--<link rel="shortcut icon" href="img/favicon.ico">-->
     <script src="jquery-1.8.3.min.js"></script>
     <meta charset="utf-8" />
-    <title>Main Page</title>
+    <title>KTV</title>
 </head>
 <body dir='<asp:Literal ID="Literal1" runat="server" Text="<%$Resources: GlobalMessages, directionltr %>"></asp:Literal>'>
 
@@ -34,59 +43,52 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
 
-                <header id="masthead">
+                <header id="masterheader">
                     <nav>
-
-                        <div style="float: left; width: 50%;">
-                            <asp:Label ID="Label1" runat="server" Text="Language: " meta:resourcekey="Label1Resource1" CssClass="label1"></asp:Label>
-                            &nbsp;<asp:DropDownList ID="language" runat="server" AutoPostBack="True" meta:resourcekey="DropDownList1Resource1" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1">
-                                <asp:ListItem meta:resourcekey="ListItemResource1" Value="en-US"></asp:ListItem>
-                                <asp:ListItem meta:resourcekey="ListItemResource2" Value="zh-CHT"></asp:ListItem>
-                                <asp:ListItem Value="zh-CHS" meta:resourcekey="ListItemResource3">简体中文</asp:ListItem>
-                                <asp:ListItem Value="ja-JP" meta:resourcekey="ListItemResource4">日本語</asp:ListItem>
-                                <asp:ListItem Value="ko-KR" meta:resourcekey="ListItemResource5">한국의</asp:ListItem>
-                                <asp:ListItem Value="th-TH" meta:resourcekey="ListItemResource6">ภาษาไทย</asp:ListItem>
+                        <div style="display:block">
+                        <div style="float: left; width: 50%; display:block">
+                            <asp:Label ID="lLanguage" runat="server" Text="Language: " CssClass="label1" meta:resourcekey="lLanguageResource1"></asp:Label>
+                            <asp:DropDownList ID="ddlanguage" runat="server" AutoPostBack="True" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1" meta:resourcekey="ddlanguageResource1">
+                                <asp:ListItem Value="en-US" Text="English" meta:resourcekey="ListItemResource14"></asp:ListItem>
+                                <asp:ListItem Value="zh-CHT" Text="繁體中文" meta:resourcekey="ListItemResource15"></asp:ListItem>
+                                <asp:ListItem Value="zh-CHS" Text="简体中文" meta:resourcekey="ListItemResource16"></asp:ListItem>
+                                <asp:ListItem Value="ja-JP" Text="日本語" meta:resourcekey="ListItemResource17"></asp:ListItem>
+                                <asp:ListItem Value="ko-KR" Text="한국의" meta:resourcekey="ListItemResource18"></asp:ListItem>
+                                <asp:ListItem Value="th-TH" Text="ภาษาไทย" meta:resourcekey="ListItemResource19"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <div>
-
-                            <uc3:actionsMain ID="actionsMain1" runat="server" />
-
-
-
+             
+                        <div style="float: right; width: 50%; display:block">                           
+                            <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" ></asp:Label>
+                            <asp:DropDownList ID="ddActions" runat="server" AutoPostBack="True" CssClass="dropdown1" meta:resourcekey="ddActionsResource1" OnSelectedIndexChanged="ddActions_SelectedIndexChanged">
+                            <asp:ListItem meta:resourcekey="ListItemResource20">Find</asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource21">Song Number</asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource22">Waiting List</asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource23">Video</asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource24">Volume</asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource25">Tune</asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource26">Advance</asp:ListItem>
+                            </asp:DropDownList>
                         </div>
+
+
+                      </div>
                     </nav>
                 </header>
-                <br />
 
-                <article id="Action">
 
-                    <section class="events">
-                        <uc2:events ID="events1" runat="server" />
-
-                        <h3>
-                    </section>
+                <article id="mainarea">
                     <section>
-
-                        <p />
-
-                    </section>
-                    
-<%--			<aside id="testside">
-				<h4>test side</h4>
-				<ul>
-					<li>
-						test1
-					</li>
-					<li>
-						test2
-					</li>
-				</ul>
-			</aside>
-			--%>
+                        <div>
+                            <uc0:find runat="server" ID="find" Visible="False"/>
+                            <uc1:songNumber runat="server" ID="songNumber" Visible="False" />
+                            <uc2:currentList ID="currentList1" runat="server" />
+                            <uc3:video runat="server" ID="video" Visible="False" />
+                            <uc4:volume runat="server" ID="volume" Visible="False" />
+                            <uc5:tune runat="server" ID="tune" Visible="False" />
+                        </div>
+                    </section>                    
                 </article>
-
-
             </ContentTemplate>
         </asp:UpdatePanel>
 
@@ -94,40 +96,43 @@
 
 
         
-      <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
+
+       
+        
+
+       
+                  <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
         <ProgressTemplate>
             <div class="overlay" />
             <div class="overlayContent">
-           <%--     <h2>Loading...</h2>
-                <img src="Images/ajax-loader.gif" alt="Loading"/>--%>
+                <h2>Loading...</h2>
+                <img src="/images/ajax-loader.gif" alt="Loading"/>
             </div>
         </ProgressTemplate>
     </asp:UpdateProgress>
-       
+    
+
+        
+            <script>
+
+            function adjustDivs() {
+            var df = document.getElementById('<%=UpdateProgress1.ClientID%>');
+            df.style.position = 'absolute';
+            df.style.left = (document.documentElement.scrollLeft + 45) + '%';
+            df.style.top = (document.documentElement.scrollTop + 2) + 'px';
+
+        }
+
+
+        window.onload = adjustDivs;
+        window.onresize = adjustDivs;
+        window.onscroll = adjustDivs;
+</script>
+
 
     </form>
 
-    <div id="loading" class="overlayContent">
-   <p><img src="/Images/ajax-loader.gif" />Please Wait</p>
-</div>
 
-<script type="text/javascript" charset="utf-8">
-    $('#loading').ajaxStart(function () {
-        $(this).dialog({
-            title: "Loading data...",
-            modal: true,
-            width: 50,
-            height: 100,
-            closeOnEscape: false,
-            resizable: false,
-            open: function () {
-                $(".ui-dialog-titlebar-close", $(this).parent()).hide(); //hides the little 'x' button
-            }
-        });
-    }).ajaxStop(function () {
-        $(this).dialog('close');
-    });
-</script>
 
 </body>
 </html>

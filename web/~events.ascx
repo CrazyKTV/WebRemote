@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="events.ascx.cs" Inherits="web.events" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="~events.ascx.cs" Inherits="web.events" %>
 <link href="css/layout.css" rel="stylesheet" />
 <link href="css/overlay.css" rel="stylesheet" />
 <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">

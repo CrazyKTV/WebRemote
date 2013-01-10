@@ -10,132 +10,105 @@
 namespace web {
     
     
-    public partial class _default {
+    public partial class video {
         
         /// <summary>
-        /// form1 control.
+        /// Pause control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button Pause;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// Play control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Button Play;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// Cut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Button Cut;
         
         /// <summary>
-        /// lLanguage control.
+        /// Repeat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lLanguage;
+        protected global::System.Web.UI.WebControls.Button Repeat;
         
         /// <summary>
-        /// ddlanguage control.
+        /// Restart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlanguage;
+        protected global::System.Web.UI.WebControls.Button Restart;
         
         /// <summary>
-        /// lFunctions control.
+        /// FastFoward control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lFunctions;
+        protected global::System.Web.UI.WebControls.Button FastFoward;
         
         /// <summary>
-        /// ddActions control.
+        /// FastBackward control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddActions;
+        protected global::System.Web.UI.WebControls.Button FastBackward;
         
         /// <summary>
-        /// find control.
+        /// Mute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::web.video find;
+        protected global::System.Web.UI.WebControls.Button Mute;
         
         /// <summary>
-        /// songNumber control.
+        /// NoVocal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::web.songNumber songNumber;
+        protected global::System.Web.UI.WebControls.Button NoVocal;
         
         /// <summary>
-        /// currentList1 control.
+        /// Vocal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::web.currentList currentList1;
+        protected global::System.Web.UI.WebControls.Button Vocal;
         
         /// <summary>
-        /// video control.
+        /// Stereo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::web.video video;
-        
-        /// <summary>
-        /// volume control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::web.volume volume;
-        
-        /// <summary>
-        /// tune control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::web.video tune;
-        
-        /// <summary>
-        /// UpdateProgress1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgress1;
+        protected global::System.Web.UI.WebControls.Button Stereo;
     }
 }

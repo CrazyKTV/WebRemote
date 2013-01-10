@@ -2,9 +2,3 @@ C:\__PROJECTS__\CrazyKTV\web\bin\web.dll
 C:\__PROJECTS__\CrazyKTV\web\bin\web.pdb
 C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.dll
 C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.pdb
-C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.csprojResolveAssemblyReference.cache
-C:\__PROJECTS__\CrazyKTV\web\bin\zh-CHT\web.resources.dll
-C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.App_LocalResources.default.aspx.zh-CHT.resources
-C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.csproj.GenerateResource.Cache
-C:\__PROJECTS__\CrazyKTV\web\obj\Debug\zh-CHT\web.resources.dll
-C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.App_LocalResources.actionsMain.ascx.zh-CHT.resources
