@@ -98,13 +98,36 @@
         <ProgressTemplate>
             <div class="overlay" />
             <div class="overlayContent">
-                <h2>Loading...</h2>
-                <img src="Images/ajax-loader.gif" alt="Loading"/>
+           <%--     <h2>Loading...</h2>
+                <img src="Images/ajax-loader.gif" alt="Loading"/>--%>
             </div>
         </ProgressTemplate>
     </asp:UpdateProgress>
        
 
     </form>
+
+    <div id="loading" class="overlayContent">
+   <p><img src="/Images/ajax-loader.gif" />Please Wait</p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $('#loading').ajaxStart(function () {
+        $(this).dialog({
+            title: "Loading data...",
+            modal: true,
+            width: 50,
+            height: 100,
+            closeOnEscape: false,
+            resizable: false,
+            open: function () {
+                $(".ui-dialog-titlebar-close", $(this).parent()).hide(); //hides the little 'x' button
+            }
+        });
+    }).ajaxStop(function () {
+        $(this).dialog('close');
+    });
+</script>
+
 </body>
 </html>

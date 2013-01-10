@@ -74,13 +74,15 @@ body {
 ::-moz-selection 	{background: rgb(255,255,158);}
 img::selection 		{background: transparent;}
 img::-moz-selection	{background: transparent;}
-body {-webkit-tap-highlight-color: rgb(255,255,158);
-      background-image:url('/images/Basic.jpg');
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: rgb(0,0,0);
-      color: rgb(255, 255, 255);
+body
+{
+    -webkit-tap-highlight-color: rgb(255,255,158);
+    background-image: url('/images/Basic.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: rgb(0,0,0);
+    color: rgb(255, 255, 255);
 }
 
 
@@ -94,15 +96,39 @@ body {-webkit-tap-highlight-color: rgb(255,255,158);
 cols    1     2      3      4      5      6      7      8      9      10
 px      68    160    252    344    436    528    620    712    804    896    */
 
-body {
-	width: 896px;
-	padding: 15px 5px 5px;
-	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+body
+{
+    width: 982px;
+    padding: 25px 5px 5px 5px;
+    -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
 .dropdown1 {
     font-size: 100%;
 }
+
+.button1
+{
+    background-image: url('/images/Button1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    color: #FFFFFF;
+    font-weight: bold;
+    /*position:relative;*/
+    display:block;
+    float:left; /* optional */
+}
+
+
+.button1Text
+{
+    position: relative; top:-40px; left:50px;
+    display:block;
+    width:120px;
+    /*float:left;*/ /* optional */
+}
+
 
 /****************default end******/
 
@@ -118,8 +144,8 @@ px      68    160    252    344    436    528    620    712    */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	
 	body {
-		width: 712px;
-		padding: 5px 5px 5px;
+		width: 760px;
+		padding: 3px 5px 5px;
 	}
 }
 
@@ -137,7 +163,7 @@ px      68    160    252    */
 	
 	body {
 		width: 252px;
-		padding: 5px 5px 5px;
+		padding: 5px 2px 5px;
 	}
 	
 }
@@ -155,8 +181,8 @@ px      68    160    252    344    436    */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	
 	body {
-		width: 436px;
-		padding: 5px 5px 5px;
+		width: 476px;
+		padding: 2px 2px 5px;
 	}
 	
 }

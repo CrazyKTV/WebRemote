@@ -58,17 +58,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="actionsMain.ascx" />
-    <Content Include="css\computer.css" />
     <Content Include="css\layout.css" />
-    <Content Include="css\mobile.css" />
     <Content Include="css\overlay.css" />
-    <Content Include="css\tablet.css" />
     <Content Include="currentList.ascx" />
     <Content Include="default.aspx" />
     <Content Include="events.ascx" />
     <Content Include="IE9html5.js" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\Basic.jpg" />
+    <Content Include="images\Button.jpg" />
+    <Content Include="images\Button1.jpg" />
     <Content Include="jquery-1.8.3.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
