@@ -83,7 +83,7 @@ body {
     background-color: rgb(0,0,0);
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-family: DFKai-sb, 標楷體, stkaiti,华文楷体, sans-serif,Arial, Helvetica;
+    font-family: Arial, Helvetica,sans-serif, DFKai-sb, 標楷體, stkaiti,华文楷体;
 }
 
 
@@ -99,17 +99,17 @@ px      68    160    252    344    436    528    620    712    804    896    */
 
 body
 {
-    width: 982px;
+    width: 972px;
     padding: 25px 5px 5px 5px;
     -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
 .dropdown1 {
-    font-size: 100%;
+    font-size: 90%;
 }
 
 .dropdown2 {
-    font-size: 100%;
+    font-size: 90%;
 }
 
 .textbox2 {
@@ -117,8 +117,13 @@ body
     width:70%;
 }
 
+.label1 {
+    font-size: 85%;
+}
+
+
 .label2 {
-    font-size: 100%;
+    font-size: 90%;
 }
 
 .button1 {
@@ -151,7 +156,7 @@ body
     font-weight: bold; /*position:relative;*/
     background-color: #AAA;
     height: 30px;
-    width: 100px;
+    width: 40px;
 }
 
 
@@ -191,7 +196,7 @@ px      68    160    252    344    436    528    620    712    */
 	
 	body {
 		width: 760px;
-		padding: 3px 5px 5px;
+		padding: 5px 2px 5px;
 	}
 }
 
@@ -208,7 +213,7 @@ px      68    160    252    */
 @media only screen and (max-width: 767px) {
 	
 	body {
-		width: 252px;
+		width: 310px;
 		padding: 5px 2px 5px;
 	}
 	
@@ -227,8 +232,8 @@ px      68    160    252    344    436    */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	
 	body {
-		width: 476px;
-		padding: 2px 2px 5px;
+		width: 470px;
+		padding: 5px 2px 5px;
 	}
 	
 }

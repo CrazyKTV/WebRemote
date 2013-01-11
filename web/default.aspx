@@ -50,7 +50,7 @@
                         
              
                         <div style="float: left; width: 50%; display:block">                           
-                            <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" ></asp:Label>
+                            <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" CssClass="label1" ></asp:Label>
                             <asp:DropDownList ID="ddActions" runat="server" AutoPostBack="True" CssClass="dropdown1" meta:resourcekey="ddActionsResource1" OnSelectedIndexChanged="ddActions_SelectedIndexChanged">
                             <asp:ListItem meta:resourcekey="ListItemResource30">---------</asp:ListItem>
                             <asp:ListItem meta:resourcekey="ListItemResource20">Find</asp:ListItem>
