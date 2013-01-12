@@ -1,14 +1,14 @@
 ﻿ .overlay
         {
-          /*position: fixed;*/
+          position: fixed;
           z-index: 98;
-          /*top: 0px;
+          top: 0px;
           left: 0px;
           right: 0px;
-          bottom: 0px;*/
-            /*background-color: #aaa;
+          bottom: 0px;
+            background-color: #aaa;
             filter: alpha(opacity=80);
-            opacity: 0.8;*/
+            opacity: 0.8;
         }
         .overlayContent
         {

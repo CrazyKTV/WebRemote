@@ -40,6 +40,15 @@ namespace web {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
+        /// LComputerOnlyMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LComputerOnlyMessage;
+        
+        /// <summary>
         /// lFunctions control.
         /// </summary>
         /// <remarks>

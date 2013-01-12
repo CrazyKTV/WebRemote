@@ -1,14 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="video.ascx.cs" Inherits="web.video" %>
 <link href="css/layout.css" rel="stylesheet" />
-
-
-<p>
     <br />
-</p>
-<p>
-    &nbsp;</p>
-
-
+    
 <asp:Button ID="Pause" runat="server" Text="Pause" CssClass="button1" /> 
 <asp:Button ID="Play" runat="server" Text="Play" CssClass="button1" /> 
 <asp:Button ID="Cut" runat="server" Text="Cut" CssClass="button1" /> 

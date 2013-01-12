@@ -31,8 +31,8 @@ namespace web
             if (UICulture == null)
                 language.Visible = false;
              */
-            //System.Threading.Thread.Sleep(3000);
-            ////Console.WriteLine( System.Threading.Thread.CurrentThread.CurrentCulture);
+            System.Threading.Thread.Sleep(2000);
+            //Console.WriteLine( System.Threading.Thread.CurrentThread.CurrentCulture);
 
         }
 

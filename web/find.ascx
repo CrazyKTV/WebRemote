@@ -3,7 +3,7 @@
 </asp:ScriptManagerProxy>
 
 <link href="css/layout.css" rel="stylesheet" />
-
+<br/>
 <asp:Panel ID="Panel1" runat="server">
     <asp:DropDownList ID="ddSearchType" runat="server" CssClass="dropdown2">
         <asp:ListItem>Song</asp:ListItem>

@@ -97,6 +97,7 @@ body {
 cols    1     2      3      4      5      6      7      8      9      10
 px      68    160    252    344    436    528    620    712    804    896    */
 
+
 body
 {
     width: 972px;
@@ -114,7 +115,7 @@ body
 
 .textbox2 {
     font-size: 100%;
-    width:70%;
+    width:45%;
 }
 
 .label1 {
@@ -142,6 +143,10 @@ body
     width: 200px;
     background-color: #AAA;
 }
+
+.button1:active { background-color: #ff6a00; }
+
+
 
 .button2 {
     padding: 2px;
@@ -180,6 +185,14 @@ body
     display:block;*/
 }
 
+#LComputerOnlyMessage
+{
+    display: block;
+    font-size: medium;
+    font-weight: bold;
+    color: #FF00FF;
+}
+
 
 /****************default end******/
 
@@ -198,6 +211,13 @@ px      68    160    252    344    436    528    620    712    */
 		width: 760px;
 		padding: 5px 2px 5px;
 	}
+
+    #LComputerOnlyMessage
+    {
+        display: none;
+    }
+
+
 }
 
 
@@ -216,9 +236,12 @@ px      68    160    252    */
 		width: 310px;
 		padding: 5px 2px 5px;
 	}
+    #LComputerOnlyMessage
+    {
+        display: none;
+    }
 	
 }
-
 
 
 /*		Wide Mobile Layout: 480px.
@@ -235,8 +258,32 @@ px      68    160    252    344    436    */
 		width: 470px;
 		padding: 5px 2px 5px;
 	}
-	
+	#LComputerOnlyMessage
+    {
+        display: none;
+    }
 }
+
+/*		Small Tablet Portrait Layout: 600px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5         6     7 
+px      68    160    252    344    436            */
+
+@media only screen and (min-width: 600px) and (max-width: 600px) {
+	
+	body {
+		width: 590px;
+		padding: 5px 2px 5px;
+	}
+	#LComputerOnlyMessage
+    {
+        display: none;
+    }
+}
+
 
 
 /*	Retina media query.
@@ -252,4 +299,9 @@ px      68    160    252    344    436    */
 	
 	}
 	
+    #LComputerOnlyMessage
+    {
+        display: none;
+    }
+
 }

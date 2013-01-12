@@ -31,6 +31,7 @@
     <!-- Favicons-->
     <!--<link rel="shortcut icon" href="img/favicon.ico">-->
     <script src="jquery-1.8.3.min.js"></script>
+    <script src="jquery.blockUI.js"></script>
     <meta charset="utf-8" />
     <title>KTV</title>
 </head>
@@ -44,22 +45,22 @@
             <ContentTemplate>
 
                 <header id="masterheader">
-                    <nav>
+                    <section>
+                        <asp:Label ID="LComputerOnlyMessage" runat="server" Text="'F11' on the keyboard to activate/diactivate full screen." meta:resourcekey="LComputerOnlyMessageResource1"></asp:Label>
+                    </section>
+                    <nav> 
                         <div style="display:block">
-
-                        
-             
                         <div style="float: left; width: 50%; display:block">                           
                             <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" CssClass="label1" ></asp:Label>
                             <asp:DropDownList ID="ddActions" runat="server" AutoPostBack="True" CssClass="dropdown1" meta:resourcekey="ddActionsResource1" OnSelectedIndexChanged="ddActions_SelectedIndexChanged">
-                            <asp:ListItem meta:resourcekey="ListItemResource30">---------</asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource20">Find</asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource21">Song Number</asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource22">Waiting List</asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource23">Video</asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource24">Volume</asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource25">Tune</asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource26">Advance</asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource30" Text="---------"></asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource20" Text="Find"></asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource21" Text="Song Number"></asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource22" Text="Waiting List"></asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource23" Text="Video"></asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource24" Text="Volume"></asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource25" Text="Tune"></asp:ListItem>
+                            <asp:ListItem meta:resourcekey="ListItemResource26" Text="Advanced"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
 
@@ -79,7 +80,7 @@
                     </nav>
                 </header>
 
-
+                   
                 <article id="mainarea">
                     <section>
                         <div>
@@ -92,6 +93,21 @@
                         </div>
                     </section>                    
                 </article>
+
+
+                       
+      <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
+        <ProgressTemplate>
+            <div class="overlay" />
+            <div class="overlayContent" id="overlayContent1">
+                <h2>
+                    <asp:Label ID="lLoading" runat="server" Text="Loading..."></asp:Label></h2>
+                <img src="/images/ajax-loader.gif" alt="Loading"/>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+
+
             </ContentTemplate>
         </asp:UpdatePanel>
 
@@ -99,38 +115,94 @@
 
 
         
-
+        
+        
        
         
 
-       
-                  <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
-        <ProgressTemplate>
-            <div class="overlay" />
-            <div class="overlayContent">
-                <h2>Loading...</h2>
-                <img src="/images/ajax-loader.gif" alt="Loading"/>
-            </div>
-        </ProgressTemplate>
-    </asp:UpdateProgress>
-    
-
-        
-            <script>
-
-            function adjustDivs() {
-            var df = document.getElementById('<%=UpdateProgress1.ClientID%>');
-            df.style.position = 'absolute';
-            df.style.left = (document.documentElement.scrollLeft + 45) + '%';
-            df.style.top = (document.documentElement.scrollTop + 2) + 'px';
-
-        }
 
 
-        window.onload = adjustDivs;
-        window.onresize = adjustDivs;
-        window.onscroll = adjustDivs;
-</script>
+<%--         <img id="displayBox" src="/images/ajax-loader.gif" width="32" height="32" style="display:none" />--%>
+
+<%--        <script>
+
+            //jQuery.fn.center = function () {
+            //    this.css("position", "absolute");
+            //    this.css("top", (($(window).height() - this.outerHeight()) / 2) +
+            //                                        $(window).scrollTop() + "px");
+            //    this.css("left", (($(window).width() - this.outerWidth()) / 2) +
+            //                                        $(window).scrollLeft() + "px");
+            //    return this;
+            //}
+
+            //$(function () {
+            //    $('#UpdateProgress1').center();
+            //});
+
+
+
+            //$(document).ready(function () {
+            //    $('#form1').submit(function () {
+            //        $.blockUI({
+            //            message: $('#displayBox'),
+            //            css: {
+            //                top: ($(window).height() - 32) / 2 + 'px',
+            //                left: ($(window).width() - 32) / 2 + 'px',
+            //                width: '32px'
+            //            }
+            //        });
+
+            //        setTimeout($.unblockUI, 0);
+            //    });
+            //});
+
+            //$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
+
+            
+
+            //$(document).ready(function () {
+            //    $('#form1').change(function () {
+            //        $.blockUI({
+            //            message: $('#UpdateProgress1'),
+            //            css: {
+            //                top: ($(window).height() - 32) / 2 + 'px',
+            //                left: ($(window).width() - 32) / 2 + 'px',
+            //                width: '32px'
+            //            }
+            //        });
+
+            //         setTimeout($.unblockUI, 0);
+            //        //$(document).ajaxStop($.unblockUI);
+
+            //    });
+            //});
+
+
+            //// Get a reference to the PageRequestManager.
+            //var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+            //// Unblock the form when a partial postback ends.
+            //prm.add_endRequest(function () {
+            //    $('#form1').unblock();
+            //});
+
+
+            
+            //jQuery.fn.center = function () {
+            //    this.css("position", "absolute");
+            //    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+            //    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+            //    return this;
+            //}
+
+            //$('#UpdateProgress1').center();
+
+
+
+ 
+
+
+        </script>--%>
 
 
     </form>

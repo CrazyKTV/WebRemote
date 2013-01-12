@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="find.ascx" />
+    <Content Include="jquery.blockUI.js" />
     <Content Include="tune.ascx" />
     <Content Include="~actionsMain.ascx" />
     <Content Include="css\layout.css" />
@@ -167,6 +168,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\songNumber.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\songNumber.ascx.zh-CHT.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
