@@ -13,5 +13,10 @@ namespace web
         {
 
         }
+
+        protected void Pause_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

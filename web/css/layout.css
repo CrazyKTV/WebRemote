@@ -115,7 +115,7 @@ body
 
 .textbox2 {
     font-size: 100%;
-    width:45%;
+    width:40%;
 }
 
 .label1 {
@@ -131,8 +131,7 @@ body
     padding: 5px;
     border-width: 0px;
     border-style: none;
-    margin: 5px;
-    /*background-image: url('/images/Button1.jpg');
+    margin: 5px; /*background-image: url('/images/Button1.jpg');
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: center center;*/
@@ -140,8 +139,9 @@ body
     font-weight: bold; /*position:relative;*/
     display: block; /*float: left;*/ /*padding: 0px;*/
     height: 38px;
-    width: 200px;
-    background-color: #AAA;
+    width: 250px;
+    background-color: #999;
+    font-size: 100%;
 }
 
 .button1:active { background-color: #ff6a00; }
@@ -160,8 +160,49 @@ body
     color: #FFFFFF;
     font-weight: bold; /*position:relative;*/
     background-color: #AAA;
-    height: 30px;
+    height: 32px;
     width: 40px;
+}
+
+
+.gridview {
+    width: 100%;
+}
+
+
+.gridviewHeader {
+    font-weight: lighter;
+    font-size: medium;
+    color: #C0C0C0;
+}
+
+.gridviewContent {
+}
+
+.dgAdd {
+    width: 27px;
+    height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.dgSong{
+     width:auto;
+     word-wrap: break-word;
+}
+
+.dgSinger{
+   width:100px;
+   word-wrap: break-word;
+}
+
+.dgInsert {
+    width: 27px;
+    text-align: right;
+    height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 2px;
 }
 
 
@@ -231,16 +272,27 @@ cols    1     2      3
 px      68    160    252    */
 
 @media only screen and (max-width: 767px) {
-	
-	body {
-		width: 310px;
-		padding: 5px 2px 5px;
-	}
-    #LComputerOnlyMessage
-    {
+
+    body {
+        width: 310px;
+        padding: 5px 2px 5px;
+    }
+
+    #LComputerOnlyMessage {
         display: none;
     }
-	
+
+    .button1 {
+        font-size: larger;
+        height: 44px;
+    }
+
+        .dgAdd {
+        height: 44px;
+    }
+            .dgInsert {
+        height: 44px;
+    }
 }
 
 
@@ -253,13 +305,13 @@ cols    1     2      3      4      5
 px      68    160    252    344    436    */
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	
-	body {
-		width: 470px;
-		padding: 5px 2px 5px;
-	}
-	#LComputerOnlyMessage
-    {
+
+    body {
+        width: 470px;
+        padding: 5px 2px 5px;
+    }
+
+    #LComputerOnlyMessage {
         display: none;
     }
 }
@@ -273,13 +325,13 @@ cols    1     2      3      4      5         6     7
 px      68    160    252    344    436            */
 
 @media only screen and (min-width: 600px) and (max-width: 600px) {
-	
-	body {
-		width: 590px;
-		padding: 5px 2px 5px;
-	}
-	#LComputerOnlyMessage
-    {
+
+    body {
+        width: 590px;
+        padding: 5px 2px 5px;
+    }
+
+    #LComputerOnlyMessage {
         display: none;
     }
 }
@@ -291,17 +343,24 @@ px      68    160    252    344    436            */
 	device-pixel-ratio of 2+, such as iPhone 4.
 -----------------------------------------------    */
 
-@media 
-	only screen and (-webkit-min-device-pixel-ratio: 2),
-	only screen and (min-device-pixel-ratio: 2) {
-	
-	body {
-	
-	}
-	
-    #LComputerOnlyMessage
-    {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+    body {
+    }
+
+    #LComputerOnlyMessage {
         display: none;
     }
 
+    .button1 {
+        font-size: 160%;
+        height: 68px;
+    }
+
+    .dgAdd {
+        height: 68px;
+    }
+    .dgInsert {
+        height: 68px;
+    }
 }

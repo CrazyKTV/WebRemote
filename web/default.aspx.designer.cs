@@ -91,7 +91,7 @@ namespace web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::web.video find;
+        protected global::web.find find;
         
         /// <summary>
         /// songNumber control.
@@ -136,7 +136,7 @@ namespace web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::web.video tune;
+        protected global::web.tune tune;
         
         /// <summary>
         /// UpdateProgress1 control.

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="songs" msprop:Generator_TableClassName="songsDataTable" msprop:Generator_TableVarName="tablesongs" msprop:Generator_TablePropName="songs" msprop:Generator_RowDeletingName="songsRowDeleting" msprop:Generator_RowChangingName="songsRowChanging" msprop:Generator_RowEvHandlerName="songsRowChangeEventHandler" msprop:Generator_RowDeletedName="songsRowDeleted" msprop:Generator_UserTableName="songs" msprop:Generator_RowChangedName="songsRowChanged" msprop:Generator_RowEvArgName="songsRowChangeEvent" msprop:Generator_RowClassName="songsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="SongNum" msprop:Generator_ColumnVarNameInTable="columnSongNum" msprop:Generator_ColumnPropNameInRow="SongNum" msprop:Generator_ColumnPropNameInTable="SongNumColumn" msprop:Generator_UserColumnName="SongNum" type="xs:string" minOccurs="0" />
+              <xs:element name="SongName" msprop:Generator_ColumnVarNameInTable="columnSongName" msprop:Generator_ColumnPropNameInRow="SongName" msprop:Generator_ColumnPropNameInTable="SongNameColumn" msprop:Generator_UserColumnName="SongName" type="xs:string" minOccurs="0" />
+              <xs:element name="Singer" msprop:Generator_ColumnVarNameInTable="columnSinger" msprop:Generator_ColumnPropNameInRow="Singer" msprop:Generator_ColumnPropNameInTable="SingerColumn" msprop:Generator_UserColumnName="Singer" type="xs:string" minOccurs="0" />
+              <xs:element name="Language" msprop:Generator_ColumnVarNameInTable="columnLanguage" msprop:Generator_ColumnPropNameInRow="Language" msprop:Generator_ColumnPropNameInTable="LanguageColumn" msprop:Generator_UserColumnName="Language" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:songs" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

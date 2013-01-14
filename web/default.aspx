@@ -4,8 +4,9 @@
 <%@ Register src="~/currentList.ascx" tagname="currentList" tagprefix="uc2" %>
 <%@ Register Src="~/video.ascx" TagPrefix="uc3" TagName="video" %>
 <%@ Register Src="~/volume.ascx" TagPrefix="uc4" TagName="volume" %>
-<%@ Register Src="~/tune.ascx" TagPrefix="uc5" TagName="tune" %>
 <%@ Register Src="~/find.ascx" TagPrefix="uc0" TagName="find" %>
+<%@ Register Src="~/tune.ascx" TagPrefix="uc5" TagName="tune" %>
+
 
 
 
@@ -38,7 +39,7 @@
 <body dir='<asp:Literal ID="Literal1" runat="server" Text="<%$Resources: GlobalMessages, directionltr %>"></asp:Literal>'>
 
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableHistory="True">
         </asp:ScriptManager>
 
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -84,12 +85,13 @@
                 <article id="mainarea">
                     <section>
                         <div>
-                            <uc0:find runat="server" ID="find" Visible="False"/>
+                           
+                            <uc0:find runat="server" id="find"  Visible="False"/>
                             <uc1:songNumber runat="server" ID="songNumber" Visible="False" />
                             <uc2:currentList ID="currentList1" runat="server" />
                             <uc3:video runat="server" ID="video" Visible="False" />
                             <uc4:volume runat="server" ID="volume" Visible="False" />
-                            <uc5:tune runat="server" ID="tune" Visible="False" />
+                            <uc5:tune runat="server" id="tune"  Visible="False"/>
                         </div>
                     </section>                    
                 </article>

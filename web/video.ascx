@@ -2,7 +2,7 @@
 <link href="css/layout.css" rel="stylesheet" />
     <br />
     
-<asp:Button ID="Pause" runat="server" Text="Pause" CssClass="button1" /> 
+<asp:Button ID="Pause" runat="server" Text="Pause" CssClass="button1" OnClick="Pause_Click" /> 
 <asp:Button ID="Play" runat="server" Text="Play" CssClass="button1" /> 
 <asp:Button ID="Cut" runat="server" Text="Cut" CssClass="button1" /> 
 <asp:Button ID="Repeat" runat="server" Text="Repeat" CssClass="button1" /> 

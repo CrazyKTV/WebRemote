@@ -10,7 +10,7 @@
 namespace web {
     
     
-    public partial class video {
+    public partial class tune {
         
         /// <summary>
         /// tuneUp control.

@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="tune.ascx.cs" Inherits="web.video" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="tune.ascx.cs" Inherits="web.tune" %>
+
 <link href="css/layout.css" rel="stylesheet" />
 
 <br/>

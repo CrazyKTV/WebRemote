@@ -10,13 +10,12 @@
             filter: alpha(opacity=80);
             opacity: 0.8;
         }
-        .overlayContent
-        {
-          z-index: 99;
-          margin: 250px auto;
-          width: 80px;
-          height: 80px;
-        }
+        .overlayContent {
+    z-index: 99;
+    margin: 200px auto auto auto;
+    width: 80px;
+    height: 80px;
+}
         .overlayContent h2
         {
             font-size: 18px;

@@ -31,7 +31,7 @@ namespace web
             if (UICulture == null)
                 language.Visible = false;
              */
-            System.Threading.Thread.Sleep(2000);
+            //System.Threading.Thread.Sleep(2000);
             //Console.WriteLine( System.Threading.Thread.CurrentThread.CurrentCulture);
 
         }
@@ -42,8 +42,28 @@ namespace web
 
         }
 
+        /// <summary>
+        /// for browswer back button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void scriptManager_Navigate(object sender, HistoryEventArgs e)
+        {
+            string state = e.State["historyPoint"];
+            ddActions.SelectedIndex = Convert.ToInt32(state);
+        }
+
+
+
         protected void ddActions_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ////for broswer back button
+            if (ScriptManager1.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
+            {
+                ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
+            }
+
+
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Find".ToLower())
             {
                 find.Visible = true;
@@ -89,20 +109,21 @@ namespace web
                 volume.Visible = false;
             }
 
-            if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Tune".ToLower())
-            {
-                tune.Visible = true;
-            }
-            else
-            {
-                tune.Visible = false;
-            }
-
+            //if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Tune".ToLower())
+            //{
+            //    tune.Visible = true;
+            //}
+            //else
+            //{
+            //    tune.Visible = false;
+            //}
 
 
 
 
         }
+
+
 
 
 
