@@ -2,6 +2,4 @@ C:\__PROJECTS__\CrazyKTV\web\bin\web.dll
 C:\__PROJECTS__\CrazyKTV\web\bin\web.pdb
 C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.dll
 C:\__PROJECTS__\CrazyKTV\web\obj\Debug\web.pdb
-C:\__PROJECTS__\CrazyKTV\web\bin\EntityFramework.dll
 C:\__PROJECTS__\CrazyKTV\web\bin\Newtonsoft.Json.dll
-C:\__PROJECTS__\CrazyKTV\web\bin\EntityFramework.xml
