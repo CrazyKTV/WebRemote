@@ -9,15 +9,17 @@ namespace web
 {
     public partial class find : System.Web.UI.UserControl
     {
+        DataSet1 dset = new DataSet1();
        
-                   protected void Page_Load(object sender, EventArgs e)
+         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
+
         protected void bSearch_Click(object sender, EventArgs e)
         {
-            DataSet1 dset = new DataSet1();
+            
             dset.songs.Clear();
 
 
@@ -38,6 +40,30 @@ namespace web
 
             GridView1.DataSource = dset.songs;
             GridView1.DataBind();  
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+    
+            if (e.CommandName == "Add")
+            {
+
+                // Convert the row index stored in the CommandArgument
+                // property to an Integer.
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Get the last name of the selected author from the appropriate
+                // cell in the GridView control.
+                GridViewRow selectedRow = GridView1.Rows[index];
+                TableCell contactName = selectedRow.Cells[1];
+                string contact = contactName.Text;
+
+                // Display the selected author.
+                //Console.WriteLine("You selected " + contact + ".");
+
+            }
+
+
         }
 
         

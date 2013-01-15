@@ -22,10 +22,10 @@
 </asp:Panel>
 
 <asp:Panel ID="Panel2" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowPaging="True" AllowSorting="True" PageSize="100">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowPaging="True" AllowSorting="True" PageSize="100" OnRowCommand="GridView1_RowCommand">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
-            <asp:ButtonField HeaderText="A" Text="Add" ButtonType="Button" InsertVisible="False">
+            <asp:ButtonField HeaderText="A" Text="Add" ButtonType="Button" InsertVisible="False" CommandName="Add" >
             <ControlStyle CssClass="dgAdd" />
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Left" />
             <ItemStyle CssClass="dgAdd" />
@@ -40,7 +40,7 @@
             <HeaderStyle HorizontalAlign="Left" />
             <ItemStyle CssClass="dgSinger" />
             </asp:BoundField>
-            <asp:ButtonField HeaderText="I" Text="Int" ButtonType="Button">
+            <asp:ButtonField HeaderText="I" Text="Int" ButtonType="Button" CommandName="Insert">
             <ControlStyle CssClass="dgInsert" />
             <HeaderStyle HorizontalAlign="Right" CssClass="hideThis" />
             <ItemStyle CssClass="dgInsert" />

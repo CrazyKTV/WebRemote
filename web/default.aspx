@@ -94,7 +94,7 @@
                             <uc3:video runat="server" ID="video" Visible="False" />
                             <uc4:volume runat="server" ID="volume" Visible="False" />
                             <uc5:tune runat="server" id="tune"  Visible="False"/>
-                            <uc6:advanced runat="server" ID="advanced" />
+                            <uc6:advanced runat="server" ID="advanced"  Visible="False"/>
                         </div>
                     </section>                    
                 </article>
