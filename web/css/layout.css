@@ -115,7 +115,7 @@ body
 
 .textbox2 {
     font-size: 100%;
-    width:40%;
+    width:38%;
 }
 
 .label1 {
@@ -182,18 +182,32 @@ body
 .dgAdd {
     width: 27px;
     height: auto;
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    padding-right: 2px;
+    background-color: #AAA;
     padding-top: 4px;
     padding-bottom: 4px;
+    border-width: 0px;
+    border-style: none;
 }
 
-.dgSong{
-     width:auto;
-     word-wrap: break-word;
+.dgSong {
+    width: auto;
+    word-wrap: break-word;
+    text-align: left;
+    padding-right: 4px;
 }
 
 .dgSinger{
    width:100px;
    word-wrap: break-word;
+   text-align: left;
+   padding-right: 4px;
+}
+
+.hideThis {
+    color:#000;
 }
 
 .dgInsert {
@@ -203,6 +217,11 @@ body
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 2px;
+     color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    background-color: #AAA;
+       border-width: 0px;
+    border-style: none;
 }
 
 

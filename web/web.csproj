@@ -64,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="advanced.ascx" />
     <Content Include="find.ascx" />
     <Content Include="jquery.blockUI.js" />
     <Content Include="libs\Newtonsoft.Json.dll" />
@@ -84,6 +85,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="advanced.ascx.cs">
+      <DependentUpon>advanced.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="advanced.ascx.designer.cs">
+      <DependentUpon>advanced.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

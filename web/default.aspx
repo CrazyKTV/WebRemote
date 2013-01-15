@@ -6,6 +6,8 @@
 <%@ Register Src="~/volume.ascx" TagPrefix="uc4" TagName="volume" %>
 <%@ Register Src="~/find.ascx" TagPrefix="uc0" TagName="find" %>
 <%@ Register Src="~/tune.ascx" TagPrefix="uc5" TagName="tune" %>
+<%@ Register Src="~/advanced.ascx" TagPrefix="uc6" TagName="advanced" %>
+
 
 
 
@@ -92,6 +94,7 @@
                             <uc3:video runat="server" ID="video" Visible="False" />
                             <uc4:volume runat="server" ID="volume" Visible="False" />
                             <uc5:tune runat="server" id="tune"  Visible="False"/>
+                            <uc6:advanced runat="server" ID="advanced" />
                         </div>
                     </section>                    
                 </article>

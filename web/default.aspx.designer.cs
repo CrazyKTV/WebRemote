@@ -139,6 +139,15 @@ namespace web {
         protected global::web.tune tune;
         
         /// <summary>
+        /// advanced control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::web.advanced advanced;
+        
+        /// <summary>
         /// UpdateProgress1 control.
         /// </summary>
         /// <remarks>

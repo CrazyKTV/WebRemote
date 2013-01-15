@@ -109,16 +109,24 @@ namespace web
                 volume.Visible = false;
             }
 
-            //if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Tune".ToLower())
-            //{
-            //    tune.Visible = true;
-            //}
-            //else
-            //{
-            //    tune.Visible = false;
-            //}
+            if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Tune".ToLower())
+            {
+                tune.Visible = true;
+            }
+            else
+            {
+                tune.Visible = false;
+            }
 
 
+            if (ddActions.SelectedValue.ToString().ToLower().Trim() == "advanced".ToLower())
+            {
+                advanced.Visible = true;
+            }
+            else
+            {
+                advanced.Visible = false;
+            }
 
 
         }
