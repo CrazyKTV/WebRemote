@@ -19,9 +19,20 @@ namespace web
         {
             DataSet1 dset = new DataSet1();
 
+
             System.Data.DataRow dataRow = dset.songs.NewRow();
-            dataRow["SongName"] = "name1";
+            dataRow["ID"] = 1;
+            dataRow["SongName"] = "我愛夏天";
+            dataRow["Singer"] = "莫文蔚";            
             dset.songs.Rows.Add(dataRow);
+
+            System.Data.DataRow dataRow2 = dset.songs.NewRow();
+            dataRow["ID"] = 2;
+            dataRow["SongName"] = "小情歌";
+            dataRow["Singer"] = "蘇打綠";
+            dset.songs.Rows.Add(dataRow2);
+
+
 
             GridView1.DataSource = dset.songs;
             GridView1.DataBind();  
