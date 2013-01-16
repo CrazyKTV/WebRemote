@@ -32,10 +32,10 @@ namespace web
 
 
 
-            //GridView1.DataSource = GlobalFunctions.dtSongs;
+            GridView1.DataSource = GlobalFunctions.dtSongs;
 
             //json test
-            GridView1.DataSource = GlobalFunctions.DerializeDataTable();
+            //GridView1.DataSource = GlobalFunctions.DerializeDataTable();
             GridView1.DataBind();
 
             ////GlobalFunctions.SearchKeyword();

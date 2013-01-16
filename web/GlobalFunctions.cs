@@ -56,7 +56,7 @@ namespace web
                               + @"{""SongNum"":""222"",""SongName"":""小情歌"",""Singer"":""蘇打綠""},"
                               + @"{""SongNum"":""333"",""SongName"":""我愛夏天2"",""Singer"":""莫文蔚""}]";
             var table = JsonConvert.DeserializeObject<System.Data.DataTable>(json);
-            dtSongs. = table;
+            //dtSongs. = table;
             return (DataSet1.songsDataTable)table;
         }
 
