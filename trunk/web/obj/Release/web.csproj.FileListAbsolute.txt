@@ -1,0 +1,5 @@
+C:\__PROJECTS__\CrazyKTV\trunk\web\bin\web.dll
+C:\__PROJECTS__\CrazyKTV\trunk\web\bin\web.pdb
+C:\__PROJECTS__\CrazyKTV\trunk\web\bin\Newtonsoft.Json.dll
+C:\__PROJECTS__\CrazyKTV\trunk\web\obj\Release\web.dll
+C:\__PROJECTS__\CrazyKTV\trunk\web\obj\Release\web.pdb
