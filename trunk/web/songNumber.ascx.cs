@@ -14,14 +14,9 @@ namespace web
             tSongNumber.Text = "";
         }
 
-        private void AddSong()
-        { 
-        // add to the list
-        }
-
         protected void bAdd_Click(object sender, EventArgs e)
         {
-
+            CrazyKTVWCF.wcf_ordersong(tSongNumber.Text.Trim());
         }
 
 

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace web
 {
     public partial class _default : System.Web.UI.Page
@@ -34,6 +35,8 @@ namespace web
             //System.Threading.Thread.Sleep(2000);
             //Console.WriteLine( System.Threading.Thread.CurrentThread.CurrentCulture);
 
+            //string a= CrazyKTVWCF.wcf_ordersong("22334");
+            //Console.WriteLine(a);
         }
 
         protected void language_SelectedIndexChanged(object sender, EventArgs e)
