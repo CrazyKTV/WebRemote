@@ -18,5 +18,34 @@ namespace web
         {
 
         }
+
+        protected void Cut_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Cut");
+        }
+
+        protected void Repeat_Click(object sender, EventArgs e)
+        {
+
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
+        }
+
+        protected void Mute_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "Mute");
+        }
+
+        protected void Channel_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "Channel");
+        }
+
+        protected void FixedChannel_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "Fixed");
+        }
+
+
+
     }
 }

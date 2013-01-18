@@ -13,5 +13,25 @@ namespace web
         {
 
         }
+
+        protected void Mute_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "Mute");
+        }
+
+        protected void softer_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-2, "Volume");
+        }
+
+        protected void louder_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(2, "Volume");
+        }
+
+        protected void reset_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

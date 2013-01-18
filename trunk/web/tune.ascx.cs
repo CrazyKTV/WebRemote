@@ -13,5 +13,17 @@ namespace web
         {
 
         }
+
+        protected void tuneUp_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(1, "Pitch");
+        }
+
+        protected void tuneDown_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "Pitch");
+        }
+
+
     }
 }

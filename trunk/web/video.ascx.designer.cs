@@ -85,30 +85,21 @@ namespace web {
         protected global::System.Web.UI.WebControls.Button Mute;
         
         /// <summary>
-        /// NoVocal control.
+        /// Channel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NoVocal;
+        protected global::System.Web.UI.WebControls.Button Channel;
         
         /// <summary>
-        /// Vocal control.
+        /// Fixed Channel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Vocal;
-        
-        /// <summary>
-        /// Stereo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Stereo;
+        protected global::System.Web.UI.WebControls.Button FixedChannel;
     }
 }

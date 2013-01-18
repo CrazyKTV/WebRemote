@@ -32,7 +32,7 @@ namespace web
             if (UICulture == null)
                 language.Visible = false;
              */
-            //System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(300);
             //Console.WriteLine( System.Threading.Thread.CurrentThread.CurrentCulture);
 
             //string a= CrazyKTVWCF.wcf_ordersong("22334");
