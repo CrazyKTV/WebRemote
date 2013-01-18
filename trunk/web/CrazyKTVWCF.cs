@@ -41,9 +41,16 @@ namespace web
 
         public static string wcf_ordersong(string songID)
         {
-            string orderSongUrl = wcfUrl + string.Format("/OrderSong?value={0}", songID);
+            string orderSongUrl = "";
+            if (songID != null)
+            {
+                orderSongUrl = wcfUrl + string.Format("/OrderSong?value={0}", songID.Trim());
+            }
+
             return requestWeb(orderSongUrl);
         }
+
+
 
         /// <summary>
         /// Does the crazy KT v_ control.
@@ -63,10 +70,10 @@ namespace web
 
             if (value.HasValue == true)
             {
-                Url = wcfUrl + string.Format("/DoCrazyKTV_Control?value={0}&state={1}", value, state);
+                Url = wcfUrl + string.Format("/DoCrazyKTV_Control?value={0}&state={1}", value, state.Trim());
             }
             else {
-                Url = wcfUrl + string.Format("/DoCrazyKTV_Control?state={0}", state);
+                Url = wcfUrl + string.Format("/DoCrazyKTV_Control?state={0}", state.Trim());
             }
 
             return requestWeb(Url);
@@ -89,11 +96,11 @@ namespace web
 
             if (value!=null)
             {
-                Url = wcfUrl + string.Format("/DoCrazyKTV_Action?value={0}&state={1}", value, state);
+                Url = wcfUrl + string.Format("/DoCrazyKTV_Action?value={0}&state={1}", value.Trim(), state.Trim());
             }
             else
             {
-                Url = wcfUrl + string.Format("/DoCrazyKTV_Action?state={0}", state);
+                Url = wcfUrl + string.Format("/DoCrazyKTV_Action?state={0}", state.Trim());
             }
 
             return requestWeb(Url);
