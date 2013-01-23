@@ -12,14 +12,14 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="songs" msdata:Locale="" msprop:Generator_TableClassName="songsDataTable" msprop:Generator_TableVarName="tablesongs" msprop:Generator_RowChangedName="songsRowChanged" msprop:Generator_TablePropName="songs" msprop:Generator_RowDeletingName="songsRowDeleting" msprop:Generator_RowChangingName="songsRowChanging" msprop:Generator_RowEvHandlerName="songsRowChangeEventHandler" msprop:Generator_RowDeletedName="songsRowDeleted" msprop:Generator_RowClassName="songsRow" msprop:Generator_UserTableName="songs" msprop:Generator_RowEvArgName="songsRowChangeEvent">
+        <xs:element name="songs" msdata:Locale="" msprop:Generator_TableClassName="songsDataTable" msprop:Generator_TableVarName="tablesongs" msprop:Generator_TablePropName="songs" msprop:Generator_RowDeletingName="songsRowDeleting" msprop:Generator_RowChangingName="songsRowChanging" msprop:Generator_RowEvHandlerName="songsRowChangeEventHandler" msprop:Generator_RowDeletedName="songsRowDeleted" msprop:Generator_UserTableName="songs" msprop:Generator_RowChangedName="songsRowChanged" msprop:Generator_RowEvArgName="songsRowChangeEvent" msprop:Generator_RowClassName="songsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Song_Id" msprop:Generator_ColumnVarNameInTable="columnSong_Id" msprop:Generator_ColumnPropNameInRow="Song_Id" msprop:Generator_ColumnPropNameInTable="Song_IdColumn" msprop:Generator_UserColumnName="Song_Id" type="xs:string" minOccurs="0" />
               <xs:element name="Song_SongName" msprop:Generator_ColumnVarNameInTable="columnSong_SongName" msprop:Generator_ColumnPropNameInRow="Song_SongName" msprop:Generator_ColumnPropNameInTable="Song_SongNameColumn" msprop:Generator_UserColumnName="Song_SongName" type="xs:string" minOccurs="0" />
               <xs:element name="Song_Singer" msprop:Generator_ColumnVarNameInTable="columnSong_Singer" msprop:Generator_ColumnPropNameInRow="Song_Singer" msprop:Generator_ColumnPropNameInTable="Song_SingerColumn" msprop:Generator_UserColumnName="Song_Singer" type="xs:string" minOccurs="0" />
-              <xs:element name="Song_Lang" msprop:Generator_ColumnVarNameInTable="columnSong_Lang" msprop:Generator_ColumnPropNameInRow="Song_Lang" msprop:Generator_ColumnPropNameInTable="Song_LangColumn" msprop:Generator_UserColumnName="Song_Lang" type="xs:string" default=" " minOccurs="0" />
               <xs:element name="Song_WordCount" msprop:Generator_ColumnVarNameInTable="columnSong_WordCount" msprop:Generator_ColumnPropNameInRow="Song_WordCount" msprop:Generator_ColumnPropNameInTable="Song_WordCountColumn" msprop:Generator_UserColumnName="Song_WordCount" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Song_Lang" msprop:Generator_ColumnVarNameInTable="columnSong_Lang" msprop:Generator_ColumnPropNameInRow="Song_Lang" msprop:Generator_ColumnPropNameInTable="Song_LangColumn" msprop:Generator_UserColumnName="Song_Lang" type="xs:string" default=" " minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

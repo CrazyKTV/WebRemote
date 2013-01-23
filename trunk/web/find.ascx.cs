@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
+using System.IO;
+using System.Data;
+using System.Xml;
 
 namespace web
 {
@@ -20,55 +23,12 @@ namespace web
 
         protected void bSearch_Click(object sender, EventArgs e)
         {
-            GlobalFunctions.InidtSongs();
-            GlobalFunctions.dtSongs.Clear();
-            //dset.songs.Clear();
-
-            GlobalFunctions.dtSongs.Rows.Add(new Object[] { "111", "我愛夏天", "莫文蔚", "langA",12 });
-            GlobalFunctions.dtSongs.Rows.Add(new Object[] { "222", "小情歌", "蘇打綠","LANGB",2 });
-
-            //json test
-            
-
-
-
-            GridView1.DataSource = GlobalFunctions.dtSongs;
-
-            //json test
-            //GridView1.DataSource = GlobalFunctions.DerializeDataTable();
+            GridView1.DataSource = GlobalFunctions.DerializetoDataTable();
             GridView1.DataBind();
 
 
             GridView1.Columns[1].Visible = false; //Song_Id
             GridView1.Columns[4].Visible = false; //Song_WordCount
-           // GridView1.Columns[5].Visible = false; //Song_Lang
-
-
-
-
-            ////GlobalFunctions.SearchKeyword();
-            //string json = JsonConvert.SerializeObject(GlobalFunctions.dtSongs, Formatting.Indented, new JsonSerializerSettings()
-            //{
-            //    ReferenceLoopHandling = ReferenceLoopHandling.Serialize
-            //});
-            //Console.WriteLine(json);
-
-            string json = @"{""key1"":""value1"",""key2"":""value2""}";
-
-            Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-
-            Console.WriteLine(values.Count);
-            // 2
-
-            Console.WriteLine(values["key1"]);
-            // value1
-
-
-
-            
-
-
-
 
         }
 

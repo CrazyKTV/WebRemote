@@ -3,61 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
+using System.Data;
 
 namespace web
 {
     public class GlobalFunctions
     {
-        public static DataSet1.songsDataTable dtSongs { get; set; }
+        public static DataSet1 dt { get; set; }
 
-        public static bool InidtSongs()
-        { 
-            DataSet1 ds = new DataSet1();
-            dtSongs = ds.songs;
-            return true; 
-        }
-
-        //public static string AddSong(string _songNumber)
-        //{
-        //    try { 
-        //    //add song here
-        //    }
-        //    catch {
-        //        return "Adding failed";
-        //    }
-
-        //    return "Added";
-        //}
-
-        //public static string InsertSong(string _songNumber)
-        //{
-        //    try
-        //    {
-        //        //Insert song here
-        //    }
-        //    catch
-        //    {
-        //        return "inserting failed";
-        //    }
-
-        //    return "Inserted";
-        //}
-
-
-        public static DataSet1.songsDataTable DerializeDataTable()
+        public static DataTable DerializetoDataTable()
         {
-            //const string json = @"[{""SongNum"":""AAA"",""Singer"":""22"",""SongName"":""PPP""},"
-            //                   + @"{""SongNum"":""BBB"",""Singer"":""25"",""SongName"":""QQQ""},"
-            //                   + @"{""SongNum"":""CCC"",""Singer"":""38"",""SongName"":""RRR""}]";
-            //var table = JsonConvert.DeserializeObject<System.Data.DataTable>(json);
-            //return table;
-
-            const string json = @"[{""SongNum"":""111"",""SongName"":""我愛夏天"",""Singer"":""莫文蔚""},"
-                              + @"{""SongNum"":""222"",""SongName"":""小情歌"",""Singer"":""蘇打綠""},"
-                              + @"{""SongNum"":""333"",""SongName"":""我愛夏天2"",""Singer"":""莫文蔚""}]";
+            const string json = @"[{""Song_Id"":""111"",""Song_SongName"":""我愛夏天"",""Song_Singer"":""莫文蔚"",""Song_WordCount"":123,""Song_Lang"":""EN""},"
+                              + @"{""Song_Id"":""222"",""Song_SongName"":""小情歌"",""Song_Singer"":""蘇打綠"",""Song_WordCount"":123,""Song_Lang"":""CN""},"
+                              + @"{""Song_Id"":""333"",""Song_SongName"":""我愛夏天2"",""Song_Singer"":""莫文蔚"",""Song_WordCount"":123,""Song_Lang"":""TW""}]";
             var table = JsonConvert.DeserializeObject<System.Data.DataTable>(json);
-            //dtSongs. = table;
-            return (DataSet1.songsDataTable)table;
+            return (DataTable)table;
         }
 
 
@@ -78,7 +38,7 @@ namespace web
 
             //Console.WriteLine("{0} - {1} - {2}", dehardware.ID, dehardware.Name, dehardware.IPAddress);
 
-            string json = JsonConvert.SerializeObject(dtSongs, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(GlobalFunctions.dt.Tables["songs"], Formatting.Indented);
             Console.WriteLine(json);
 
             return "Nothing returned";

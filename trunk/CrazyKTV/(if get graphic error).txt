@@ -1,3 +1,4 @@
 1. in win7, 8, make sure run as a local administrator
 2. reneme "CrazyKTV_BackGround.exe" to soemthing else eg, "~CrazyKTV_BackGround.exe"
 3. make sure WCF_URL setting is correct in web associate to the CrazyKTV.exe
+4. right click on "Newtonsoft.Json.dll" -> "unlock"

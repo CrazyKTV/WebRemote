@@ -30,15 +30,27 @@
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Left" />
             <ItemStyle CssClass="dgAdd" />
             </asp:ButtonField>
-            <asp:BoundField HeaderText="Song" InsertVisible="False" ReadOnly="True" DataField="SongName">
+            <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" >
+            <ControlStyle/>
+            <FooterStyle />
+            <ItemStyle />
+            </asp:BoundField>
+            <asp:BoundField HeaderText="Song" InsertVisible="False" ReadOnly="True" DataField="Song_SongName">
+            </asp:BoundField>
+            <asp:BoundField DataField="Song_Singer" HeaderText="Singer" InsertVisible="False" ReadOnly="True">
             <ControlStyle CssClass="dgSong" />
             <HeaderStyle HorizontalAlign="Left" />
             <ItemStyle CssClass="dgSong" />
-            </asp:BoundField>
-            <asp:BoundField HeaderText="Singer" InsertVisible="False" ReadOnly="True" DataField="Singer">
             <ControlStyle CssClass="dgSinger" />
             <HeaderStyle HorizontalAlign="Left" />
             <ItemStyle CssClass="dgSinger" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Song_WordCount" HeaderText="Song_WordCount" >
+            <ControlStyle/>
+            </asp:BoundField>
+            <asp:BoundField DataField="Song_Lang" HeaderText="Lang" >
+            <ControlStyle CssClass="dgLang" />
+            <ItemStyle CssClass="dgLang" />
             </asp:BoundField>
             <asp:ButtonField HeaderText="I" Text="Int" ButtonType="Button" CommandName="Insert">
             <ControlStyle CssClass="dgInsert" />
@@ -58,7 +70,7 @@
 </asp:Panel>
 
 
-<asp:Panel ID="Panel3" runat="server">
+<asp:Panel ID="Panel3" runat="server" Visible="False">
     choose others here and then link to panel 2<br />
 </asp:Panel>
 
