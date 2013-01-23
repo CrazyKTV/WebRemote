@@ -26,8 +26,6 @@ namespace web {
         
         private songsDataTable tablesongs;
         
-        private singersDataTable tablesingers;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -59,9 +57,6 @@ namespace web {
                 if ((ds.Tables["songs"] != null)) {
                     base.Tables.Add(new songsDataTable(ds.Tables["songs"]));
                 }
-                if ((ds.Tables["singers"] != null)) {
-                    base.Tables.Add(new singersDataTable(ds.Tables["singers"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -87,16 +82,6 @@ namespace web {
         public songsDataTable songs {
             get {
                 return this.tablesongs;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public singersDataTable singers {
-            get {
-                return this.tablesingers;
             }
         }
         
@@ -170,9 +155,6 @@ namespace web {
                 if ((ds.Tables["songs"] != null)) {
                     base.Tables.Add(new songsDataTable(ds.Tables["songs"]));
                 }
-                if ((ds.Tables["singers"] != null)) {
-                    base.Tables.Add(new singersDataTable(ds.Tables["singers"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -212,12 +194,6 @@ namespace web {
                     this.tablesongs.InitVars();
                 }
             }
-            this.tablesingers = ((singersDataTable)(base.Tables["singers"]));
-            if ((initTable == true)) {
-                if ((this.tablesingers != null)) {
-                    this.tablesingers.InitVars();
-                }
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -230,19 +206,11 @@ namespace web {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablesongs = new songsDataTable();
             base.Tables.Add(this.tablesongs);
-            this.tablesingers = new singersDataTable();
-            base.Tables.Add(this.tablesingers);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializesongs() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializesingers() {
             return false;
         }
         
@@ -304,9 +272,6 @@ namespace web {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void songsRowChangeEventHandler(object sender, songsRowChangeEvent e);
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void singersRowChangeEventHandler(object sender, singersRowChangeEvent e);
-        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -314,19 +279,15 @@ namespace web {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class songsDataTable : global::System.Data.TypedTableBase<songsRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnSong_Id;
             
-            private global::System.Data.DataColumn columnSongNum;
+            private global::System.Data.DataColumn columnSong_SongName;
             
-            private global::System.Data.DataColumn columnSongName;
+            private global::System.Data.DataColumn columnSong_Singer;
             
-            private global::System.Data.DataColumn columnSinger;
+            private global::System.Data.DataColumn columnSong_Lang;
             
-            private global::System.Data.DataColumn columnLanguage;
-            
-            private global::System.Data.DataColumn columnType;
-            
-            private global::System.Data.DataColumn columnSortOrder;
+            private global::System.Data.DataColumn columnSong_WordCount;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -363,57 +324,41 @@ namespace web {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn Song_IdColumn {
                 get {
-                    return this.columnID;
+                    return this.columnSong_Id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SongNumColumn {
+            public global::System.Data.DataColumn Song_SongNameColumn {
                 get {
-                    return this.columnSongNum;
+                    return this.columnSong_SongName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SongNameColumn {
+            public global::System.Data.DataColumn Song_SingerColumn {
                 get {
-                    return this.columnSongName;
+                    return this.columnSong_Singer;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SingerColumn {
+            public global::System.Data.DataColumn Song_LangColumn {
                 get {
-                    return this.columnSinger;
+                    return this.columnSong_Lang;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LanguageColumn {
+            public global::System.Data.DataColumn Song_WordCountColumn {
                 get {
-                    return this.columnLanguage;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TypeColumn {
-                get {
-                    return this.columnType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SortOrderColumn {
-                get {
-                    return this.columnSortOrder;
+                    return this.columnSong_WordCount;
                 }
             }
             
@@ -454,16 +399,14 @@ namespace web {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public songsRow AddsongsRow(string SongNum, string SongName, string Singer, string Language, string Type, int SortOrder) {
+            public songsRow AddsongsRow(string Song_Id, string Song_SongName, string Song_Singer, string Song_Lang, byte Song_WordCount) {
                 songsRow rowsongsRow = ((songsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        SongNum,
-                        SongName,
-                        Singer,
-                        Language,
-                        Type,
-                        SortOrder};
+                        Song_Id,
+                        Song_SongName,
+                        Song_Singer,
+                        Song_Lang,
+                        Song_WordCount};
                 rowsongsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsongsRow);
                 return rowsongsRow;
@@ -486,39 +429,27 @@ namespace web {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnSongNum = base.Columns["SongNum"];
-                this.columnSongName = base.Columns["SongName"];
-                this.columnSinger = base.Columns["Singer"];
-                this.columnLanguage = base.Columns["Language"];
-                this.columnType = base.Columns["Type"];
-                this.columnSortOrder = base.Columns["SortOrder"];
+                this.columnSong_Id = base.Columns["Song_Id"];
+                this.columnSong_SongName = base.Columns["Song_SongName"];
+                this.columnSong_Singer = base.Columns["Song_Singer"];
+                this.columnSong_Lang = base.Columns["Song_Lang"];
+                this.columnSong_WordCount = base.Columns["Song_WordCount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnSongNum = new global::System.Data.DataColumn("SongNum", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSongNum);
-                this.columnSongName = new global::System.Data.DataColumn("SongName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSongName);
-                this.columnSinger = new global::System.Data.DataColumn("Singer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSinger);
-                this.columnLanguage = new global::System.Data.DataColumn("Language", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLanguage);
-                this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnType);
-                this.columnSortOrder = new global::System.Data.DataColumn("SortOrder", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSortOrder);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, false));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
-                this.columnLanguage.DefaultValue = ((string)(" "));
-                this.columnType.DefaultValue = ((string)(" "));
+                this.columnSong_Id = new global::System.Data.DataColumn("Song_Id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSong_Id);
+                this.columnSong_SongName = new global::System.Data.DataColumn("Song_SongName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSong_SongName);
+                this.columnSong_Singer = new global::System.Data.DataColumn("Song_Singer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSong_Singer);
+                this.columnSong_Lang = new global::System.Data.DataColumn("Song_Lang", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSong_Lang);
+                this.columnSong_WordCount = new global::System.Data.DataColumn("Song_WordCount", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSong_WordCount);
+                this.columnSong_Lang.DefaultValue = ((string)(" "));
                 this.Locale = new global::System.Globalization.CultureInfo("");
             }
             
@@ -647,322 +578,6 @@ namespace web {
         }
         
         /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class singersDataTable : global::System.Data.TypedTableBase<singersRow> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnSinger;
-            
-            private global::System.Data.DataColumn columnSingerGender;
-            
-            private global::System.Data.DataColumn columnSingerType;
-            
-            private global::System.Data.DataColumn columnSortOrder;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public singersDataTable() {
-                this.TableName = "singers";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal singersDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected singersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SingerColumn {
-                get {
-                    return this.columnSinger;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SingerGenderColumn {
-                get {
-                    return this.columnSingerGender;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SingerTypeColumn {
-                get {
-                    return this.columnSingerType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SortOrderColumn {
-                get {
-                    return this.columnSortOrder;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public singersRow this[int index] {
-                get {
-                    return ((singersRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event singersRowChangeEventHandler singersRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event singersRowChangeEventHandler singersRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event singersRowChangeEventHandler singersRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event singersRowChangeEventHandler singersRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddsingersRow(singersRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public singersRow AddsingersRow(string Singer, string SingerGender, string SingerType, int SortOrder) {
-                singersRow rowsingersRow = ((singersRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Singer,
-                        SingerGender,
-                        SingerType,
-                        SortOrder};
-                rowsingersRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsingersRow);
-                return rowsingersRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public singersRow FindByID(int ID) {
-                return ((singersRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                singersDataTable cln = ((singersDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new singersDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnSinger = base.Columns["Singer"];
-                this.columnSingerGender = base.Columns["SingerGender"];
-                this.columnSingerType = base.Columns["SingerType"];
-                this.columnSortOrder = base.Columns["SortOrder"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnSinger = new global::System.Data.DataColumn("Singer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSinger);
-                this.columnSingerGender = new global::System.Data.DataColumn("SingerGender", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSingerGender);
-                this.columnSingerType = new global::System.Data.DataColumn("SingerType", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSingerType);
-                this.columnSortOrder = new global::System.Data.DataColumn("SortOrder", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSortOrder);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("singersKey1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
-                this.Locale = new global::System.Globalization.CultureInfo("");
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public singersRow NewsingersRow() {
-                return ((singersRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new singersRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(singersRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.singersRowChanged != null)) {
-                    this.singersRowChanged(this, new singersRowChangeEvent(((singersRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.singersRowChanging != null)) {
-                    this.singersRowChanging(this, new singersRowChangeEvent(((singersRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.singersRowDeleted != null)) {
-                    this.singersRowDeleted(this, new singersRowChangeEvent(((singersRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.singersRowDeleting != null)) {
-                    this.singersRowDeleting(this, new singersRowChangeEvent(((singersRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovesingersRow(singersRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "singersDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class songsRow : global::System.Data.DataRow {
@@ -978,319 +593,142 @@ namespace web {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablesongs.IDColumn]));
-                }
-                set {
-                    this[this.tablesongs.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SongNum {
+            public string Song_Id {
                 get {
                     try {
-                        return ((string)(this[this.tablesongs.SongNumColumn]));
+                        return ((string)(this[this.tablesongs.Song_IdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SongNum\' in table \'songs\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Song_Id\' in table \'songs\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesongs.SongNumColumn] = value;
+                    this[this.tablesongs.Song_IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SongName {
+            public string Song_SongName {
                 get {
                     try {
-                        return ((string)(this[this.tablesongs.SongNameColumn]));
+                        return ((string)(this[this.tablesongs.Song_SongNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SongName\' in table \'songs\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Song_SongName\' in table \'songs\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesongs.SongNameColumn] = value;
+                    this[this.tablesongs.Song_SongNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Singer {
+            public string Song_Singer {
                 get {
                     try {
-                        return ((string)(this[this.tablesongs.SingerColumn]));
+                        return ((string)(this[this.tablesongs.Song_SingerColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Singer\' in table \'songs\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Song_Singer\' in table \'songs\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesongs.SingerColumn] = value;
+                    this[this.tablesongs.Song_SingerColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Language {
+            public string Song_Lang {
                 get {
                     try {
-                        return ((string)(this[this.tablesongs.LanguageColumn]));
+                        return ((string)(this[this.tablesongs.Song_LangColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Language\' in table \'songs\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Song_Lang\' in table \'songs\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesongs.LanguageColumn] = value;
+                    this[this.tablesongs.Song_LangColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Type {
+            public byte Song_WordCount {
                 get {
                     try {
-                        return ((string)(this[this.tablesongs.TypeColumn]));
+                        return ((byte)(this[this.tablesongs.Song_WordCountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'songs\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Song_WordCount\' in table \'songs\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesongs.TypeColumn] = value;
+                    this[this.tablesongs.Song_WordCountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SortOrder {
-                get {
-                    try {
-                        return ((int)(this[this.tablesongs.SortOrderColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SortOrder\' in table \'songs\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesongs.SortOrderColumn] = value;
-                }
+            public bool IsSong_IdNull() {
+                return this.IsNull(this.tablesongs.Song_IdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSongNumNull() {
-                return this.IsNull(this.tablesongs.SongNumColumn);
+            public void SetSong_IdNull() {
+                this[this.tablesongs.Song_IdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSongNumNull() {
-                this[this.tablesongs.SongNumColumn] = global::System.Convert.DBNull;
+            public bool IsSong_SongNameNull() {
+                return this.IsNull(this.tablesongs.Song_SongNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSongNameNull() {
-                return this.IsNull(this.tablesongs.SongNameColumn);
+            public void SetSong_SongNameNull() {
+                this[this.tablesongs.Song_SongNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSongNameNull() {
-                this[this.tablesongs.SongNameColumn] = global::System.Convert.DBNull;
+            public bool IsSong_SingerNull() {
+                return this.IsNull(this.tablesongs.Song_SingerColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSingerNull() {
-                return this.IsNull(this.tablesongs.SingerColumn);
+            public void SetSong_SingerNull() {
+                this[this.tablesongs.Song_SingerColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSingerNull() {
-                this[this.tablesongs.SingerColumn] = global::System.Convert.DBNull;
+            public bool IsSong_LangNull() {
+                return this.IsNull(this.tablesongs.Song_LangColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLanguageNull() {
-                return this.IsNull(this.tablesongs.LanguageColumn);
+            public void SetSong_LangNull() {
+                this[this.tablesongs.Song_LangColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLanguageNull() {
-                this[this.tablesongs.LanguageColumn] = global::System.Convert.DBNull;
+            public bool IsSong_WordCountNull() {
+                return this.IsNull(this.tablesongs.Song_WordCountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTypeNull() {
-                return this.IsNull(this.tablesongs.TypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTypeNull() {
-                this[this.tablesongs.TypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSortOrderNull() {
-                return this.IsNull(this.tablesongs.SortOrderColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSortOrderNull() {
-                this[this.tablesongs.SortOrderColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class singersRow : global::System.Data.DataRow {
-            
-            private singersDataTable tablesingers;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal singersRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablesingers = ((singersDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablesingers.IDColumn]));
-                }
-                set {
-                    this[this.tablesingers.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Singer {
-                get {
-                    try {
-                        return ((string)(this[this.tablesingers.SingerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Singer\' in table \'singers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesingers.SingerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SingerGender {
-                get {
-                    try {
-                        return ((string)(this[this.tablesingers.SingerGenderColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SingerGender\' in table \'singers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesingers.SingerGenderColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SingerType {
-                get {
-                    try {
-                        return ((string)(this[this.tablesingers.SingerTypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SingerType\' in table \'singers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesingers.SingerTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SortOrder {
-                get {
-                    try {
-                        return ((int)(this[this.tablesingers.SortOrderColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SortOrder\' in table \'singers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesingers.SortOrderColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSingerNull() {
-                return this.IsNull(this.tablesingers.SingerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSingerNull() {
-                this[this.tablesingers.SingerColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSingerGenderNull() {
-                return this.IsNull(this.tablesingers.SingerGenderColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSingerGenderNull() {
-                this[this.tablesingers.SingerGenderColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSingerTypeNull() {
-                return this.IsNull(this.tablesingers.SingerTypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSingerTypeNull() {
-                this[this.tablesingers.SingerTypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSortOrderNull() {
-                return this.IsNull(this.tablesingers.SortOrderColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSortOrderNull() {
-                this[this.tablesingers.SortOrderColumn] = global::System.Convert.DBNull;
+            public void SetSong_WordCountNull() {
+                this[this.tablesongs.Song_WordCountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1314,40 +752,6 @@ namespace web {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public songsRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class singersRowChangeEvent : global::System.EventArgs {
-            
-            private singersRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public singersRowChangeEvent(singersRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public singersRow Row {
                 get {
                     return this.eventRow;
                 }

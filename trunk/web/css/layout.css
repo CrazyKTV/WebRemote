@@ -115,7 +115,7 @@ body
 
 .textbox2 {
     font-size: 100%;
-    width:38%;
+    width:35%;
 }
 
 .label1 {
@@ -206,9 +206,20 @@ body
    padding-right: 4px;
 }
 
+.dgLang
+{    width: 30px;
+    text-align: right;
+    height: auto;
+}
+
 .hideThis {
     color:#000;
 }
+
+/*.hideGridColumn
+{
+    display:none;
+}*/
 
 .dgInsert {
     width: 27px;
@@ -217,10 +228,10 @@ body
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 2px;
-     color: #FFFFFF;
+    color: #FFFFFF;
     font-weight: bold; /*position:relative;*/
     background-color: #AAA;
-       border-width: 0px;
+    border-width: 0px;
     border-style: none;
 }
 

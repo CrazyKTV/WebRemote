@@ -17,31 +17,31 @@ namespace web
             return true; 
         }
 
-        public static string AddSong(string _songNumber)
-        {
-            try { 
-            //add song here
-            }
-            catch {
-                return "Adding failed";
-            }
+        //public static string AddSong(string _songNumber)
+        //{
+        //    try { 
+        //    //add song here
+        //    }
+        //    catch {
+        //        return "Adding failed";
+        //    }
 
-            return "Added";
-        }
+        //    return "Added";
+        //}
 
-        public static string InsertSong(string _songNumber)
-        {
-            try
-            {
-                //Insert song here
-            }
-            catch
-            {
-                return "inserting failed";
-            }
+        //public static string InsertSong(string _songNumber)
+        //{
+        //    try
+        //    {
+        //        //Insert song here
+        //    }
+        //    catch
+        //    {
+        //        return "inserting failed";
+        //    }
 
-            return "Inserted";
-        }
+        //    return "Inserted";
+        //}
 
 
         public static DataSet1.songsDataTable DerializeDataTable()
@@ -83,6 +83,17 @@ namespace web
 
             return "Nothing returned";
         }
+
+
+
+        public static string ToQueryString(System.Collections.Specialized.NameValueCollection nvc)
+        {
+            return "?" + string.Join("&", Array.ConvertAll(nvc.AllKeys, key => string.Format("{0}={1}", HttpUtility.UrlEncode(key), HttpUtility.UrlEncode(nvc[key]))));
+        }
+
+
+
+
 
 
     }

@@ -24,8 +24,8 @@ namespace web
             GlobalFunctions.dtSongs.Clear();
             //dset.songs.Clear();
 
-            GlobalFunctions.dtSongs.Rows.Add(new Object[] { 1, "111", "我愛夏天", "莫文蔚", "a", "B" });
-            GlobalFunctions.dtSongs.Rows.Add(new Object[] { 2, "222", "小情歌", "蘇打綠", "a", "B" });
+            GlobalFunctions.dtSongs.Rows.Add(new Object[] { "111", "我愛夏天", "莫文蔚", "langA",12 });
+            GlobalFunctions.dtSongs.Rows.Add(new Object[] { "222", "小情歌", "蘇打綠","LANGB",2 });
 
             //json test
             
@@ -37,6 +37,14 @@ namespace web
             //json test
             //GridView1.DataSource = GlobalFunctions.DerializeDataTable();
             GridView1.DataBind();
+
+
+            GridView1.Columns[1].Visible = false; //Song_Id
+            GridView1.Columns[4].Visible = false; //Song_WordCount
+           // GridView1.Columns[5].Visible = false; //Song_Lang
+
+
+
 
             ////GlobalFunctions.SearchKeyword();
             //string json = JsonConvert.SerializeObject(GlobalFunctions.dtSongs, Formatting.Indented, new JsonSerializerSettings()
@@ -68,7 +76,6 @@ namespace web
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
             if (e.CommandName.ToLower().Trim() == "Add".ToLower().Trim())
             {
                 // Convert the row index stored in the CommandArgument
@@ -77,10 +84,10 @@ namespace web
 
                 // Get the last name of the selected author from the appropriate
                 // cell in the GridView control.
+
                 GridViewRow selectedRow = GridView1.Rows[index];
-                TableCell _song = selectedRow.Cells[1];
-                string contact = _song.Text;
-                GlobalFunctions.AddSong("222");
+                TableCell Song_Id = selectedRow.Cells[1];
+                CrazyKTVWCF.wcf_addsong(Song_Id.Text.Trim());
             }
 
             if (e.CommandName.ToLower().Trim() == "Insert".ToLower().Trim())
@@ -92,9 +99,8 @@ namespace web
                 // Get the last name of the selected author from the appropriate
                 // cell in the GridView control.
                 GridViewRow selectedRow = GridView1.Rows[index];
-                TableCell _song = selectedRow.Cells[1];
-                string contact = _song.Text;
-                GlobalFunctions.InsertSong("111");
+                TableCell Song_Id = selectedRow.Cells[1];
+                CrazyKTVWCF.wcf_insertsong(Song_Id.Text.Trim());
             }
 
 

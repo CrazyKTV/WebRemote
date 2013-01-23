@@ -11,12 +11,16 @@ namespace web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            tSongNumber.Text = "";
         }
 
         protected void bAdd_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.wcf_ordersong(tSongNumber.Text.Trim());
+            CrazyKTVWCF.wcf_addsong(tSongNumber.Text.Trim());
+        }
+        
+        protected void tSongNumber_PreRender(object sender, EventArgs e)
+        {
+            tSongNumber.Text = "";
         }
 
 

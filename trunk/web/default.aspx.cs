@@ -28,15 +28,18 @@ namespace web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            if (UICulture == null)
-                language.Visible = false;
-             */
-            System.Threading.Thread.Sleep(300);
-            //Console.WriteLine( System.Threading.Thread.CurrentThread.CurrentCulture);
+            // check if the WCF is alive
+            if (CrazyKTVWCF.WCFlive == false)
+            {
+                if (CrazyKTVWCF.checkWCF() == false)
+                {
+                    //Response.Redirect("ErrorDeadWCF.html");
+                }
+            }
 
-            //string a= CrazyKTVWCF.wcf_ordersong("22334");
-            //Console.WriteLine(a);
+            // if WCF is alive then continue with other process
+            System.Threading.Thread.Sleep(300);
+
         }
 
         protected void language_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,9 +58,7 @@ namespace web
             string state = e.State["historyPoint"];
             ddActions.SelectedIndex = Convert.ToInt32(state);
         }
-
-
-
+        
         protected void ddActions_SelectedIndexChanged(object sender, EventArgs e)
         {
             ////for broswer back button

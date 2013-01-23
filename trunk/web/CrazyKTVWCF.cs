@@ -4,12 +4,41 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Collections.Specialized;
 
 namespace web
 {
     public class CrazyKTVWCF
     {
         public static string wcfUrl = Properties.Settings.Default.CrazyKTV_WCF_URL;
+        public static bool WCFlive=false;
+
+
+
+        public static bool checkWCF()
+        {
+            WebRequest request = WebRequest.Create(wcfUrl);
+            HttpWebResponse response;
+            string __responseText = "";
+
+            try {
+               response= (HttpWebResponse)request.GetResponse();           
+            }
+            catch (WebException e) {
+                __responseText = e.ToString();
+            }
+
+            if (__responseText.Trim().ToLower().IndexOf("Unable to connect to the remote server".Trim().ToLower()) == -1)
+            {
+                WCFlive = true;
+                return true; }
+            else
+            {
+                WCFlive = false; 
+                return false; }
+   
+        }
+
 
         public static string requestWeb(string url)
         {
@@ -38,20 +67,51 @@ namespace web
             return strResponse;
         }
 
+        //public static string requestJSONWeb()
+        //{ 
+        //    var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://url");
+        //    httpWebRequest.ContentType = "text/json";
+        //    httpWebRequest.Method = "POST";
 
-        public static string wcf_ordersong(string songID)
+        //    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+        //    {
+        //    string json = "{\"user\":\"test\"," +
+        //                  "\"password\":\"bla"}";
+
+        //    streamWriter.Write(json);
+        //    streamWriter.Flush();
+        //    streamWriter.Close();
+
+        //    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+        //    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+        //    {
+        //        var result = streamReader.ReadToEnd();
+        //    }
+        //}
+
+        public static string wcf_addsong(string songID)
         {
-            string orderSongUrl = "";
+            string orderSongUrl = "";                       
+
             if (songID != null)
             {
-                orderSongUrl = wcfUrl + string.Format("/OrderSong?value={0}", songID.Trim());
+                //orderSongUrl = wcfUrl + string.Format("/OrderSong?value={0}", songID.Trim());
+
+                NameValueCollection collection = new NameValueCollection();
+                collection.Add("value", songID.Trim());
+
+                orderSongUrl=wcfUrl + string.Format("/OrderSong") + GlobalFunctions.ToQueryString(collection);
             }
 
             return requestWeb(orderSongUrl);
         }
 
-
-
+        public static bool wcf_insertsong(string songID)
+        {
+            DoCrazyKTV_Action(songID, "Inster");
+            return true;
+        }
+        
         /// <summary>
         /// Does the crazy KT v_ control.
         /// </summary>
@@ -105,6 +165,62 @@ namespace web
 
             return requestWeb(Url);
         }
+
+
+        public static string QuerySong(string lang, string singer, string words, string condition, int page, int rows)
+        {
+            string Url = "";
+
+            NameValueCollection collection = new NameValueCollection();
+
+            if (lang != null || lang=="")
+            {
+                collection.Add("lang", lang.Trim());
+            }
+
+            if (singer != null || singer == "")
+            {
+                collection.Add("singer", singer.Trim());
+            }
+
+            if (words != null || words == "")
+            {
+                collection.Add("words", words.Trim());
+            }
+
+            if (condition != null || condition == "")
+            {
+                collection.Add("condition", condition.Trim());
+            }
+
+
+             collection.Add("page", page.ToString().Trim());
+             collection.Add("rows", rows.ToString().Trim());
+
+             Url = wcfUrl + string.Format("/QuerySong") + GlobalFunctions.ToQueryString(collection);
+
+
+             return requestWeb(Url);
+        }
+
+
+        public static string ViewSong(int page, int rows)
+        {
+            string Url = "";
+
+            NameValueCollection collection = new NameValueCollection();
+
+            collection.Add("page", page.ToString().Trim());
+            collection.Add("rows", rows.ToString().Trim());
+
+            Url = wcfUrl + string.Format("/ViewSong") + GlobalFunctions.ToQueryString(collection);
+
+
+            return requestWeb(Url);
+        }
+
+
+
 
 
     }
