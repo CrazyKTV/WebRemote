@@ -55,17 +55,19 @@ namespace web
         /// <param name="e"></param>
         protected void scriptManager_Navigate(object sender, HistoryEventArgs e)
         {
-            string state = e.State["historyPoint"];
-            ddActions.SelectedIndex = Convert.ToInt32(state);
+            //string state = e.State["historyPoint"];
+            //ddActions.SelectedIndex = Convert.ToInt32(state);
         }
         
         protected void ddActions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ////for broswer back button
-            if (ScriptManager1.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
-            {
-                ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
-            }
+            //////for broswer back button
+            //if (ScriptManager1.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
+            //{
+            //    ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
+            //}
+
+
 
 
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Find".ToLower())

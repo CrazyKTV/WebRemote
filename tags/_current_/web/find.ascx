@@ -4,12 +4,17 @@
 <%--<br/>--%>
 <asp:Panel ID="Panel1" runat="server">
     <asp:DropDownList ID="ddSearchType" runat="server" CssClass="dropdown2">
-        <asp:ListItem>Song</asp:ListItem>
+        <asp:ListItem Value="Song">Song Name</asp:ListItem>
         <asp:ListItem>Singer</asp:ListItem>
+        <asp:ListItem Value="WordCount">Word Count</asp:ListItem>
+        <asp:ListItem Value="TopOrder">Top Order</asp:ListItem>
         <asp:ListItem>Favorites</asp:ListItem>
         <asp:ListItem>Male</asp:ListItem>
         <asp:ListItem>Female</asp:ListItem>
+        <asp:ListItem>Chorus</asp:ListItem>
+        <asp:ListItem Value="NewSongs">New Songs</asp:ListItem>
     </asp:DropDownList>
+
 
 
     <asp:TextBox ID="tSearch" runat="server" CssClass="textbox2"></asp:TextBox>
@@ -22,7 +27,7 @@
 </asp:Panel>
 
 <asp:Panel ID="Panel2" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowPaging="True" AllowSorting="True" PageSize="100" OnRowCommand="GridView1_RowCommand">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging" EnableSortingAndPagingCallbacks="True" OnSorting="GridView1_Sorting" ShowHeaderWhenEmpty="True">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
             <asp:ButtonField HeaderText="A" Text="Add" ButtonType="Button" InsertVisible="False" CommandName="Add" >
@@ -31,9 +36,6 @@
             <ItemStyle CssClass="dgAdd" />
             </asp:ButtonField>
             <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" >
-            <ControlStyle/>
-            <FooterStyle />
-            <ItemStyle />
             </asp:BoundField>
             <asp:BoundField HeaderText="Song" InsertVisible="False" ReadOnly="True" DataField="Song_SongName">
             </asp:BoundField>
@@ -41,20 +43,27 @@
             <ControlStyle CssClass="dgSong" />
             <HeaderStyle HorizontalAlign="Left" />
             <ItemStyle CssClass="dgSong" />
-            <ControlStyle CssClass="dgSinger" />
-            <HeaderStyle HorizontalAlign="Left" />
-            <ItemStyle CssClass="dgSinger" />
             </asp:BoundField>
-            <asp:BoundField DataField="Song_WordCount" HeaderText="Song_WordCount" >
-            <ControlStyle/>
-            </asp:BoundField>
-            <asp:BoundField DataField="Song_Lang" HeaderText="Lang" >
-            <ControlStyle CssClass="dgLang" />
-            <ItemStyle CssClass="dgLang" />
-            </asp:BoundField>
-            <asp:ButtonField HeaderText="I" Text="Int" ButtonType="Button" CommandName="Insert">
+            <asp:TemplateField HeaderText="w#">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Song_WordCount") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="lSong_WordCount" runat="server" Text='<%# Bind("Song_WordCount") %>'></asp:Label>
+                </ItemTemplate>
+                <ControlStyle CssClass="dgLang" />
+                <ItemStyle CssClass="dgLang" />
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="L">
+                <ItemTemplate>
+                    <asp:Label ID="lSong_Lang" runat="server" Text='<%# Eval("Song_Lang").ToString().Substring(0,1) %>'></asp:Label>
+                </ItemTemplate>
+                <HeaderStyle CssClass="dgLang" />
+                <ItemStyle CssClass="dgLang" />
+            </asp:TemplateField>
+            <asp:ButtonField ButtonType="Button" CommandName="Insert" HeaderText="I" Text="Int">
             <ControlStyle CssClass="dgInsert" />
-            <HeaderStyle HorizontalAlign="Right" CssClass="hideThis" />
+            <HeaderStyle CssClass="hideThis" HorizontalAlign="Right" />
             <ItemStyle CssClass="dgInsert" />
             </asp:ButtonField>
         </Columns>
@@ -67,6 +76,7 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
+    <br/>
 </asp:Panel>
 
 

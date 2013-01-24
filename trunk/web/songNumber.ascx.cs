@@ -23,6 +23,11 @@ namespace web
             tSongNumber.Text = "";
         }
 
+        protected void bInsert_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.wcf_insertsong(tSongNumber.Text.Trim());
+        }
+
 
 
     }

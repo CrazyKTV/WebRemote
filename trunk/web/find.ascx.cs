@@ -39,18 +39,47 @@ namespace web
 
                 if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Song".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SongName like '*" + tSearch.Text.ToString().Trim() + "*'", currentPageNumber, rowsPerPage); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SongName like '*" + tSearch.Text.ToString().Trim() + "*'", currentPageNumber, rowsPerPage, "Song_SongName"); //more than 2000 per rows will be super slow
                 }
 
                 if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Singer".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '*" + tSearch.Text.ToString().Trim() + "*'", currentPageNumber, rowsPerPage); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '*" + tSearch.Text.ToString().Trim() + "*'", currentPageNumber, rowsPerPage, "Song_Singer"); //more than 2000 per rows will be super slow
                 }
 
+                if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "NewSongs".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_CreatDate >= '" + DateTime.Now.AddDays(-90).ToString("yyyy/MM/dd") + "'", currentPageNumber, rowsPerPage, "Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
+                }
 
-                jsonText = jsonText.TrimStart('"');
-                jsonText = jsonText.TrimEnd('"');
-                jsonText = Regex.Replace(jsonText, @"\\""", @"""");
+                if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "male".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=1", currentPageNumber, rowsPerPage, "Song_Singer, Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
+                }
+
+                if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "female".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=2", currentPageNumber, rowsPerPage, "Song_Singer, Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
+                }
+
+                if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "chorus".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=3", currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer, Song_CreatDate desc"); //more than 2000 per rows will be super slow
+                }
+
+                if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "wordcount".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_WordCount=" + tSearch.Text.ToString().Trim(), currentPageNumber, rowsPerPage, "Song_CreatDate desc"); //more than 2000 per rows will be super slow
+                }
+
+                if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "toporder".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_PlayCount >= 1 ", currentPageNumber, rowsPerPage, "Song_PlayCount desc, Song_CreatDate desc"); //more than 2000 per rows will be super slow
+                }
+
+                //jsonText = jsonText.TrimStart('"');
+                //jsonText = jsonText.TrimEnd('"');
+                //jsonText = Regex.Replace(jsonText, @"\\""", @"""");
 
                 DataTable dt = GlobalFunctions.JsontoDataTable(jsonText);
 
@@ -89,7 +118,7 @@ namespace web
                 CrazyKTVWCF.wcf_addsong(Song_Id.Text.Trim());
             }
 
-            if (e.CommandName.ToLower().Trim() == "Insert".ToLower().Trim())
+            else if (e.CommandName.ToLower().Trim() == "Insert".ToLower().Trim())
             {
                 // Convert the row index stored in the CommandArgument
                 // property to an Integer.
@@ -115,35 +144,35 @@ namespace web
 
         protected void GridView1_Sorting(object sender, GridViewSortEventArgs e)
         {
-            if (GridViewSortDirection == null)
-            {
-                e.SortDirection = SortDirection.Descending;
-            }
-            else if (GridViewSortDirection == SortDirection.Ascending)
-            {
-                e.SortDirection = SortDirection.Descending;
-            }
-            else if (GridViewSortDirection == SortDirection.Descending)
-            {
-                e.SortDirection = SortDirection.Ascending;
-            }
+            //if (GridViewSortDirection == null)
+            //{
+            //    e.SortDirection = SortDirection.Descending;
+            //}
+            //else if (GridViewSortDirection == SortDirection.Ascending)
+            //{
+            //    e.SortDirection = SortDirection.Descending;
+            //}
+            //else if (GridViewSortDirection == SortDirection.Descending)
+            //{
+            //    e.SortDirection = SortDirection.Ascending;
+            //}
 
-            GridViewSortDirection = e.SortDirection;
+            //GridViewSortDirection = e.SortDirection;
         }
 
-        public SortDirection GridViewSortDirection
-        {
-            get
-            {
-                if (ViewState["sortDirection"] == null)
-                    ViewState["sortDirection"] = SortDirection.Ascending;
-                return (SortDirection)ViewState["sortDirection"];
-            }
-            set
-            {
-                ViewState["sortDirection"] = value;
-            }
-        }
+        //public SortDirection GridViewSortDirection
+        //{
+        //    //get
+        //    //{
+        //    //    if (ViewState["sortDirection"] == null)
+        //    //        ViewState["sortDirection"] = SortDirection.Ascending;
+        //    //    return (SortDirection)ViewState["sortDirection"];
+        //    //}
+        //    //set
+        //    //{
+        //    //    ViewState["sortDirection"] = value;
+        //    //}
+        //}
 
 
     }

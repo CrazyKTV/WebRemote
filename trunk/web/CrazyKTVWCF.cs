@@ -108,7 +108,7 @@ namespace web
 
         public static bool wcf_insertsong(string songID)
         {
-            DoCrazyKTV_Action(songID, "Inster");
+            DoCrazyKTV_Action(songID, "Insert");
             return true;
         }
         
@@ -166,8 +166,7 @@ namespace web
             return requestWeb(Url);
         }
 
-
-        public static string QuerySong(string lang, string singer, string words, string condition, int? page, int? rows)
+        public static string QuerySong(string lang, string singer, string words, string condition, int? page, int rows, string sort)
         {
             string Url = "";
 
@@ -206,8 +205,7 @@ namespace web
 
              return requestWeb(Url);
         }
-
-
+        
         public static string ViewSong(int page, int rows)
         {
             string Url = "";
@@ -223,6 +221,35 @@ namespace web
             return requestWeb(Url);
         }
 
+        public static string FavoriteUser(int page, int rows) {
+            string Url = "";
+
+            NameValueCollection collection = new NameValueCollection();
+
+            collection.Add("page", page.ToString().Trim());
+            collection.Add("rows", rows.ToString().Trim());
+
+            Url = wcfUrl + string.Format("/FavoriteUser") + GlobalFunctions.ToQueryString(collection);
+
+
+            return requestWeb(Url);
+        }
+        
+        public static string FavoriteSong(string user, int page, int rows)
+        {
+            string Url = "";
+
+            NameValueCollection collection = new NameValueCollection();
+
+            collection.Add("user", user.ToString().Trim());
+            collection.Add("page", page.ToString().Trim());
+            collection.Add("rows", rows.ToString().Trim());
+
+            Url = wcfUrl + string.Format("/FavoriteUser") + GlobalFunctions.ToQueryString(collection);
+
+
+            return requestWeb(Url);
+        }
 
 
 

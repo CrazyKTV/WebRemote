@@ -34,7 +34,7 @@
     <!-- Favicons-->
     <!--<link rel="shortcut icon" href="img/favicon.ico">-->
     <script src="jquery-1.8.3.min.js"></script>
-    <script src="jquery.blockUI.js"></script>
+    <%--<script src="jquery.blockUI.js"></script>--%>
     <meta charset="utf-8" />
     <title>KTV</title>
 </head>
@@ -211,7 +211,6 @@
 
 
     </form>
-
 
 
 </body>
