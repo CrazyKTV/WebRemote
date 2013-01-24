@@ -9,7 +9,15 @@ namespace web
 {
     public class GlobalFunctions
     {
-        public static DataSet1 dt { get; set; }
+        //public static DataSet1 dt { get; set; }
+
+        //Application[""];
+
+        public static DataTable JsontoDataTable(string jsonString)
+        {
+            var table = JsonConvert.DeserializeObject<System.Data.DataTable>(jsonString);
+            return (DataTable)table;
+        }
 
         public static DataTable DerializetoDataTable()
         {
@@ -38,8 +46,8 @@ namespace web
 
             //Console.WriteLine("{0} - {1} - {2}", dehardware.ID, dehardware.Name, dehardware.IPAddress);
 
-            string json = JsonConvert.SerializeObject(GlobalFunctions.dt.Tables["songs"], Formatting.Indented);
-            Console.WriteLine(json);
+            //string json = JsonConvert.SerializeObject(GlobalFunctions.dt.Tables["songs"], Formatting.Indented);
+            //Console.WriteLine(json);
 
             return "Nothing returned";
         }

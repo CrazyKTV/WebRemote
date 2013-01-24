@@ -167,35 +167,39 @@ namespace web
         }
 
 
-        public static string QuerySong(string lang, string singer, string words, string condition, int page, int rows)
+        public static string QuerySong(string lang, string singer, string words, string condition, int? page, int? rows)
         {
             string Url = "";
 
             NameValueCollection collection = new NameValueCollection();
 
-            if (lang != null || lang=="")
+            if (lang != null && lang!="")
             {
                 collection.Add("lang", lang.Trim());
             }
 
-            if (singer != null || singer == "")
+            if (singer != null && singer != "")
             {
                 collection.Add("singer", singer.Trim());
             }
 
-            if (words != null || words == "")
+            if (words != null && words != "")
             {
                 collection.Add("words", words.Trim());
             }
 
-            if (condition != null || condition == "")
+            if (condition != null && condition != "")
             {
                 collection.Add("condition", condition.Trim());
             }
 
+            if (page.HasValue==true)
+            {
+                collection.Add("page", page.ToString());
+            }
 
-             collection.Add("page", page.ToString().Trim());
-             collection.Add("rows", rows.ToString().Trim());
+
+             collection.Add("rows", rows.ToString().Trim()); //must have
 
              Url = wcfUrl + string.Format("/QuerySong") + GlobalFunctions.ToQueryString(collection);
 
