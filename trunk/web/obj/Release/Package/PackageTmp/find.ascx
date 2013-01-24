@@ -14,11 +14,8 @@
         <asp:ListItem>Chorus</asp:ListItem>
         <asp:ListItem Value="NewSongs">New Songs</asp:ListItem>
     </asp:DropDownList>
-
-
-
+        
     <asp:TextBox ID="tSearch" runat="server" CssClass="textbox2"></asp:TextBox>
-
 
     <asp:Button ID="bSearch" runat="server" Text="List" CssClass="button2" OnClick="bSearch_Click" />
 
@@ -27,7 +24,7 @@
 </asp:Panel>
 
 <asp:Panel ID="Panel2" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging" EnableSortingAndPagingCallbacks="True" OnSorting="GridView1_Sorting" ShowHeaderWhenEmpty="True">
+    <asp:GridView ID="GridView1" runat="server" DataKeyNames="Song_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging" EnableSortingAndPagingCallbacks="True" OnSorting="GridView1_Sorting" ShowHeaderWhenEmpty="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
             <asp:ButtonField HeaderText="A" Text="Add" ButtonType="Button" InsertVisible="False" CommandName="Add" >
@@ -35,14 +32,17 @@
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Left" />
             <ItemStyle CssClass="dgAdd" />
             </asp:ButtonField>
-            <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" >
+            <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" Visible="False" >
             </asp:BoundField>
             <asp:BoundField HeaderText="Song" InsertVisible="False" ReadOnly="True" DataField="Song_SongName">
+            <ControlStyle CssClass="dgSong" />
+            <HeaderStyle CssClass="dgSong" />
+            <ItemStyle CssClass="dgSong" />
             </asp:BoundField>
             <asp:BoundField DataField="Song_Singer" HeaderText="Singer" InsertVisible="False" ReadOnly="True">
-            <ControlStyle CssClass="dgSong" />
-            <HeaderStyle HorizontalAlign="Left" />
-            <ItemStyle CssClass="dgSong" />
+            <ControlStyle CssClass="dgSinger" />
+            <HeaderStyle HorizontalAlign="Left" CssClass="dgSinger" />
+            <ItemStyle CssClass="dgSinger" />
             </asp:BoundField>
             <asp:TemplateField HeaderText="w#">
                 <EditItemTemplate>
@@ -52,6 +52,7 @@
                     <asp:Label ID="lSong_WordCount" runat="server" Text='<%# Bind("Song_WordCount") %>'></asp:Label>
                 </ItemTemplate>
                 <ControlStyle CssClass="dgLang" />
+                <HeaderStyle CssClass="dgLang" />
                 <ItemStyle CssClass="dgLang" />
             </asp:TemplateField>
             <asp:TemplateField HeaderText="L">
@@ -76,12 +77,38 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
+    <div style="text-align: center ;">
+    <asp:Button ID="BPrevious" runat="server" Text="Previous" CssClass="button3" OnClick="BPrevious_Click" Visible="False" />
+    <asp:Button ID="BNext" runat="server" Text="Next" CssClass="button3" OnClick="BNext_Click" Visible="False" />
+        
+    
+        </div>
+    <asp:HiddenField ID="songDGpage" runat="server" Value="0" />
     <br/>
 </asp:Panel>
 
 
 <asp:Panel ID="Panel3" runat="server" Visible="False">
-    choose others here and then link to panel 2<br />
+    <asp:GridView ID="GridView2" runat="server" DataKeyNames="User_Name" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView2_RowCommand">
+        <AlternatingRowStyle BackColor="#CCCCCC" />
+        <Columns>
+            <asp:BoundField HeaderText="User_Id" DataField="User_Id" Visible="False" >
+            </asp:BoundField>
+            <asp:ButtonField ButtonType="Button" CommandName="Select" DataTextField="User_Name" HeaderText="Select" InsertVisible="False" ControlStyle-CssClass="button1">
+            <HeaderStyle HorizontalAlign="Center" />
+            <ItemStyle HorizontalAlign="Center"/>
+            </asp:ButtonField>
+        </Columns>
+        <FooterStyle BackColor="#CCCCCC" />
+        <HeaderStyle BackColor="Black" CssClass="gridviewHeader" Font-Bold="True" ForeColor="White" />
+        <PagerStyle ForeColor="Black" HorizontalAlign="Center" />
+        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+        <SortedAscendingHeaderStyle BackColor="#808080" />
+        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+        <SortedDescendingHeaderStyle BackColor="#383838" />
+    </asp:GridView>
+    <br />
 </asp:Panel>
 
 

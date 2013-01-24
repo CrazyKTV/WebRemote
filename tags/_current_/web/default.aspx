@@ -90,7 +90,7 @@
                            
                             <uc0:find runat="server" id="find"  Visible="False"/>
                             <uc1:songNumber runat="server" ID="songNumber" Visible="False" />
-                            <uc2:currentList ID="currentList1" runat="server" />
+                            <uc2:currentList ID="currentList1" runat="server" Visible="False" />
                             <uc3:video runat="server" ID="video" Visible="False" />
                             <uc4:volume runat="server" ID="volume" Visible="False" />
                             <uc5:tune runat="server" id="tune"  Visible="False"/>

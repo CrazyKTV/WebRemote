@@ -245,7 +245,7 @@ namespace web
             collection.Add("page", page.ToString().Trim());
             collection.Add("rows", rows.ToString().Trim());
 
-            Url = wcfUrl + string.Format("/FavoriteUser") + GlobalFunctions.ToQueryString(collection);
+            Url = wcfUrl + string.Format("/FavoriteSong") + GlobalFunctions.ToQueryString(collection);
 
 
             return requestWeb(Url);

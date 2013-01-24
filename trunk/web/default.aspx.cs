@@ -38,7 +38,7 @@ namespace web
             }
 
             // if WCF is alive then continue with other process
-            System.Threading.Thread.Sleep(300);
+           // System.Threading.Thread.Sleep(300);
 
         }
 
