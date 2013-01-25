@@ -2,20 +2,6 @@
 
 <link href="css/layout.css" rel="stylesheet" />
 
-<script type="text/javascript">
-    var xPos, yPos;
-    var prm = Sys.WebForms.PageRequestManager.getInstance();
-    prm.add_beginRequest(BeginRequestHandler);
-    prm.add_endRequest(EndRequestHandler);
-    function BeginRequestHandler(sender, args) {
-        xPos = $get('UpdatePanel1').scrollLeft;
-        yPos = $get('UpdatePanel1').scrollTop;
-    }
-    function EndRequestHandler(sender, args) {
-        $get('UpdatePanel1').scrollLeft = xPos;
-        $get('UpdatePanel1').scrollTop = yPos;
-    }
-</script>
 
 <%--<br/>--%>
 <asp:Panel ID="Panel1" runat="server">
@@ -101,6 +87,7 @@
         </div>
     <asp:HiddenField ID="songDGpage" runat="server" Value="0" />
     <asp:HiddenField ID="gvMode" runat="server" Value="" />
+    <asp:HiddenField ID="findCaller" runat="server" Value="" />
     <br/>
 </asp:Panel>
 

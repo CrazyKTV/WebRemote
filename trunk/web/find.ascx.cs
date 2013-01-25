@@ -166,6 +166,7 @@ namespace web
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            findCaller.Value = "";
             var data = GridView1.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get hiddent Song_ID
 
             if (e.CommandName.ToLower().Trim() == "Add".ToLower().Trim())
@@ -228,6 +229,7 @@ namespace web
 
         protected void BNext_Click(object sender, EventArgs e)
         {
+            findCaller.Value = "toTop";
             //clean up data on display
             GridView1.DataSource = null;
             GridView1.DataBind();
@@ -247,6 +249,7 @@ namespace web
 
         protected void BPrevious_Click(object sender, EventArgs e)
         {
+            findCaller.Value = "toTop";
             //clean up data on display
             GridView1.DataSource = null;
             GridView1.DataBind();

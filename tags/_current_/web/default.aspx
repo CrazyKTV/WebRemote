@@ -44,6 +44,71 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableHistory="True">
         </asp:ScriptManager>
 
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                AfterPostBack();
+                // You are calling this function the page loads for the first time
+
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(AfterPostBack);
+
+                //  EndRequest added on endRequest of Postback..  This is when the page pots back..
+                // Called when postback occurs
+
+            });
+
+            var AfterPostBack = function () {
+                // You write your code here to assign Data
+                // to the calender
+                //window.scrollTo(0, 0);
+               // $("html, body").animate({ scrollTop: 0 }, "slow");
+                //return false;
+                //$('#BPrevious')..click(function() {
+                //    $("html, body").animate({ scrollTop: 0 }, "slow");
+                //    return false;
+                //});
+                
+                //$('#BNext').click(function () {
+                //    $("html, body").animate({ scrollTop: 0 }, "slow");
+                //    return false;
+                //});
+
+                if ($('#findCaller').val() == "toTop")
+                {
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
+                    //return false;
+                }
+
+
+                $('#ddSearchType').change(function () {
+                    var _value = $('#ddSearchType').val();
+                    if (_value == "Song" || _value == "Singer" || _value == "WordCount") {
+                        $('#tSearch').show();
+                    }
+                    else {
+                        $('#tSearch').hide();
+                        $('#bSearch').click();
+                    }
+
+                });
+
+                $('#ddSearchType').ready(function () {
+                    var _value = $('#ddSearchType').val();
+                    if (_value == "Song" || _value == "Singer" || _value == "WordCount") {
+                        $('#tSearch').show();
+                    }
+                    else {
+                        $('#tSearch').hide();
+                    }
+                });
+
+
+
+                return false;
+
+                
+            }
+</script>
 
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
@@ -89,7 +154,7 @@
                     <section>
                         <div>
                            
-                            <uc0:find runat="server" id="find"  Visible="False"/>
+                            <uc0:find runat="server" id="find"  Visible="False" ClientIDMode="Static" />
                             <uc1:songNumber runat="server" ID="songNumber" Visible="False" />
                             <uc2:currentList ID="currentList1" runat="server" Visible="False" />
                             <uc3:video runat="server" ID="video" Visible="False" />
