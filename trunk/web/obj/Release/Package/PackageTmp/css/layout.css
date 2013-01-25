@@ -115,7 +115,10 @@ body
 
 .textbox2 {
     font-size: 100%;
-    width:35%;
+    width:auto;
+    min-width:38%;
+    max-width:90%;
+
 }
 
 .label1 {

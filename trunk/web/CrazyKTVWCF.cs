@@ -192,6 +192,11 @@ namespace web
                 collection.Add("condition", condition.Trim());
             }
 
+            if (condition != null && condition != "")
+            {
+                collection.Add("sort", sort.Trim());
+            }
+
             if (page.HasValue==true)
             {
                 collection.Add("page", page.ToString());
@@ -216,6 +221,20 @@ namespace web
             collection.Add("rows", rows.ToString().Trim());
 
             Url = wcfUrl + string.Format("/ViewSong") + GlobalFunctions.ToQueryString(collection);
+
+
+            return requestWeb(Url);
+        }
+
+        public static string FavoriteLogin(string user)
+        {
+            string Url = "";
+
+            NameValueCollection collection = new NameValueCollection();
+
+            collection.Add("user", user.ToString().Trim());
+
+            Url = wcfUrl + string.Format("/FavoriteLogin") + GlobalFunctions.ToQueryString(collection);
 
 
             return requestWeb(Url);

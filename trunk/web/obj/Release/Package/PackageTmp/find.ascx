@@ -1,6 +1,22 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="find.ascx.cs" Inherits="web.find" %>
 
 <link href="css/layout.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    var xPos, yPos;
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    prm.add_beginRequest(BeginRequestHandler);
+    prm.add_endRequest(EndRequestHandler);
+    function BeginRequestHandler(sender, args) {
+        xPos = $get('UpdatePanel1').scrollLeft;
+        yPos = $get('UpdatePanel1').scrollTop;
+    }
+    function EndRequestHandler(sender, args) {
+        $get('UpdatePanel1').scrollLeft = xPos;
+        $get('UpdatePanel1').scrollTop = yPos;
+    }
+</script>
+
 <%--<br/>--%>
 <asp:Panel ID="Panel1" runat="server">
     <asp:DropDownList ID="ddSearchType" runat="server" CssClass="dropdown2">
@@ -62,7 +78,7 @@
                 <HeaderStyle CssClass="dgLang" />
                 <ItemStyle CssClass="dgLang" />
             </asp:TemplateField>
-            <asp:ButtonField ButtonType="Button" CommandName="Insert" HeaderText="I" Text="Int">
+            <asp:ButtonField ButtonType="Button" CommandName="Insert" HeaderText="I" Text="Ins">
             <ControlStyle CssClass="dgInsert" />
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Right" />
             <ItemStyle CssClass="dgInsert" />
@@ -84,29 +100,23 @@
     
         </div>
     <asp:HiddenField ID="songDGpage" runat="server" Value="0" />
+    <asp:HiddenField ID="gvMode" runat="server" Value="" />
     <br/>
 </asp:Panel>
 
 
 <asp:Panel ID="Panel3" runat="server" Visible="False">
-    <asp:GridView ID="GridView2" runat="server" DataKeyNames="User_Name" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView2_RowCommand">
-        <AlternatingRowStyle BackColor="#CCCCCC" />
+    <asp:GridView ID="GridView2" runat="server" DataKeyNames="User_Id,User_Name" AutoGenerateColumns="False" CssClass="gridview" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView2_RowCommand">
         <Columns>
             <asp:BoundField HeaderText="User_Id" DataField="User_Id" Visible="False" >
             </asp:BoundField>
             <asp:ButtonField ButtonType="Button" CommandName="Select" DataTextField="User_Name" HeaderText="Select" InsertVisible="False" ControlStyle-CssClass="button1">
+            <ControlStyle CssClass="button1" />
             <HeaderStyle HorizontalAlign="Center" />
             <ItemStyle HorizontalAlign="Center"/>
             </asp:ButtonField>
         </Columns>
-        <FooterStyle BackColor="#CCCCCC" />
-        <HeaderStyle BackColor="Black" CssClass="gridviewHeader" Font-Bold="True" ForeColor="White" />
-        <PagerStyle ForeColor="Black" HorizontalAlign="Center" />
-        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-        <SortedAscendingHeaderStyle BackColor="#808080" />
-        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-        <SortedDescendingHeaderStyle BackColor="#383838" />
+        <HeaderStyle CssClass="gridviewHeader" />
     </asp:GridView>
     <br />
 </asp:Panel>

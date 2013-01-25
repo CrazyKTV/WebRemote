@@ -50,6 +50,7 @@ namespace web
             try
             {
                 string jsonText = "";
+                gvMode.Value = "";
 
                 if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Song".ToLower())
                 {
@@ -144,6 +145,8 @@ namespace web
                             BPrevious.Visible = false;
                         }
                     }
+
+                    
                 }
                 catch { }
 
@@ -229,7 +232,16 @@ namespace web
             GridView1.DataSource = null;
             GridView1.DataBind();
 
-            songList(1 + int.Parse(songDGpage.Value.ToString()), 100);
+            if (gvMode.Value.ToString().Trim().Length>0)
+            {
+                FSongList(1 + int.Parse(songDGpage.Value.ToString()), 100, gvMode.Value.ToString());
+            }
+            else
+            {
+                songList(1 + int.Parse(songDGpage.Value.ToString()), 100);
+            }
+
+
             songDGpage.Value=(1 + int.Parse(songDGpage.Value.ToString())).ToString();
         }
 
@@ -239,7 +251,16 @@ namespace web
             GridView1.DataSource = null;
             GridView1.DataBind();
 
-            songList(int.Parse(songDGpage.Value.ToString())-1, 100);
+            if (gvMode.Value.ToString().Trim().Length > 0)
+            {
+                FSongList(int.Parse(songDGpage.Value.ToString()) - 1, 100, gvMode.Value.ToString());
+            }
+            else
+            {
+                songList(int.Parse(songDGpage.Value.ToString()) - 1, 100);
+            }
+            
+
             songDGpage.Value=(int.Parse(songDGpage.Value.ToString()) -1).ToString();
         }
 
@@ -254,9 +275,19 @@ namespace web
             BNext.Visible = false;
             BPrevious.Visible = false;
 
-            var data = GridView2.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="User_Name"
+            var data = GridView2.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="User_ID"
+            gvMode.Value = data.ToString();
+            FSongList(0, 100, data.ToString());
+        }
 
-            string jsonText = CrazyKTVWCF.FavoriteSong(data.ToString().Trim(), 0, 100);
+        private void FSongList(int page, int rows, string user)
+        {
+            if (user.Length > 0)
+            {
+                CrazyKTVWCF.FavoriteLogin(user.ToString()); //need to login first to see favoritesongs
+            }
+
+            string jsonText = CrazyKTVWCF.FavoriteSong(user.ToString().Trim(), page, rows);
 
             DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
             DataView dv3 = new DataView(dt3);
@@ -265,9 +296,7 @@ namespace web
             GridView1.DataSource = dv3;
             GridView1.DataBind();
 
-            int page = 0;
-
-            if (dv3.Count == 100)
+            if (dv3.Count == rows)
             {
                 BNext.Visible = true;
                 if (page > 0)
@@ -293,9 +322,8 @@ namespace web
                 }
             }
 
-
-
         }
+
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
