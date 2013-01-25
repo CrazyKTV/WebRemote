@@ -6,9 +6,10 @@
 <asp:Button ID="Play" runat="server" Text="Play" CssClass="button1" /> 
 <asp:Button ID="Cut" runat="server" Text="Cut" CssClass="button1" OnClick="Cut_Click" /> 
 <asp:Button ID="Repeat" runat="server" Text="Repeat" CssClass="button1" OnClick="Repeat_Click" /> 
-<asp:Button ID="Restart" runat="server" Text="Restart" CssClass="button1" /> 
+<asp:Button ID="Restart" runat="server" Text="Restart" CssClass="button1" OnClick="Restart_Click" /> 
 <asp:Button ID="FastFoward" runat="server" Text="Fast Foward"  CssClass="button1" /> 
 <asp:Button ID="FastBackward" runat="server" Text="Fast Backward" CssClass="button1" /> 
 <asp:Button ID="Mute" runat="server" Text="Mute" CssClass="button1" OnClick="Mute_Click" /> 
 <asp:Button ID="Channel" runat="server" Text="Channel" CssClass="button1" OnClick="Channel_Click" /> 
 <asp:Button ID="FixedChannel" runat="server" Text="Fixed Channel" CssClass="button1" OnClick="FixedChannel_Click" /> 
+ <br />

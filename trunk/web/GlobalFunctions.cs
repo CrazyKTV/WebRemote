@@ -15,8 +15,14 @@ namespace web
 
         public static DataTable JsontoDataTable(string jsonString)
         {
-            var table = JsonConvert.DeserializeObject<System.Data.DataTable>(jsonString);
-            return (DataTable)table;
+            try
+            {
+                var table = JsonConvert.DeserializeObject<System.Data.DataTable>(jsonString);
+                return (DataTable)table;
+            }
+            catch { return null; }
+
+            
         }
 
         //public static DataTable DerializetoDataTable()

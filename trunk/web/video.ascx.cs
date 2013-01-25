@@ -27,7 +27,7 @@ namespace web
         protected void Repeat_Click(object sender, EventArgs e)
         {
 
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
+            
         }
 
         protected void Mute_Click(object sender, EventArgs e)
@@ -43,6 +43,11 @@ namespace web
         protected void FixedChannel_Click(object sender, EventArgs e)
         {
             CrazyKTVWCF.DoCrazyKTV_Control(null, "Fixed");
+        }
+
+        protected void Restart_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
         }
 
 

@@ -33,7 +33,7 @@ namespace web
             {
                 if (CrazyKTVWCF.checkWCF() == false)
                 {
-                    //Response.Redirect("ErrorDeadWCF.html");
+                    Response.Redirect("ErrorDeadWCF.html");
                 }
             }
 
