@@ -8,7 +8,7 @@
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-             <asp:Timer ID="Timer1" runat="server" Interval="180" OnTick="Timer1_Tick" ></asp:Timer>
+             <asp:Timer ID="Timer1" runat="server" Interval="180000" OnTick="Timer1_Tick" ></asp:Timer>
             <asp:Panel ID="Panel1" runat="server" meta:resourcekey="Panel1Resource1">
               
 
