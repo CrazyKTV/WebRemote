@@ -11,37 +11,61 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="advanced.ascx">
-      <publishTime>01/16/2013 19:35:54</publishTime>
+      <publishTime>01/17/2013 10:39:24</publishTime>
     </File>
     <File Include="App_GlobalResources/GlobalMessages.resx">
-      <publishTime>01/16/2013 19:35:54</publishTime>
+      <publishTime>01/17/2013 10:39:24</publishTime>
+    </File>
+    <File Include="App_LocalResources/currentList.ascx.resx">
+      <publishTime>01/25/2013 12:32:27</publishTime>
+    </File>
+    <File Include="App_LocalResources/currentList.ascx.zh-CHT.resx">
+      <publishTime>01/25/2013 12:33:31</publishTime>
     </File>
     <File Include="App_LocalResources/default.aspx.resx">
-      <publishTime>01/16/2013 19:35:54</publishTime>
+      <publishTime>01/17/2013 10:39:25</publishTime>
     </File>
     <File Include="App_LocalResources/default.aspx.zh-CHT.resx">
-      <publishTime>01/16/2013 19:35:54</publishTime>
+      <publishTime>01/17/2013 10:39:25</publishTime>
     </File>
     <File Include="App_LocalResources/songNumber.ascx.resx">
-      <publishTime>01/16/2013 19:35:53</publishTime>
+      <publishTime>01/17/2013 10:39:25</publishTime>
     </File>
     <File Include="App_LocalResources/songNumber.ascx.zh-CHT.resx">
-      <publishTime>01/16/2013 19:35:53</publishTime>
+      <publishTime>01/17/2013 10:39:25</publishTime>
+    </File>
+    <File Include="App_LocalResources/tune.ascx.resx">
+      <publishTime>01/25/2013 12:29:38</publishTime>
+    </File>
+    <File Include="App_LocalResources/tune.ascx.zh-CHT.resx">
+      <publishTime>01/25/2013 12:30:47</publishTime>
+    </File>
+    <File Include="App_LocalResources/video.ascx.resx">
+      <publishTime>01/25/2013 12:39:37</publishTime>
+    </File>
+    <File Include="App_LocalResources/video.ascx.zh-CHT.resx">
+      <publishTime>01/25/2013 12:42:39</publishTime>
+    </File>
+    <File Include="App_LocalResources/volume.ascx.resx">
+      <publishTime>01/25/2013 12:27:14</publishTime>
+    </File>
+    <File Include="App_LocalResources/volume.ascx.zh-CHT.resx">
+      <publishTime>01/25/2013 12:29:07</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>11/20/2012 22:45:32</publishTime>
+      <publishTime>01/17/2013 10:39:29</publishTime>
     </File>
     <File Include="bin/web.dll">
-      <publishTime>01/24/2013 23:45:06</publishTime>
+      <publishTime>01/25/2013 15:49:35</publishTime>
     </File>
     <File Include="css/layout.css">
-      <publishTime>01/24/2013 18:19:54</publishTime>
+      <publishTime>01/25/2013 13:33:28</publishTime>
     </File>
     <File Include="css/overlay.css">
-      <publishTime>01/16/2013 19:35:52</publishTime>
+      <publishTime>01/17/2013 10:39:26</publishTime>
     </File>
     <File Include="currentList.ascx">
-      <publishTime>01/24/2013 18:19:57</publishTime>
+      <publishTime>01/25/2013 13:48:11</publishTime>
     </File>
     <File Include="DataSet1.xsc">
       <publishTime>01/22/2013 15:41:20</publishTime>
@@ -50,61 +74,61 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2013 08:36:47</publishTime>
     </File>
     <File Include="default.aspx">
-      <publishTime>01/25/2013 00:04:49</publishTime>
+      <publishTime>01/25/2013 08:38:57</publishTime>
     </File>
     <File Include="ErrorDeadWCF.html">
-      <publishTime>01/24/2013 18:19:57</publishTime>
+      <publishTime>01/24/2013 13:14:12</publishTime>
     </File>
     <File Include="find.ascx">
-      <publishTime>01/24/2013 23:45:03</publishTime>
+      <publishTime>01/25/2013 14:27:05</publishTime>
     </File>
     <File Include="IE9html5.js">
-      <publishTime>01/16/2013 19:35:51</publishTime>
+      <publishTime>01/17/2013 10:39:28</publishTime>
     </File>
     <File Include="images/ajax-loader.gif">
-      <publishTime>01/16/2013 19:35:49</publishTime>
+      <publishTime>01/17/2013 10:39:28</publishTime>
     </File>
     <File Include="images/Basic.jpg">
-      <publishTime>01/16/2013 19:35:49</publishTime>
+      <publishTime>01/17/2013 10:39:28</publishTime>
     </File>
     <File Include="images/Button.jpg">
-      <publishTime>01/16/2013 19:35:49</publishTime>
+      <publishTime>01/17/2013 10:39:28</publishTime>
     </File>
     <File Include="images/Button1.jpg">
-      <publishTime>01/16/2013 19:35:49</publishTime>
+      <publishTime>01/17/2013 10:39:28</publishTime>
     </File>
     <File Include="images/ErrorDeadWCF.jpg">
-      <publishTime>01/22/2013 17:38:38</publishTime>
+      <publishTime>01/22/2013 13:59:52</publishTime>
     </File>
     <File Include="jquery-1.8.3.min.js">
-      <publishTime>01/16/2013 19:35:48</publishTime>
+      <publishTime>01/17/2013 10:39:29</publishTime>
     </File>
     <File Include="jquery.blockUI.js">
-      <publishTime>01/16/2013 19:35:48</publishTime>
+      <publishTime>01/17/2013 10:39:29</publishTime>
     </File>
     <File Include="libs/Newtonsoft.Json.dll">
-      <publishTime>11/20/2012 22:45:32</publishTime>
+      <publishTime>01/17/2013 10:39:29</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/16/2013 19:35:44</publishTime>
+      <publishTime>01/17/2013 10:39:35</publishTime>
     </File>
     <File Include="Properties/Settings.settings">
-      <publishTime>01/17/2013 20:51:20</publishTime>
+      <publishTime>01/17/2013 14:51:06</publishTime>
     </File>
     <File Include="songNumber.ascx">
-      <publishTime>01/23/2013 21:02:54</publishTime>
+      <publishTime>01/24/2013 08:39:32</publishTime>
     </File>
     <File Include="tune.ascx">
-      <publishTime>01/17/2013 20:51:27</publishTime>
+      <publishTime>01/25/2013 12:29:42</publishTime>
     </File>
     <File Include="video.ascx">
-      <publishTime>01/24/2013 18:19:57</publishTime>
+      <publishTime>01/25/2013 12:39:56</publishTime>
     </File>
     <File Include="volume.ascx">
-      <publishTime>01/17/2013 20:51:27</publishTime>
+      <publishTime>01/25/2013 12:27:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/25/2013 00:05:13</publishTime>
+      <publishTime>01/25/2013 15:49:39</publishTime>
     </File>
   </ItemGroup>
 </Project>
