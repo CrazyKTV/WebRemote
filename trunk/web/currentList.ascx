@@ -15,16 +15,24 @@
                 <asp:GridView ID="GridView1" runat="server" DataKeyNames="Song_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" meta:resourcekey="GridView1Resource1">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
+            <asp:TemplateField><ItemTemplate>
+    <%# Container.DataItemIndex + 1 %>
+  </ItemTemplate>
+                <HeaderStyle HorizontalAlign="Left" />
+                <ItemStyle CssClass="dgLang" HorizontalAlign="Left" />
+            </asp:TemplateField>
             <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" Visible="False" meta:resourcekey="BoundFieldResource1" >
             </asp:BoundField>
             <asp:BoundField HeaderText="Song" InsertVisible="False" ReadOnly="True" DataField="Song_SongName" meta:resourcekey="BoundFieldResource2">
+            <HeaderStyle HorizontalAlign="Left" CssClass="dgSong" />
+            <ItemStyle HorizontalAlign="Left" CssClass="dgSong" />
             </asp:BoundField>
             <asp:BoundField DataField="Song_Singer" HeaderText="Singer" InsertVisible="False" ReadOnly="True" meta:resourcekey="BoundFieldResource3">
             <ControlStyle CssClass="dgSong" />
-            <HeaderStyle HorizontalAlign="Left" />
-            <ItemStyle CssClass="dgSong" />
+            <HeaderStyle HorizontalAlign="Left" CssClass="dgSinger" />
+            <ItemStyle CssClass="dgSinger" ForeColor="#993300" HorizontalAlign="Left" />
             </asp:BoundField>
-            <asp:TemplateField HeaderText="w#" meta:resourcekey="TemplateFieldResource1">
+            <asp:TemplateField HeaderText="w#" meta:resourcekey="TemplateFieldResource1" Visible="False">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Song_WordCount") %>' meta:resourcekey="TextBox1Resource1"></asp:TextBox>
                 </EditItemTemplate>
@@ -50,6 +58,7 @@
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" CssClass="gridviewHeader" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                    <RowStyle CssClass="gridviewRows" />
         <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
         <SortedAscendingCellStyle BackColor="#F1F1F1" />
         <SortedAscendingHeaderStyle BackColor="Gray" />

@@ -73,6 +73,12 @@
                 //    return false;
                 //});
 
+                //if ($("#ddActions option:selected").val() == "Waiting List") {
+                //    $.
+                //    //return false;
+                //}
+
+
                 if ($('#findCaller').val() == "toTop")
                 {
                     $("html, body").animate({ scrollTop: 0 }, "slow");

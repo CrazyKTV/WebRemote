@@ -114,11 +114,10 @@ body
 }
 
 .textbox2 {
-    font-size: 100%;
-    width:auto;
-    min-width:25%;
-    max-width:80%;
-
+    /*font-size: 90%;*/
+    width:135px;
+    min-width:10%;
+    max-width:70%;
 }
 
 .label1 {
@@ -199,6 +198,9 @@ body
     width: 100%;
 }
 
+.gridviewRows {
+    padding: 5px 2px 5px 2px;
+}
 
 .gridviewHeader {
     font-weight: lighter;
@@ -210,17 +212,40 @@ body
 }
 
 .dgAdd {
+    /*border: thin solid #666666;*/
     width: 35px;
+    text-align: left;
     height: auto;
     color: #FFFFFF;
     font-weight: bold; /*position:relative;*/
     padding-right: 2px;
-    background-color: #AAA;
+    background-color: #999;
     padding-top: 4px;
     padding-bottom: 4px;
     border-width: 0px;
-    border-style: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 }
+
+.dgInsert {
+    width: 27px;
+    text-align: right;
+    height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 2px;
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    background-color: #999;
+    border-width: 0px;
+    border-style: none;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+
 
 .dgSong {
     width: auto;
@@ -236,6 +261,7 @@ body
    word-wrap: break-word;
    text-align: left;
    padding-right: 4px;
+   font-size:90%;
 }
 
 .dgLang
@@ -255,20 +281,6 @@ body
 {
     display:none;
 }*/
-
-.dgInsert {
-    width: 27px;
-    text-align: right;
-    height: auto;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 2px;
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    background-color: #AAA;
-    border-width: 0px;
-    border-style: none;
-}
 
 
 /*.button1Text

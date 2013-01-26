@@ -51,7 +51,7 @@
             <asp:BoundField DataField="Song_Singer" HeaderText="Singer" InsertVisible="False" ReadOnly="True">
             <ControlStyle CssClass="dgSinger" />
             <HeaderStyle HorizontalAlign="Left" CssClass="dgSinger" />
-            <ItemStyle CssClass="dgSinger" />
+            <ItemStyle CssClass="dgSinger" ForeColor="#993300" />
             </asp:BoundField>
             <asp:TemplateField HeaderText="w#">
                 <EditItemTemplate>

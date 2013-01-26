@@ -102,32 +102,32 @@ namespace web
 
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Mandarin".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("0", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("國語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                  else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Taiwanese".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("1", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("台語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Cantonese".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("2", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("粵語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Japanese".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("3", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("日語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "English".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("4", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("英語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "OtherLangs".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Lang not in ('國語','台語','粵語','日語','英語')", currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Lang not in ('國語','台語','粵語','日語','英語')", currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }                    
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Favorites".ToLower())
@@ -237,7 +237,7 @@ namespace web
                 //TableCell Song_Id = selectedRow.Cells[1];
                 //CrazyKTVWCF.wcf_insertsong(Song_Id.Text.Trim());
 
-                CrazyKTVWCF.wcf_addsong(data.ToString().Trim());
+                CrazyKTVWCF.wcf_insertsong(data.ToString().Trim());
             }
 
 

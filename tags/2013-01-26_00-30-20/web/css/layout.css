@@ -1,0 +1,443 @@
+﻿/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://opensource.org/licenses/mit-license.php	*/
+
+
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+
+
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 123px;
+	line-height: 132px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 76px;
+	line-height: 84px;
+	letter-spacing: -1px;
+}
+
+.large, h2 {
+	font-size: 47px;
+	line-height: 48px;
+}
+
+.bigger, h3 {
+	font-size: 29px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	font-size: 25px;
+	line-height: 30px;
+}
+
+body {
+	font: 18px/24px "Times New Roman", Times, serif;
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+/* Selection colours (easy to forget) */
+
+::selection 	 	{background: rgb(255,255,158);}
+::-moz-selection 	{background: rgb(255,255,158);}
+img::selection 		{background: transparent;}
+img::-moz-selection	{background: transparent;}
+body {
+    -webkit-tap-highlight-color: rgb(255,255,158);
+    background-image: url('/images/Basic.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: rgb(0,0,0);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: Arial, Helvetica,sans-serif, DFKai-sb, 標楷體, stkaiti,华文楷体;
+}
+
+
+/****************default Start******/
+
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+
+body
+{
+    width: 972px;
+    padding: 25px 5px 5px 5px;
+    -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+.dropdown1 {
+    font-size: 90%;
+}
+
+.dropdown2 {
+    font-size: 90%;
+}
+
+.textbox2 {
+    /*font-size: 90%;*/
+    width:135px;
+    min-width:10%;
+    max-width:70%;
+}
+
+.label1 {
+    font-size: 85%;
+}
+
+
+.label2 {
+    font-size: 90%;
+}
+
+.button1 {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin: 5px; /*background-image: url('/images/Button1.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center center;*/
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: block; /*float: left;*/ /*padding: 0px;*/
+    height: 38px;
+    width: auto;
+    min-width:300px;
+    max-width:100%;
+    background-color: #999;
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.button1:active { background-color: #ff6a00; }
+
+
+
+.button2 {
+    padding: 2px;
+    border-width: 0px;
+    border-style: none;
+    margin: 2px;
+    /*background-image: url('/images/Button1.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center center;*/
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    background-color: #AAA;
+    height: 32px;
+    width: 40px;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.button3 {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin: 5px; 
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: inline; /*float: left;*/ /*padding: 0px;*/
+    height: 44px;
+    width: 40%;
+    background-color: #999;
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.button3:active { background-color: #ff6a00; }
+
+
+.gridview {
+    width: 100%;
+}
+
+.gridviewRows {
+    padding: 5px 2px 5px 2px;
+}
+
+.gridviewHeader {
+    font-weight: lighter;
+    font-size: medium;
+    color: #C0C0C0;
+}
+
+.gridviewContent {
+}
+
+.dgAdd {
+    /*border: thin solid #666666;*/
+    width: 35px;
+    text-align: left;
+    height: auto;
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    padding-right: 2px;
+    background-color: #999;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-width: 0px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.dgInsert {
+    width: 27px;
+    text-align: right;
+    height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 2px;
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    background-color: #999;
+    border-width: 0px;
+    border-style: none;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+
+
+.dgSong {
+    width: auto;
+    word-wrap: break-word;
+    text-align: left;
+    padding-right: 4px;
+}
+
+.dgSinger{
+   max-width: 100px;
+   min-width: 30px;
+   width:auto;
+   word-wrap: break-word;
+   text-align: left;
+   padding-right: 4px;
+   font-size:90%;
+}
+
+.dgLang
+{   
+   max-width: 20px;
+   min-width: 5px;
+   width:auto;
+    text-align: right;
+    height: auto;
+}
+
+.hideThis {
+    color:#000;
+}
+
+/*.hideGridColumn
+{
+    display:none;
+}*/
+
+
+/*.button1Text
+{
+    position: relative; top:-40px; left:50px;
+    display:block;
+    width:120px;
+
+}*/
+
+#mainarea {
+    border: thin groove #C0C0C0;
+    width:100%;
+    float:left;
+    display:block;
+    margin-top: 10px;
+
+    /*position: relative;
+    margin-top: 50px;
+    display:block;*/
+}
+
+#LComputerOnlyMessage
+{
+    display: block;
+    font-size: medium;
+    font-weight: bold;
+    color: #FF00FF;
+}
+
+
+/****************default end******/
+
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+	body {
+		width: 760px;
+		padding: 5px 2px 5px;
+	}
+
+    #LComputerOnlyMessage
+    {
+        display: none;
+    }
+
+
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+
+    body {
+        width: 310px;
+        padding: 5px 2px 5px;
+    }
+
+    #LComputerOnlyMessage {
+        display: none;
+    }
+
+    .button1 {
+        font-size: larger;
+        height: 44px;
+    }
+
+    .dgAdd {
+        height: 44px;
+    }
+    .dgInsert {
+		height: 44px;
+    }
+}
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    body {
+        width: 470px;
+        padding: 5px 2px 5px;
+    }
+
+    #LComputerOnlyMessage {
+        display: none;
+    }
+}
+
+/*		Small Tablet Portrait Layout: 600px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5         6     7 
+px      68    160    252    344    436            */
+
+@media only screen and (min-width: 600px) and (max-width: 600px) {
+
+    body {
+        width: 590px;
+        padding: 5px 2px 5px;
+    }
+
+    #LComputerOnlyMessage {
+        display: none;
+    }
+}
+
+
+
+/*	Retina media query.
+	Overrides styles for devices with a 
+	device-pixel-ratio of 2+, such as iPhone 4.
+-----------------------------------------------    */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+    body {
+    }
+
+    #LComputerOnlyMessage {
+        display: none;
+    }
+
+    .button1 {
+        font-size: 160%;
+        height: 68px;
+    }
+
+    .dgAdd {
+        height: 68px;
+    }
+    .dgInsert {
+        height: 68px;
+    }
+}

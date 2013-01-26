@@ -54,7 +54,7 @@ namespace web
                 // StreamWriter oSw = new StreamWriter(strFilePath);
                 // oSw.WriteLine(strResponse);
                 // oSw.Close();
-                Console.WriteLine(strResponse);
+                //Console.WriteLine(strResponse);
 
                 readStream.Close();
                 myWebResponse.Close();
@@ -152,18 +152,31 @@ namespace web
         /// <returns></returns>
         public static string DoCrazyKTV_Action(string value, string state)
         {
+            //string Url = "";
+
+            //if (value!=null)
+            //{
+            //    Url = wcfUrl + string.Format("/DoCrazyKTV_Action?value={0}&state={1}", value.Trim(), state.Trim());
+            //}
+            //else
+            //{
+            //    Url = wcfUrl + string.Format("/DoCrazyKTV_Action?state={0}", state.Trim());
+            //}
+
+            //return requestWeb(Url);
+
             string Url = "";
 
-            if (value!=null)
-            {
-                Url = wcfUrl + string.Format("/DoCrazyKTV_Action?value={0}&state={1}", value.Trim(), state.Trim());
-            }
-            else
-            {
-                Url = wcfUrl + string.Format("/DoCrazyKTV_Action?state={0}", state.Trim());
-            }
+            NameValueCollection collection = new NameValueCollection();
+
+            collection.Add("value", value.ToString().Trim());
+            collection.Add("state", state.ToString().Trim());
+
+            Url = wcfUrl + string.Format("/DoCrazyKTV_Action") + GlobalFunctions.ToQueryString(collection);
+
 
             return requestWeb(Url);
+
         }
 
         public static string QuerySong(string lang, string singer, string words, string condition, int? page, int rows, string sort)
@@ -192,7 +205,7 @@ namespace web
                 collection.Add("condition", condition.Trim());
             }
 
-            if (condition != null && condition != "")
+            if (sort != null && sort != "")
             {
                 collection.Add("sort", sort.Trim());
             }
