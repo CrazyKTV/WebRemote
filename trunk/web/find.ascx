@@ -1,20 +1,27 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="find.ascx.cs" Inherits="web.find" %>
 
 <link href="css/layout.css" rel="stylesheet" />
-
+<asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server"></asp:ScriptManagerProxy>
 
 <%--<br/>--%>
 <asp:Panel ID="Panel1" runat="server">
     <asp:DropDownList ID="ddSearchType" runat="server" CssClass="dropdown2">
         <asp:ListItem Value="Song">Song Name</asp:ListItem>
         <asp:ListItem>Singer</asp:ListItem>
-        <asp:ListItem Value="WordCount">Word Count</asp:ListItem>
+        <asp:ListItem Value="WordCount">Word Count</asp:ListItem>        
+        <asp:ListItem Value="NewSongs">New Songs</asp:ListItem>
         <asp:ListItem Value="TopOrder">Top Order</asp:ListItem>
         <asp:ListItem>Favorites</asp:ListItem>
         <asp:ListItem>Male</asp:ListItem>
         <asp:ListItem>Female</asp:ListItem>
+        <asp:ListItem>Group</asp:ListItem>
         <asp:ListItem>Chorus</asp:ListItem>
-        <asp:ListItem Value="NewSongs">New Songs</asp:ListItem>
+        <asp:ListItem Value="Mandarin">Mandarin</asp:ListItem>
+        <asp:ListItem Value="Taiwanese">Taiwanese</asp:ListItem>
+        <asp:ListItem Value="Cantonese">Cantonese</asp:ListItem>
+        <asp:ListItem Value="Japanese">Japanese</asp:ListItem>
+        <asp:ListItem Value="English">English</asp:ListItem>
+        <asp:ListItem Value="OtherLangs">Other Langs</asp:ListItem>
     </asp:DropDownList>
         
     <asp:TextBox ID="tSearch" runat="server" CssClass="textbox2"></asp:TextBox>

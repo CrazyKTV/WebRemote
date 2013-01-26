@@ -61,11 +61,11 @@ namespace web
         
         protected void ddActions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //////for broswer back button
-            //if (ScriptManager1.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
-            //{
-            //    ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
-            //}
+            ////for broswer back button
+            if (ScriptManager1.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
+            {
+                ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
+            }
 
 
 

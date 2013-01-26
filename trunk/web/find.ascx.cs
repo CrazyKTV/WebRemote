@@ -19,6 +19,11 @@ namespace web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //////for broswer back button
+            //if (ScriptManagerProxy1.isinas.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
+            //{
+            //    ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
+            //}
 
         }
 
@@ -62,6 +67,7 @@ namespace web
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "NewSongs".ToLower())
                 {
+                    tSearch.Text = "";
                     jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_CreatDate >= '" + DateTime.Now.AddDays(-90).ToString("yyyy/MM/dd") + "'", currentPageNumber, rowsPerPage, "Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "male".ToLower())
@@ -72,6 +78,11 @@ namespace web
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "female".ToLower())
                 {
                     jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=1", currentPageNumber, rowsPerPage, "Song_Singer, Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
+                    tSearch.Text = "";
+                }
+                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Group".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=2", currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer, Song_CreatDate desc"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "chorus".ToLower())
@@ -88,6 +99,37 @@ namespace web
                     jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_PlayCount >= 1 ", currentPageNumber, rowsPerPage, "Song_PlayCount desc, Song_CreatDate desc"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
+
+                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Mandarin".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong("0", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    tSearch.Text = "";
+                }
+                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Taiwanese".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong("1", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    tSearch.Text = "";
+                }
+                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Cantonese".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong("2", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    tSearch.Text = "";
+                }
+                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Japanese".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong("3", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    tSearch.Text = "";
+                }
+                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "English".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong("4", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    tSearch.Text = "";
+                }
+                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "OtherLangs".ToLower())
+                {
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Lang not in ('國語','台語','粵語','日語','英語')", currentPageNumber, rowsPerPage, "Song_WordCount , Song_SongName,Song_Singer "); //more than 2000 per rows will be super slow
+                    tSearch.Text = "";
+                }                    
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Favorites".ToLower())
                 {
                     tSearch.Text = ""; 

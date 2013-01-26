@@ -193,6 +193,30 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\volume.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\volume.ascx.zh-CHT.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\tune.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\tune.ascx.zh-CHT.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\currentList.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\currentList.ascx.zh-CHT.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\video.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\video.ascx.zh-CHT.resx" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
