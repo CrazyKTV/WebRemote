@@ -142,7 +142,7 @@
     <value />
   </data>
   <data name="FixedChannelResource1.Text" xml:space="preserve">
-    <value>音軌矯正</value>
+    <value>固定 原音/伴唱</value>
   </data>
   <data name="FixedChannelResource1.ToolTip" xml:space="preserve">
     <value />

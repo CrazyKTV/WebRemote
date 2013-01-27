@@ -19,7 +19,7 @@
     <%# Container.DataItemIndex + 1 %>
   </ItemTemplate>
                 <HeaderStyle HorizontalAlign="Left" />
-                <ItemStyle CssClass="dgLang" HorizontalAlign="Left" />
+                <ItemStyle CssClass="dgLang" HorizontalAlign="Left" ForeColor="#000066" />
             </asp:TemplateField>
             <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" Visible="False" meta:resourcekey="BoundFieldResource1" >
             </asp:BoundField>

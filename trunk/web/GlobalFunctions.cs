@@ -9,9 +9,9 @@ namespace web
 {
     public class GlobalFunctions
     {
-        //public static DataSet1 dt { get; set; }
 
-        //Application[""];
+        public static System.IO.MemoryStream QRimageMS;
+
 
         public static DataTable JsontoDataTable(string jsonString)
         {
@@ -24,15 +24,6 @@ namespace web
 
             
         }
-
-        //public static DataTable DerializetoDataTable()
-        //{
-        //    const string json = @"[{""Song_Id"":""111"",""Song_SongName"":""我愛夏天"",""Song_Singer"":""莫文蔚"",""Song_WordCount"":123,""Song_Lang"":""EN""},"
-        //                      + @"{""Song_Id"":""222"",""Song_SongName"":""小情歌"",""Song_Singer"":""蘇打綠"",""Song_WordCount"":123,""Song_Lang"":""CN""},"
-        //                      + @"{""Song_Id"":""333"",""Song_SongName"":""我愛夏天2"",""Song_Singer"":""莫文蔚"",""Song_WordCount"":123,""Song_Lang"":""TW""}]";
-        //    var table = JsonConvert.DeserializeObject<System.Data.DataTable>(json);
-        //    return (DataTable)table;
-        //}
 
 
         public static string SearchKeyword()

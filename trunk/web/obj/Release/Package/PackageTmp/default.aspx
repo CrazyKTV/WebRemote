@@ -43,6 +43,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableHistory="True">
         </asp:ScriptManager>
+       
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -160,13 +161,14 @@
                     <section>
                         <div>
                            
-                            <uc0:find runat="server" id="find"  Visible="False" ClientIDMode="Static" />
+                            
                             <uc1:songNumber runat="server" ID="songNumber" Visible="False" />
                             <uc2:currentList ID="currentList1" runat="server" Visible="False" />
                             <uc3:video runat="server" ID="video" Visible="False" />
                             <uc4:volume runat="server" ID="volume" Visible="False" />
                             <uc5:tune runat="server" id="tune"  Visible="False"/>
                             <uc6:advanced runat="server" ID="advanced"  Visible="False"/>
+                            <uc0:find runat="server" id="find"  Visible="False" ClientIDMode="Static" />
                         </div>
                     </section>                    
                 </article>

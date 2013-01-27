@@ -169,7 +169,12 @@ namespace web
 
             NameValueCollection collection = new NameValueCollection();
 
-            collection.Add("value", value.ToString().Trim());
+            if (value != null)
+            {
+                collection.Add("value", value.ToString().Trim());
+            }
+
+
             collection.Add("state", state.ToString().Trim());
 
             Url = wcfUrl + string.Format("/DoCrazyKTV_Action") + GlobalFunctions.ToQueryString(collection);

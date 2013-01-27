@@ -166,7 +166,7 @@
     <value>th-TH</value>
   </data>
   <data name="ListItemResource20.Text" xml:space="preserve">
-    <value>點歌</value>
+    <value>點/找 歌</value>
   </data>
   <data name="ListItemResource20.Value" xml:space="preserve">
     <value>Find</value>
@@ -202,7 +202,7 @@
     <value>Tune</value>
   </data>
   <data name="ListItemResource26.Text" xml:space="preserve">
-    <value>其他</value>
+    <value>進階</value>
   </data>
   <data name="ListItemResource26.Value" xml:space="preserve">
     <value>Advanced</value>
@@ -214,7 +214,7 @@
     <value />
   </data>
   <data name="PageResource1.Title" xml:space="preserve">
-    <value>KTV</value>
+    <value>CrazyKTV</value>
   </data>
   <data name="ListItemResource30.Text" xml:space="preserve">
     <value>---------</value>

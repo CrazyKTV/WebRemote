@@ -11,10 +11,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="advanced.ascx">
-      <publishTime>01/16/2013 19:35:54</publishTime>
+      <publishTime>01/27/2013 13:36:15</publishTime>
     </File>
     <File Include="App_GlobalResources/GlobalMessages.resx">
       <publishTime>01/16/2013 19:35:54</publishTime>
+    </File>
+    <File Include="App_LocalResources/advanced.ascx.resx">
+      <publishTime>01/27/2013 11:36:24</publishTime>
+    </File>
+    <File Include="App_LocalResources/advanced.ascx.zh-CHT.resx">
+      <publishTime>01/27/2013 12:42:25</publishTime>
     </File>
     <File Include="App_LocalResources/currentList.ascx.resx">
       <publishTime>01/25/2013 21:52:43</publishTime>
@@ -23,10 +29,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2013 21:52:43</publishTime>
     </File>
     <File Include="App_LocalResources/default.aspx.resx">
-      <publishTime>01/16/2013 19:35:54</publishTime>
+      <publishTime>01/26/2013 22:56:43</publishTime>
     </File>
     <File Include="App_LocalResources/default.aspx.zh-CHT.resx">
-      <publishTime>01/16/2013 19:35:54</publishTime>
+      <publishTime>01/27/2013 12:42:03</publishTime>
+    </File>
+    <File Include="App_LocalResources/find.ascx.resx">
+      <publishTime>01/27/2013 11:53:20</publishTime>
+    </File>
+    <File Include="App_LocalResources/find.ascx.zh-CHT.resx">
+      <publishTime>01/27/2013 13:22:26</publishTime>
     </File>
     <File Include="App_LocalResources/songNumber.ascx.resx">
       <publishTime>01/16/2013 19:35:53</publishTime>
@@ -44,7 +56,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2013 21:52:42</publishTime>
     </File>
     <File Include="App_LocalResources/video.ascx.zh-CHT.resx">
-      <publishTime>01/25/2013 21:52:42</publishTime>
+      <publishTime>01/26/2013 22:30:53</publishTime>
     </File>
     <File Include="App_LocalResources/volume.ascx.resx">
       <publishTime>01/25/2013 21:52:42</publishTime>
@@ -52,20 +64,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="App_LocalResources/volume.ascx.zh-CHT.resx">
       <publishTime>01/25/2013 21:52:42</publishTime>
     </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>01/26/2013 23:18:07</publishTime>
+    </File>
+    <File Include="bin/Gma.QrCodeNet.Encoding.dll">
+      <publishTime>01/29/2012 17:11:35</publishTime>
+    </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>11/20/2012 22:45:32</publishTime>
     </File>
     <File Include="bin/web.dll">
-      <publishTime>01/26/2013 00:32:15</publishTime>
+      <publishTime>01/27/2013 13:36:34</publishTime>
     </File>
     <File Include="css/layout.css">
-      <publishTime>01/26/2013 00:22:41</publishTime>
+      <publishTime>01/27/2013 12:17:31</publishTime>
     </File>
     <File Include="css/overlay.css">
       <publishTime>01/16/2013 19:35:52</publishTime>
     </File>
     <File Include="currentList.ascx">
-      <publishTime>01/25/2013 23:00:06</publishTime>
+      <publishTime>01/26/2013 22:47:02</publishTime>
     </File>
     <File Include="DataSet1.xsc">
       <publishTime>01/22/2013 15:41:20</publishTime>
@@ -74,13 +92,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2013 08:36:47</publishTime>
     </File>
     <File Include="default.aspx">
-      <publishTime>01/25/2013 22:50:58</publishTime>
+      <publishTime>01/27/2013 11:46:02</publishTime>
     </File>
     <File Include="ErrorDeadWCF.html">
       <publishTime>01/24/2013 18:19:57</publishTime>
     </File>
     <File Include="find.ascx">
-      <publishTime>01/26/2013 00:19:53</publishTime>
+      <publishTime>01/27/2013 13:15:47</publishTime>
+    </File>
+    <File Include="GenImage.ashx">
+      <publishTime>01/27/2013 11:04:27</publishTime>
     </File>
     <File Include="IE9html5.js">
       <publishTime>01/16/2013 19:35:51</publishTime>
@@ -122,13 +143,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2013 21:52:44</publishTime>
     </File>
     <File Include="video.ascx">
-      <publishTime>01/25/2013 21:52:44</publishTime>
+      <publishTime>01/26/2013 22:31:29</publishTime>
     </File>
     <File Include="volume.ascx">
       <publishTime>01/25/2013 21:52:44</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/26/2013 00:32:25</publishTime>
+      <publishTime>01/27/2013 13:36:45</publishTime>
     </File>
   </ItemGroup>
 </Project>

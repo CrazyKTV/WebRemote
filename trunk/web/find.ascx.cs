@@ -25,6 +25,23 @@ namespace web
             //    ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
             //}
 
+            try
+            {
+                if (GridView1.Rows.Count > 0)
+                {
+                    LPageNumDisplay.Visible = true;
+                    LPageNumCount.Visible = true;
+                }
+                else
+                {
+                    LPageNumDisplay.Visible = false;
+                    LPageNumCount.Visible = false;
+                }
+            }
+            catch {
+                LPageNumDisplay.Visible = false;
+                LPageNumCount.Visible = false;
+            }
         }
 
 
@@ -287,6 +304,7 @@ namespace web
 
 
             songDGpage.Value=(1 + int.Parse(songDGpage.Value.ToString())).ToString();
+            //LPageNumCount.Text = songDGpage.Value.ToString();
         }
 
         protected void BPrevious_Click(object sender, EventArgs e)
@@ -307,6 +325,7 @@ namespace web
             
 
             songDGpage.Value=(int.Parse(songDGpage.Value.ToString()) -1).ToString();
+            //LPageNumCount.Text = songDGpage.Value.ToString();
         }
 
         protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -373,6 +392,11 @@ namespace web
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void LPageNumCount_PreRender(object sender, EventArgs e)
+        {
+            LPageNumCount.Text = (int.Parse(songDGpage.Value)+1).ToString();
         }
 
         //public SortDirection GridViewSortDirection

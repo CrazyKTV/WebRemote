@@ -85,15 +85,6 @@ namespace web {
         protected global::System.Web.UI.WebControls.DropDownList ddlanguage;
         
         /// <summary>
-        /// find control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::web.find find;
-        
-        /// <summary>
         /// songNumber control.
         /// </summary>
         /// <remarks>
@@ -146,6 +137,15 @@ namespace web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::web.advanced advanced;
+        
+        /// <summary>
+        /// find control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::web.find find;
         
         /// <summary>
         /// UpdateProgress1 control.
