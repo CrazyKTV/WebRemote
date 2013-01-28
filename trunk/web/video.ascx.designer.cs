@@ -40,15 +40,6 @@ namespace web {
         protected global::System.Web.UI.WebControls.Button FixedChannel;
         
         /// <summary>
-        /// Pause control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Pause;
-        
-        /// <summary>
         /// Play control.
         /// </summary>
         /// <remarks>
@@ -101,5 +92,23 @@ namespace web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Mute;
+        
+        /// <summary>
+        /// FixVocal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FixVocal;
+        
+        /// <summary>
+        /// FixVolume control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FixVolume;
     }
 }

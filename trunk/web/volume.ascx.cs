@@ -33,5 +33,10 @@ namespace web
         {
 
         }
+
+        protected void record_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Record");
+        }
     }
 }

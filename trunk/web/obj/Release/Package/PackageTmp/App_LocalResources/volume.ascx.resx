@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="louderResource1.Text" xml:space="preserve">
-    <value>louder</value>
+    <value>Louder</value>
   </data>
   <data name="louderResource1.ToolTip" xml:space="preserve">
     <value />
@@ -129,6 +129,12 @@
   <data name="MuteResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="recordResource1.Text" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="recordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="resetResource1.Text" xml:space="preserve">
     <value>reset</value>
   </data>
@@ -136,7 +142,7 @@
     <value />
   </data>
   <data name="softerResource1.Text" xml:space="preserve">
-    <value>softer</value>
+    <value>Softer</value>
   </data>
   <data name="softerResource1.ToolTip" xml:space="preserve">
     <value />

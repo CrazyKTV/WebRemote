@@ -9,6 +9,8 @@
         <ContentTemplate>
             <asp:Panel ID="Panel1" runat="server" meta:resourcekey="Panel1Resource1">
                <asp:Button ID="Random" runat="server" Text="Random" CssClass="button1" meta:resourcekey="RandomResource1" OnClick="Random_Click" /> 
+                <asp:Button ID="ShowTime" runat="server" Text="Show Count Time" CssClass="button1" meta:resourcekey="ShowTimeResource1"/>
+                <asp:Button ID="HideConsole" runat="server" Text="Hide Console" CssClass="button1" meta:resourcekey="HideConsoleResource1" />
                 <p/><hr style="
     height: 5PX;
     background-color: rgb(73, 72, 72);

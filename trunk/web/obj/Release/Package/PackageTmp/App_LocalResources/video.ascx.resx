@@ -147,6 +147,18 @@
   <data name="FixedChannelResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="FixVocalResource1.Text" xml:space="preserve">
+    <value>Fix Vocal</value>
+  </data>
+  <data name="FixVocalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FixVolumeResource1.Text" xml:space="preserve">
+    <value>Fix Volume</value>
+  </data>
+  <data name="FixVolumeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="MuteResource1.Text" xml:space="preserve">
     <value>Mute</value>
   </data>
@@ -160,7 +172,7 @@
     <value />
   </data>
   <data name="PlayResource1.Text" xml:space="preserve">
-    <value>Play</value>
+    <value>Play/Pause</value>
   </data>
   <data name="PlayResource1.ToolTip" xml:space="preserve">
     <value />

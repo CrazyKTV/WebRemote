@@ -123,6 +123,12 @@
   <data name="tuneDownResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="tuneMaleVoiceResource1.Text" xml:space="preserve">
+    <value>Tune Male Voice</value>
+  </data>
+  <data name="tuneMaleVoiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="tuneResetResource1.Text" xml:space="preserve">
     <value>Tune Reset</value>
   </data>
@@ -133,6 +139,12 @@
     <value>Tune Up</value>
   </data>
   <data name="tuneUpResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tuneWomanVoiceResource1.Text" xml:space="preserve">
+    <value>Tune Female Voice</value>
+  </data>
+  <data name="tuneWomanVoiceResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
 </root>

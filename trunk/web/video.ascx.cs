@@ -26,7 +26,7 @@ namespace web
 
         protected void Repeat_Click(object sender, EventArgs e)
         {
-
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
             
         }
 
@@ -47,7 +47,32 @@ namespace web
 
         protected void Restart_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "RsetPlay");
+        }
+
+        protected void Play_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "PlayPause");
+        }
+
+        protected void FastFoward_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Forward");
+        }
+
+        protected void FastBackward_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Back");
+        }
+
+        protected void FixVocal_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "AmendSound");
+        }
+
+        protected void FixVolume_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "AmendVolume");
         }
 
 

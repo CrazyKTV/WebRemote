@@ -123,8 +123,11 @@
   <data name="tuneDownResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="tuneMaleVoiceResource1.Text" xml:space="preserve">
+    <value>男調</value>
+  </data>
   <data name="tuneResetResource1.Text" xml:space="preserve">
-    <value>Key恢復</value>
+    <value>原Key</value>
   </data>
   <data name="tuneResetResource1.ToolTip" xml:space="preserve">
     <value />
@@ -134,5 +137,8 @@
   </data>
   <data name="tuneUpResource1.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="tuneWomanVoiceResource1.Text" xml:space="preserve">
+    <value>女調</value>
   </data>
 </root>

@@ -147,20 +147,20 @@
   <data name="FixedChannelResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="FixVocalResource1.Text" xml:space="preserve">
+    <value>聲道修正</value>
+  </data>
+  <data name="FixVolumeResource1.Text" xml:space="preserve">
+    <value>音量修正</value>
+  </data>
   <data name="MuteResource1.Text" xml:space="preserve">
     <value>靜音</value>
   </data>
   <data name="MuteResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="PauseResource1.Text" xml:space="preserve">
-    <value>暫停</value>
-  </data>
-  <data name="PauseResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="PlayResource1.Text" xml:space="preserve">
-    <value>播放</value>
+    <value>播放/暫停</value>
   </data>
   <data name="PlayResource1.ToolTip" xml:space="preserve">
     <value />

@@ -24,6 +24,21 @@ namespace web
             CrazyKTVWCF.DoCrazyKTV_Control(-1, "Pitch");
         }
 
+        protected void tuneReset_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "DefaultPitch");
+        }
+
+        protected void tuneMaleVoice_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "MaleVoice");
+        }
+
+        protected void tuneWomanVoice_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "WomanVoice");
+        }
+
 
     }
 }

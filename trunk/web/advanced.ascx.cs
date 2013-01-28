@@ -49,6 +49,16 @@ namespace web
 
         }
 
+        protected void HideConsole_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "HideConsole");
+        }
+
+        protected void ShowTime_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "ShowTime");
+        }
+
 
     }
 }
