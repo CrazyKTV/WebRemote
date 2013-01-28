@@ -67,12 +67,12 @@ namespace web
 
         protected void FixVocal_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "AmendSound");
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "AmendSound");
         }
 
         protected void FixVolume_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "AmendVolume");
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "AmendVolume");
         }
 
 
