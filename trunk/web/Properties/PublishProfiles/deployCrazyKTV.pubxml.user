@@ -74,7 +74,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/20/2012 22:45:32</publishTime>
     </File>
     <File Include="bin/web.dll">
-      <publishTime>01/27/2013 20:50:54</publishTime>
+      <publishTime>01/30/2013 22:51:16</publishTime>
     </File>
     <File Include="css/layout.css">
       <publishTime>01/27/2013 12:17:31</publishTime>
@@ -102,6 +102,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="GenImage.ashx">
       <publishTime>01/27/2013 11:04:27</publishTime>
+    </File>
+    <File Include="getSinger.aspx">
+      <publishTime>01/30/2013 21:08:10</publishTime>
     </File>
     <File Include="IE9html5.js">
       <publishTime>01/16/2013 19:35:51</publishTime>
@@ -149,7 +152,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/27/2013 18:42:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/27/2013 20:51:01</publishTime>
+      <publishTime>01/30/2013 22:51:23</publishTime>
     </File>
   </ItemGroup>
 </Project>

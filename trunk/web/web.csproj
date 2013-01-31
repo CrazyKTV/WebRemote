@@ -70,6 +70,7 @@
     <Content Include="advanced.ascx" />
     <Content Include="ErrorDeadWCF.html" />
     <Content Include="find.ascx" />
+    <Content Include="getSinger.aspx" />
     <Content Include="images\ErrorDeadWCF.jpg" />
     <Content Include="jquery.blockUI.js" />
     <Content Include="css\layout.css" />
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="GenImage.ashx.cs">
       <DependentUpon>GenImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="getSinger.aspx.cs">
+      <DependentUpon>getSinger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getSinger.aspx.designer.cs">
+      <DependentUpon>getSinger.aspx</DependentUpon>
     </Compile>
     <Compile Include="GlobalFunctions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
