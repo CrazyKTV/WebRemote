@@ -62,9 +62,9 @@ namespace web
 
         private void songList(int page, int rows)
         {
-            //preset
+            //pre-set
+            hideAllGridViewPanel();
             Panel2.Visible = true;
-            Panel3.Visible = false;
 
 
             int currentPageNumber  = page;
@@ -149,8 +149,8 @@ namespace web
                 }                    
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Favorites".ToLower())
                 {
-                    tSearch.Text = ""; 
-                    Panel2.Visible = false;
+                    tSearch.Text = "";
+                    hideAllGridViewPanel();
                     Panel3.Visible = true;
 
                     jsonText = CrazyKTVWCF.FavoriteUser(0, 200);
@@ -334,8 +334,8 @@ namespace web
             GridView1.DataSource = null;
             GridView1.DataBind();
             tSearch.Text = "";
+            hideAllGridViewPanel();
             Panel2.Visible = true;
-            Panel3.Visible = false;
             BNext.Visible = false;
             BPrevious.Visible = false;
 
@@ -397,6 +397,13 @@ namespace web
         protected void LPageNumCount_PreRender(object sender, EventArgs e)
         {
             LPageNumCount.Text = (int.Parse(songDGpage.Value)+1).ToString();
+        }
+
+        protected void hideAllGridViewPanel()
+        {
+            Panel2.Visible = false;
+            Panel3.Visible = false;
+            Panel4.Visible = false;
         }
 
         //public SortDirection GridViewSortDirection

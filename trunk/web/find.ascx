@@ -127,3 +127,21 @@
 
 
 
+<asp:Panel ID="Panel4" runat="server" Visible="False">
+    <asp:GridView ID="GridView3" runat="server" DataKeyNames="User_Id,User_Name" AutoGenerateColumns="False" CssClass="gridview" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView2_RowCommand" >
+        <Columns>
+            <asp:BoundField HeaderText="User_Id" DataField="User_Id" Visible="False" >
+            </asp:BoundField>
+            <asp:ButtonField ButtonType="Button" CommandName="Select" DataTextField="User_Name" InsertVisible="False">
+            <ControlStyle CssClass="button1" />
+            <HeaderStyle HorizontalAlign="Center" />
+            <ItemStyle HorizontalAlign="Center"/>
+            </asp:ButtonField>
+        </Columns>
+        <HeaderStyle CssClass="gridviewHeader" />
+    </asp:GridView>
+    <br />
+</asp:Panel>
+
+
+

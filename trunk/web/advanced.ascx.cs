@@ -59,6 +59,16 @@ namespace web
             CrazyKTVWCF.DoCrazyKTV_Control(null, "ShowTime");
         }
 
+        protected void Exit_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Exit");
+        }
+
+        protected void Close_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Close");
+        }
+
 
     }
 }

@@ -130,19 +130,19 @@
     <value />
   </data>
   <data name="FastBackwardResource1.Text" xml:space="preserve">
-    <value>後快轉</value>
+    <value>後快轉/恢復</value>
   </data>
   <data name="FastBackwardResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="FastFowardResource1.Text" xml:space="preserve">
-    <value>前快轉</value>
+    <value>前快轉/恢復</value>
   </data>
   <data name="FastFowardResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="FixedChannelResource1.Text" xml:space="preserve">
-    <value>固定 原音/伴唱</value>
+    <value>固定 (原音/伴唱)</value>
   </data>
   <data name="FixedChannelResource1.ToolTip" xml:space="preserve">
     <value />

@@ -22,6 +22,13 @@
                     <asp:Image ID="ImageQR" runat="server" ImageUrl="GenImage.ashx" Height="160px" Width="160px" CssClass="displayBlock" meta:resourcekey="ImageQRResource1" />
                 </div>
                 
+                <hr style="
+    height: 5PX;
+    background-color: rgb(73, 72, 72);
+    color: rgb(73, 72, 72);
+"/>
+                <asp:Button ID="Exit" runat="server" Text="Exit" CssClass="button1" OnClick="Exit_Click"  />
+                <asp:Button ID="Close" runat="server" Text="Close" CssClass="button1" OnClick="Close_Click"  />
             </asp:Panel>
         </ContentTemplate>
         
