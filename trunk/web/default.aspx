@@ -185,7 +185,7 @@
                 <div class="alwaysVisibleDiv">
                         <asp:Button ID="BChannel" runat="server" Text="導唱" CssClass="button4"  Visible="True" OnClick="BChannel_Click"  />
                     <asp:Button ID="BFind" runat="server" Text="點歌" CssClass="button4"  Visible="True" OnClick="BFind_Click"/>
-                        <asp:Button ID="BCut" runat="server" Text="切歌" CssClass="button4" Visible="True" OnClick="BCut_Click"  />
+                        <asp:Button ID="BCut" runat="server" Text="切歌" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');"  />
                 </div>
 
 
