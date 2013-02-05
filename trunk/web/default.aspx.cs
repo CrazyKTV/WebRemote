@@ -22,12 +22,28 @@ namespace web
                 System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture(selectedLanguage);
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(selectedLanguage);
             }
+            else //default setting
+            {
+                String selectedLanguage = "zh-CHT";
+                UICulture = selectedLanguage;
+                Culture = selectedLanguage;
+                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture(selectedLanguage);
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(selectedLanguage);
+               // ddlanguage.SelectedIndex = 1; //SelectedValue = "zh-CHT";
+            }
             base.InitializeCulture();
         }
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.Form["ddlanguage"] == null)
+            {
+                ddlanguage.SelectedValue = "zh-CHT";
+                ddActions.SelectedValue = "Waiting List";
+                currentList1.Visible = true;
+            }
+
             // check if the WCF is alive
             if (CrazyKTVWCF.WCFlive == false)
             {
@@ -68,73 +84,80 @@ namespace web
             }
 
 
-
+            hideAllCU();
 
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Find".ToLower())
             {
                 find.Visible = true;
-            }
-            else
-            {
-                find.Visible = false;
             }
 
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Song Number".ToLower())
             {
                 songNumber.Visible = true;
             }
-            else
-            {
-                songNumber.Visible = false;
-            }
+
 
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Waiting List".ToLower())
             {
                 currentList1.Visible = true;
             }
-            else
-            {
-                currentList1.Visible = false;
-            }
+
 
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Video".ToLower())
             {
                 video.Visible = true;
             }
-            else
-            {
-                video.Visible = false;
-            }
+
 
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Volume".ToLower())
             {
                 volume.Visible = true;
             }
-            else
-            {
-                volume.Visible = false;
-            }
+
+ 
 
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "Tune".ToLower())
             {
                 tune.Visible = true;
             }
-            else
-            {
-                tune.Visible = false;
-            }
+
 
 
             if (ddActions.SelectedValue.ToString().ToLower().Trim() == "advanced".ToLower())
             {
                 advanced.Visible = true;
             }
-            else
-            {
-                advanced.Visible = false;
-            }
+   
 
 
+        }
+
+        private void hideAllCU()
+        {
+            tune.Visible = false;
+            advanced.Visible = false;
+                volume.Visible = false;
+                video.Visible = false;
+                currentList1.Visible = false;
+                songNumber.Visible = false;
+                find.Visible = false;
+        }
+
+        protected void BChannel_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "Channel");
+        }
+
+        protected void BCut_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Cut");
+        }
+
+        protected void BFind_Click(object sender, EventArgs e)
+        {
+            hideAllCU();
+            find.Visible = true;
+            ddActions.SelectedValue = "Find";
         }
 
 

@@ -13,24 +13,6 @@ namespace web {
     public partial class video {
         
         /// <summary>
-        /// Cut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cut;
-        
-        /// <summary>
-        /// Channel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Channel;
-        
-        /// <summary>
         /// FixedChannel control.
         /// </summary>
         /// <remarks>
