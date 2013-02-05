@@ -16,31 +16,45 @@ namespace web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (Properties.Settings.Default.QR == true)
             {
-                //only generate once for the QR code, isregard the sessions
-                if (Application["QRimageMS"] == null)
+                try
                 {
-                    String strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
-                    String strUrl = HttpContext.Current.Request.Url.AbsoluteUri.Replace(strPathAndQuery, "/");
+                    LToFriend.Visible = true;
+                    ImageQR.Visible = true;
+                    //only generate once for the QR code, isregard the sessions
+                    if (Application["QRimageMS"] == null)
+                    {
+                        String strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+                        String strUrl = HttpContext.Current.Request.Url.AbsoluteUri.Replace(strPathAndQuery, "/");
 
-                    QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
-                    QrCode qrCode = new QrCode();
-                    qrEncoder.TryEncode(strUrl, out qrCode);
+                        QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
+                        QrCode qrCode = new QrCode();
+                        qrEncoder.TryEncode(strUrl, out qrCode);
 
-                    Renderer renderer = new Renderer(5, Brushes.Black, Brushes.White);
-                    MemoryStream ms = new MemoryStream();
-                    renderer.WriteToStream(qrCode.Matrix, ms, ImageFormat.Jpeg);
-                    //GlobalFunctions.QRimageMS = ms;
-                    Application["QRimageMS"]=ms;
+                        Renderer renderer = new Renderer(5, Brushes.Black, Brushes.White);
+                        MemoryStream ms = new MemoryStream();
+                        renderer.WriteToStream(qrCode.Matrix, ms, ImageFormat.Jpeg);
+                        //GlobalFunctions.QRimageMS = ms;
+                        Application["QRimageMS"] = ms;
+                    }
+
+                    if (GlobalFunctions.QRimageMS == null)
+                    {
+                        GlobalFunctions.QRimageMS = (MemoryStream)Application["QRimageMS"];
+                    }
                 }
-
-                if (GlobalFunctions.QRimageMS == null)
-                {
-                    GlobalFunctions.QRimageMS = (MemoryStream)Application["QRimageMS"];
+                catch {
+                    LToFriend.Visible = false;
+                    ImageQR.Visible = false;
                 }
             }
-            catch { }
+            else
+            {
+                LToFriend.Visible = false;
+                ImageQR.Visible = false;
+            }
+
 
         }
 

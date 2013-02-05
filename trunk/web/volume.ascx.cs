@@ -21,12 +21,12 @@ namespace web
 
         protected void softer_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Control(-2, "Volume");
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "Volume");
         }
 
         protected void louder_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Control(2, "Volume");
+            CrazyKTVWCF.DoCrazyKTV_Control(1, "Volume");
         }
 
         protected void reset_Click(object sender, EventArgs e)
@@ -37,6 +37,11 @@ namespace web
         protected void record_Click(object sender, EventArgs e)
         {
             CrazyKTVWCF.DoCrazyKTV_Action(null, "Record");
+        }
+
+        protected void FixVolume_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "AmendVolume");
         }
     }
 }
