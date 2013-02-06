@@ -287,7 +287,10 @@ body
     -webkit-border-radius:3px;
 }
 
-
+.spacerToFooter {
+    height: 80px;
+    display: block;
+}
 
 .dgSong {
     width: auto;

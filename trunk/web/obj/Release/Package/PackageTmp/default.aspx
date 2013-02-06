@@ -155,8 +155,7 @@
                    
                 <article id="mainarea">
                     <section>
-                        <div>
-                           
+                        <div>                       
                             
                             <uc1:songNumber runat="server" ID="songNumber" Visible="False" />
                             <uc2:currentList ID="currentList1" runat="server" Visible="False" />
@@ -166,10 +165,12 @@
                             <uc6:advanced runat="server" ID="advanced"  Visible="False"/>
                             <uc0:find runat="server" id="find"  Visible="False" ClientIDMode="Static" />
                         </div>
+                        <div class="spacerToFooter"/>
+                        <%--<div style="clear:both;"/>--%>
                     </section>                    
                 </article>
 
-                <div style="display:block;height:44px"/>
+                <%--<div style="display:block;height:44px"/>--%>
                 <style>
                     .alwaysVisibleDiv
                     {
@@ -178,7 +179,8 @@
                         left: 0px;
                         text-align: center ;
                         display:inline;
-                        width:95%;
+                        width:100%;
+                        background-color: #000000;
                     }
                 </style>
                 <div style="clear:both;"/>
