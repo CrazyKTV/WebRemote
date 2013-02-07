@@ -21,6 +21,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <!--Mobile specific meta goodness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
@@ -36,7 +39,7 @@
     <script src="jquery-1.8.3.min.js"></script>
     <%--<script src="jquery.blockUI.js"></script>--%>
     <meta charset="utf-8" />
-    <title>KTV</title>
+    <title>CrazyKTV</title>
 </head>
 <body dir='<asp:Literal ID="Literal1" runat="server" Text="<%$Resources: GlobalMessages, directionltr %>"></asp:Literal>'>
 
