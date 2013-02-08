@@ -83,6 +83,8 @@
     <Content Include="images\Button.jpg" />
     <Content Include="images\Button1.jpg" />
     <Content Include="jquery-1.8.3.min.js" />
+    <Content Include="images\flag.png" />
+    <Content Include="images\remote.png" />
     <Content Include="songNumber.ascx" />
     <Content Include="tune.ascx" />
     <Content Include="video.ascx" />

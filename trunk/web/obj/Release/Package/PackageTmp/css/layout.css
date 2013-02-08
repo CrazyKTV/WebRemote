@@ -105,8 +105,11 @@ body
     -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
-.dropdown1 {
+.dropdown1
+{
     font-size: 90%;
+    top: 2px;
+    vertical-align: top;
 }
 
 .dropdown2 {
@@ -132,6 +135,8 @@ body
 
 .label1 {
     font-size: 85%;
+    top: 2px;
+    vertical-align: top;
 }
 
 

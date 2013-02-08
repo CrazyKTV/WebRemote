@@ -37,6 +37,7 @@
     <!-- Favicons-->
     <!--<link rel="shortcut icon" href="img/favicon.ico">-->
     <script src="jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="jquery.watermark.js"></script>
     <%--<script src="jquery.blockUI.js"></script>--%>
     <meta charset="utf-8" />
     <title>CrazyKTV</title>
@@ -82,6 +83,7 @@
                 //    //return false;
                 //}
 
+                $('#tSearch').watermark('空白=全部');
 
                 if ($('#findCaller').val() == "toTop")
                 {
@@ -94,6 +96,9 @@
                     var _value = $('#ddSearchType').val();
                     if (_value == "Song" || _value == "Singer" || _value == "WordCount") {
                         $('#tSearch').show();
+                    }
+                    else if (_value.toLowerCase().indexOf("---") >= 0) {
+                        $('#tSearch').hide();
                     }
                     else {
                         $('#tSearch').hide();
@@ -131,6 +136,7 @@
                         <div style="display:block">
                         <div style="float: left; width: 50%; display:block">                           
                             <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" CssClass="label1" ></asp:Label>
+                          <%--  <img src="images/remote.png" width="25" height="25"/>--%>
                             <asp:DropDownList ID="ddActions" runat="server" AutoPostBack="True" CssClass="dropdown1" meta:resourcekey="ddActionsResource1" OnSelectedIndexChanged="ddActions_SelectedIndexChanged">
                             <asp:ListItem meta:resourcekey="ListItemResource30" Text="---------"></asp:ListItem>
                             <asp:ListItem meta:resourcekey="ListItemResource20" Text="Find" Value="Find"></asp:ListItem>
@@ -144,6 +150,7 @@
                         </div>
 
                             <div style="float: right; width: 50%; display:block">
+                                <%--<img src="images/flag.png"  width="25" height="25"/>--%>
                             <asp:Label ID="lLanguage" runat="server" Text="Language: " CssClass="label1" meta:resourcekey="lLanguageResource1"></asp:Label>
                             <asp:DropDownList ID="ddlanguage" runat="server" AutoPostBack="True" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1" meta:resourcekey="ddlanguageResource1">
                                 <asp:ListItem Value="en-US" Text="English" meta:resourcekey="ListItemResource14"></asp:ListItem>

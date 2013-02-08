@@ -146,11 +146,14 @@ namespace web
         protected void BChannel_Click(object sender, EventArgs e)
         {
             CrazyKTVWCF.DoCrazyKTV_Control(null, "Channel");
+            ((HiddenField)find.FindControl("findCaller")).Value="";
+
         }
 
         protected void BCut_Click(object sender, EventArgs e)
         {
             CrazyKTVWCF.DoCrazyKTV_Action(null, "Cut");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 
         protected void BFind_Click(object sender, EventArgs e)
@@ -158,6 +161,7 @@ namespace web
             hideAllCU();
             find.Visible = true;
             ddActions.SelectedValue = "Find";
+            ((HiddenField)find.FindControl("findCaller")).Value = "toTop";
         }
 
 
