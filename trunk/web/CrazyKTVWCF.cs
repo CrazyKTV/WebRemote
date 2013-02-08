@@ -288,6 +288,24 @@ namespace web
             return requestWeb(Url);
         }
 
+        public static string QuerySinger(string condition, int page, int rows, string sort)
+        {
+            string Url = "";
+
+            NameValueCollection collection = new NameValueCollection();
+
+            collection.Add("condition", condition.ToString().Trim());
+            collection.Add("sort", sort.ToString().Trim());
+            collection.Add("page", page.ToString().Trim());
+            collection.Add("rows", rows.ToString().Trim());
+
+            Url = wcfUrl + string.Format("/QuerySinger") + GlobalFunctions.ToQueryString(collection);
+
+
+            return requestWeb(Url);
+        }
+        
+
 
 
 

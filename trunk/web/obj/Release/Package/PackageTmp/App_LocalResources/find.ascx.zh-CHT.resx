@@ -307,19 +307,19 @@
     <value>Favorites</value>
   </data>
   <data name="ListItemResource7.Text" xml:space="preserve">
-    <value>男歌手</value>
+    <value>男歌手列表</value>
   </data>
   <data name="ListItemResource7.Value" xml:space="preserve">
     <value>Male</value>
   </data>
   <data name="ListItemResource8.Text" xml:space="preserve">
-    <value>女歌手</value>
+    <value>女歌手列表</value>
   </data>
   <data name="ListItemResource8.Value" xml:space="preserve">
     <value>Female</value>
   </data>
   <data name="ListItemResource9.Text" xml:space="preserve">
-    <value>團體歌手</value>
+    <value>團體名列表</value>
   </data>
   <data name="ListItemResource9.Value" xml:space="preserve">
     <value>Group</value>

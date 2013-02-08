@@ -76,11 +76,12 @@ namespace web
 
                 if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Song".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SongName like '%" + tSearch.Text.ToString().Trim() + "%'", currentPageNumber, rowsPerPage, "Song_SongName"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SongName like '%" + tSearch.Text.ToString().Trim() + "%'", currentPageNumber, rowsPerPage, "Song_SongStroke,Song_SongName"); //more than 2000 per rows will be super slow
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Singer".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + tSearch.Text.ToString().Trim() + "%'", currentPageNumber, rowsPerPage, "Song_Singer, Song_SongName"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + tSearch.Text.ToString().Trim() + "%'", page, rows, "Song_Singer, Song_SongName"); //more than 2000 per rows will be super slow
+                
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "NewSongs".ToLower())
                 {
@@ -89,62 +90,106 @@ namespace web
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "male".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=0", currentPageNumber, rowsPerPage, "Song_Singer, Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
+                    hideAllGridViewPanel();
+                    Panel4.Visible = true;
+
                     tSearch.Text = "";
+                    jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=0", 0, 2000, "Singer_Strokes, Singer_Name");
+
+                    DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
+
+                    DataView dv3 = new DataView(dt3);
+                    //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
+
+                    GridView3.DataSource = dv3;
+                    GridView3.DataBind();
+                    //ddSearchType.SelectedIndex = 1;
+
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "female".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=1", currentPageNumber, rowsPerPage, "Song_Singer, Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
+                    hideAllGridViewPanel();
+                    Panel4.Visible = true;
+
                     tSearch.Text = "";
+                    jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=1", 0, 2000, "Singer_Strokes, Singer_Name");
+
+                    DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
+
+                    DataView dv3 = new DataView(dt3);
+                    //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
+
+                    GridView3.DataSource = dv3;
+                    GridView3.DataBind();
+                    //ddSearchType.SelectedIndex = 1;
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Group".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=2", currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer, Song_CreatDate desc"); //more than 2000 per rows will be super slow
+                    hideAllGridViewPanel();
+                    Panel4.Visible = true;
+
                     tSearch.Text = "";
+                    jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=2", 0, 2000, "Singer_Strokes, Singer_Name");
+
+                    DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
+
+                    DataView dv3 = new DataView(dt3);
+                    //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
+
+                    GridView3.DataSource = dv3;
+                    GridView3.DataBind();
+                    //ddSearchType.SelectedIndex = 1;
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "chorus".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=3", currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer, Song_CreatDate desc"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=3", currentPageNumber, rowsPerPage, "Song_SongStroke, Song_SongName, Song_Singer, Song_CreatDate desc"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "wordcount".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_WordCount=" + tSearch.Text.ToString().Trim(), currentPageNumber, rowsPerPage, "Song_CreatDate desc"); //more than 2000 per rows will be super slow
+                    if (tSearch.Text.ToString().Trim().Length > 0)
+                    {
+                        jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_WordCount=" + tSearch.Text.ToString().Trim(), currentPageNumber, rowsPerPage, "Song_CreatDate desc, Song_SongStroke, Song_SongName"); //more than 2000 per rows will be super slow
+                    }
+                    else {
+                        jsonText = CrazyKTVWCF.QuerySong(null, null, null, null, currentPageNumber, rowsPerPage, "Song_CreatDate desc, Song_SongStroke, Song_SongName"); //more than 2000 per rows will be super slow
+                   
+                    }
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "toporder".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_PlayCount >= 1 ", currentPageNumber, rowsPerPage, "Song_PlayCount desc, Song_CreatDate desc"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_PlayCount >= 1 ", currentPageNumber, rowsPerPage, "Song_PlayCount desc, Song_CreatDate desc, Song_SongStroke, Song_SongName"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
 
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Mandarin".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("國語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("國語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                  else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Taiwanese".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("台語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("台語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Cantonese".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("粵語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("粵語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Japanese".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("日語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("日語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "English".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong("英語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong("英語", null, null, null, currentPageNumber, rowsPerPage, "Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "OtherLangs".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Lang not in ('國語','台語','粵語','日語','英語')", currentPageNumber, rowsPerPage, "Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Lang not in ('國語','台語','粵語','日語','英語')", currentPageNumber, rowsPerPage, "Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }                    
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Favorites".ToLower())
@@ -404,6 +449,64 @@ namespace web
             Panel2.Visible = false;
             Panel3.Visible = false;
             Panel4.Visible = false;
+        }
+
+        protected void GridView3_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            //clean up data on display
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            tSearch.Text = "";
+            hideAllGridViewPanel();
+            Panel2.Visible = true;
+            BNext.Visible = false;
+            BPrevious.Visible = false;
+
+            var data = GridView3.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
+           // gvMode.Value = data.ToString();
+            tSearch.Text = data.ToString();
+            SingerSongList(0, 100, data.ToString());
+            ddSearchType.SelectedIndex = 1;
+
+        }
+
+        private void SingerSongList(int page, int rows, string Singer_Name)
+        {
+            string   jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + Singer_Name.Trim() + "%'", page, rows, "Song_Singer, Song_SongName"); //more than 2000 per rows will be super slow
+                
+            DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
+            DataView dv3 = new DataView(dt3);
+            //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
+
+            GridView1.DataSource = dv3;
+            GridView1.DataBind();
+
+            if (dv3.Count == rows)
+            {
+                BNext.Visible = true;
+                if (page > 0)
+                {
+                    BPrevious.Visible = true;
+                }
+                else
+                {
+                    BPrevious.Visible = false;
+                }
+
+            }
+            else
+            {
+                BNext.Visible = false;
+                if (page > 0)
+                {
+                    BPrevious.Visible = true;
+                }
+                else
+                {
+                    BPrevious.Visible = false;
+                }
+            }
+
         }
 
         //public SortDirection GridViewSortDirection
