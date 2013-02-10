@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <!--Mobile specific meta goodness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/overlay.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="IE9html5.js"></script>
+    <![endif]-->
+    <!-- Favicons-->
+    <!--<link rel="shortcut icon" href="img/favicon.ico">-->
+    <script src="jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="jquery.watermark.js"></script>
+
+    <meta charset="utf-8" />
+    <title>CrazyKTV</title>
+</head>
+<body>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                AfterPostBack();
+                // You are calling this function the page loads for the first time
+
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(AfterPostBack);
+
+                //  EndRequest added on endRequest of Postback..  This is when the page pots back..
+                // Called when postback occurs
+
+            });
+
+            var AfterPostBack = function () {
+                 $(".up").click(function () {
+                    $("#div1").animate({ bottom:$(document).height() *0.9 +'px'  }, "slow");
+			$("#suball").css("height", $(document).height() *0.9+"px");
+                });
+
+		$(".down").click(function () {
+                    $("#div1").animate({ bottom:'-0px'  }, "slow");
+
+                });
+
+               return false;               
+            }
+</script>
+
+           <style>
+                    .alwaysVisibleDiv
+                    {
+                        
+                        bottom: 0px;
+                        left: 0px;
+                        text-align: center ;
+                        display:inline;
+                        width:100%;
+                        background-color: #000000;
+                        z-index: 10;
+                    }
+                </style>
+                <div style="clear:both;"/>
+                <div class="alwaysVisibleDiv" id="div1">
+		<div class="up" style="display:inline-block; width:50px;">UP</div> 
+		<div class="down" style="display:inline-block; width:50px;">down</div> 
+<div id="all" style="display:block; height:0px; background-color: #000000;"><div id="suball" style="display:block;background-color: #000000;">all<br/>fda<br/>fd<br/>fd<br/>fdsafs<br/>fda<br/></div></div> 
+                </div>
+
+</body>
+</html>

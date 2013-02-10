@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="web._default" Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 
 <%@ Register Src="~/songNumber.ascx" TagPrefix="uc1" TagName="songNumber" %>
-<%@ Register src="~/currentList.ascx" tagname="currentList" tagprefix="uc2" %>
+<%@ Register Src="~/currentList.ascx" TagName="currentList" TagPrefix="uc2" %>
 <%@ Register Src="~/video.ascx" TagPrefix="uc3" TagName="video" %>
 <%@ Register Src="~/volume.ascx" TagPrefix="uc4" TagName="volume" %>
 <%@ Register Src="~/find.ascx" TagPrefix="uc0" TagName="find" %>
@@ -22,8 +22,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <!--Mobile specific meta goodness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
@@ -47,7 +47,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableHistory="True">
         </asp:ScriptManager>
-       
+
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -66,13 +66,13 @@
                 // You write your code here to assign Data
                 // to the calender
                 //window.scrollTo(0, 0);
-               // $("html, body").animate({ scrollTop: 0 }, "slow");
+                // $("html, body").animate({ scrollTop: 0 }, "slow");
                 //return false;
                 //$('#BPrevious')..click(function() {
                 //    $("html, body").animate({ scrollTop: 0 }, "slow");
                 //    return false;
                 //});
-                
+
                 //$('#BNext').click(function () {
                 //    $("html, body").animate({ scrollTop: 0 }, "slow");
                 //    return false;
@@ -85,11 +85,33 @@
 
                 $('#tSearch').watermark('空白=全部');
 
-                if ($('#findCaller').val() == "toTop")
-                {
+                if ($('#findCaller').val() == "toTop") {
                     $("html, body").animate({ scrollTop: 0 }, "slow");
                     //return false;
                 }
+
+
+
+
+                $(document).ready(function () {
+                    $("#down").css("height", $("#BChannel").height() + "px");
+                    $("#up").css("height", $("#BChannel").height() + "px");
+                    $(".arrowSpacer").css("width", $("#down").height() + "px");
+                })
+
+                $("#up").click(function () {
+                    $("#alwaysVisibleDiv").animate({ bottom: ($(document).height() - $("#alwaysVisibleDiv").height()) * 0.85 + 'px' }, "slow");
+                    $("#suball").css("height", ($(document).height() - $("#alwaysVisibleDiv").height()) * 0.85 + 'px');
+                    $("#down").css("display", "inline-block");
+                    $("#up").css("display", "none");
+                });
+
+                $("#down").click(function () {
+                    $("#alwaysVisibleDiv").animate({ bottom: '-0px' }, "slow");
+                    $("#up").css("display", "inline-block");
+                    $("#down").css("display", "none");
+                });
+
 
 
                 $('#ddSearchType').change(function () {
@@ -121,9 +143,9 @@
 
                 return false;
 
-                
+
             }
-</script>
+        </script>
 
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
@@ -132,111 +154,137 @@
                     <section>
                         <asp:Label ID="LComputerOnlyMessage" runat="server" Text="'F11' on the keyboard to activate/diactivate full screen." meta:resourcekey="LComputerOnlyMessageResource1"></asp:Label>
                     </section>
-                    <nav> 
-                        <div style="display:block">
-                        <div style="float: left; width: 50%; display:block">                           
-                            <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" CssClass="label1" ></asp:Label>
-                          <%--  <img src="images/remote.png" width="25" height="25"/>--%>
-                            <asp:DropDownList ID="ddActions" runat="server" AutoPostBack="True" CssClass="dropdown1" meta:resourcekey="ddActionsResource1" OnSelectedIndexChanged="ddActions_SelectedIndexChanged">
-                            <asp:ListItem meta:resourcekey="ListItemResource30" Text="---------"></asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource20" Text="Find" Value="Find"></asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource21" Text="Song Number"></asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource22" Text="Waiting List"></asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource23" Text="Video"></asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource24" Text="Volume"></asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource25" Text="Tune"></asp:ListItem>
-                            <asp:ListItem meta:resourcekey="ListItemResource26" Text="Advanced"></asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
+                    <nav>
+                        <div style="display: block">
+                            <div style="float: left; width: 50%; display: block">
+                                <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" CssClass="label1"></asp:Label>
+                                <%--  <img src="images/remote.png" width="25" height="25"/>--%>
+                                <asp:DropDownList ID="ddActions" runat="server" AutoPostBack="True" CssClass="dropdown1" meta:resourcekey="ddActionsResource1" OnSelectedIndexChanged="ddActions_SelectedIndexChanged">
+                                    <asp:ListItem meta:resourcekey="ListItemResource30" Text="---------"></asp:ListItem>
+                                    <asp:ListItem meta:resourcekey="ListItemResource20" Text="Find" Value="Find"></asp:ListItem>
+                                    <asp:ListItem meta:resourcekey="ListItemResource21" Text="Song Number"></asp:ListItem>
+                                    <asp:ListItem meta:resourcekey="ListItemResource22" Text="Waiting List"></asp:ListItem>
+                                    <asp:ListItem meta:resourcekey="ListItemResource23" Text="Video"></asp:ListItem>
+                                    <asp:ListItem meta:resourcekey="ListItemResource24" Text="Volume"></asp:ListItem>
+                                    <asp:ListItem meta:resourcekey="ListItemResource25" Text="Tune"></asp:ListItem>
+                                    <asp:ListItem meta:resourcekey="ListItemResource26" Text="Advanced"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
 
-                            <div style="float: right; width: 50%; display:block">
+                            <div style="float: right; width: 50%; display: block">
                                 <%--<img src="images/flag.png"  width="25" height="25"/>--%>
-                            <asp:Label ID="lLanguage" runat="server" Text="Language: " CssClass="label1" meta:resourcekey="lLanguageResource1"></asp:Label>
-                            <asp:DropDownList ID="ddlanguage" runat="server" AutoPostBack="True" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1" meta:resourcekey="ddlanguageResource1">
-                                <asp:ListItem Value="en-US" Text="English" meta:resourcekey="ListItemResource14"></asp:ListItem>
-                                <asp:ListItem Value="zh-CHT" Text="繁體中文" meta:resourcekey="ListItemResource15"></asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
+                                <asp:Label ID="lLanguage" runat="server" Text="Language: " CssClass="label1" meta:resourcekey="lLanguageResource1"></asp:Label>
+                                <asp:DropDownList ID="ddlanguage" runat="server" AutoPostBack="True" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1" meta:resourcekey="ddlanguageResource1">
+                                    <asp:ListItem Value="en-US" Text="English" meta:resourcekey="ListItemResource14"></asp:ListItem>
+                                    <asp:ListItem Value="zh-CHT" Text="繁體中文" meta:resourcekey="ListItemResource15"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
 
-                      </div>
+                        </div>
                     </nav>
                 </header>
 
-                   
+
                 <article id="mainarea">
                     <section>
-                        <div>                       
-                            
+                        <div>
+
                             <uc1:songNumber runat="server" ID="songNumber" Visible="False" />
                             <uc2:currentList ID="currentList1" runat="server" Visible="False" />
                             <uc3:video runat="server" ID="video" Visible="False" />
                             <uc4:volume runat="server" ID="volume" Visible="False" />
-                            <uc5:tune runat="server" id="tune"  Visible="False"/>
-                            <uc6:advanced runat="server" ID="advanced"  Visible="False"/>
-                            <uc0:find runat="server" id="find"  Visible="False" ClientIDMode="Static" />
+                            <uc5:tune runat="server" ID="tune" Visible="False" />
+                            <uc6:advanced runat="server" ID="advanced" Visible="False" />
+                            <uc0:find runat="server" ID="find" Visible="False" ClientIDMode="Static" />
                         </div>
-                        <div class="spacerToFooter"/>
+                        <div class="spacerToFooter" />
                         <%--<div style="clear:both;"/>--%>
-                    </section>                    
+                    </section>
                 </article>
 
 
-<%--                <article class="spacerToFooter">
+                <%--                <article class="spacerToFooter">
 
                     </article>--%>
 
                 <%--<div style="display:block;height:44px"/>--%>
                 <style>
-                    .alwaysVisibleDiv
-                    {
+                    #alwaysVisibleDiv {
                         position: fixed;
                         bottom: 0px;
                         left: 0px;
-                        text-align: center ;
-                        display:inline;
-                        width:100%;
+                        text-align: center;
+                        display: inline;
+                        width: 100%;
                         background-color: #000000;
+                        z-index: 10;
                     }
                 </style>
-                <div style="clear:both;"/>
-                <div class="alwaysVisibleDiv">
-                        <asp:Button ID="BChannel" runat="server" Text="導唱" CssClass="button4"  Visible="True" OnClick="BChannel_Click"  />
-                    <asp:Button ID="BFind" runat="server" Text="點歌" CssClass="button4"  Visible="True" OnClick="BFind_Click"/>
-                        <asp:Button ID="BCut" runat="server" Text="切歌" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');"  />
-                </div>
+                <div style="clear: both;" />
+                <div id="alwaysVisibleDiv">
+                    <asp:Button ID="BChannel" runat="server" Text="導唱" CssClass="button4" Visible="True" OnClick="BChannel_Click" />
+                    <asp:Button ID="BFind" runat="server" Text="點歌" CssClass="button4" Visible="True" OnClick="BFind_Click" />
+                    <asp:Button ID="BCut" runat="server" Text="切歌" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');" />
+
+                    <%--               <span id="up" style="display: inline-block;">UP</span>--%>
+                    <img id="up" style="display: inline-block;  max-width:48px;" src="images/Arrow.png" />
+                    <%--               <span id="down" style="display: none;">down</span>--%>
+                    <img id="down" style="display: none; max-width:48px;" src="images/Arrow2.png" />
+                    <div id="all" style="display: block; height: 0px; background-color: #000000;">
+                        <div id="suball" style="display: block; background-color: #000000;">
+
+                            <div id="row" style="display: block;">
+                                <%--   <div style="display:inline-block;>--%>
+                                <asp:Button ID="Button1" runat="server" Text="降key" CssClass="button4" Visible="True" OnClick="BChannel_Click" />
+                                <asp:Button ID="Button2" runat="server" Text="恢復" CssClass="button4" Visible="True" OnClick="BFind_Click" />
+                                <asp:Button ID="Button3" runat="server" Text="升key" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick=";" />
+                                <div class="arrowSpacer" style="display: inline-block"></div>
+                            </div>
+                            <div id="row2" style="display: block;">
+                                <asp:Button ID="Button4" runat="server" Text="快後" CssClass="button4" Visible="True" OnClick="BChannel_Click" />
+                                <asp:Button ID="Button5" runat="server" Text="播放暫停" CssClass="button4" Visible="True" OnClick="BFind_Click" />
+                                <asp:Button ID="Button6" runat="server" Text="快前" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick=";" />
+                                <div class="arrowSpacer" style="display: inline-block"></div>
+                            </div>
+                            <div id="row3" style="display: block;">
+                                <asp:Button ID="Button7" runat="server" Text="減音量" CssClass="button4" Visible="True" OnClick="BChannel_Click" />
+                                <asp:Button ID="Button8" runat="server" Text="靜音" CssClass="button4" Visible="True" OnClick="BFind_Click" />
+                                <asp:Button ID="Button9" runat="server" Text="加音量" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick=";" />
+                                <div class="arrowSpacer" style="display: inline-block"></div>
+                            </div>
+                        </div>
+                    </div>
 
 
-         
-      <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
-        <ProgressTemplate>
-            <div class="overlay" />
-            <div class="overlayContent" id="overlayContent1">
-                <h2>
-                    <asp:Label ID="lLoading" runat="server" Text="Loading..."></asp:Label></h2>
-                <img src="/images/ajax-loader.gif" alt="Loading"/>
-            </div>
-        </ProgressTemplate>
-    </asp:UpdateProgress>
 
 
-            
+                    <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
+                        <ProgressTemplate>
+                            <div class="overlay" />
+                            <div class="overlayContent" id="overlayContent1">
+                                <h2>
+                                    <asp:Label ID="lLoading" runat="server" Text="Loading..."></asp:Label></h2>
+                                <img src="/images/ajax-loader.gif" alt="Loading" />
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
             </ContentTemplate>
         </asp:UpdatePanel>
 
 
 
 
-        
-        
-        
-       
-        
 
 
 
-<%--         <img id="displayBox" src="/images/ajax-loader.gif" width="32" height="32" style="display:none" />--%>
 
-<%--        <script>
+
+
+
+
+        <%--         <img id="displayBox" src="/images/ajax-loader.gif" width="32" height="32" style="display:none" />--%>
+
+        <%--        <script>
 
             //jQuery.fn.center = function () {
             //    this.css("position", "absolute");
@@ -315,8 +363,6 @@
 
 
         </script>--%>
-
-
     </form>
 
 
