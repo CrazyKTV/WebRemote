@@ -232,9 +232,9 @@
                     <asp:Button ID="BCut" runat="server" Text="切歌" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');" />
 
                     <%--               <span id="up" style="display: inline-block;">UP</span>--%>
-                    <img id="up" style="display: inline-block;  max-width:48px; vertical-align:bottom;" src="images/Arrow.gif" />
+                    <img id="up" style="display: inline-block;  max-width:48px;" src="images/Arrow.gif" />
                     <%--               <span id="down" style="display: none;">down</span>--%>
-                    <img id="down" style="display: none; max-width:48px; vertical-align:bottom;" src="images/Arrow2.gif" />
+                    <img id="down" style="display: none; max-width:48px;" src="images/Arrow2.gif" />
                     <div id="all" style="display: block; height: 0px; background-color: #000000;">
                         <div id="suball" style="display: none; background-color: #000000;">
 
