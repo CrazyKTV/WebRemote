@@ -82,7 +82,7 @@ namespace web
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Singer".ToLower())
                 {
-                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + tSearch.Text.ToString().Trim() + "%'", page, rows, "Song_Singer, Song_SongName"); //more than 2000 per rows will be super slow
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + tSearch.Text.ToString().Trim() + "%'", page, rows, "Song_Singer, Song_SongStroke, Song_SongName"); //more than 2000 per rows will be super slow
                 
                 }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "NewSongs".ToLower())
@@ -273,7 +273,8 @@ namespace web
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             findCaller.Value = "";
-            var data = GridView1.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get hiddent Song_ID
+            var data = GridView1.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get hidden Song_ID
+            var dataStr = GridView1.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[1]; //get hidden Song_Singer
 
             if (e.CommandName.ToLower().Trim() == "Add".ToLower().Trim())
             {
@@ -302,6 +303,23 @@ namespace web
                 //CrazyKTVWCF.wcf_insertsong(Song_Id.Text.Trim());
 
                 CrazyKTVWCF.wcf_insertsong(data.ToString().Trim());
+            }
+            else if (e.CommandName.ToLower().Trim() == "Singer".ToLower().Trim())
+            {
+                //clean up data on display
+                GridView1.DataSource = null;
+                GridView1.DataBind();
+                hideAllGridViewPanel();
+                Panel2.Visible = true;
+                BNext.Visible = false;
+                BPrevious.Visible = false;
+
+                findCaller.Value = "toTop";
+                string _singer = dataStr.ToString().Trim(); // singer
+                // gvMode.Value = data.ToString();
+                tSearch.Text = _singer;
+                SingerSongList(0, 100, _singer);
+                ddSearchType.SelectedIndex = 1;
             }
 
 
