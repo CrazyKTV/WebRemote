@@ -51,7 +51,7 @@
             <asp:ButtonField HeaderText="A" Text="＋" ButtonType="Button" InsertVisible="False" CommandName="Add" meta:resourcekey="ButtonFieldResource2" >
             <ControlStyle CssClass="dgAdd" />
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Left" />
-            <ItemStyle CssClass="dgAdd" />
+            <ItemStyle CssClass="dgAddbackground" />
             </asp:ButtonField>
             <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" Visible="False" meta:resourcekey="BoundFieldResource2" >
             </asp:BoundField>
@@ -86,7 +86,7 @@
             <asp:ButtonField ButtonType="Button" CommandName="Insert" HeaderText="I" Text="Ins" meta:resourcekey="ButtonFieldResource3">
             <ControlStyle CssClass="dgInsert" />
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Right" />
-            <ItemStyle CssClass="dgInsert" />
+            <ItemStyle CssClass="dgInsertbackground" />
             </asp:ButtonField>
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />

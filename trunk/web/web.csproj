@@ -71,7 +71,9 @@
     <Content Include="ErrorDeadWCF.html" />
     <Content Include="find.ascx" />
     <Content Include="getSinger.aspx" />
+    <Content Include="images\Arrow.gif" />
     <Content Include="images\Arrow.png" />
+    <Content Include="images\Arrow2.gif" />
     <Content Include="images\Arrow2.png" />
     <Content Include="images\ErrorDeadWCF.jpg" />
     <Content Include="jquery.blockUI.js" />

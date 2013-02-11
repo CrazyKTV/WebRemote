@@ -97,17 +97,22 @@
                     $("#down").css("height", $("#BChannel").height() + "px");
                     $("#up").css("height", $("#BChannel").height() + "px");
                     $(".arrowSpacer").css("width", $("#down").height() + "px");
+					$("#suball").css("display", "none");
                 })
 
                 $("#up").click(function () {
-                    $("#alwaysVisibleDiv").animate({ bottom: ($(document).height() - $("#alwaysVisibleDiv").height()) * 0.85 + 'px' }, "slow");
-                    $("#suball").css("height", ($(document).height() - $("#alwaysVisibleDiv").height()) * 0.85 + 'px');
+                    //$("#alwaysVisibleDiv").animate({ bottom: ($(window).height() - $("#alwaysVisibleDiv").height()) * 0.85 + 'px' }, "slow");
+                    //$("#suball").css("height", ($(window).height() - $("#alwaysVisibleDiv").height()) * 0.85 + 'px');
+					$("#suball").css("display", "block");
+                    $("#alwaysVisibleDiv").animate({ bottom: ($("#BChannel").height()*5) +10*5 + 'px' }, "fast");
+                    $("#suball").css("height", ($("#BChannel").height()*5 ) +10*5 + 'px');
                     $("#down").css("display", "inline-block");
                     $("#up").css("display", "none");
                 });
 
                 $("#down").click(function () {
-                    $("#alwaysVisibleDiv").animate({ bottom: '-0px' }, "slow");
+                    $("#alwaysVisibleDiv").animate({ bottom: '-0px' }, "fast");
+					$("#suball").css("display", "none");
                     $("#up").css("display", "inline-block");
                     $("#down").css("display", "none");
                 });
@@ -227,29 +232,36 @@
                     <asp:Button ID="BCut" runat="server" Text="切歌" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');" />
 
                     <%--               <span id="up" style="display: inline-block;">UP</span>--%>
-                    <img id="up" style="display: inline-block;  max-width:48px;" src="images/Arrow.png" />
+                    <img id="up" style="display: inline-block;  max-width:48px;" src="images/Arrow.gif" />
                     <%--               <span id="down" style="display: none;">down</span>--%>
-                    <img id="down" style="display: none; max-width:48px;" src="images/Arrow2.png" />
+                    <img id="down" style="display: none; max-width:48px;" src="images/Arrow2.gif" />
                     <div id="all" style="display: block; height: 0px; background-color: #000000;">
-                        <div id="suball" style="display: block; background-color: #000000;">
+                        <div id="suball" style="display: none; background-color: #000000;">
 
-                            <div id="row" style="display: block;">
+                            <div id="row1" style="display: block;">
                                 <%--   <div style="display:inline-block;>--%>
-                                <asp:Button ID="Button1" runat="server" Text="降key" CssClass="button4" Visible="True" OnClick="BChannel_Click" />
-                                <asp:Button ID="Button2" runat="server" Text="恢復" CssClass="button4" Visible="True" OnClick="BFind_Click" />
-                                <asp:Button ID="Button3" runat="server" Text="升key" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick=";" />
+                                <asp:Button ID="BdRestart" runat="server" Text="重播" CssClass="button4" Visible="True" OnClick="BdRestart_Click" />
+                                <asp:Button ID="BdKeyDown" runat="server" Text="-key" CssClass="button4" Visible="True" OnClick="BdKeyDown_Click" />
+                                <asp:Button ID="BdKeyUp" runat="server" Text="+key" CssClass="button4" Visible="True" OnClientClick=";" OnClick="BdKeyUp_Click" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
-                            <div id="row2" style="display: block;">
-                                <asp:Button ID="Button4" runat="server" Text="快後" CssClass="button4" Visible="True" OnClick="BChannel_Click" />
-                                <asp:Button ID="Button5" runat="server" Text="播放暫停" CssClass="button4" Visible="True" OnClick="BFind_Click" />
-                                <asp:Button ID="Button6" runat="server" Text="快前" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick=";" />
+                             <div id="row2" style="display: block;">
+                                <%--   <div style="display:inline-block;>--%>                                 
+                                <asp:Button ID="BdRepeat" runat="server" Text="循環" CssClass="button4" Visible="True" OnClick="BdRepeat_Click" />
+                                <asp:Button ID="BdMale" runat="server" Text="男調" CssClass="button4" Visible="True" OnClick="BdMale_Click" />
+                                <asp:Button ID="BdFemale" runat="server" Text="女調" CssClass="button4" Visible="True" OnClientClick=";" OnClick="BdFemale_Click" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
                             <div id="row3" style="display: block;">
-                                <asp:Button ID="Button7" runat="server" Text="減音量" CssClass="button4" Visible="True" OnClick="BChannel_Click" />
-                                <asp:Button ID="Button8" runat="server" Text="靜音" CssClass="button4" Visible="True" OnClick="BFind_Click" />
-                                <asp:Button ID="Button9" runat="server" Text="加音量" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick=";" />
+                                <asp:Button ID="BdPause" runat="server" Text="暫停" CssClass="button4" Visible="True" OnClick="BdPause_Click" />
+                                <asp:Button ID="BdBackward" runat="server" Text="快後" CssClass="button4" Visible="True" OnClick="BdBackward_Click" />
+                                <asp:Button ID="BdForward" runat="server" Text="快前" CssClass="button4" Visible="True" OnClientClick=";" OnClick="BdForward_Click" />
+                                <div class="arrowSpacer" style="display: inline-block"></div>
+                            </div>
+                            <div id="row4" style="display: block;">                                
+                                <asp:Button ID="BdMute" runat="server" Text="靜音" CssClass="button4" Visible="True" OnClick="BdMute_Click" />
+                                <asp:Button ID="BdVolumeDown" runat="server" Text="-音量" CssClass="button4" Visible="True" OnClick="BdVolumeDown_Click"  />
+                                <asp:Button ID="BdColumeUp" runat="server" Text="+音量" CssClass="button4" Visible="True" OnClientClick=";" OnClick="BdColumeUp_Click" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
                         </div>

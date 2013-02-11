@@ -31,12 +31,12 @@ namespace web
 
         protected void tuneMaleVoice_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Control(-1, "WomanVoice");
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "MaleVoice");
         }
 
         protected void tuneWomanVoice_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Control(-1, "MaleVoice");
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "WomanVoice");
         }
 
 

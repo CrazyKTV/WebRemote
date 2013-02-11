@@ -49,7 +49,7 @@ namespace web
             {
                 if (CrazyKTVWCF.checkWCF() == false)
                 {
-                   // Response.Redirect("ErrorDeadWCF.html");
+                    Response.Redirect("ErrorDeadWCF.html");
                 }
             }
 
@@ -162,6 +162,78 @@ namespace web
             find.Visible = true;
             ddActions.SelectedValue = "Find";
             ((HiddenField)find.FindControl("findCaller")).Value = "toTop";
+        }
+
+        protected void BdRestart_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdKeyDown_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(1, "Pitch");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdKeyUp_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "Pitch");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdRepeat_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "RsetPlay");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdMale_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "MaleVoice");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdFemale_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "WomanVoice");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdPause_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "PlayPause");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdBackward_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Forward");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdForward_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Back");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdMute_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "Mute");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdVolumeDown_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "Volume");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdColumeUp_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(1, "Volume");
+            ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 
 
