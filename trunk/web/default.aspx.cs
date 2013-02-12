@@ -207,14 +207,14 @@ namespace web
         }
 
         protected void BdBackward_Click(object sender, EventArgs e)
-        {
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "Forward");
+        {            
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Back");
             ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 
         protected void BdForward_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "Back");
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Forward");
             ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 
