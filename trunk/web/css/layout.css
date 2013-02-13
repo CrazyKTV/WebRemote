@@ -518,6 +518,11 @@ px      68    160    252    */
     .dgInsert {
 		height: 44px;
     }
+    
+    .dropdown2 {
+    font-size: 130%;
+}
+
 }
 
 
@@ -591,4 +596,9 @@ px      68    160    252    344    436            */
         height: 68px;
         font-size:160%;
     }
+    
+        .dropdown2 {
+    font-size: 180%;
+}
+
 }
