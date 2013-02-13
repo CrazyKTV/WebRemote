@@ -313,6 +313,7 @@ namespace web
                 Panel2.Visible = true;
                 BNext.Visible = false;
                 BPrevious.Visible = false;
+                songDGpage.Value = "0";
 
                 findCaller.Value = "toTop";
                 string _singer = dataStr.ToString().Trim(); // singer
@@ -403,6 +404,7 @@ namespace web
             Panel2.Visible = true;
             BNext.Visible = false;
             BPrevious.Visible = false;
+            songDGpage.Value = "0";
 
             var data = GridView2.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="User_ID"
             gvMode.Value = data.ToString();
@@ -481,6 +483,8 @@ namespace web
             Panel2.Visible = true;
             BNext.Visible = false;
             BPrevious.Visible = false;
+            songDGpage.Value = "0";
+
 
             var data = GridView3.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
            // gvMode.Value = data.ToString();
