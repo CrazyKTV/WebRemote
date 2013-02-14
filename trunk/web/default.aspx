@@ -83,7 +83,12 @@
                 //    //return false;
                 //}
 
-                $('#tSearch').watermark('空白=全部');
+                
+
+                if ($('ddlanguage').val == "en-US")
+                { $('#tSearch').watermark('All Songs'); }
+                else { $('#tSearch').watermark('全部歌曲'); }
+
 
                 if ($('#findCaller').val() == "toTop") {
                     $("html, body").animate({ scrollTop: 0 }, "slow");

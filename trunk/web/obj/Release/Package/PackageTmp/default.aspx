@@ -83,7 +83,12 @@
                 //    //return false;
                 //}
 
-                $('#tSearch').watermark('空白=全部');
+                
+
+                if ($('ddlanguage').val == "en-US")
+                { $('#tSearch').watermark('blank=all'); }
+                else { $('#tSearch').watermark('空白=全部'); }
+
 
                 if ($('#findCaller').val() == "toTop") {
                     $("html, body").animate({ scrollTop: 0 }, "slow");

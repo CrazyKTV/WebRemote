@@ -28,7 +28,7 @@
         <asp:ListItem Value="OtherLangs" meta:resourcekey="ListItemResource16" Text="Other Langs"></asp:ListItem>
     </asp:DropDownList>
         
-    <asp:TextBox ID="tSearch" runat="server" CssClass="textbox2" meta:resourcekey="tSearchResource1" Width="120px"></asp:TextBox>
+    <asp:TextBox ID="tSearch" runat="server" CssClass="textbox2" meta:resourcekey="tSearchResource1" Width="100px"></asp:TextBox>
 
 <%--    <asp:TextBoxWatermarkExtender ID="tSearch_TextBoxWatermarkExtender" runat="server" 
         meta:resourcekey="TextBoxWatermarkExtenderResource1" 
