@@ -86,8 +86,8 @@
                 
 
                 if ($('ddlanguage').val == "en-US")
-                { $('#tSearch').watermark('blank=all'); }
-                else { $('#tSearch').watermark('空白=全部'); }
+                { $('#tSearch').watermark('All Songs'); }
+                else { $('#tSearch').watermark('全部歌曲'); }
 
 
                 if ($('#findCaller').val() == "toTop") {
@@ -175,7 +175,7 @@
                                     <asp:ListItem meta:resourcekey="ListItemResource22" Text="Waiting List"></asp:ListItem>
                                     <asp:ListItem meta:resourcekey="ListItemResource23" Text="Video"></asp:ListItem>
                                     <asp:ListItem meta:resourcekey="ListItemResource24" Text="Volume"></asp:ListItem>
-                                    <asp:ListItem meta:resourcekey="ListItemResource25" Text="Tune"></asp:ListItem>
+                                    <asp:ListItem meta:resourcekey="ListItemResource25" Text="Pitch" Value="Tune"></asp:ListItem>
                                     <asp:ListItem meta:resourcekey="ListItemResource26" Text="Advanced"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>

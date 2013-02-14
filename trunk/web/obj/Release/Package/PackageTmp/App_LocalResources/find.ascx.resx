@@ -159,6 +159,9 @@
   <data name="BoundFieldResource4.HeaderText" xml:space="preserve">
     <value>Singer</value>
   </data>
+  <data name="BoundFieldResource4.Text" xml:space="preserve">
+    <value>Singer</value>
+  </data>
   <data name="BPreviousResource1.Text" xml:space="preserve">
     <value>Previous</value>
   </data>
@@ -207,6 +210,18 @@
   <data name="ButtonFieldResource3.Text" xml:space="preserve">
     <value>Ins</value>
   </data>
+  <data name="ButtonFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonFieldResource4.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonFieldResource4.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="ddSearchTypeResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -226,6 +241,15 @@
     <value />
   </data>
   <data name="GridView2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView3Resource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView3Resource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ListItemResource1.Text" xml:space="preserve">
@@ -275,6 +299,24 @@
   </data>
   <data name="ListItemResource16.Value" xml:space="preserve">
     <value>OtherLangs</value>
+  </data>
+  <data name="ListItemResource17.Text" xml:space="preserve">
+    <value>--Top List--</value>
+  </data>
+  <data name="ListItemResource17.Value" xml:space="preserve">
+    <value>---排行---</value>
+  </data>
+  <data name="ListItemResource18.Text" xml:space="preserve">
+    <value>-Singers--</value>
+  </data>
+  <data name="ListItemResource18.Value" xml:space="preserve">
+    <value>---歌星---</value>
+  </data>
+  <data name="ListItemResource19.Text" xml:space="preserve">
+    <value>--Songs--</value>
+  </data>
+  <data name="ListItemResource19.Value" xml:space="preserve">
+    <value>---歌種---</value>
   </data>
   <data name="ListItemResource2.Text" xml:space="preserve">
     <value>Singer</value>
@@ -358,6 +400,12 @@
     <value />
   </data>
   <data name="Panel3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Panel4Resource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Panel4Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="TemplateFieldResource1.AccessibleHeaderText" xml:space="preserve">
