@@ -166,25 +166,25 @@ namespace web
 
         protected void BdRestart_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "RsetPlay");
             ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 
         protected void BdKeyDown_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Control(1, "Pitch");
+            CrazyKTVWCF.DoCrazyKTV_Control(-1, "Pitch");
             ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 
         protected void BdKeyUp_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Control(-1, "Pitch");
+            CrazyKTVWCF.DoCrazyKTV_Control(1, "Pitch");
             ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 
         protected void BdRepeat_Click(object sender, EventArgs e)
-        {
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "RsetPlay");
+        {            
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
             ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 

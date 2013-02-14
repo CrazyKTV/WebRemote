@@ -228,4 +228,52 @@
   <data name="LComputerOnlyMessageResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="BChannelResource1.Text" xml:space="preserve">
+    <value>導唱</value>
+  </data>
+  <data name="BCutResource1.OnClientClick" xml:space="preserve">
+    <value>return confirm('確認切歌?');</value>
+  </data>
+  <data name="BCutResource1.Text" xml:space="preserve">
+    <value>切歌</value>
+  </data>
+  <data name="BdBackwardResource1.Text" xml:space="preserve">
+    <value>快後</value>
+  </data>
+  <data name="BdColumeUpResource1.Text" xml:space="preserve">
+    <value>+音量</value>
+  </data>
+  <data name="BdFemaleResource1.Text" xml:space="preserve">
+    <value>女調</value>
+  </data>
+  <data name="BdForwardResource1.Text" xml:space="preserve">
+    <value>快前</value>
+  </data>
+  <data name="BdKeyDownResource1.Text" xml:space="preserve">
+    <value>-Key</value>
+  </data>
+  <data name="BdKeyUpResource1.Text" xml:space="preserve">
+    <value>+Key</value>
+  </data>
+  <data name="BdMaleResource1.Text" xml:space="preserve">
+    <value>男調</value>
+  </data>
+  <data name="BdMuteResource1.Text" xml:space="preserve">
+    <value>靜音</value>
+  </data>
+  <data name="BdPauseResource1.Text" xml:space="preserve">
+    <value>暫停</value>
+  </data>
+  <data name="BdRepeatResource1.Text" xml:space="preserve">
+    <value>循環</value>
+  </data>
+  <data name="BdRestartResource1.Text" xml:space="preserve">
+    <value>重播</value>
+  </data>
+  <data name="BdVolumeDownResource1.Text" xml:space="preserve">
+    <value>-音量</value>
+  </data>
+  <data name="BFindResource1.Text" xml:space="preserve">
+    <value>點歌</value>
+  </data>
 </root>

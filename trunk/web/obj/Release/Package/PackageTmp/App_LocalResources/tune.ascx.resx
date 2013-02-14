@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tuneDownResource1.Text" xml:space="preserve">
-    <value>Tune Down</value>
+    <value>-Flatten</value>
   </data>
   <data name="tuneDownResource1.ToolTip" xml:space="preserve">
     <value />
@@ -136,7 +136,7 @@
     <value />
   </data>
   <data name="tuneUpResource1.Text" xml:space="preserve">
-    <value>Tune Up</value>
+    <value>+Sharpen</value>
   </data>
   <data name="tuneUpResource1.ToolTip" xml:space="preserve">
     <value />

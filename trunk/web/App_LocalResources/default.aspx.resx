@@ -154,13 +154,13 @@
     <value />
   </data>
   <data name="BdKeyDownResource1.Text" xml:space="preserve">
-    <value>-Tune</value>
+    <value>-Flatten</value>
   </data>
   <data name="BdKeyDownResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="BdKeyUpResource1.Text" xml:space="preserve">
-    <value>+Tune</value>
+    <value>+Sharpen</value>
   </data>
   <data name="BdKeyUpResource1.ToolTip" xml:space="preserve">
     <value />

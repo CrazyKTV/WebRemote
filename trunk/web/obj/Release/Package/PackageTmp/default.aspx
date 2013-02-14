@@ -163,7 +163,6 @@
                         <div style="display: block">
                             <div style="float: left; width: 50%; display: block">
                                 <asp:Label ID="lFunctions" runat="server" Text="Functions: " meta:resourcekey="lFunctionsResource1" CssClass="label1"></asp:Label>
-                                <%--  <img src="images/remote.png" width="25" height="25"/>--%>
                                 <asp:DropDownList ID="ddActions" runat="server" AutoPostBack="True" CssClass="dropdown1" meta:resourcekey="ddActionsResource1" OnSelectedIndexChanged="ddActions_SelectedIndexChanged">
                                     <asp:ListItem meta:resourcekey="ListItemResource30" Text="---------"></asp:ListItem>
                                     <asp:ListItem meta:resourcekey="ListItemResource20" Text="Find" Value="Find"></asp:ListItem>
@@ -177,7 +176,6 @@
                             </div>
 
                             <div style="float: right; width: 50%; display: block">
-                                <%--<img src="images/flag.png"  width="25" height="25"/>--%>
                                 <asp:Label ID="lLanguage" runat="server" Text="Language: " CssClass="label1" meta:resourcekey="lLanguageResource1"></asp:Label>
                                 <asp:DropDownList ID="ddlanguage" runat="server" AutoPostBack="True" OnSelectedIndexChanged="language_SelectedIndexChanged" CssClass="dropdown1" meta:resourcekey="ddlanguageResource1">
                                     <asp:ListItem Value="en-US" Text="English" meta:resourcekey="ListItemResource14"></asp:ListItem>
@@ -203,16 +201,10 @@
                             <uc0:find runat="server" ID="find" Visible="False" ClientIDMode="Static" />
                         </div>
                         <div class="spacerToFooter" />
-                        <%--<div style="clear:both;"/>--%>
                     </section>
                 </article>
 
 
-                <%--                <article class="spacerToFooter">
-
-                    </article>--%>
-
-                <%--<div style="display:block;height:44px"/>--%>
                 <style>
                     #alwaysVisibleDiv {
                         position: fixed;
@@ -227,41 +219,37 @@
                 </style>
                 <div style="clear: both;" />
                 <div id="alwaysVisibleDiv">
-                    <asp:Button ID="BChannel" runat="server" Text="導唱" CssClass="button4" Visible="True" OnClick="BChannel_Click" />
-                    <asp:Button ID="BFind" runat="server" Text="點歌" CssClass="button4" Visible="True" OnClick="BFind_Click" />
-                    <asp:Button ID="BCut" runat="server" Text="切歌" CssClass="button4" Visible="True" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');" />
+                    <asp:Button ID="BChannel" runat="server" Text="導唱" CssClass="button4" OnClick="BChannel_Click" meta:resourcekey="BChannelResource1" />
+                    <asp:Button ID="BFind" runat="server" Text="點歌" CssClass="button4" OnClick="BFind_Click" meta:resourcekey="BFindResource1" />
+                    <asp:Button ID="BCut" runat="server" Text="切歌" CssClass="button4" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');" meta:resourcekey="BCutResource1" />
 
-                    <%--               <span id="up" style="display: inline-block;">UP</span>--%>
                     <img id="up" style="display: inline-block;  max-width:48px; vertical-align:middle;" src="images/Arrow.gif" />
-                    <%--               <span id="down" style="display: none;">down</span>--%>
                     <img id="down" style="display: none; max-width:48px; vertical-align:middle;" src="images/Arrow2.gif" />
                     <div id="all" style="display: block; height: 0px; background-color: #000000;">
                         <div id="suball" style="display: none; background-color: #000000;">
 
                             <div id="row1" style="display: block;">
-                                <%--   <div style="display:inline-block;>--%>
-                                <asp:Button ID="BdRestart" runat="server" Text="重播" CssClass="button4" Visible="True" OnClick="BdRestart_Click" />
-                                <asp:Button ID="BdKeyDown" runat="server" Text="-key" CssClass="button4" Visible="True" OnClick="BdKeyDown_Click" />
-                                <asp:Button ID="BdKeyUp" runat="server" Text="+key" CssClass="button4" Visible="True" OnClientClick=";" OnClick="BdKeyUp_Click" />
+                                <asp:Button ID="BdRestart" runat="server" Text="重播" CssClass="button4" OnClick="BdRestart_Click" meta:resourcekey="BdRestartResource1" />
+                                <asp:Button ID="BdKeyDown" runat="server" Text="-key" CssClass="button4" OnClick="BdKeyDown_Click" meta:resourcekey="BdKeyDownResource1" />
+                                <asp:Button ID="BdKeyUp" runat="server" Text="+key" CssClass="button4" OnClientClick=";" OnClick="BdKeyUp_Click" meta:resourcekey="BdKeyUpResource1" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
                              <div id="row2" style="display: block;">
-                                <%--   <div style="display:inline-block;>--%>                                 
-                                <asp:Button ID="BdRepeat" runat="server" Text="循環" CssClass="button4" Visible="True" OnClick="BdRepeat_Click" />
-                                <asp:Button ID="BdMale" runat="server" Text="男調" CssClass="button4" Visible="True" OnClick="BdMale_Click" />
-                                <asp:Button ID="BdFemale" runat="server" Text="女調" CssClass="button4" Visible="True" OnClientClick=";" OnClick="BdFemale_Click" />
+                                <asp:Button ID="BdRepeat" runat="server" Text="循環" CssClass="button4" OnClick="BdRepeat_Click" meta:resourcekey="BdRepeatResource1" />
+                                <asp:Button ID="BdMale" runat="server" Text="男調" CssClass="button4" OnClick="BdMale_Click" meta:resourcekey="BdMaleResource1" />
+                                <asp:Button ID="BdFemale" runat="server" Text="女調" CssClass="button4" OnClientClick=";" OnClick="BdFemale_Click" meta:resourcekey="BdFemaleResource1" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
                             <div id="row3" style="display: block;">
-                                <asp:Button ID="BdPause" runat="server" Text="暫停" CssClass="button4" Visible="True" OnClick="BdPause_Click" />
-                                <asp:Button ID="BdBackward" runat="server" Text="快後" CssClass="button4" Visible="True" OnClick="BdBackward_Click" />
-                                <asp:Button ID="BdForward" runat="server" Text="快前" CssClass="button4" Visible="True" OnClientClick=";" OnClick="BdForward_Click" />
+                                <asp:Button ID="BdPause" runat="server" Text="暫停" CssClass="button4" OnClick="BdPause_Click" meta:resourcekey="BdPauseResource1" />
+                                <asp:Button ID="BdBackward" runat="server" Text="快後" CssClass="button4" OnClick="BdBackward_Click" meta:resourcekey="BdBackwardResource1" />
+                                <asp:Button ID="BdForward" runat="server" Text="快前" CssClass="button4" OnClientClick=";" OnClick="BdForward_Click" meta:resourcekey="BdForwardResource1" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
                             <div id="row4" style="display: block;">                                
-                                <asp:Button ID="BdMute" runat="server" Text="靜音" CssClass="button4" Visible="True" OnClick="BdMute_Click" />
-                                <asp:Button ID="BdVolumeDown" runat="server" Text="-音量" CssClass="button4" Visible="True" OnClick="BdVolumeDown_Click"  />
-                                <asp:Button ID="BdColumeUp" runat="server" Text="+音量" CssClass="button4" Visible="True" OnClientClick=";" OnClick="BdColumeUp_Click" />
+                                <asp:Button ID="BdMute" runat="server" Text="靜音" CssClass="button4" OnClick="BdMute_Click" meta:resourcekey="BdMuteResource1" />
+                                <asp:Button ID="BdVolumeDown" runat="server" Text="-音量" CssClass="button4" OnClick="BdVolumeDown_Click" meta:resourcekey="BdVolumeDownResource1"  />
+                                <asp:Button ID="BdColumeUp" runat="server" Text="+音量" CssClass="button4" OnClientClick=";" OnClick="BdColumeUp_Click" meta:resourcekey="BdColumeUpResource1" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
                         </div>
@@ -275,7 +263,7 @@
                             <div class="overlay" />
                             <div class="overlayContent" id="overlayContent1">
                                 <h2>
-                                    <asp:Label ID="lLoading" runat="server" Text="Loading..."></asp:Label></h2>
+                                    <asp:Label ID="lLoading" runat="server" Text="Loading..." meta:resourcekey="lLoadingResource1"></asp:Label></h2>
                                 <img src="/images/ajax-loader.gif" alt="Loading" />
                             </div>
                         </ProgressTemplate>
