@@ -117,110 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BChannelResource1.Text" xml:space="preserve">
-    <value>Vocal</value>
-  </data>
-  <data name="BChannelResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BCutResource1.Text" xml:space="preserve">
-    <value>Next Song</value>
-  </data>
-  <data name="BCutResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdBackwardResource1.Text" xml:space="preserve">
-    <value>Backward</value>
-  </data>
-  <data name="BdBackwardResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdColumeUpResource1.Text" xml:space="preserve">
-    <value>+ VOL</value>
-  </data>
-  <data name="BdColumeUpResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdFemaleResource1.Text" xml:space="preserve">
-    <value>Female</value>
-  </data>
-  <data name="BdFemaleResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdForwardResource1.Text" xml:space="preserve">
-    <value>Forward</value>
-  </data>
-  <data name="BdForwardResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdKeyDownResource1.Text" xml:space="preserve">
-    <value>-Flatten</value>
-  </data>
-  <data name="BdKeyDownResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdKeyUpResource1.Text" xml:space="preserve">
-    <value>+Sharpen</value>
-  </data>
-  <data name="BdKeyUpResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdMaleResource1.Text" xml:space="preserve">
-    <value>Male</value>
-  </data>
-  <data name="BdMaleResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdMuteResource1.Text" xml:space="preserve">
-    <value>Mute</value>
-  </data>
-  <data name="BdMuteResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdPauseResource1.Text" xml:space="preserve">
-    <value>Pause</value>
-  </data>
-  <data name="BdPauseResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdRepeatResource1.Text" xml:space="preserve">
-    <value>Repeat</value>
-  </data>
-  <data name="BdRepeatResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdRestartResource1.Text" xml:space="preserve">
-    <value>Restart</value>
-  </data>
-  <data name="BdRestartResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BdVolumeDownResource1.Text" xml:space="preserve">
-    <value>-VOL</value>
-  </data>
-  <data name="BdVolumeDownResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BFindResource1.Text" xml:space="preserve">
-    <value>Order</value>
-  </data>
-  <data name="BFindResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="ddActionsResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ddlanguageResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="LComputerOnlyMessageResource1.Text" xml:space="preserve">
-    <value>'F11' on the keyboard to activate/diactivate full screen.</value>
-  </data>
-  <data name="LComputerOnlyMessageResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="lFunctionsResource1.Text" xml:space="preserve">
-    <value>Functions: </value>
+    <value>功能: </value>
   </data>
   <data name="lFunctionsResource1.ToolTip" xml:space="preserve">
     <value />
@@ -262,46 +166,55 @@
     <value>th-TH</value>
   </data>
   <data name="ListItemResource20.Text" xml:space="preserve">
-    <value>Find</value>
+    <value>點歌</value>
   </data>
   <data name="ListItemResource20.Value" xml:space="preserve">
     <value>Find</value>
   </data>
   <data name="ListItemResource21.Text" xml:space="preserve">
-    <value>Song Number</value>
+    <value>歌號輸入</value>
   </data>
   <data name="ListItemResource21.Value" xml:space="preserve">
     <value>Song Number</value>
   </data>
   <data name="ListItemResource22.Text" xml:space="preserve">
-    <value>Waiting List</value>
+    <value>待播歌曲</value>
   </data>
   <data name="ListItemResource22.Value" xml:space="preserve">
     <value>Waiting List</value>
   </data>
   <data name="ListItemResource23.Text" xml:space="preserve">
-    <value>Video</value>
+    <value>影片功能</value>
   </data>
   <data name="ListItemResource23.Value" xml:space="preserve">
     <value>Video</value>
   </data>
   <data name="ListItemResource24.Text" xml:space="preserve">
-    <value>Volume</value>
+    <value>音量功能</value>
   </data>
   <data name="ListItemResource24.Value" xml:space="preserve">
     <value>Volume</value>
   </data>
   <data name="ListItemResource25.Text" xml:space="preserve">
-    <value>Pitch</value>
+    <value>Key功能</value>
   </data>
   <data name="ListItemResource25.Value" xml:space="preserve">
     <value>Tune</value>
   </data>
   <data name="ListItemResource26.Text" xml:space="preserve">
-    <value>Advanced</value>
+    <value>進階</value>
   </data>
   <data name="ListItemResource26.Value" xml:space="preserve">
     <value>Advanced</value>
+  </data>
+  <data name="lLanguageResource1.Text" xml:space="preserve">
+    <value>語言: </value>
+  </data>
+  <data name="lLanguageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>CrazyKTV</value>
   </data>
   <data name="ListItemResource30.Text" xml:space="preserve">
     <value>---------</value>
@@ -309,22 +222,58 @@
   <data name="ListItemResource30.Value" xml:space="preserve">
     <value>---------</value>
   </data>
-  <data name="lLanguageResource1.Text" xml:space="preserve">
-    <value>Language: </value>
+  <data name="LComputerOnlyMessageResource1.Text" xml:space="preserve">
+    <value>在鍵盤上按 'F11' 啟動或恢復全螢幕.</value>
   </data>
-  <data name="lLanguageResource1.ToolTip" xml:space="preserve">
+  <data name="LComputerOnlyMessageResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="lLoadingResource1.Text" xml:space="preserve">
-    <value>Loading...</value>
-  </data>
-  <data name="lLoadingResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="PageResource1.Title" xml:space="preserve">
-    <value>CrazyKTV</value>
+  <data name="BChannelResource1.Text" xml:space="preserve">
+    <value>導唱</value>
   </data>
   <data name="BCutResource1.OnClientClick" xml:space="preserve">
-    <value>return confirm('Are you sure about skipping this song now?');</value>
+    <value>return confirm('確認切歌?');</value>
+  </data>
+  <data name="BCutResource1.Text" xml:space="preserve">
+    <value>切歌</value>
+  </data>
+  <data name="BdBackwardResource1.Text" xml:space="preserve">
+    <value>快後</value>
+  </data>
+  <data name="BdColumeUpResource1.Text" xml:space="preserve">
+    <value>+音量</value>
+  </data>
+  <data name="BdFemaleResource1.Text" xml:space="preserve">
+    <value>女調</value>
+  </data>
+  <data name="BdForwardResource1.Text" xml:space="preserve">
+    <value>快前</value>
+  </data>
+  <data name="BdKeyDownResource1.Text" xml:space="preserve">
+    <value>-Key</value>
+  </data>
+  <data name="BdKeyUpResource1.Text" xml:space="preserve">
+    <value>+Key</value>
+  </data>
+  <data name="BdMaleResource1.Text" xml:space="preserve">
+    <value>男調</value>
+  </data>
+  <data name="BdMuteResource1.Text" xml:space="preserve">
+    <value>靜音</value>
+  </data>
+  <data name="BdPauseResource1.Text" xml:space="preserve">
+    <value>暫停</value>
+  </data>
+  <data name="BdRepeatResource1.Text" xml:space="preserve">
+    <value>循環</value>
+  </data>
+  <data name="BdRestartResource1.Text" xml:space="preserve">
+    <value>重播</value>
+  </data>
+  <data name="BdVolumeDownResource1.Text" xml:space="preserve">
+    <value>-音量</value>
+  </data>
+  <data name="BFindResource1.Text" xml:space="preserve">
+    <value>點歌</value>
   </data>
 </root>
