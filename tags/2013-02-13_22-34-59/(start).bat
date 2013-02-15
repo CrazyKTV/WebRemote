@@ -13,8 +13,14 @@ del %temp%\ip.txt
 pause
 
 
+
+rem set port=2000
+rem start iis\iisexpress.exe /path:"%CD%\web" /port:%port% 
+rem start "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:%port%
+
+
 start /min CassiniDev4-console.exe /a:%CD%\web /im:Any /prs:80 /pre:9000
-start /wait %CD%\CrazyKTV.exe
+rem start /wait %CD%\CrazyKTV.exe
 
 
-taskkill /f /im CassiniDev4-console.exe
+rem taskkill /f /im CassiniDev4-console.exe

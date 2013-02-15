@@ -53,6 +53,7 @@
             <asp:ButtonField ButtonType="Button" CommandName="Insert" Text="Int" meta:resourcekey="ButtonFieldResource1">
             <ControlStyle CssClass="dgInsert" />
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Right" />
+             <ItemStyle HorizontalAlign="Right" />
              </asp:ButtonField>
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />

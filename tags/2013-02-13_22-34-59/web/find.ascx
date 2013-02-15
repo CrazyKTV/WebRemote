@@ -10,15 +10,15 @@
         <asp:ListItem Value="Song" meta:resourcekey="ListItemResource1" Text="Song Name"></asp:ListItem>
         <asp:ListItem meta:resourcekey="ListItemResource2" Text="Singer" Value="Singer"></asp:ListItem>        
         <asp:ListItem Value="WordCount" meta:resourcekey="ListItemResource3" Text="Word Count"></asp:ListItem>  
-        <asp:ListItem Text="---排行---"></asp:ListItem>    
+        <asp:ListItem Text="---排行---" meta:resourcekey="ListItemResource17"></asp:ListItem>    
         <asp:ListItem Value="NewSongs" meta:resourcekey="ListItemResource4" Text="New Songs"></asp:ListItem>
         <asp:ListItem Value="TopOrder" meta:resourcekey="ListItemResource5" Text="Top Order"></asp:ListItem>
         <asp:ListItem meta:resourcekey="ListItemResource6" Text="Favorites"></asp:ListItem>
-        <asp:ListItem Text="---歌星---"></asp:ListItem>    
+        <asp:ListItem Text="---歌星---" meta:resourcekey="ListItemResource18"></asp:ListItem>    
         <asp:ListItem meta:resourcekey="ListItemResource7" Text="Male"></asp:ListItem>
         <asp:ListItem meta:resourcekey="ListItemResource8" Text="Female"></asp:ListItem>
         <asp:ListItem meta:resourcekey="ListItemResource9" Text="Group"></asp:ListItem>
-        <asp:ListItem Text="---歌種---"></asp:ListItem>    
+        <asp:ListItem Text="---歌種---" meta:resourcekey="ListItemResource19"></asp:ListItem>    
         <asp:ListItem meta:resourcekey="ListItemResource10" Text="Chorus"></asp:ListItem>
         <asp:ListItem Value="Mandarin" meta:resourcekey="ListItemResource11" Text="Mandarin"></asp:ListItem>
         <asp:ListItem Value="Taiwanese" meta:resourcekey="ListItemResource12" Text="Taiwanese"></asp:ListItem>
@@ -29,11 +29,6 @@
     </asp:DropDownList>
         
     <asp:TextBox ID="tSearch" runat="server" CssClass="textbox2" meta:resourcekey="tSearchResource1" Width="100px"></asp:TextBox>
-
-<%--    <asp:TextBoxWatermarkExtender ID="tSearch_TextBoxWatermarkExtender" runat="server" 
-        meta:resourcekey="TextBoxWatermarkExtenderResource1" 
-        TargetControlID="tSearch" WatermarkText="Empty = List All." WatermarkCssClass="textboxWaterMark" Enabled="True">
-    </asp:TextBoxWatermarkExtender>--%>
 
     <asp:Button ID="bSearch" runat="server" Text="List" CssClass="button2" OnClick="bSearch_Click" meta:resourcekey="bSearchResource1" />
 
@@ -136,12 +131,10 @@
 
 
 
-<asp:Panel ID="Panel4" runat="server" Visible="False">
-    <asp:GridView ID="GridView3" runat="server" DataKeyNames="Singer_Name,Singer_Type" AutoGenerateColumns="False" CssClass="gridview" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView3_RowCommand" >
+<asp:Panel ID="Panel4" runat="server" Visible="False" meta:resourcekey="Panel4Resource1">
+    <asp:GridView ID="GridView3" runat="server" DataKeyNames="Singer_Name,Singer_Type" AutoGenerateColumns="False" CssClass="gridview" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView3_RowCommand" meta:resourcekey="GridView3Resource1" >
         <Columns>
-<%--            <asp:BoundField HeaderText="Singer_Id" DataField="Singer_Id" Visible="False" >
-            </asp:BoundField>--%>
-            <asp:ButtonField ButtonType="Button" CommandName="Select" DataTextField="Singer_Name" InsertVisible="False">
+            <asp:ButtonField ButtonType="Button" CommandName="Select" DataTextField="Singer_Name" InsertVisible="False" meta:resourcekey="ButtonFieldResource4">
             <ControlStyle CssClass="button1" />
             <HeaderStyle HorizontalAlign="Center" />
             <ItemStyle HorizontalAlign="Center"/>

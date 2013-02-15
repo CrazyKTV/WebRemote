@@ -388,6 +388,24 @@
     <value />
   </data>
   <data name="TextBoxWatermarkExtenderResource1.WatermarkText" xml:space="preserve">
-    <value>沒搜尋字=列印全部</value>
+    <value>全部歌曲</value>
+  </data>
+  <data name="ListItemResource17.Text" xml:space="preserve">
+    <value>---排行---</value>
+  </data>
+  <data name="ListItemResource17.Value" xml:space="preserve">
+    <value>---排行---</value>
+  </data>
+  <data name="ListItemResource18.Text" xml:space="preserve">
+    <value>---歌星---</value>
+  </data>
+  <data name="ListItemResource18.Value" xml:space="preserve">
+    <value>---歌星---</value>
+  </data>
+  <data name="ListItemResource19.Text" xml:space="preserve">
+    <value>---歌種---</value>
+  </data>
+  <data name="ListItemResource19.Value" xml:space="preserve">
+    <value>---歌種---</value>
   </data>
 </root>
