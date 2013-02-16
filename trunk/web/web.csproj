@@ -46,6 +46,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>libs\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SharpPieces.Web.Controls">
+      <HintPath>..\..\..\..\_MSmesh_\(my documents)\__PROJECTS__\CrazyKTV\trunk\web\libs\SharpPieces.Web.Controls.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />

@@ -11,4 +11,4 @@ C:\_MSmesh_\(my documents)\__PROJECTS__\CrazyKTV\trunk\web\bin\Newtonsoft.Json.d
 C:\_MSmesh_\(my documents)\__PROJECTS__\CrazyKTV\trunk\web\obj\Release\web.csprojResolveAssemblyReference.cache
 C:\_MSmesh_\(my documents)\__PROJECTS__\CrazyKTV\trunk\web\obj\Release\web.dll
 C:\_MSmesh_\(my documents)\__PROJECTS__\CrazyKTV\trunk\web\obj\Release\web.pdb
-C:\__PROJECTS__\crazyktv\trunk\web\obj\Release\web.csprojResolveAssemblyReference.cache
+C:\__PROJECTS__\crazyktv\trunk\web\bin\SharpPieces.Web.Controls.dll

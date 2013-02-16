@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="find.ascx.cs" Inherits="web.find" %>
+<%@ Register Assembly="SharpPieces.Web.Controls" Namespace="SharpPieces.Web.Controls" TagPrefix="piece" %>
 
 
 <link href="css/layout.css" rel="stylesheet" />
@@ -6,7 +7,44 @@
 
 <%--<br/>--%>
 <asp:Panel ID="Panel1" runat="server" meta:resourcekey="Panel1Resource1">
-    <asp:DropDownList ID="ddSearchType" runat="server" CssClass="dropdown2" meta:resourcekey="ddSearchTypeResource1">
+    <piece:ExtendedDropDownList ID="ddSearchType" runat="server" CssClass="dropdown2" meta:resourcekey="ddSearchTypeResource1">
+        <ExtendedItems>
+<%--                <piece:ExtendedListItem GroupingText="Group 1"  GroupingType="New"></piece:ExtendedListItem>
+                <piece:ExtendedListItem Text="My item2" Value="2" GroupingType="none"></piece:ExtendedListItem>
+            <piece:ExtendedListItem Text="My item2" Value="2" GroupingType="none"></piece:ExtendedListItem>
+            <piece:ExtendedListItem Text="My item2" Value="2" GroupingType="none"></piece:ExtendedListItem>
+            <piece:ExtendedListItem GroupingText="--排行--" GroupingType="New" meta:resourcekey="ListItemResource17"></piece:ExtendedListItem>
+            <piece:ExtendedListItem Text="NewSongs" Value="NewSongs" GroupingType="inherit" meta:resourcekey="ListItemResource4"></piece:ExtendedListItem>
+            <piece:ExtendedListItem Text="TopOrder" Value="TopOrder" GroupingType="inherit"></piece:ExtendedListItem>
+            <piece:ExtendedListItem Text="Favorites" Value="Favorites" GroupingType="inherit"></piece:ExtendedListItem>
+--%>
+
+         <piece:ExtendedListItem Value="Song" meta:resourcekey="ListItemResource1" Text="Song Name" GroupingType="none"></piece:ExtendedListItem> 
+        <piece:ExtendedListItem meta:resourcekey="ListItemResource2" Text="Singer" Value="Singer" GroupingType="none"></piece:ExtendedListItem>        
+        <piece:ExtendedListItem Value="WordCount" meta:resourcekey="ListItemResource3" Text="Word Count" GroupingType="none"></piece:ExtendedListItem>  
+        <%--<piece:ExtendedListItem GroupingText="--排行--"Text="---排行---" meta:resourcekey="ListItemResource17"></piece:ExtendedListItem>--%>    
+        <piece:ExtendedListItem GroupingText="--排行--" GroupingType="New" Value="NewSongs" meta:resourcekey="ListItemResource4" Text="New Songs"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" Value="TopOrder" meta:resourcekey="ListItemResource5" Text="Top Order"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" meta:resourcekey="ListItemResource6" Text="Favorites"></piece:ExtendedListItem>
+        <%--<piece:ExtendedListItem Text="---歌星---" meta:resourcekey="ListItemResource18"></piece:ExtendedListItem>--%>    
+        <piece:ExtendedListItem GroupingText="--歌星--" GroupingType="New" meta:resourcekey="ListItemResource7" Text="Male"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" meta:resourcekey="ListItemResource8" Text="Female"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" meta:resourcekey="ListItemResource9" Text="Group"></piece:ExtendedListItem>
+        <%--<piece:ExtendedListItem Text="---歌種---" meta:resourcekey="ListItemResource19"></piece:ExtendedListItem>--%>    
+        <piece:ExtendedListItem GroupingText="--歌種--" GroupingType="New" meta:resourcekey="ListItemResource10" Text="Chorus"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" Value="Mandarin" meta:resourcekey="ListItemResource11" Text="Mandarin"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" Value="Taiwanese" meta:resourcekey="ListItemResource12" Text="Taiwanese"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" Value="Cantonese" meta:resourcekey="ListItemResource13" Text="Cantonese"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" Value="Japanese" meta:resourcekey="ListItemResource14" Text="Japanese"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" Value="English" meta:resourcekey="ListItemResource15" Text="English"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingType="inherit" Value="OtherLangs" meta:resourcekey="ListItemResource16" Text="Other Langs"></piece:ExtendedListItem>
+		
+		
+            </ExtendedItems>
+
+    </piece:ExtendedDropDownList>
+
+<%--    <asp:DropDownList ID="ddSearchType" runat="server" CssClass="dropdown2" meta:resourcekey="ddSearchTypeResource1">
         <asp:ListItem Value="Song" meta:resourcekey="ListItemResource1" Text="Song Name"></asp:ListItem>
         <asp:ListItem meta:resourcekey="ListItemResource2" Text="Singer" Value="Singer"></asp:ListItem>        
         <asp:ListItem Value="WordCount" meta:resourcekey="ListItemResource3" Text="Word Count"></asp:ListItem>  
@@ -27,7 +65,7 @@
         <asp:ListItem Value="English" meta:resourcekey="ListItemResource15" Text="English"></asp:ListItem>
         <asp:ListItem Value="OtherLangs" meta:resourcekey="ListItemResource16" Text="Other Langs"></asp:ListItem>
     </asp:DropDownList>
-        
+        --%>
     <asp:TextBox ID="tSearch" runat="server" CssClass="textbox2" meta:resourcekey="tSearchResource1" Width="100px"></asp:TextBox>
 
     <asp:Button ID="bSearch" runat="server" Text="List" CssClass="button2" OnClick="bSearch_Click" meta:resourcekey="bSearchResource1" />

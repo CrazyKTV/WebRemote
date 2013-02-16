@@ -85,10 +85,11 @@
 
                 
 
-                if ($('ddlanguage').val == "en-US")
+                if ($('#ddlanguage').val() == "en-US")
                 { $('#tSearch').watermark('All Songs'); }
                 else { $('#tSearch').watermark('全部歌曲'); }
 
+            
 
                 if ($('#findCaller').val() == "toTop") {
                     $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -101,7 +102,8 @@
                 $(document).ready(function () {
                     $("#down").css("height", $("#BChannel").height() + "px");
                     $("#up").css("height", $("#BChannel").height() + "px");
-                    $(".arrowSpacer").css("width", $("#down").height() + "px");
+                    $(".arrowSpacer").css("height", $("#BChannel").height() + "px");
+                    $(".arrowSpacer").css("width", $("#down").width() + "px");
 					$("#suball").css("display", "none");
                 })
 
@@ -122,6 +124,14 @@
                     $("#suball").css("display", "none");
                 });
 
+                $(".arrowSpacer").click(function () {
+                    $("#alwaysVisibleDiv").animate({ bottom: '-0px' }, "fast");
+                    $("#up").css("display", "inline-block");
+                    $("#down").css("display", "none");
+                    $("#suball").css("display", "none");
+                });
+
+                
 
 
                 $('#ddSearchType').change(function () {

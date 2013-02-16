@@ -271,7 +271,7 @@
     <value>English</value>
   </data>
   <data name="ListItemResource16.Text" xml:space="preserve">
-    <value>其他語言</value>
+    <value>其他語</value>
   </data>
   <data name="ListItemResource16.Value" xml:space="preserve">
     <value>OtherLangs</value>
@@ -289,7 +289,7 @@
     <value>WordCount</value>
   </data>
   <data name="ListItemResource4.Text" xml:space="preserve">
-    <value>最近新歌</value>
+    <value>新歌</value>
   </data>
   <data name="ListItemResource4.Value" xml:space="preserve">
     <value>NewSongs</value>
@@ -301,25 +301,25 @@
     <value>TopOrder</value>
   </data>
   <data name="ListItemResource6.Text" xml:space="preserve">
-    <value>我的最愛</value>
+    <value>最愛</value>
   </data>
   <data name="ListItemResource6.Value" xml:space="preserve">
     <value>Favorites</value>
   </data>
   <data name="ListItemResource7.Text" xml:space="preserve">
-    <value>男星列表</value>
+    <value>男星</value>
   </data>
   <data name="ListItemResource7.Value" xml:space="preserve">
     <value>Male</value>
   </data>
   <data name="ListItemResource8.Text" xml:space="preserve">
-    <value>女星列表</value>
+    <value>女星</value>
   </data>
   <data name="ListItemResource8.Value" xml:space="preserve">
     <value>Female</value>
   </data>
   <data name="ListItemResource9.Text" xml:space="preserve">
-    <value>團體列表</value>
+    <value>團體</value>
   </data>
   <data name="ListItemResource9.Value" xml:space="preserve">
     <value>Group</value>
@@ -407,5 +407,14 @@
   </data>
   <data name="ListItemResource19.Value" xml:space="preserve">
     <value>---歌種---</value>
+  </data>
+  <data name="ListItemResource10.GroupingText" xml:space="preserve">
+    <value>-歌種-</value>
+  </data>
+  <data name="ListItemResource4.GroupingText" xml:space="preserve">
+    <value>-排行-</value>
+  </data>
+  <data name="ListItemResource7.GroupingText" xml:space="preserve">
+    <value>-歌星-</value>
   </data>
 </root>

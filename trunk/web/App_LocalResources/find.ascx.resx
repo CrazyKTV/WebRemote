@@ -432,4 +432,13 @@
   <data name="tSearchResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="ListItemResource10.GroupingText" xml:space="preserve">
+    <value>-TYPE-</value>
+  </data>
+  <data name="ListItemResource4.GroupingText" xml:space="preserve">
+    <value>-TOP-</value>
+  </data>
+  <data name="ListItemResource7.GroupingText" xml:space="preserve">
+    <value>-SINGER-</value>
+  </data>
 </root>
