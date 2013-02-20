@@ -9,14 +9,25 @@
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-             <asp:Timer ID="Timer1" runat="server" Interval="180000" OnTick="Timer1_Tick" ></asp:Timer>
+             <asp:Timer ID="Timer1" runat="server" Interval="180000" OnTick="Timer1_Tick" OnPreRender="Timer1_PreRender" ></asp:Timer>
             <asp:Panel ID="Panel1" runat="server" meta:resourcekey="Panel1Resource1">
               
 
-                <asp:GridView ID="GridView1" runat="server" DataKeyNames="Song_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" meta:resourcekey="GridView1Resource1">
+                <asp:GridView ID="GridView1" runat="server" DataKeyNames="Song_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" meta:resourcekey="GridView1Resource1" OnRowDataBound="GridView1_RowDataBound">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
+            <asp:ButtonField ButtonType="Button" CommandName="Del" Text="Del" meta:resourcekey="ButtonFieldResource5">
+            <ControlStyle CssClass="dgInsert" />
+            <HeaderStyle CssClass="hideThis" HorizontalAlign="Left"/>
+            <ItemStyle HorizontalAlign="Left" />
+            </asp:ButtonField>
+
+
             <asp:TemplateField><ItemTemplate>
+
+
+
+
     <%# Container.DataItemIndex + 1  + "."%>
   </ItemTemplate>
                 <HeaderStyle HorizontalAlign="Left" />

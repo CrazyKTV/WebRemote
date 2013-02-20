@@ -15,6 +15,7 @@ namespace web
 
 
 
+
         public static bool checkWCF()
         {
             WebRequest request = WebRequest.Create(wcfUrl);

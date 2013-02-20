@@ -16,6 +16,8 @@ namespace web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             if (Properties.Settings.Default.QR == true)
             {
                 try
@@ -60,7 +62,7 @@ namespace web
 
         protected void Random_Click(object sender, EventArgs e)
         {
-
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "RandomSong");
         }
 
         protected void HideConsole_Click(object sender, EventArgs e)
@@ -81,6 +83,65 @@ namespace web
         protected void Close_Click(object sender, EventArgs e)
         {
             CrazyKTVWCF.DoCrazyKTV_Action(null, "Close");
+        }
+
+        protected void BsettingRefreshRate_Click(object sender, EventArgs e)
+        {
+
+            if (TsettingRefreshRate.Text.ToString().Trim().Length>0)
+            {
+                try
+                {
+                    GlobalFunctions.setCookie("DurationInMillisecond_currentList", TsettingRefreshRate.Text.ToString().Trim());
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+        }
+
+        protected void TsettingRefreshRate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TsettingRefreshRate_PreRender(object sender, EventArgs e)
+        {
+            if (GlobalFunctions.getCookieValue("DurationInMillisecond_currentList") != null)
+            {
+                try
+                {
+                    TsettingRefreshRate.Text = GlobalFunctions.DurationInMillisecond_currentList.ToString();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                //    try
+                //    {
+                //        TsettingRefreshRate.Text = GlobalFunctions.getCookieValue("DurationInMillisecond_currentList").ToString().Trim();
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //        throw;
+                //    }
+                //}
+                //else
+                //{
+                //    try
+                //    {
+                //        TsettingRefreshRate.Text = Properties.Settings.Default.DurationInMillisecond_currentList.ToString().Trim();
+                //    }
+                //    catch (Exception)
+                //    {
+                //        throw;
+                //    }
+            }
         }
 
 

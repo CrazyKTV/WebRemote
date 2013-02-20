@@ -29,7 +29,25 @@
 "/>
                 <asp:Button ID="Exit" runat="server" Text="Exit" CssClass="button1" OnClick="Exit_Click" meta:resourcekey="ExitResource1"  />
                 <asp:Button ID="Close" runat="server" Text="Close" CssClass="button1" OnClick="Close_Click" meta:resourcekey="CloseResource1"  />
-            </asp:Panel>
+           
+              <hr style="
+    height: 5PX;
+    background-color: rgb(73, 72, 72);
+    color: rgb(73, 72, 72);
+"/>
+                 <asp:Label ID="LSettingDiv" runat="server" Text="Setting: " meta:resourcekey="LSettingDivResource1"></asp:Label>
+                <div style="vertical-align:middle;">
+                    <asp:Label ID="LsettingRefreshRate" runat="server" Text="Refresh Rate (ms): " meta:resourcekey="LsettingRefreshRateResource1"></asp:Label>
+                    <asp:TextBox ID="TsettingRefreshRate" runat="server" CssClass="textbox2" meta:resourcekey="TsettingRefreshRateResource1" OnPreRender="TsettingRefreshRate_PreRender" OnTextChanged="TsettingRefreshRate_TextChanged"></asp:TextBox>
+                    <asp:Button ID="BsettingRefreshRate" runat="server" Text="Save"  CssClass="button2" OnClick="BsettingRefreshRate_Click" meta:resourcekey="BsettingRefreshRateResource1"/>
+           
+
+                    </div>
+                
+                 </asp:Panel>
+
+
+
         </ContentTemplate>
         
     </asp:UpdatePanel>

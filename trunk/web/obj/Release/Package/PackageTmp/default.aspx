@@ -104,10 +104,26 @@
                     $("#up").css("height", $("#BChannel").height() + "px");
                     $(".arrowSpacer").css("height", $("#BChannel").height() + "px");
                     $(".arrowSpacer").css("width", $("#down").width() + "px");
-					$("#suball").css("display", "none");
+
+                    if ($('#Showsuball').val() == "0")
+                    { Hidesuball(); }
+                    else { Showsuball(); }
                 })
 
                 $("#up").click(function () {
+                    Showsuball();
+                });
+
+                $("#down").click(function () {
+                    Hidesuball();
+                });
+
+                $(".arrowSpacer").click(function () {
+                    Hidesuball();
+                });
+
+                
+                function Showsuball() {
                     //$("#alwaysVisibleDiv").animate({ bottom: ($(window).height() - $("#alwaysVisibleDiv").height()) * 0.85 + 'px' }, "slow");
                     //$("#suball").css("height", ($(window).height() - $("#alwaysVisibleDiv").height()) * 0.85 + 'px');
 					$("#suball").css("display", "block");
@@ -115,23 +131,17 @@
                     $("#suball").css("height", ($("#BChannel").height()*5 ) +10*5 + 'px');
                     $("#down").css("display", "inline-block");
                     $("#up").css("display", "none");
-                });
+                    $('#Showsuball').val("1");
+                }
 
-                $("#down").click(function () {
+                function Hidesuball()
+                {
                     $("#alwaysVisibleDiv").animate({ bottom: '-0px' }, "fast");
                     $("#up").css("display", "inline-block");
                     $("#down").css("display", "none");
                     $("#suball").css("display", "none");
-                });
-
-                $(".arrowSpacer").click(function () {
-                    $("#alwaysVisibleDiv").animate({ bottom: '-0px' }, "fast");
-                    $("#up").css("display", "inline-block");
-                    $("#down").css("display", "none");
-                    $("#suball").css("display", "none");
-                });
-
-                
+                    $('#Showsuball').val("0");
+                }
 
 
                 $('#ddSearchType').change(function () {
@@ -166,6 +176,10 @@
 
             }
         </script>
+
+
+        
+        <asp:HiddenField ID="Showsuball" runat="server" Value="0" />
 
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>

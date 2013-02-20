@@ -13,6 +13,11 @@ namespace web
 
         protected override void InitializeCulture()
         {
+            changeLang();
+        }
+
+        protected void changeLang()
+        {
             // dropdown change languages
             if (Request.Form["ddlanguage"] != null)
             {
@@ -29,9 +34,11 @@ namespace web
                 Culture = selectedLanguage;
                 System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture(selectedLanguage);
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(selectedLanguage);
-               // ddlanguage.SelectedIndex = 1; //SelectedValue = "zh-CHT";
+                // ddlanguage.SelectedIndex = 1; //SelectedValue = "zh-CHT";
             }
             base.InitializeCulture();
+
+            //((ExtendedListItem)find.FindControl("NewSongs")).Value = "";
         }
 
 
@@ -53,8 +60,11 @@ namespace web
                 }
             }
 
+            GlobalFunctions.currentlang = ddlanguage.SelectedValue.ToString();
             // if WCF is alive then continue with other process
             System.Threading.Thread.Sleep(150);
+
+            
 
         }
 

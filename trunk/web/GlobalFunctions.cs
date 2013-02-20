@@ -11,6 +11,22 @@ namespace web
     {
 
         public static System.IO.MemoryStream QRimageMS;
+        //public static string wcfUrl = Properties.Settings.Default.CrazyKTV_WCF_URL;
+        public static string currentlang = "";
+
+        public static string DurationInMillisecond_currentList
+        {
+            get
+            {
+                if (getCookieValue("DurationInMillisecond_currentList") != null)
+                    return getCookieValue("DurationInMillisecond_currentList").ToString();
+                else
+                    return Properties.Settings.Default.DurationInMillisecond_currentList.ToString();
+            }
+
+            set { ;}
+        }
+
 
 
         public static DataTable JsontoDataTable(string jsonString)
@@ -54,6 +70,48 @@ namespace web
         public static string ToQueryString(System.Collections.Specialized.NameValueCollection nvc)
         {
             return "?" + string.Join("&", Array.ConvertAll(nvc.AllKeys, key => string.Format("{0}={1}", HttpUtility.UrlEncode(key), HttpUtility.UrlEncode(nvc[key]))));
+        }
+
+
+        public static bool setCookie(string cookieName, string value)
+        {
+
+            HttpContext.Current.Response.Cookies["userSettings"][cookieName] = value.ToString();
+            HttpContext.Current.Response.Cookies["UserSettings"].Expires = DateTime.Now.AddDays(18262);
+            return true;
+        }
+
+        public static bool setCookie(string cookieObjectName, string cookieName, string value)
+        {
+            HttpContext.Current.Response.Cookies[cookieObjectName][cookieName] = value.ToString();
+            HttpContext.Current.Response.Cookies["UserSettings"].Expires = DateTime.Now.AddDays(18262);
+            return true;
+        }
+
+        public static string getCookieValue(string cookieName)
+        {
+            string _value = null;
+
+            if (HttpContext.Current.Request.Cookies["UserSettings"] != null)
+            {
+                if (HttpContext.Current.Request.Cookies["UserSettings"][cookieName] != null)
+                { _value = HttpContext.Current.Request.Cookies["UserSettings"][cookieName].ToString();}
+            }
+
+            return _value;
+        }
+
+        public static string getCookieValue(string cookieObjectName, string cookieName)
+        {
+            string _value = null;
+
+            if (HttpContext.Current.Request.Cookies[cookieObjectName] != null)
+            {
+                if (HttpContext.Current.Request.Cookies[cookieObjectName][cookieName] != null)
+                { _value = HttpContext.Current.Request.Cookies[cookieObjectName][cookieName].ToString(); }
+            }
+
+            return _value;
         }
 
 

@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BsettingRefreshRateResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="BsettingRefreshRateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="CloseResource1.Text" xml:space="preserve">
-    <value>Shutdown</value>
+    <value>Close</value>
   </data>
   <data name="CloseResource1.ToolTip" xml:space="preserve">
     <value />
@@ -139,6 +145,18 @@
     <value />
   </data>
   <data name="ImageQRResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LSettingDivResource1.Text" xml:space="preserve">
+    <value>Setting: </value>
+  </data>
+  <data name="LSettingDivResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LsettingRefreshRateResource1.Text" xml:space="preserve">
+    <value>Refresh Rate (ms): </value>
+  </data>
+  <data name="LsettingRefreshRateResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="LToFriendResource1.Text" xml:space="preserve">
@@ -163,6 +181,12 @@
     <value>Show Count Time</value>
   </data>
   <data name="ShowTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TsettingRefreshRateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TsettingRefreshRateResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
 </root>

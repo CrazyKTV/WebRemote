@@ -243,7 +243,7 @@
     <Content Include="App_LocalResources\video.ascx.zh-CHT.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\find.ascx.resx" />
+    <Content Include="App_LocalResources\find.ascx.en-US.resx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\find.ascx.zh-CHT.resx" />
@@ -253,6 +253,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\advanced.ascx.zh-CHT.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\find.ascx.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
