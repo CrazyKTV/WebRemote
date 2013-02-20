@@ -259,13 +259,13 @@
     <value>男調</value>
   </data>
   <data name="BdMuteResource1.Text" xml:space="preserve">
-    <value>靜音</value>
+    <value>Txt</value>
   </data>
   <data name="BdPauseResource1.Text" xml:space="preserve">
     <value>暫停</value>
   </data>
   <data name="BdRepeatResource1.Text" xml:space="preserve">
-    <value>循環</value>
+    <value>隨機</value>
   </data>
   <data name="BdRestartResource1.Text" xml:space="preserve">
     <value>重播</value>

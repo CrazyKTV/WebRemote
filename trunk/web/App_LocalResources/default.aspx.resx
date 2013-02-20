@@ -172,7 +172,7 @@
     <value />
   </data>
   <data name="BdMuteResource1.Text" xml:space="preserve">
-    <value>Mute</value>
+    <value>Txt</value>
   </data>
   <data name="BdMuteResource1.ToolTip" xml:space="preserve">
     <value />
@@ -184,7 +184,7 @@
     <value />
   </data>
   <data name="BdRepeatResource1.Text" xml:space="preserve">
-    <value>Repeat</value>
+    <value>Random</value>
   </data>
   <data name="BdRepeatResource1.ToolTip" xml:space="preserve">
     <value />

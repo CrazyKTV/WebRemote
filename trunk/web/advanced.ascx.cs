@@ -152,6 +152,13 @@ namespace web
             //}
         }
 
+        protected void TxtBadSongs_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "SongRecoedList");
+        }
+
+
+
 
     }
 }

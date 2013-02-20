@@ -162,4 +162,7 @@
   <data name="BsettingRefreshRateResource1.Text" xml:space="preserve">
     <value>儲存</value>
   </data>
+  <data name="TxtBadSongsResource1.Text" xml:space="preserve">
+    <value>Txt 記住壞歌</value>
+  </data>
 </root>

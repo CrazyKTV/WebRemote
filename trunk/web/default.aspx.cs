@@ -194,7 +194,8 @@ namespace web
 
         protected void BdRepeat_Click(object sender, EventArgs e)
         {            
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
+            //CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "RandomSong");
             ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 
@@ -230,7 +231,8 @@ namespace web
 
         protected void BdMute_Click(object sender, EventArgs e)
         {
-            CrazyKTVWCF.DoCrazyKTV_Control(null, "Mute");
+            //CrazyKTVWCF.DoCrazyKTV_Control(null, "Mute");
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "SongRecoedList");
             ((HiddenField)find.FindControl("findCaller")).Value = "";
         }
 

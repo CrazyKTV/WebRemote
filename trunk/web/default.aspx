@@ -264,7 +264,7 @@
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
                              <div id="row2" style="display: block;">
-                                <asp:Button ID="BdRepeat" runat="server" Text="循環" CssClass="button4" OnClick="BdRepeat_Click" meta:resourcekey="BdRepeatResource1" />
+                                <asp:Button ID="BdRepeat" runat="server" Text="隨機" CssClass="button4" OnClick="BdRepeat_Click" meta:resourcekey="BdRepeatResource1" />
                                 <asp:Button ID="BdMale" runat="server" Text="男調" CssClass="button4" OnClick="BdMale_Click" meta:resourcekey="BdMaleResource1" />
                                 <asp:Button ID="BdFemale" runat="server" Text="女調" CssClass="button4" OnClientClick=";" OnClick="BdFemale_Click" meta:resourcekey="BdFemaleResource1" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
@@ -276,7 +276,7 @@
                                 <div class="arrowSpacer" style="display: inline-block"></div>
                             </div>
                             <div id="row4" style="display: block;">                                
-                                <asp:Button ID="BdMute" runat="server" Text="靜音" CssClass="button4" OnClick="BdMute_Click" meta:resourcekey="BdMuteResource1" />
+                                <asp:Button ID="BdMute" runat="server" Text="壞歌" CssClass="button4" OnClick="BdMute_Click" meta:resourcekey="BdMuteResource1" />
                                 <asp:Button ID="BdVolumeDown" runat="server" Text="-音量" CssClass="button4" OnClick="BdVolumeDown_Click" meta:resourcekey="BdVolumeDownResource1"  />
                                 <asp:Button ID="BdColumeUp" runat="server" Text="+音量" CssClass="button4" OnClientClick=";" OnClick="BdColumeUp_Click" meta:resourcekey="BdColumeUpResource1" />
                                 <div class="arrowSpacer" style="display: inline-block"></div>
