@@ -36,6 +36,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PrecompileBeforePublish>false</PrecompileBeforePublish>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Gma.QrCodeNet.Encoding">

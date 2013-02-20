@@ -201,4 +201,7 @@
   <data name="ButtonFieldResource5.Text" xml:space="preserve">
     <value>刪</value>
   </data>
+  <data name="ButtonFieldResource5.OnClientClick" xml:space="preserve">
+    <value>return confirm('確認刪歌?');</value>
+  </data>
 </root>

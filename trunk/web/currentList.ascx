@@ -17,11 +17,18 @@
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
 
-           <asp:ButtonField ButtonType="Button" CommandName="Del" Text="Del" meta:resourcekey="ButtonFieldResource5">
-            <ControlStyle CssClass="dgInsert" />
-            <HeaderStyle CssClass="hideThis" HorizontalAlign="Left"/>
-            <ItemStyle HorizontalAlign="Left" Width="10px" />
-            </asp:ButtonField>
+            <asp:TemplateField ShowHeader="False">
+                <ItemTemplate>
+                    <asp:Button ID="BDel" runat="server" CausesValidation="false" CommandName="Del" Text="Del" meta:resourcekey="ButtonFieldResource5"
+                        OnClientClick="return confirm('Delete this song?');"  />
+                </ItemTemplate>
+                <ControlStyle CssClass="dgInsert" />
+                <HeaderStyle CssClass="hideThis" HorizontalAlign="Left" />
+                <ItemStyle HorizontalAlign="Left" Width="10px" />
+            </asp:TemplateField>
+
+
+
 
 
 
@@ -66,11 +73,17 @@
                 <HeaderStyle HorizontalAlign="Right" />
                 <ItemStyle CssClass="dgLang" HorizontalAlign="Right" />
             </asp:TemplateField>
-            <asp:ButtonField ButtonType="Button" CommandName="Insert" Text="Int" meta:resourcekey="ButtonFieldResource1">
+
+           <asp:ButtonField ButtonType="Button" CommandName="Del" Text="Del" meta:resourcekey="ButtonFieldResource5">
             <ControlStyle CssClass="dgInsert" />
-            <HeaderStyle CssClass="hideThis" HorizontalAlign="Right" />
-             <ItemStyle HorizontalAlign="Right" Width="10px" />
-             </asp:ButtonField>
+            <HeaderStyle CssClass="hideThis" HorizontalAlign="Left"/>
+            <ItemStyle HorizontalAlign="Left" Width="10px" />
+            </asp:ButtonField>
+
+
+
+
+
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" CssClass="gridviewHeader" Font-Bold="True" ForeColor="White" />
