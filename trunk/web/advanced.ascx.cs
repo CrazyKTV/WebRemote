@@ -17,6 +17,11 @@ namespace web
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (TsettingRefreshRate.Text.Trim().Length<1)
+            {
+                   TsettingRefreshRate.Text = GlobalFunctions.DurationInMillisecond_currentList.ToString();
+            }
+
 
             if (Properties.Settings.Default.QR == true)
             {
@@ -92,6 +97,9 @@ namespace web
             {
                 try
                 {
+                    if (int.Parse(TsettingRefreshRate.Text.ToString().Trim()) < 3000)
+                    { TsettingRefreshRate.Text = "3000"; //min is 3 seconds
+                    }
                     GlobalFunctions.setCookie("DurationInMillisecond_currentList", TsettingRefreshRate.Text.ToString().Trim());
                 }
                 catch (Exception)
@@ -110,38 +118,38 @@ namespace web
 
         protected void TsettingRefreshRate_PreRender(object sender, EventArgs e)
         {
-            if (GlobalFunctions.getCookieValue("DurationInMillisecond_currentList") != null)
-            {
-                try
-                {
-                    TsettingRefreshRate.Text = GlobalFunctions.DurationInMillisecond_currentList.ToString();
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+            //if (GlobalFunctions.getCookieValue("DurationInMillisecond_currentList") != null)
+            //{
+            //    try
+            //    {
+            //     //   TsettingRefreshRate.Text = GlobalFunctions.DurationInMillisecond_currentList.ToString();
+            //    }
+            //    catch (Exception)
+            //    {
+            //        throw;
+            //    }
 
-                //    try
-                //    {
-                //        TsettingRefreshRate.Text = GlobalFunctions.getCookieValue("DurationInMillisecond_currentList").ToString().Trim();
-                //    }
-                //    catch (Exception)
-                //    {
+            //    //    try
+            //    //    {
+            //    //        TsettingRefreshRate.Text = GlobalFunctions.getCookieValue("DurationInMillisecond_currentList").ToString().Trim();
+            //    //    }
+            //    //    catch (Exception)
+            //    //    {
 
-                //        throw;
-                //    }
-                //}
-                //else
-                //{
-                //    try
-                //    {
-                //        TsettingRefreshRate.Text = Properties.Settings.Default.DurationInMillisecond_currentList.ToString().Trim();
-                //    }
-                //    catch (Exception)
-                //    {
-                //        throw;
-                //    }
-            }
+            //    //        throw;
+            //    //    }
+            //    //}
+            //    //else
+            //    //{
+            //    //    try
+            //    //    {
+            //    //        TsettingRefreshRate.Text = Properties.Settings.Default.DurationInMillisecond_currentList.ToString().Trim();
+            //    //    }
+            //    //    catch (Exception)
+            //    //    {
+            //    //        throw;
+            //    //    }
+            //}
         }
 
 

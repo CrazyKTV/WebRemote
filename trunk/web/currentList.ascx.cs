@@ -24,7 +24,7 @@ namespace web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            getDataToGv();
+            //getDataToGv();
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -61,32 +61,36 @@ namespace web
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowIndex != -1)
-            {
-                //Here Index of Cell will be the No of Delete Column. 
-                LinkButton btn = (LinkButton)e.Row.Cells[1].Controls[1];
-                //btn.Attributes.Add("onclick", "if (confirm('Are you sure to delete this admin user?')){return true} else {return false}");
-                if (GlobalFunctions.currentlang.ToString().Trim().ToLower() == "zh-CHT".ToLower())
-                {
-                    btn.Attributes.Add("onclick", "return confirm('刪除此歌曲?');");
-                }
-                else
-                { 
-                    btn.Attributes.Add("onclick", "return confirm('Remove this song?');");
-                }
-                
-               
-            }
+            //if (e.Row.RowIndex != -1)
+            //{
+            //    //Here Index of Cell will be the No of Delete Column. 
+            //    LinkButton btn = (Button)e.Row.Cells[1].Controls[1];
+            //    //btn.Attributes.Add("onclick", "if (confirm('Are you sure to delete this admin user?')){return true} else {return false}");
+            //    if (GlobalFunctions.currentlang.ToString().Trim().ToLower() == "zh-CHT".ToLower())
+            //    {
+            //        btn.Attributes.Add("onclick", "return confirm('刪除此歌曲?');");
+            //    }
+            //    else
+            //    {
+            //        btn.Attributes.Add("onclick", "return confirm('Remove this song?');");
+            //    }
+
+            //}
         }
 
         protected void Timer1_PreRender(object sender, EventArgs e)
         {
             try
             {
-                Timer1.Interval = int.Parse(GlobalFunctions.DurationInMillisecond_currentList);
+               Timer1.Interval = int.Parse(GlobalFunctions.DurationInMillisecond_currentList);
             }
             catch (Exception)
             { }
+        }
+
+        protected void GridView1_PreRender(object sender, EventArgs e)
+        {
+            getDataToGv();
         }
     }
 }

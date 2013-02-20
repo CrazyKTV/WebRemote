@@ -13,17 +13,21 @@
             <asp:Panel ID="Panel1" runat="server" meta:resourcekey="Panel1Resource1">
               
 
-                <asp:GridView ID="GridView1" runat="server" DataKeyNames="Song_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" meta:resourcekey="GridView1Resource1" OnRowDataBound="GridView1_RowDataBound">
+                <asp:GridView ID="GridView1" runat="server" DataKeyNames="Song_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowSorting="True" PageSize="1" OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" meta:resourcekey="GridView1Resource1" OnRowDataBound="GridView1_RowDataBound" OnPreRender="GridView1_PreRender">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
-            <asp:ButtonField ButtonType="Button" CommandName="Del" Text="Del" meta:resourcekey="ButtonFieldResource5">
+
+           <asp:ButtonField ButtonType="Button" CommandName="Del" Text="Del" meta:resourcekey="ButtonFieldResource5">
             <ControlStyle CssClass="dgInsert" />
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Left"/>
-            <ItemStyle HorizontalAlign="Left" />
+            <ItemStyle HorizontalAlign="Left" Width="10px" />
             </asp:ButtonField>
 
 
-            <asp:TemplateField><ItemTemplate>
+
+
+
+            <asp:TemplateField ShowHeader="False"><ItemTemplate>
 
 
 
@@ -31,9 +35,10 @@
     <%# Container.DataItemIndex + 1  + "."%>
   </ItemTemplate>
                 <HeaderStyle HorizontalAlign="Left" />
-                <ItemStyle CssClass="dgLang" HorizontalAlign="Left" ForeColor="#993300" />
+                <ItemStyle CssClass="dgLang" HorizontalAlign="Left" ForeColor="#993300" Width="15px" />
             </asp:TemplateField>
-            <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" Visible="False" meta:resourcekey="BoundFieldResource1" >
+            <asp:BoundField HeaderText="Song_Id" DataField="Song_Id" Visible="False" meta:resourcekey="BoundFieldResource1" ShowHeader="False" >
+            <ItemStyle />
             </asp:BoundField>
             <asp:BoundField HeaderText="Song" InsertVisible="False" ReadOnly="True" DataField="Song_SongName" meta:resourcekey="BoundFieldResource2">
             <HeaderStyle HorizontalAlign="Left"/>
@@ -64,7 +69,7 @@
             <asp:ButtonField ButtonType="Button" CommandName="Insert" Text="Int" meta:resourcekey="ButtonFieldResource1">
             <ControlStyle CssClass="dgInsert" />
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Right" />
-             <ItemStyle HorizontalAlign="Right" />
+             <ItemStyle HorizontalAlign="Right" Width="10px" />
              </asp:ButtonField>
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
