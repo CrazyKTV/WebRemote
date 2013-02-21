@@ -29,23 +29,39 @@ namespace web
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
-            var data = GridView1.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get hiddent Song_ID
-
-            if (e.CommandName.ToLower().Trim() == "Insert".ToLower().Trim())
+            try
             {
-                int index = Convert.ToInt32(e.CommandArgument);
-                CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "Insert");
+                var data = GridView1.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get hiddent Song_ID
+
+                if (e.CommandName.ToLower().Trim() == "Insert".ToLower().Trim())
+                {
+                    int index = Convert.ToInt32(e.CommandArgument);
+                    CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "Insert");
+                }
             }
+            catch (Exception) { }
 
 
-            if (e.CommandName.ToLower().Trim() == "Del".ToLower().Trim())
-            {
-                int index = Convert.ToInt32(e.CommandArgument);
-                CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "Delete");
-            }
+            //if (e.CommandName.ToLower().Trim() == "Del".ToLower().Trim())
+            //{
+            //    int index = Convert.ToInt32(e.CommandArgument);
+            //    CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "Delete");
+            //}
 
         }
+
+        protected void BDel_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            GridViewRow row = (GridViewRow)btn.NamingContainer;
+            //Response.Write("Row Index of Link button: " + row.RowIndex +
+            //               "DataKey value:" + GridView1.DataKeys[row.RowIndex].Value.ToString());
+
+            var data = GridView1.DataKeys[row.RowIndex].Value.ToString(); //get hiddent Song_ID
+            CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "Delete");
+        }
+
+  
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {

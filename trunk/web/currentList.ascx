@@ -20,7 +20,7 @@
             <asp:TemplateField ShowHeader="False">
                 <ItemTemplate>
                     <asp:Button ID="BDel" runat="server" CausesValidation="false" CommandName="Del" Text="Del" meta:resourcekey="ButtonFieldResource5"
-                        OnClientClick="return confirm('Delete this song?');"  />
+                        OnClick="BDel_Click" OnClientClick="return confirm('Delete this song?');"  />
                 </ItemTemplate>
                 <ControlStyle CssClass="dgInsert" />
                 <HeaderStyle CssClass="hideThis" HorizontalAlign="Left" />
