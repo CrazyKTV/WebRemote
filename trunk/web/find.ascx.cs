@@ -17,6 +17,33 @@ namespace web
     {
         //DataSet1 dset = new DataSet1();
 
+        protected void LPageNumCount_PreRender(object sender, EventArgs e)
+        {
+            
+
+            //try
+            //{
+            //    if (GridView1.Rows.Count > 0)
+            //    {
+            //        LPageNumDisplay.Visible = true;
+            //        LPageNumCount.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        LPageNumDisplay.Visible = false;
+            //        LPageNumCount.Visible = false;
+            //    }
+
+            //    LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
+            //}
+            //catch
+            //{
+            //    LPageNumDisplay.Visible = false;
+            //    LPageNumCount.Visible = false;
+            //}
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //////for broswer back button
@@ -25,23 +52,37 @@ namespace web
             //    ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
             //}
 
-            try
-            {
-                if (GridView1.Rows.Count > 0)
-                {
-                    LPageNumDisplay.Visible = true;
-                    LPageNumCount.Visible = true;
-                }
-                else
-                {
-                    LPageNumDisplay.Visible = false;
-                    LPageNumCount.Visible = false;
-                }
-            }
-            catch {
-                LPageNumDisplay.Visible = false;
-                LPageNumCount.Visible = false;
-            }
+            //try
+            //{
+
+            //    //DataView dv = new DataView(dt);
+            //    ////dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
+
+            //    //GridView1.Rows.C = dv;
+
+
+            //    if (int.Parse(songDGpage.Value) >= 0)
+            //    {
+            //        LPageNumDisplay.Visible = true;
+            //        LPageNumCount.Visible = true;
+            //        BJump.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        LPageNumDisplay.Visible = false;
+            //        LPageNumCount.Visible = false;
+            //        BJump.Visible = false;
+            //    }
+            //    //LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
+            //    //int.Parse(LPageNumCount.Text.ToString().Trim())
+            //    songDGpage.Value = (int.Parse(LPageNumCount.Text) - 1).ToString();
+            //}
+            //catch {
+            //    LPageNumDisplay.Visible = false;
+            //    LPageNumCount.Visible = false;
+            //    songDGpage.Value = "0";
+            //    BJump.Visible = false;
+            //}
         }
 
 
@@ -58,6 +99,7 @@ namespace web
             songList(0, rowsPerPage);
 
             songDGpage.Value = "0";
+            LPageNumCount.Text = "1";
         }
 
         private void songList(int page, int rows)
@@ -334,6 +376,7 @@ namespace web
                 BNext.Visible = false;
                 BPrevious.Visible = false;
                 songDGpage.Value = "0";
+                LPageNumCount.Text = "1";
 
                 findCaller.Value = "toTop";
                 string _singer = dataStr.ToString().Trim(); // singer
@@ -390,6 +433,8 @@ namespace web
 
 
             songDGpage.Value=(1 + int.Parse(songDGpage.Value.ToString())).ToString();
+            LPageNumCount.Text = (int.Parse(LPageNumCount.Text) + 1).ToString();
+
             //LPageNumCount.Text = songDGpage.Value.ToString();
         }
 
@@ -411,6 +456,7 @@ namespace web
             
 
             songDGpage.Value=(int.Parse(songDGpage.Value.ToString()) -1).ToString();
+            LPageNumCount.Text = (int.Parse(LPageNumCount.Text) - 1).ToString();
             //LPageNumCount.Text = songDGpage.Value.ToString();
         }
 
@@ -425,6 +471,7 @@ namespace web
             BNext.Visible = false;
             BPrevious.Visible = false;
             songDGpage.Value = "0";
+            LPageNumCount.Text = "1";
 
             var data = GridView2.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="User_ID"
             gvMode.Value = data.ToString();
@@ -481,10 +528,10 @@ namespace web
 
         }
 
-        protected void LPageNumCount_PreRender(object sender, EventArgs e)
-        {
-            LPageNumCount.Text = (int.Parse(songDGpage.Value)+1).ToString();
-        }
+        //protected void LPageNumCount_PreRender(object sender, EventArgs e)
+        //{
+        //    //LPageNumCount.Text = (int.Parse(songDGpage.Value)+1).ToString();
+        //}
 
         protected void hideAllGridViewPanel()
         {
@@ -504,7 +551,7 @@ namespace web
             BNext.Visible = false;
             BPrevious.Visible = false;
             songDGpage.Value = "0";
-
+            LPageNumCount.Text = "1";
 
             var data = GridView3.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
            // gvMode.Value = data.ToString();
@@ -551,6 +598,76 @@ namespace web
                 }
             }
 
+        }
+
+        protected void BJump_Click(object sender, EventArgs e)
+        {
+
+
+            try
+            {
+                int _page = int.Parse(LPageNumCount.Text.ToString().Trim());
+                findCaller.Value = "toTop";
+                //clean up data on display
+                GridView1.DataSource = null;
+                GridView1.DataBind();
+
+                if (_page <= 0)
+                    _page = 1;
+
+                if (gvMode.Value.ToString().Trim().Length > 0)
+                {
+                    FSongList(_page - 1, 100, gvMode.Value.ToString());
+                }
+                else
+                {
+                    songList(_page - 1, 100);
+                }
+
+
+                songDGpage.Value = (_page - 1).ToString();
+
+            }
+            catch (Exception) { }
+
+
+            //LPageNumCount.Text = songDGpage.Value.ToString();
+        }
+
+        protected void bSearch_PreRender(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //DataView dv = new DataView(dt);
+                ////dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
+
+                //GridView1.Rows.C = dv;
+
+                if (GridView1.Rows.Count > 0 || int.Parse(songDGpage.Value) > 0)
+                {
+                    LPageNumDisplay.Visible = true;
+                    LPageNumCount.Visible = true;
+                    BJump.Visible = true;
+                }
+                else
+                {
+                    LPageNumDisplay.Visible = false;
+                    LPageNumCount.Visible = false;
+                    BJump.Visible = false;
+                }
+                //LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
+                //int.Parse(LPageNumCount.Text.ToString().Trim())
+                songDGpage.Value = (int.Parse(LPageNumCount.Text) - 1).ToString();
+            }
+            catch
+            {
+                LPageNumDisplay.Visible = false;
+                LPageNumCount.Visible = false;
+                songDGpage.Value = "0";
+                LPageNumCount.Text = "1";
+                BJump.Visible = false;
+            }
         }
 
         //public SortDirection GridViewSortDirection
