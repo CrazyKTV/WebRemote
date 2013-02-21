@@ -51,18 +51,20 @@ namespace web
                 currentList1.Visible = true;
             }
 
+
+
             // check if the WCF is alive
             if (CrazyKTVWCF.WCFlive == false)
             {
                 if (CrazyKTVWCF.checkWCF() == false)
                 {
-                   // Response.Redirect("ErrorDeadWCF.html");
+                    Response.Redirect("ErrorDeadWCF.html");
                 }
             }
 
             GlobalFunctions.currentlang = ddlanguage.SelectedValue.ToString();
             // if WCF is alive then continue with other process
-            System.Threading.Thread.Sleep(150);
+            System.Threading.Thread.Sleep(150);  // to display "loading" icon for 0.15 second
 
             
 

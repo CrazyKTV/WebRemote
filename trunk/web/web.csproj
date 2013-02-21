@@ -245,9 +245,6 @@
     <Content Include="App_LocalResources\video.ascx.zh-CHT.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\find.ascx.en-US.resx" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_LocalResources\find.ascx.zh-CHT.resx" />
   </ItemGroup>
   <ItemGroup>

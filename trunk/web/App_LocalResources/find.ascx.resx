@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BNextResource1.Text" xml:space="preserve">
-    <value>下一頁</value>
+    <value>Next</value>
   </data>
   <data name="BNextResource1.ToolTip" xml:space="preserve">
     <value />
@@ -148,7 +148,7 @@
     <value />
   </data>
   <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
-    <value>歌曲</value>
+    <value>Song</value>
   </data>
   <data name="BoundFieldResource4.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -157,16 +157,16 @@
     <value />
   </data>
   <data name="BoundFieldResource4.HeaderText" xml:space="preserve">
-    <value>歌者</value>
+    <value>Singer</value>
   </data>
   <data name="BPreviousResource1.Text" xml:space="preserve">
-    <value>上一頁</value>
+    <value>Previous</value>
   </data>
   <data name="BPreviousResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="bSearchResource1.Text" xml:space="preserve">
-    <value>列出</value>
+    <value>List</value>
   </data>
   <data name="bSearchResource1.ToolTip" xml:space="preserve">
     <value />
@@ -193,7 +193,7 @@
     <value>A</value>
   </data>
   <data name="ButtonFieldResource2.Text" xml:space="preserve">
-    <value>加</value>
+    <value>＋</value>
   </data>
   <data name="ButtonFieldResource3.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -205,7 +205,19 @@
     <value>I</value>
   </data>
   <data name="ButtonFieldResource3.Text" xml:space="preserve">
-    <value>插</value>
+    <value>Ins</value>
+  </data>
+  <data name="ButtonFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonFieldResource4.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonFieldResource4.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="ddSearchTypeResource1.ToolTip" xml:space="preserve">
     <value />
@@ -228,98 +240,113 @@
   <data name="GridView2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="GridView3Resource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView3Resource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="ListItemResource1.Text" xml:space="preserve">
-    <value>歌名</value>
+    <value>Song Name</value>
   </data>
   <data name="ListItemResource1.Value" xml:space="preserve">
     <value>Song</value>
   </data>
   <data name="ListItemResource10.Text" xml:space="preserve">
-    <value>合唱曲</value>
+    <value>Chorus</value>
   </data>
   <data name="ListItemResource10.Value" xml:space="preserve">
     <value>Chorus</value>
   </data>
   <data name="ListItemResource11.Text" xml:space="preserve">
-    <value>國語</value>
+    <value>Mandarin</value>
   </data>
   <data name="ListItemResource11.Value" xml:space="preserve">
     <value>Mandarin</value>
   </data>
   <data name="ListItemResource12.Text" xml:space="preserve">
-    <value>台語</value>
+    <value>Taiwanese</value>
   </data>
   <data name="ListItemResource12.Value" xml:space="preserve">
     <value>Taiwanese</value>
   </data>
   <data name="ListItemResource13.Text" xml:space="preserve">
-    <value>粵語</value>
+    <value>Cantonese</value>
   </data>
   <data name="ListItemResource13.Value" xml:space="preserve">
     <value>Cantonese</value>
   </data>
   <data name="ListItemResource14.Text" xml:space="preserve">
-    <value>日語</value>
+    <value>Japanese</value>
   </data>
   <data name="ListItemResource14.Value" xml:space="preserve">
     <value>Japanese</value>
   </data>
   <data name="ListItemResource15.Text" xml:space="preserve">
-    <value>英語</value>
+    <value>English</value>
   </data>
   <data name="ListItemResource15.Value" xml:space="preserve">
     <value>English</value>
   </data>
   <data name="ListItemResource16.Text" xml:space="preserve">
-    <value>其他語</value>
+    <value>Others</value>
   </data>
   <data name="ListItemResource16.Value" xml:space="preserve">
     <value>OtherLangs</value>
   </data>
   <data name="ListItemResource2.Text" xml:space="preserve">
-    <value>歌者</value>
+    <value>Singer</value>
   </data>
   <data name="ListItemResource2.Value" xml:space="preserve">
     <value>Singer</value>
   </data>
   <data name="ListItemResource3.Text" xml:space="preserve">
-    <value>字數</value>
+    <value>Word Count</value>
   </data>
   <data name="ListItemResource3.Value" xml:space="preserve">
     <value>WordCount</value>
   </data>
+  <data name="ListItemResource4.GroupingText" xml:space="preserve">
+    <value>-TOP-</value>
+  </data>
   <data name="ListItemResource4.Text" xml:space="preserve">
-    <value>新歌</value>
+    <value>New Songs</value>
   </data>
   <data name="ListItemResource4.Value" xml:space="preserve">
     <value>NewSongs</value>
   </data>
   <data name="ListItemResource5.Text" xml:space="preserve">
-    <value>點播率</value>
+    <value>Top Order</value>
   </data>
   <data name="ListItemResource5.Value" xml:space="preserve">
     <value>TopOrder</value>
   </data>
   <data name="ListItemResource6.Text" xml:space="preserve">
-    <value>最愛</value>
+    <value>Favorites</value>
   </data>
   <data name="ListItemResource6.Value" xml:space="preserve">
     <value>Favorites</value>
   </data>
+  <data name="ListItemResource7.GroupingText" xml:space="preserve">
+    <value>-SINGER-</value>
+  </data>
   <data name="ListItemResource7.Text" xml:space="preserve">
-    <value>男星</value>
+    <value>Male</value>
   </data>
   <data name="ListItemResource7.Value" xml:space="preserve">
     <value>Male</value>
   </data>
   <data name="ListItemResource8.Text" xml:space="preserve">
-    <value>女星</value>
+    <value>Female</value>
   </data>
   <data name="ListItemResource8.Value" xml:space="preserve">
     <value>Female</value>
   </data>
   <data name="ListItemResource9.Text" xml:space="preserve">
-    <value>團體</value>
+    <value>Group</value>
   </data>
   <data name="ListItemResource9.Value" xml:space="preserve">
     <value>Group</value>
@@ -331,7 +358,7 @@
     <value />
   </data>
   <data name="LPageNumDisplayResource1.Text" xml:space="preserve">
-    <value>目前頁數: </value>
+    <value>Page. </value>
   </data>
   <data name="LPageNumDisplayResource1.ToolTip" xml:space="preserve">
     <value />
@@ -360,6 +387,12 @@
   <data name="Panel3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="Panel4Resource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Panel4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="TemplateFieldResource1.AccessibleHeaderText" xml:space="preserve">
     <value />
   </data>
@@ -367,7 +400,7 @@
     <value />
   </data>
   <data name="TemplateFieldResource1.HeaderText" xml:space="preserve">
-    <value>字數</value>
+    <value>w#</value>
   </data>
   <data name="TemplateFieldResource2.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -376,7 +409,7 @@
     <value />
   </data>
   <data name="TemplateFieldResource2.HeaderText" xml:space="preserve">
-    <value>語言</value>
+    <value>L</value>
   </data>
   <data name="TextBox1Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -387,28 +420,19 @@
   <data name="tSearchResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="TextBoxWatermarkExtenderResource1.WatermarkText" xml:space="preserve">
-    <value>全部歌曲</value>
-  </data>
-  <data name="ListItemResource4.GroupingText" xml:space="preserve">
-    <value>-排行-</value>
-  </data>
-  <data name="ListItemResource7.GroupingText" xml:space="preserve">
-    <value>-歌星-</value>
-  </data>
   <data name="ExtendedListItem1.Text" xml:space="preserve">
-    <value>客語</value>
+    <value>Haka</value>
   </data>
   <data name="ExtendedListItem2.Text" xml:space="preserve">
-    <value>原住語</value>
+    <value>Local</value>
   </data>
   <data name="ExtendedListItem3.Text" xml:space="preserve">
-    <value>韓語</value>
+    <value>Korean</value>
   </data>
   <data name="ExtendedListItem4.Text" xml:space="preserve">
-    <value>兒歌</value>
+    <value>Kid</value>
   </data>
   <data name="ListItemResource10.GroupingText" xml:space="preserve">
-    <value>-TYPE-</value>
+    <value>TYPE2222</value>
   </data>
 </root>

@@ -23,7 +23,7 @@
         <piece:ExtendedListItem meta:resourcekey="ListItemResource2" Text="Singer" Value="Singer" GroupingType="none"></piece:ExtendedListItem>        
         <piece:ExtendedListItem Value="WordCount" meta:resourcekey="ListItemResource3" Text="Word Count" GroupingType="none"></piece:ExtendedListItem>  
         <%--<piece:ExtendedListItem GroupingText="--排行--"Text="---排行---" meta:resourcekey="ListItemResource17"></piece:ExtendedListItem>--%>    
-        <piece:ExtendedListItem id="NewSongs" GroupingText="-TOP-" GroupingType="New" Value="NewSongs" meta:resourcekey="ListItemResource4" Text="New Songs"></piece:ExtendedListItem>
+        <piece:ExtendedListItem GroupingText="-TOP-" GroupingType="New" Value="NewSongs" meta:resourcekey="ListItemResource4" Text="New Songs"></piece:ExtendedListItem>
         <piece:ExtendedListItem GroupingType="inherit" Value="TopOrder" meta:resourcekey="ListItemResource5" Text="Top Order"></piece:ExtendedListItem>
         <piece:ExtendedListItem GroupingType="inherit" meta:resourcekey="ListItemResource6" Text="Favorites"></piece:ExtendedListItem>
         <%--<piece:ExtendedListItem Text="---歌星---" meta:resourcekey="ListItemResource18"></piece:ExtendedListItem>--%>    
