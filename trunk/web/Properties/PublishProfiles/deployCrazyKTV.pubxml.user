@@ -23,7 +23,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/20/2013 21:02:37</publishTime>
     </File>
     <File Include="App_LocalResources/currentList.ascx.resx">
-      <publishTime>02/19/2013 21:26:01</publishTime>
+      <publishTime>02/20/2013 22:34:49</publishTime>
     </File>
     <File Include="App_LocalResources/currentList.ascx.zh-CHT.resx">
       <publishTime>02/19/2013 22:05:11</publishTime>
@@ -182,7 +182,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/19/2013 21:26:23</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/20/2013 21:25:03</publishTime>
+      <publishTime>02/20/2013 22:36:10</publishTime>
     </File>
   </ItemGroup>
 </Project>
