@@ -35,7 +35,6 @@ namespace web
             if (e.CommandName.ToLower().Trim() == "Insert".ToLower().Trim())
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-
                 CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "Insert");
             }
 
@@ -43,7 +42,6 @@ namespace web
             if (e.CommandName.ToLower().Trim() == "Del".ToLower().Trim())
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-
                 CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "Delete");
             }
 

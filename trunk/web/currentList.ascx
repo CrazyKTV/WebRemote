@@ -74,7 +74,7 @@
                 <ItemStyle CssClass="dgLang" HorizontalAlign="Right" />
             </asp:TemplateField>
 
-           <asp:ButtonField ButtonType="Button" CommandName="Del" Text="Del" meta:resourcekey="ButtonFieldResource5">
+           <asp:ButtonField ButtonType="Button" CommandName="Insert" Text="Ins" meta:resourcekey="ButtonFieldResource1">
             <ControlStyle CssClass="dgInsert" />
             <HeaderStyle CssClass="hideThis" HorizontalAlign="Left"/>
             <ItemStyle HorizontalAlign="Left" Width="10px" />
