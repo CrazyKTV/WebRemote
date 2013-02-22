@@ -36,9 +36,11 @@
     <![endif]-->
     <!-- Favicons-->
     <!--<link rel="shortcut icon" href="img/favicon.ico">-->
-    <script src="jquery-1.8.3.min.js"></script>
+
+    <script src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="jquery.watermark.js"></script>
-    <script src="touch.js"></script>
+    <%--<script src="jquery.mobile-1.3.0.min.js"></script>--%>
+    <%--<script src="jgestures.min.js"></script>--%>
     <%--<script src="jquery.blockUI.js"></script>--%>
     <meta charset="utf-8" />
     <title>CrazyKTV</title>
@@ -65,27 +67,7 @@
 
             var AfterPostBack = function () {
                 // You write your code here to assign Data
-                // to the calender
-                //window.scrollTo(0, 0);
-                // $("html, body").animate({ scrollTop: 0 }, "slow");
-                //return false;
-                //$('#BPrevious')..click(function() {
-                //    $("html, body").animate({ scrollTop: 0 }, "slow");
-                //    return false;
-                //});
-
-                //$('#BNext').click(function () {
-                //    $("html, body").animate({ scrollTop: 0 }, "slow");
-                //    return false;
-                //});
-
-                //if ($("#ddActions option:selected").val() == "Waiting List") {
-                //    $.
-                //    //return false;
-                //}
-
-                
-
+               
                 if ($('#ddlanguage').val() == "en-US")
                 { $('#tSearch').watermark('All Songs'); }
                 else { $('#tSearch').watermark('全部歌曲'); }
@@ -98,32 +80,13 @@
                 }
 
 
-                //$(document).click(function () {
-                //    Showsuball();
-                //});
-
-
-
-                //$(document).singleTap(function () {
-                //    alert("test2");
-                //})
-
-
-                //$(document).pinchIn(function () {
-                //    Hidesuball();
-                //})
-
-                //$(document).pinchOut(function () {
-                //    Showsuball();
-                //})
-
+                
 
                 $(document).ready(function () {
                     $("#down").css("height", $("#BChannel").height() + "px");
                     $("#up").css("height", $("#BChannel").height() + "px");
                     $(".arrowSpacer").css("height", $("#BChannel").height() + "px");
-                    $(".arrowSpacer").css("width", $("#down").width() + "px");
-                    $(".arrowSpacer").css("width", "48px");
+                    $(".arrowSpacer").css("width", $("#BChannel").height() + "px");
 
                     if ($('#Showsuball').val() == "0")
                     { Hidesuball(); }

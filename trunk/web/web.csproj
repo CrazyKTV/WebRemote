@@ -81,6 +81,7 @@
     <Content Include="images\Arrow2.gif" />
     <Content Include="images\Arrow2.png" />
     <Content Include="images\ErrorDeadWCF.jpg" />
+    <Content Include="jquery-1.9.1.min.js" />
     <Content Include="jquery.blockUI.js" />
     <Content Include="css\layout.css" />
     <Content Include="css\overlay.css" />
@@ -91,14 +92,11 @@
     <Content Include="images\Basic.jpg" />
     <Content Include="images\Button.jpg" />
     <Content Include="images\Button1.jpg" />
-    <Content Include="jquery-1.8.3.min.js" />
     <Content Include="images\flag.png" />
     <Content Include="images\remote.png" />
     <Content Include="jquery.data.js" />
     <Content Include="jquery.watermark.js" />
-    <Content Include="quo.js" />
     <Content Include="songNumber.ascx" />
-    <Content Include="touch.js" />
     <Content Include="tune.ascx" />
     <Content Include="video.ascx" />
     <Content Include="volume.ascx" />
