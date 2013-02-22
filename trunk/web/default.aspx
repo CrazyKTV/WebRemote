@@ -38,6 +38,7 @@
     <!--<link rel="shortcut icon" href="img/favicon.ico">-->
     <script src="jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="jquery.watermark.js"></script>
+    <script src="touch.js"></script>
     <%--<script src="jquery.blockUI.js"></script>--%>
     <meta charset="utf-8" />
     <title>CrazyKTV</title>
@@ -97,6 +98,24 @@
                 }
 
 
+                //$(document).click(function () {
+                //    Showsuball();
+                //});
+
+
+
+                //$(document).singleTap(function () {
+                //    alert("test2");
+                //})
+
+
+                //$(document).pinchIn(function () {
+                //    Hidesuball();
+                //})
+
+                //$(document).pinchOut(function () {
+                //    Showsuball();
+                //})
 
 
                 $(document).ready(function () {
@@ -104,6 +123,7 @@
                     $("#up").css("height", $("#BChannel").height() + "px");
                     $(".arrowSpacer").css("height", $("#BChannel").height() + "px");
                     $(".arrowSpacer").css("width", $("#down").width() + "px");
+                    $(".arrowSpacer").css("width", "48px");
 
                     if ($('#Showsuball').val() == "0")
                     { Hidesuball(); }
@@ -279,7 +299,7 @@
                                 <asp:Button ID="BdMute" runat="server" Text="壞歌" CssClass="button4" OnClick="BdMute_Click" meta:resourcekey="BdMuteResource1" />
                                 <asp:Button ID="BdVolumeDown" runat="server" Text="-音量" CssClass="button4" OnClick="BdVolumeDown_Click" meta:resourcekey="BdVolumeDownResource1"  />
                                 <asp:Button ID="BdColumeUp" runat="server" Text="+音量" CssClass="button4" OnClientClick=";" OnClick="BdColumeUp_Click" meta:resourcekey="BdColumeUpResource1" />
-                                <div class="arrowSpacer" style="display: inline-block"></div>
+                                <div class="arrowSpacer" style="display: inline-block;"></div>
                             </div>
                         </div>
                     </div>

@@ -96,7 +96,9 @@
     <Content Include="images\remote.png" />
     <Content Include="jquery.data.js" />
     <Content Include="jquery.watermark.js" />
+    <Content Include="quo.js" />
     <Content Include="songNumber.ascx" />
+    <Content Include="touch.js" />
     <Content Include="tune.ascx" />
     <Content Include="video.ascx" />
     <Content Include="volume.ascx" />

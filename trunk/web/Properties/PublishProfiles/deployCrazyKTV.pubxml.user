@@ -80,7 +80,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/19/2013 08:37:19</publishTime>
     </File>
     <File Include="bin/web.dll">
-      <publishTime>02/21/2013 13:12:18</publishTime>
+      <publishTime>02/21/2013 16:14:02</publishTime>
     </File>
     <File Include="css/layout.css">
       <publishTime>02/20/2013 11:30:44</publishTime>
@@ -98,7 +98,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2013 08:36:47</publishTime>
     </File>
     <File Include="default.aspx">
-      <publishTime>02/20/2013 09:24:57</publishTime>
+      <publishTime>02/21/2013 16:13:57</publishTime>
     </File>
     <File Include="ErrorDeadWCF.html">
       <publishTime>02/07/2013 21:14:43</publishTime>
@@ -157,6 +157,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="jquery.data.js">
       <publishTime>12/03/2010 11:34:22</publishTime>
     </File>
+    <File Include="jquery.touchy.min.js">
+      <publishTime>02/21/2013 14:42:44</publishTime>
+    </File>
     <File Include="jquery.watermark.js">
       <publishTime>08/13/2012 10:53:46</publishTime>
     </File>
@@ -169,8 +172,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Properties/Settings.settings">
       <publishTime>02/19/2013 11:02:08</publishTime>
     </File>
+    <File Include="quo.js">
+      <publishTime>02/21/2013 16:08:47</publishTime>
+    </File>
     <File Include="songNumber.ascx">
       <publishTime>02/14/2013 09:44:15</publishTime>
+    </File>
+    <File Include="touch.js">
+      <publishTime>02/21/2013 15:50:12</publishTime>
     </File>
     <File Include="tune.ascx">
       <publishTime>02/07/2013 21:14:56</publishTime>
@@ -182,7 +191,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/07/2013 21:14:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/21/2013 13:12:27</publishTime>
+      <publishTime>02/21/2013 16:14:06</publishTime>
     </File>
   </ItemGroup>
 </Project>
