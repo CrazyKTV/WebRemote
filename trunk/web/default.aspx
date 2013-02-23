@@ -24,6 +24,8 @@
 
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/crazyktv.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/crazyktv.png" />
     <!--Mobile specific meta goodness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->

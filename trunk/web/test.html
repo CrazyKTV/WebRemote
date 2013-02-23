@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/crazyktv.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/crazyktv.png" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <!--Mobile specific meta goodness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
@@ -15,9 +17,9 @@
     <![endif]-->
     <!-- Favicons-->
     <!--<link rel="shortcut icon" href="img/favicon.ico">-->
-    <script src="jquery-1.8.3.min.js"></script>
+    <script src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="jquery.watermark.js"></script>
-
+<script src="jquery.touchy.min.js"></script>
     <meta charset="utf-8" />
     <title>CrazyKTV</title>
 </head>
@@ -37,6 +39,8 @@
 
             });
 
+		
+			
             var AfterPostBack = function () {
                  $(".up").click(function () {
                     $("#div1").animate({ bottom:$(document).height() *0.9 +'px'  }, "slow");
@@ -47,6 +51,46 @@
                     $("#div1").animate({ bottom:'-0px'  }, "slow");
 
                 });
+
+				
+			var handleTouchyPinch = function (e, $target, data) {
+    //$target.css({'webkitTransform':'scale(' + data.scale + ',' + data.scale + ')'});
+	
+	$('*').mouseout(function() {
+  //$("#target").append(data.scale + " ");
+  
+    if (data.scale<1)
+  {$("#div1").animate({ bottom:$(document).height() *0.9 +'px'  }, "fast");
+			$("#suball").css("height", $(document).height() *0.9+"px");
+	}
+	else if (data.scale>1)
+	{   $("#div1").animate({ bottom:'-0px'  }, "fast");}
+
+  
+  
+});
+};
+//$('#target').bind('touchy-pinch', handleTouchyPinch);
+$("*").bind('touchy-pinch', handleTouchyPinch);
+
+
+var handleTouchyswipe = function (e, $target, data) {
+    //$target.css({'webkitTransform':'scale(' + data.scale + ',' + data.scale + ')'});
+
+  //$("#target").append(data.direction + " ");
+
+};
+$("*").bind('touchy-swipe', handleTouchyswipe);
+
+			//$('#target').bind('touchy-pinch', handleTouchyPinch);
+			
+			//$('#target').bind('touchy-pinch', handleTouchyPinch);
+			
+			//$("#target").click(function() {
+			  //alert("Handler for .click() called.");
+			 // $("#target").append(" testxx ");
+			//});
+
 
                return false;               
             }
@@ -65,6 +109,9 @@
                         z-index: 10;
                     }
                 </style>
+				
+				<div class="targetc" id="target" style="display:block; width:300px; height:300px;">here<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				aa</div>
                 <div style="clear:both;"/>
                 <div class="alwaysVisibleDiv" id="div1">
 		<div class="up" style="display:inline-block; width:50px;">UP</div> 

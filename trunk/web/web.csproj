@@ -80,9 +80,12 @@
     <Content Include="images\Arrow.png" />
     <Content Include="images\Arrow2.gif" />
     <Content Include="images\Arrow2.png" />
+    <Content Include="images\crazyktv.png" />
     <Content Include="images\ErrorDeadWCF.jpg" />
+    <Content Include="images\favicon.ico" />
     <Content Include="jquery-1.9.1.min.js" />
-    <Content Include="jquery.blockUI.js" />
+    <Content Include="jquery.touchy.min.js" />
+    <Content Include="js\~\jquery.blockUI.js" />
     <Content Include="css\layout.css" />
     <Content Include="css\overlay.css" />
     <Content Include="currentList.ascx" />
@@ -94,7 +97,7 @@
     <Content Include="images\Button1.jpg" />
     <Content Include="images\flag.png" />
     <Content Include="images\remote.png" />
-    <Content Include="jquery.data.js" />
+    <Content Include="js\~\jquery.data.js" />
     <Content Include="jquery.watermark.js" />
     <Content Include="songNumber.ascx" />
     <Content Include="tune.ascx" />

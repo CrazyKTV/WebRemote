@@ -220,7 +220,7 @@
     <value />
   </data>
   <data name="lFunctionsResource1.Text" xml:space="preserve">
-    <value>Functions: </value>
+    <value>Functions:</value>
   </data>
   <data name="lFunctionsResource1.ToolTip" xml:space="preserve">
     <value />
@@ -310,7 +310,7 @@
     <value>---------</value>
   </data>
   <data name="lLanguageResource1.Text" xml:space="preserve">
-    <value>Language: </value>
+    <value>Language:</value>
   </data>
   <data name="lLanguageResource1.ToolTip" xml:space="preserve">
     <value />
