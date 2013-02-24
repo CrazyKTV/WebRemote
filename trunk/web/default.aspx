@@ -26,24 +26,25 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/crazyktv.png" />
     <link rel="apple-touch-icon-precomposed" href="/images/crazyktv.png" />
+
     <!--Mobile specific meta goodness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
 
     <link href="css/layout.css" rel="stylesheet" />
     <link href="css/overlay.css" rel="stylesheet" />
+
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <script src="IE9html5.js"></script>
     <![endif]-->
-    <!-- Favicons-->
-    <!--<link rel="shortcut icon" href="img/favicon.ico">-->
+
 
     <script src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="jquery.watermark.js"></script>
-    <%--<script src="jquery.mobile-1.3.0.min.js"></script>--%>
-    <%--<script src="jgestures.min.js"></script>--%>
-    <%--<script src="jquery.blockUI.js"></script>--%>
+    <script src="hammer.js"></script>
+    <script src="jquery.specialevent.hammer.js"></script>
+
     <meta charset="utf-8" />
     <title>CrazyKTV</title>
 </head>
@@ -66,6 +67,10 @@
                 // Called when postback occurs
 
             });
+
+
+
+
 
             var AfterPostBack = function () {
                 // You write your code here to assign Data
@@ -155,6 +160,48 @@
                 });
 
 
+
+                //touch events
+
+                function hammerLog(event) {
+                    event.preventDefault();
+                    //$output.prepend( "Type: " + event.type + ", Fingers: " + event.touches.length + ", Direction: " + event.direction + "<br/>" );
+                    //$('#output').prepend("Type: " + event.type + ", Fingers: " + event.touches.length + ", Direction: " + event.direction + ", scale:" + event.scale + "<br/>");
+
+                    //alert("testaa");
+                   // Showsuball();
+
+                    if (event.direction == "down") {
+                        Hidesuball();
+                    }
+                    else if (event.direction == "up")
+                        {
+                        Showsuball();
+                     }
+
+                }
+
+
+                //var actions = 'hold tap swipe doubletap transformstart transform transformend dragstart drag dragend release';
+                //var actions = 'swipe';
+
+                //register each DOM jquery events
+                //$("#alwaysVisibleDiv").find("*").on('tap', hammerLog);
+                $("#alwaysVisibleDiv").children('*').on('swipe', hammerLog);
+                $("#alwaysVisibleDiv").on('swipe', hammerLog);
+                $("#suball").children('*').on('swipe', hammerLog);
+                $("#suball").on('swipe', hammerLog);
+                
+                //$("*").on('tap', hammerLog);
+
+                /*	
+				(function ($) {
+                    $("*").on(actions, hammerLog);
+                }(jQuery));
+				*/
+
+
+                //touch events END
 
                 return false;
 

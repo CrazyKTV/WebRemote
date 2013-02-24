@@ -74,8 +74,10 @@
   <ItemGroup>
     <Content Include="advanced.ascx" />
     <Content Include="ErrorDeadWCF.html" />
+    <Content Include="favicon.ico" />
     <Content Include="find.ascx" />
     <Content Include="getSinger.aspx" />
+    <Content Include="hammer.js" />
     <Content Include="images\Arrow.gif" />
     <Content Include="images\Arrow.png" />
     <Content Include="images\Arrow2.gif" />
@@ -84,7 +86,8 @@
     <Content Include="images\ErrorDeadWCF.jpg" />
     <Content Include="images\favicon.ico" />
     <Content Include="jquery-1.9.1.min.js" />
-    <Content Include="jquery.touchy.min.js" />
+    <Content Include="jquery.hammer.js" />
+    <Content Include="jquery.specialevent.hammer.js" />
     <Content Include="js\~\jquery.blockUI.js" />
     <Content Include="css\layout.css" />
     <Content Include="css\overlay.css" />
@@ -100,6 +103,7 @@
     <Content Include="js\~\jquery.data.js" />
     <Content Include="jquery.watermark.js" />
     <Content Include="songNumber.ascx" />
+    <Content Include="test2.html" />
     <Content Include="tune.ascx" />
     <Content Include="video.ascx" />
     <Content Include="volume.ascx" />
@@ -262,6 +266,12 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
