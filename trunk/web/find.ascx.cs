@@ -460,23 +460,47 @@ namespace web
             //LPageNumCount.Text = songDGpage.Value.ToString();
         }
 
-        protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            //clean up data on display
-            GridView1.DataSource = null;
-            GridView1.DataBind();
-            tSearch.Text = "";
-            hideAllGridViewPanel();
-            Panel2.Visible = true;
-            BNext.Visible = false;
-            BPrevious.Visible = false;
-            songDGpage.Value = "0";
-            LPageNumCount.Text = "1";
+        //protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
+        //{
+        //    //clean up data on display
+        //    GridView1.DataSource = null;
+        //    GridView1.DataBind();
+        //    tSearch.Text = "";
+        //    hideAllGridViewPanel();
+        //    Panel2.Visible = true;
+        //    BNext.Visible = false;
+        //    BPrevious.Visible = false;
+        //    songDGpage.Value = "0";
+        //    LPageNumCount.Text = "1";
 
-            var data = GridView2.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="User_ID"
-            gvMode.Value = data.ToString();
-            FSongList(0, 100, data.ToString());
-        }
+        //    var data = GridView2.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="User_ID"
+        //    gvMode.Value = data.ToString();
+        //    FSongList(0, 100, data.ToString());
+        //}
+
+
+        //protected void Bfavorite_Click(object sender, EventArgs e)
+        //{
+        //    //clean up data on display
+        //    GridView1.DataSource = null;
+        //    GridView1.DataBind();
+        //    tSearch.Text = "";
+        //    hideAllGridViewPanel();
+        //    Panel2.Visible = true;
+        //    BNext.Visible = false;
+        //    BPrevious.Visible = false;
+        //    songDGpage.Value = "0";
+        //    LPageNumCount.Text = "1";
+
+
+        //    //LocationID = Me.MyListView.DataKeys(currentItem.DataItemIndex)("LocationID")
+
+        //    //var data = this.GridView2.DataKeys( ((Button)sender).Text.ToString(); //get DataKeyNames="User_ID"
+        //    //gvMode.Value = data.ToString();
+        //    //FSongList(0, 100, data.ToString());
+        //}
+
+
 
         private void FSongList(int page, int rows, string user)
         {
@@ -540,8 +564,28 @@ namespace web
             Panel4.Visible = false;
         }
 
-        protected void GridView3_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
+        //protected void GridView3_RowCommand(object sender, GridViewCommandEventArgs e)
+        //{
+        //    //clean up data on display
+        //    GridView1.DataSource = null;
+        //    GridView1.DataBind();
+        //    tSearch.Text = "";
+        //    hideAllGridViewPanel();
+        //    Panel2.Visible = true;
+        //    BNext.Visible = false;
+        //    BPrevious.Visible = false;
+        //    songDGpage.Value = "0";
+        //    LPageNumCount.Text = "1";
+
+        //    var data = GridView3.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
+        //   // gvMode.Value = data.ToString();
+        //    tSearch.Text = data.ToString();
+        //    SingerSongList(0, 100, data.ToString());
+        //    ddSearchType.SelectedIndex = 1;
+
+        //}
+
+        protected void Bsinger_Click(object sender, EventArgs e) {
             //clean up data on display
             GridView1.DataSource = null;
             GridView1.DataBind();
@@ -553,12 +597,12 @@ namespace web
             songDGpage.Value = "0";
             LPageNumCount.Text = "1";
 
-            var data = GridView3.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
-           // gvMode.Value = data.ToString();
+           // var data = GridView3.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
+            var data = ((Button)sender).Text.ToString();
+             gvMode.Value = data.ToString();
             tSearch.Text = data.ToString();
             SingerSongList(0, 100, data.ToString());
             ddSearchType.SelectedIndex = 1;
-
         }
 
         private void SingerSongList(int page, int rows, string Singer_Name)
@@ -668,6 +712,27 @@ namespace web
                 LPageNumCount.Text = "1";
                 BJump.Visible = false;
             }
+        }
+
+        protected void GridView2_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            //clean up data on display
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            tSearch.Text = "";
+            hideAllGridViewPanel();
+            Panel2.Visible = true;
+            BNext.Visible = false;
+            BPrevious.Visible = false;
+            songDGpage.Value = "0";
+            LPageNumCount.Text = "1";
+
+
+            //LocationID = Me.MyListView.DataKeys(currentItem.DataItemIndex)("LocationID")
+
+            var data = this.GridView2.DataKeys[e.Item.DataItemIndex]["User_Id"]; //get DataKeyNames="User_ID"
+            gvMode.Value = data.ToString();
+            FSongList(0, 100, data.ToString());
         }
 
         //public SortDirection GridViewSortDirection

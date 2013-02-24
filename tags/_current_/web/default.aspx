@@ -274,7 +274,7 @@
                         text-align: center;
                         display: inline;
                         width: 100%;
-                        background-color: #333;
+                        background-color: #000000;
                         z-index: 10;
                     }
                 </style>
@@ -286,8 +286,8 @@
 
                     <img id="up" style="display: inline-block;  max-width:48px; vertical-align:middle;" src="images/Arrow.gif" />
                     <img id="down" style="display: none; max-width:48px; vertical-align:middle;" src="images/Arrow2.gif" />
-                    <div id="all" style="display: block; height: 0px; background-color: #333;">
-                        <div id="suball" style="display: none; background-color: #333;">
+                    <div id="all" style="display: block; height: 0px; background-color: #000000;">
+                        <div id="suball" style="display: none; background-color: #000000;">
 
                             <div id="row1" style="display: block;">
                                 <asp:Button ID="BdRestart" runat="server" Text="重播" CssClass="button4" OnClick="BdRestart_Click" meta:resourcekey="BdRestartResource1" />

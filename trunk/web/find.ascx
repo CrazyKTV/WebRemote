@@ -158,8 +158,20 @@
 </asp:Panel>
 
 
-<asp:Panel ID="Panel3" runat="server" Visible="False" meta:resourcekey="Panel3Resource1">
-    <asp:GridView ID="GridView2" runat="server" DataKeyNames="User_Id,User_Name" AutoGenerateColumns="False" CssClass="gridview" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView2_RowCommand" meta:resourcekey="GridView2Resource1">
+<asp:Panel ID="Panel3" runat="server" Visible="False" meta:resourcekey="Panel3Resource1" cssclass="alignCenter">
+
+    <asp:ListView ID="GridView2" runat="server" DataKeyNames="User_Id,User_Name" OnItemCommand="GridView2_ItemCommand">
+              <ItemTemplate>
+                   <asp:Button CssClass="button1columns" ID="Bfavorite"   runat="server" Text='<%# Eval("User_Name").ToString() %>' Visible="true" />
+        </ItemTemplate>
+    </asp:ListView>
+
+
+
+
+
+<%--    <asp:GridView ID="GridView23" runat="server" DataKeyNames="User_Id,User_Name" AutoGenerateColumns="False" 
+        CssClass="gridview" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView2_RowCommand" meta:resourcekey="GridView2Resource1">
         <Columns>
             <asp:BoundField HeaderText="User_Id" DataField="User_Id" Visible="False" meta:resourcekey="BoundFieldResource1" >
             </asp:BoundField>
@@ -170,14 +182,23 @@
             </asp:ButtonField>
         </Columns>
         <HeaderStyle CssClass="gridviewHeader" />
-    </asp:GridView>
+    </asp:GridView>--%>
     <br />
 </asp:Panel>
 
 
 
-<asp:Panel ID="Panel4" runat="server" Visible="False" meta:resourcekey="Panel4Resource1">
-    <asp:GridView ID="GridView3" runat="server" DataKeyNames="Singer_Name,Singer_Type" AutoGenerateColumns="False" CssClass="gridview" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView3_RowCommand" meta:resourcekey="GridView3Resource1" >
+<asp:Panel ID="Panel4" runat="server" Visible="False" meta:resourcekey="Panel4Resource1" cssclass="alignCenter">
+
+        <asp:ListView ID="GridView3" runat="server" DataKeyNames="Singer_Name,Singer_Type">
+              <ItemTemplate>
+                   <asp:Button CssClass="button1columns" ID="Bsinger" onclick="Bsinger_Click" runat="server" Text='<%# Eval("Singer_Name").ToString() %>' Visible="true" />
+        </ItemTemplate>
+    </asp:ListView>
+
+
+
+    <%--<asp:GridView ID="GridView23" runat="server" DataKeyNames="Singer_Name,Singer_Type" AutoGenerateColumns="False" CssClass="gridview" AllowSorting="True" PageSize="1" EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" OnRowCommand="GridView3_RowCommand" meta:resourcekey="GridView3Resource1" >
         <Columns>
             <asp:ButtonField ButtonType="Button" CommandName="Select" DataTextField="Singer_Name" InsertVisible="False" meta:resourcekey="ButtonFieldResource4">
             <ControlStyle CssClass="button1" />
@@ -186,7 +207,7 @@
             </asp:ButtonField>
         </Columns>
         <HeaderStyle CssClass="gridviewHeader" />
-    </asp:GridView>
+    </asp:GridView>--%>
     <br />
 </asp:Panel>
 

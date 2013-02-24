@@ -163,7 +163,7 @@ namespace web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.ListView GridView2;
         
         /// <summary>
         /// Panel4 control.
@@ -181,6 +181,6 @@ namespace web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView3;
+        protected global::System.Web.UI.WebControls.ListView GridView3;
     }
 }
