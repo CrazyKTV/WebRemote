@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>jQuery special event API on hammerjs</title>
+	<meta charset="utf-8" />
+	
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/crazyktv.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/crazyktv.png" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	
+    <!--Mobile specific meta goodness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+
+	<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="IE9html5.js"></script>
+    <![endif]-->
+		
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="hammer.js"></script>
+    <script src="jquery.specialevent.hammer.js"></script>
+	
+	<link href="css/layout.css" rel="stylesheet" />
+    <link href="css/overlay.css" rel="stylesheet" />
+    <style>
+        #swipeme {
+            border: 3px dashed orange;
+            line-height: 300px;
+            height: 300px;
+            text-align: center;
+            font-size: 3em;
+            width: 100%;
+        }
+    </style>
+	
+	
+	    <script>
+
+	        $(document).ready(function () {
+
+	         
+
+	            //touch
+
+	            function hammerLog(event) {
+	                event.preventDefault();
+	                //$output.prepend( "Type: " + event.type + ", Fingers: " + event.touches.length + ", Direction: " + event.direction + "<br/>" );
+	                $('#output').prepend("Type: " + event.type + ", Fingers: " + event.touches.length + ", Direction: " + event.direction + ", scale:" + event.scale + "<br/>");
+
+
+
+	                //if (event.type == "transformend" && event.scale > 1) {
+	                //    $("#div1").animate({ bottom: '-0px' }, "fast");
+	                //}
+	                //else if (event.type == "transformend" && event.scale < 1)
+	                //    $("#div1").animate({ bottom: $(window).height() * 0.5 + 'px' }, "fast");
+	                //$("#suball").css("height", $(window).height() * 0.5 + "px");
+
+	            }
+
+
+	            
+	            var actions = 'hold tap swipe doubletap transformstart transform transformend dragstart drag dragend release';
+	            //actions = 'swipe tap transformend';
+	            
+	            //$('*').on('tap', function () {
+	            //    alert('test');
+	            //});
+
+	            //$("#div1").find("*").on('swipe', hammerLog);
+
+	            $("#target").children('*').on(actions, hammerLog);
+
+
+	            //(function ($) {
+	            //    $("#target").children().on(actions, hammerLog);
+	            //}(jQuery));
+
+
+
+
+	            $(".up").click(function () {
+	                $("#div1").animate({ bottom: $(window).height() * 0.5 + 'px' }, "fast");
+	                $("#suball").css("height", $(window).height() * 0.5 + "px");
+	            });
+
+	            $(".down").click(function () {
+	                $("#div1").animate({ bottom: '-0px' }, "fast");
+	            });
+	        }
+
+            )
+    </script>
+</head>
+<body>
+
+
+	
+	           <style>
+                    .alwaysVisibleDiv
+                    {
+                        
+                        bottom: 0px;
+                        left: 0px;
+                        text-align: center ;
+                        display:inline;
+                        width:100%;
+                        background-color: #000000;
+                        z-index: 10;
+                    }
+                </style>
+				
+				<div class="targetc" id="target" style="display:block; width:100%; height:300px;">
+                    <div class="targetc" id="Div2" style="background-color:red; display:block; width:300px; height:400px;"></div>
+here<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				aa
+
+				</div>
+                <div style="clear:both;"/>
+                <div class="alwaysVisibleDiv" id="div1">
+		<div class="up" style="display:inline-block; width:50px;">UP</div> 
+		<div class="down" style="display:inline-block; width:50px;">down</div> 
+<div id="all" style="display:block; height:0px; background-color: #000000;"><div id="suball" style="display:block;background-color: #000000;">all<br/>fda<br/>fd<br/>fd<br/>fdsafs<br/>fda<br/></div></div> 
+                </div>
+				
+	Output:<div id="output"></div>
+
+	
+</body>
+</html>
