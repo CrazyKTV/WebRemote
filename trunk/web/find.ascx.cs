@@ -17,6 +17,8 @@ namespace web
     {
         //DataSet1 dset = new DataSet1();
 
+        //string findListOrder =  GlobalFunctions.FindListOrder;
+
         protected void LPageNumCount_PreRender(object sender, EventArgs e)
         {
             
@@ -46,6 +48,37 @@ namespace web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           // if (GlobalFunctions.FindListOrder == "2") //order
+           // {
+                //SharpPieces.Web.Controls.ExtendedListItem eli1 = new SharpPieces.Web.Controls.ExtendedListItem("Song Name", "Song", SharpPieces.Web.Controls.ListItemGroupingType.None);
+                //SharpPieces.Web.Controls.ExtendedListItem eli2 = new SharpPieces.Web.Controls.ExtendedListItem("Singer", "Singer", SharpPieces.Web.Controls.ListItemGroupingType.None);
+                //SharpPieces.Web.Controls.ExtendedListItem eli3 = new SharpPieces.Web.Controls.ExtendedListItem("Word Count", "WordCount", SharpPieces.Web.Controls.ListItemGroupingType.None);
+
+                //eli1.Attributes.Add("meta:resourcekey", "ListItemResource1");
+                //eli1.Attributes.Add("meta:resourcekey", "ListItemResource2");
+                //eli1.Attributes.Add("meta:resourcekey", "ListItemResource3");
+
+                //ddSearchType.ExtendedItems.Add(eli1);
+                //ddSearchType.ExtendedItems.Add(eli2);
+                //ddSearchType.ExtendedItems.Add(eli3);
+
+
+           // }
+
+            //    SharpPieces.Web.Controls.ExtendedListItem eli = new SharpPieces.Web.Controls.ExtendedListItem();
+                
+                
+            //    ddSearchType.ExtendedItems.Insert ([0].Enabled = false;
+            //    ddSearchType.ExtendedItems[1].Enabled = false;
+            //    ddSearchType.ExtendedItems[2].Enabled = false;            
+            //}
+            //else {
+            //    ddSearchType.ExtendedItems[5].Enabled = false;
+            //    ddSearchType.ExtendedItems[6].Enabled = false;
+            //    ddSearchType.ExtendedItems[7].Enabled = false;   
+            
+            //}
+
             //////for broswer back button
             //if (ScriptManagerProxy1.isinas.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
             //{

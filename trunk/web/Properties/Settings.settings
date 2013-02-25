@@ -11,5 +11,11 @@
     <Setting Name="DurationInMillisecond_currentList" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">180000</Value>
     </Setting>
+    <Setting Name="FindListOrder" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="DurationInSecond_currentList" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">180</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

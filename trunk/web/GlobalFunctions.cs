@@ -27,7 +27,18 @@ namespace web
             set { ;}
         }
 
+        public static string FindListOrder
+        {
+            get
+            {
+                if (getCookieValue("FindListOrder") != null)
+                    return getCookieValue("FindListOrder").ToString();
+                else
+                    return Properties.Settings.Default.FindListOrder.ToString();
+            }
 
+            set { ;}
+        }
 
         public static DataTable JsontoDataTable(string jsonString)
         {
