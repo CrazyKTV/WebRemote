@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="advanced.ascx" />
+    <Content Include="css\layout2.css" />
     <Content Include="ErrorDeadWCF.html" />
     <Content Include="favicon.ico" />
     <Content Include="find.ascx" />

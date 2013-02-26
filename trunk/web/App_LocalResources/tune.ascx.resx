@@ -124,7 +124,7 @@
     <value />
   </data>
   <data name="tuneMaleVoiceResource1.Text" xml:space="preserve">
-    <value>Tune Male Voice</value>
+    <value>Male Voice</value>
   </data>
   <data name="tuneMaleVoiceResource1.ToolTip" xml:space="preserve">
     <value />
@@ -142,7 +142,7 @@
     <value />
   </data>
   <data name="tuneWomanVoiceResource1.Text" xml:space="preserve">
-    <value>Tune Female Voice</value>
+    <value>Female Voice</value>
   </data>
   <data name="tuneWomanVoiceResource1.ToolTip" xml:space="preserve">
     <value />

@@ -96,7 +96,7 @@ namespace web
         {
             try
             {
-               Timer1.Interval = int.Parse(GlobalFunctions.DurationInMillisecond_currentList);
+                Timer1.Interval = int.Parse(GlobalFunctions.DurationInSecond_currentList)*1000;
             }
             catch (Exception)
             { }

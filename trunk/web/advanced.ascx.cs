@@ -19,7 +19,7 @@ namespace web
 
             if (TsettingRefreshRate.Text.Trim().Length<1)
             {
-                   TsettingRefreshRate.Text = GlobalFunctions.DurationInMillisecond_currentList.ToString();
+                TsettingRefreshRate.Text = GlobalFunctions.DurationInSecond_currentList.ToString();
             }
 
 
@@ -97,10 +97,10 @@ namespace web
             {
                 try
                 {
-                    if (int.Parse(TsettingRefreshRate.Text.ToString().Trim()) < 3000)
-                    { TsettingRefreshRate.Text = "3000"; //min is 3 seconds
+                    if (int.Parse(TsettingRefreshRate.Text.ToString().Trim()) < 3)
+                    { TsettingRefreshRate.Text = "3"; //min is 3 seconds
                     }
-                    GlobalFunctions.setCookie("DurationInMillisecond_currentList", TsettingRefreshRate.Text.ToString().Trim());
+                    GlobalFunctions.setCookie("DurationInSecond_currentList", TsettingRefreshRate.Text.ToString().Trim());
                 }
                 catch (Exception)
                 {

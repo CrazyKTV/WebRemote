@@ -14,14 +14,14 @@ namespace web
         //public static string wcfUrl = Properties.Settings.Default.CrazyKTV_WCF_URL;
         public static string currentlang = "";
 
-        public static string DurationInMillisecond_currentList
+        public static string DurationInSecond_currentList
         {
             get
             {
-                if (getCookieValue("DurationInMillisecond_currentList") != null)
-                    return getCookieValue("DurationInMillisecond_currentList").ToString();
+                if (getCookieValue("DurationInSecond_currentList") != null)
+                    return getCookieValue("DurationInSecond_currentList").ToString();
                 else
-                    return Properties.Settings.Default.DurationInMillisecond_currentList.ToString();
+                    return Properties.Settings.Default.DurationInSecond_currentList.ToString();
             }
 
             set { ;}
