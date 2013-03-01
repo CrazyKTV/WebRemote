@@ -36,16 +36,23 @@ namespace web
 
         private string getSingerSex(string url, string singerType) { 
             string _contecnt = CrazyKTVWCF.requestWeb(url);
+            string _result = "";
 
-            _contecnt = Regex.Replace(_contecnt, "<.*<table width=\"100%\">", "", RegexOptions.IgnoreCase | RegexOptions.Multiline);
-            _contecnt = Regex.Replace(_contecnt, "<script[\\s\\S]*?/script>", "", RegexOptions.IgnoreCase | RegexOptions.Multiline);
-            _contecnt = Regex.Replace(_contecnt, "(\\S*)<p align=\"center\"><script>document.write(.*)", "", RegexOptions.Multiline | RegexOptions.IgnoreCase);
-            _contecnt = Regex.Replace(_contecnt, "<(.|\\n)*?>", "",RegexOptions.Multiline | RegexOptions.IgnoreCase);
-          //  _contecnt = _contecnt.Replace(Environment.NewLine + Environment.NewLine, "");
-            _contecnt = _contecnt.Replace(Environment.NewLine, "," + singerType + Environment.NewLine);
-            _contecnt = Regex.Replace(_contecnt, "[%*/]", "", RegexOptions.Multiline | RegexOptions.IgnoreCase);
-            _contecnt = _contecnt.Replace(@"&", @"+");
-            _contecnt = (@"<pre>" + Environment.NewLine+ _contecnt + Environment.NewLine+ @"</pre>");
+            MatchCollection _matches = Regex.Matches(_contecnt,"<td><a href(.*)</a>",RegexOptions.IgnoreCase| RegexOptions.Multiline);	
+
+            foreach (Match _match in _matches)
+            {
+                _result = _result + '"' + _match.ToString().Trim() + '"' + "," + singerType + Environment.NewLine;
+            }
+
+            _result = Regex.Replace(_result, "<(.|\\n)*?>", "", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+            _result = _result.Trim();
+            _result = _result.Replace(@"&amp;", @"+");
+            _result = _result.Replace(@" + ", @"+");
+            _result = _result.Replace(@"＆", @"+");
+            _result = Regex.Replace(_result, "[%*/！!.-]", "", RegexOptions.Multiline | RegexOptions.IgnoreCase);            
+            _result = (@"<pre>" + Environment.NewLine + _result + Environment.NewLine + @"</pre>");
+
 
 
            // _contecnt = Regex.Replace(_contecnt, @"<(.|\n)*?>", "");
@@ -56,7 +63,7 @@ namespace web
            // _contecnt = (@"<pre>" + _contecnt + @"</pre>").Replace(Environment.NewLine + Environment.NewLine, singerType + Environment.NewLine);
            //// Console.WriteLine(_contecnt);
 
-            return _contecnt;
+            return _result;
         }
     }
 }

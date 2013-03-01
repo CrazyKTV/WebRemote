@@ -75,6 +75,7 @@
     <Content Include="advanced.ascx" />
     <Content Include="css\layout2.css" />
     <Content Include="ErrorDeadWCF.html" />
+    <Content Include="example.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="find.ascx" />
     <Content Include="getSinger.aspx" />
@@ -87,6 +88,7 @@
     <Content Include="images\ErrorDeadWCF.jpg" />
     <Content Include="images\favicon.ico" />
     <Content Include="jquery-1.9.1.min.js" />
+    <Content Include="jquery.dragsort.js" />
     <Content Include="jquery.hammer.js" />
     <Content Include="jquery.specialevent.hammer.js" />
     <Content Include="js\~\jquery.blockUI.js" />
@@ -119,6 +121,10 @@
       <DependentUpon>advanced.ascx</DependentUpon>
     </Compile>
     <Compile Include="CrazyKTVWCF.cs" />
+    <Compile Include="example.aspx.cs">
+      <DependentUpon>example.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="find.ascx.cs">
       <DependentUpon>find.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
