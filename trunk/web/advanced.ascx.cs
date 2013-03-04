@@ -29,7 +29,7 @@ namespace web
                 {
                     LToFriend.Visible = true;
                     ImageQR.Visible = true;
-                    //only generate once for the QR code, isregard the sessions
+                    //only generate once for the QR code, desregard the sessions
                     if (Application["QRimageMS"] == null)
                     {
                         String strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
@@ -44,6 +44,10 @@ namespace web
                         renderer.WriteToStream(qrCode.Matrix, ms, ImageFormat.Jpeg);
                         //GlobalFunctions.QRimageMS = ms;
                         Application["QRimageMS"] = ms;
+
+                        
+                        //Resources.GlobalMessages.QRimage=ms.ToString();
+
                     }
 
                     if (GlobalFunctions.QRimageMS == null)

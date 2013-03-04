@@ -105,6 +105,7 @@
     <Content Include="images\remote.png" />
     <Content Include="js\~\jquery.data.js" />
     <Content Include="jquery.watermark.js" />
+    <None Include="Resources\QRimage.bmp" />
     <Content Include="songNumber.ascx" />
     <Content Include="test2.html" />
     <Content Include="tune.ascx" />

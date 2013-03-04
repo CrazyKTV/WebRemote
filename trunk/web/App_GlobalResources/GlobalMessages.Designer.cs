@@ -77,5 +77,23 @@ namespace Resources {
                 return ResourceManager.GetString("directionrtl", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string QRimage {
+            get {
+                return ResourceManager.GetString("QRimage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string UrlWeb {
+            get {
+                return ResourceManager.GetString("UrlWeb", resourceCulture);
+            }
+        }
     }
 }
