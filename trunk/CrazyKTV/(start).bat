@@ -13,7 +13,9 @@ del %temp%\ip.txt
 pause
 
 
-start /min CassiniDev4-console.exe /a:%CD%\web /im:Any /prs:80 /pre:9000
+start /min %CD%\CassiniDev4-console.exe /a:%CD%\web /im:Any /prs:80 /pre:9000
 start /wait %CD%\CrazyKTV.exe
 
 taskkill /f /im CassiniDev4-console.exe
+
+rem pause
