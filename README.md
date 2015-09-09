@@ -1,0 +1,1 @@
+Welcome to CrazyKtV Web component page!
