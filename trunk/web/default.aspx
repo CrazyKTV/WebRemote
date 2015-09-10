@@ -36,14 +36,14 @@
 
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="IE9html5.js"></script>
+        <script src="Scripts/IE9html5.js"></script>
     <![endif]-->
 
 
-    <script src="jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="jquery.watermark.js"></script>
-    <script src="hammer.js"></script>
-    <script src="jquery.specialevent.hammer.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.watermark.js"></script>
+    <script src="Scripts/hammer.js"></script>
+    <script src="Scripts/jquery.specialevent.hammer.js"></script>
 
     <meta charset="utf-8" />
     <title>CrazyKTV</title>

@@ -13,7 +13,7 @@
 	</style>
 </head>
 <body>
-    <script src="jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
  <%--   <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>--%>
 	<% /* %><script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1-vsdoc.js"></script><% */ %>
 	<form id="form1" runat="server">
@@ -32,7 +32,7 @@
             </asp:Repeater>
 		</ul>
 		
-		<script type="text/javascript" src="jquery.dragsort.js"></script>
+		<script type="text/javascript" src="Scripts/jquery.dragsort.js"></script>
 		<script type="text/javascript">
 		    $("#gallery").dragsort({ dragSelector: "div", dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
 
