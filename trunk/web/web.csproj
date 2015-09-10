@@ -78,13 +78,18 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\gui_button.css" />
+    <Content Include="css\gui_layout.css" />
+    <Content Include="css\gui_overlay.css" />
     <Content Include="css\layout2.css" />
+    <Content Include="default.aspx" />
     <Content Include="ErrorDeadWCF.html" />
     <Content Include="example.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="find.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="getSinger.aspx" />
+    <Content Include="images\background.jpg" />
     <Content Include="Scripts\hammer.js" />
     <Content Include="images\Arrow.gif" />
     <Content Include="images\Arrow.png" />
@@ -99,7 +104,7 @@
     <Content Include="css\layout.css" />
     <Content Include="css\overlay.css" />
     <Content Include="currentList.ascx" />
-    <Content Include="default.aspx" />
+    <Content Include="tui_default.aspx" />
     <Content Include="Scripts\IE9html5.js" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\Basic.jpg" />
@@ -136,6 +141,13 @@
       <DependentUpon>advanced.ascx</DependentUpon>
     </Compile>
     <Compile Include="CrazyKTVWCF.cs" />
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="example.aspx.cs">
       <DependentUpon>example.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -159,12 +171,12 @@
     <Compile Include="currentList.ascx.designer.cs">
       <DependentUpon>currentList.ascx</DependentUpon>
     </Compile>
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="tui_default.aspx.cs">
+      <DependentUpon>tui_default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="tui_default.aspx.designer.cs">
+      <DependentUpon>tui_default.aspx</DependentUpon>
     </Compile>
     <Compile Include="GenImage.ashx.cs">
       <DependentUpon>GenImage.ashx</DependentUpon>
@@ -235,8 +247,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\default.aspx.resx" />
-    <Content Include="App_LocalResources\default.aspx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\tui_default.aspx.resx" />
+    <Content Include="App_LocalResources\tui_default.aspx.zh-CHT.resx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

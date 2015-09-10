@@ -1,0 +1,376 @@
+﻿.Mainlogo {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin-top: 5px;
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    float: left; /*float: left;*/ /*padding: 0px;*/
+    max-width: 64px;
+    max-height: 64px;
+    width: 14vw;
+    height: 14vw;
+
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+
+background-color: #006006; /* Old browsers */
+}
+
+
+.MainEmptyImage {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin-top: 0px;
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    float: left; /*float: left;*/ /*padding: 0px;*/
+    max-width: 64px;
+    max-height: 64px;
+    width: 14vw;
+    height: 14vw;
+
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+
+.Mainbutton {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin-top: 5px; 
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: inline; /*float: left;*/ /*padding: 0px;*/
+    max-width: 90px;
+    max-height: 64px;
+    width: 20vw;
+    height: 14vw;
+
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+
+background-color: #006006; /* Old browsers */
+}
+
+.Mainbutton:active { background-color: #ff6a00; }
+.Mainbutton:hover { background: #3071A9; }
+
+
+.MainMenuHideImage {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin: 2px; 
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: inline; /*float: left;*/ /*padding: 0px;*/
+    max-width: 128px;
+    max-height: 128px;
+    width: 27vw;
+    height: 27vw;
+
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+
+.MainMenuShowImage {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin: 2px; 
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: none; /*float: left;*/ /*padding: 0px;*/
+    max-width: 128px;
+    max-height: 128px;
+    width: 27vw;
+    height: 27vw;
+
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+
+.MainMenuButton {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin: 2px; 
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: inline; /*float: left;*/ /*padding: 0px;*/
+    max-width: 128px;
+    max-height: 128px;
+    width: 27vw;
+    height: 27vw;
+
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+
+background-color: #43A047; /* Old browsers */
+}
+
+.MainMenuButton:active { background-color: #ff6a00; }
+.MainMenuButton:hover { background: #3071A9; }
+
+
+.MainMenuShowButton {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin: 2px; 
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: none; /*float: left;*/ /*padding: 0px;*/
+    max-width: 128px;
+    max-height: 128px;
+    width: 27vw;
+    height: 27vw;
+
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+
+background-color: #43A047; /* Old browsers */
+}
+
+.MainMenuShowButton:active { background-color: #ff6a00; }
+.MainMenuShowButton:hover { background: #3071A9; }
+
+
+.MainMenuHideButton {
+    padding: 5px;
+    border-width: 0px;
+    border-style: none;
+    margin: 2px; 
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: inline; /*float: left;*/ /*padding: 0px;*/
+    max-width: 128px;
+    max-height: 128px;
+    width: 27vw;
+    height: 27vw;
+
+    font-size: 100%;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+
+background-color: #43A047; /* Old browsers */
+}
+
+.MainMenuHideButton:active { background-color: #ff6a00; }
+.MainMenuHideButton:hover { background: #3071A9; }
+
+.SingerImageButton {
+    padding: 0px;
+    border-width: 0px;
+    border-style: none;
+    margin: 0px 5px 10px 5px; 
+    display: block; /*float: left;*/ /*padding: 0px;*/
+    float: left;
+    min-width: 90px;
+    min-height: 90px;
+    max-width: 128px;
+    max-height: 128px;
+    width: 29vw;
+    height: 29vw;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+    background-color: #43A047; /* Old browsers */
+}
+.SingerImageButton:active { background-color: #ff6a00; }
+.SingerImageButton:hover { background: #3071A9; }
+
+
+.SingerNameButton {
+    padding: 0px;
+    border-width: 0px;
+    border-style: none;
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: inline; /*float: left;*/ /*padding: 0px;*/
+    min-width: 90px;
+    min-height: 30px;
+    max-width: 128px;
+    max-height: 30px;
+    width: 29vw;
+    height: 29vw;
+    font-size: 80%;
+    cursor: pointer;
+
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    background-color: #8a2f02; /* Old browsers */
+}
+.SingerNameButton:active { background-color: #ff6a00; }
+.SingerNameButton:hover { background: #3071A9; }
+
+
+.PageButton {
+    padding: 0px;
+    border-width: 0px;
+    border-style: none;
+    margin: 3px;
+    color: #FFFFFF;
+    font-weight: bold; /*position:relative;*/
+    display: inline; /*float: left;*/ /*padding: 0px;*/
+    min-width: 90px;
+    min-height: 40px;
+    max-width: 128px;
+    max-height: 40px;
+    width: 29vw;
+    height: 29vw;
+    font-size: 110%;
+    cursor: pointer;
+
+    -webkit-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-radius: 3px;
+
+    background-color: #43A047; /* Old browsers */
+}
+.PageButton:active { background-color: #ff6a00; }
+.PageButton:hover { background: #3071A9; }
+
+.PageButtonDisable {
+    padding: 0px;
+    border-width: 0px;
+    border-style: none;
+    margin: 3px;
+    color: #c4bfbf;
+    font-weight: bold; /*position:relative;*/
+    display: inline; /*float: left;*/ /*padding: 0px;*/
+    min-width: 90px;
+    min-height: 40px;
+    max-width: 128px;
+    max-height: 40px;
+    width: 29vw;
+    height: 29vw;
+    font-size: 110%;
+
+    -webkit-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-radius: 3px;
+
+    background-color: #808080; /* Old browsers */
+}
+
+
+
+/* ===========================================
+        HVGA (480px * 320px) 
+        Screen Orientation: landscape
+=========================================== */
+@media only screen and (orientation: portrait) and (max-height: 480px) {
+    .Mainlogo {
+        display: none;
+    }
+
+}
+
+
+
+/* ===========================================
+        HVGA (480px * 320px) 
+        Screen Orientation: landscape
+=========================================== */
+@media only screen and (orientation: landscape) and (max-height: 320px) {
+    .Mainlogo {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .MainEmptyImage {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .Mainbutton {
+        width: 14vw;
+        height: 10vw;
+    }
+
+    .MainMenuShowImage {
+        display: inline;
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .MainMenuHideImage {
+        display: none; 
+    }
+    
+    .MainMenuButton {
+        width: 20vw;
+        height: 20vw;
+    }
+    
+    .MainMenuShowButton {
+        display: inline; 
+        width: 20vw;
+        height: 20vw;
+    }
+    
+    .MainMenuHideButton {
+        display: none;
+    }
+
+    .SingerImageButton {
+        max-width: 107px;
+        width: 23vw;
+        height: 23vw;
+    }
+
+    .SingerNameButton {
+        max-width: 107px;
+        width: 23vw;
+        height: 23vw;
+    }
+
+    .PageButton {
+        max-width: 107px;
+        margin: 4px;
+        width: 23vw;
+        height: 23vw;
+    }
+
+    .PageButtonDisable {
+        max-width: 107px;
+        width: 23vw;
+        height: 23vw;
+    }
+}

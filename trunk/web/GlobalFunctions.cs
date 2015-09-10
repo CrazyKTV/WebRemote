@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
 using System.Data;
+using System.Collections.Generic;
+using System.IO;
 
 namespace web
 {
@@ -125,10 +125,84 @@ namespace web
             return _value;
         }
 
+        public static void setSingerImgFile()
+        {
+            string jsonText = "";
+            List<string> SingerTypeList = new List<string>() { "0", "1", "2", "4", "5", "6", "7" };
+            List<string> ImgFormatList = new List<string>() { ".jpg", ".png", ".bmp", ".gif" };
 
+            foreach (string SingerType in SingerTypeList)
+            {
+                jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=" + SingerType, 0, 2000, "Singer_Strokes, Singer_Name");
+                DataTable dt = new DataTable();
+                dt = GlobalFunctions.JsontoDataTable(jsonText);
+                dt.Columns.Add("ImgFileUrl");
+
+                foreach (DataRow row in dt.AsEnumerable())
+                {
+                    foreach (string ImgFormat in ImgFormatList)
+                    {
+                        if (File.Exists(HttpContext.Current.Server.MapPath("/singerimg/" + row["Singer_Name"].ToString() + ImgFormat)))
+                        {
+                            row["ImgFileUrl"] = "/singerimg/" + row["Singer_Name"].ToString() + ImgFormat;
+                            break;
+                        }
+                    }
+                    if (row["ImgFileUrl"].ToString() == "")
+                    {
+                        row["ImgFileUrl"] = "/images/singertype_default.png";
+                    }
+                }
+
+                switch (SingerTypeList.IndexOf(SingerType))
+                {
+                    case 0:
+                        GuiGlobal.SingerTypeMaleDT = dt;
+                        break;
+                    case 1:
+                        GuiGlobal.SingerTypeFemaleDT = dt;
+                        break;
+                    case 2:
+                        GuiGlobal.SingerTypeGroupDT = dt;
+                        break;
+                    case 3:
+                        GuiGlobal.SingerTypeForeignMale = dt;
+                        break;
+                    case 4:
+                        GuiGlobal.SingerTypeForeignFemale = dt;
+                        break;
+                    case 5:
+                        GuiGlobal.SingerTypeForeignGroup = dt;
+                        break;
+                    case 6:
+                        GuiGlobal.SingerTypeOther = dt;
+                        break;
+                }
+            }
+            GuiGlobal.SingerTypeDTStatus = true;
+        }
 
 
 
 
     }
+
+
+    class GuiGlobal
+    {
+        public static int SingerTypePageSize = 60;
+
+        public static bool SingerTypeDTStatus = false;
+        public static DataTable SingerTypeCurrentDT = new DataTable();
+        public static DataTable SingerTypeMaleDT = new DataTable();
+        public static DataTable SingerTypeFemaleDT = new DataTable();
+        public static DataTable SingerTypeGroupDT = new DataTable();
+        public static DataTable SingerTypeForeignMale = new DataTable();
+        public static DataTable SingerTypeForeignFemale = new DataTable();
+        public static DataTable SingerTypeForeignGroup = new DataTable();
+        public static DataTable SingerTypeOther = new DataTable();
+    }
+
+
+
 }

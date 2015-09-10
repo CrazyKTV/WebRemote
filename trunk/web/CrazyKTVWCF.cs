@@ -1,43 +1,78 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Collections.Specialized;
+using System.Net.NetworkInformation;
 
 namespace web
 {
     public class CrazyKTVWCF
     {
         public static string wcfUrl = Properties.Settings.Default.CrazyKTV_WCF_URL;
-        public static bool WCFlive=false;
+        public static bool WCFlive = false;
 
 
 
 
         public static bool checkWCF()
         {
-            WebRequest request = WebRequest.Create(wcfUrl);
+            WebRequest request = WebRequest.Create(wcfUrl + "/QuerySong");
+            request.Timeout = 500;
             HttpWebResponse response;
-            string __responseText = "";
+            string responseText = "";
 
-            try {
-               response= (HttpWebResponse)request.GetResponse();           
+            try
+            {
+                response = (HttpWebResponse)request.GetResponse();
+                StreamReader sr = new StreamReader(response.GetResponseStream());
+                responseText = sr.ReadToEnd();
+                sr.Close();
+                response.Close();
             }
-            catch (WebException e) {
-                __responseText = e.ToString();
+            catch
+            {
+                WCFlive = false;
+
+                IPGlobalProperties ipProperties = IPGlobalProperties.GetIPGlobalProperties();
+                IPEndPoint[] ipEndPoints = ipProperties.GetActiveTcpListeners();
+                foreach (IPEndPoint endPoint in ipEndPoints)
+                {
+                    if (endPoint.Address.ToString() == "0.0.0.0" && endPoint.Port != 80 && endPoint.Port != 135 && endPoint.Port != 445 && endPoint.Port != 5357)
+                    {
+                        try
+                        {
+                            request = WebRequest.Create("http://127.0.0.1:" + endPoint.Port + "/QuerySong");
+                            request.Timeout = 500;
+                            response = (HttpWebResponse)request.GetResponse();
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                StreamReader sr = new StreamReader(response.GetResponseStream());
+                                responseText = sr.ReadToEnd();
+                                sr.Close();
+
+                                if (responseText == "[]")
+                                {
+                                    wcfUrl = "http://127.0.0.1:" + endPoint.Port;
+                                    WCFlive = true;
+                                    break;
+                                }
+                            }
+                            response.Close();
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
             }
 
-            if (__responseText.Trim().ToLower().IndexOf("Unable to connect to the remote server".Trim().ToLower()) == -1)
+            if (responseText == "[]")
             {
                 WCFlive = true;
-                return true; }
-            else
-            {
-                WCFlive = false; 
-                return false; }
-   
+            }
+
+            return WCFlive;
         }
 
 
