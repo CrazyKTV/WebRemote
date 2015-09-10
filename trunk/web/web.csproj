@@ -83,13 +83,45 @@
     <Content Include="css\gui_overlay.css" />
     <Content Include="css\layout2.css" />
     <Content Include="default.aspx" />
+    <Content Include="ErrorDeadWCF.ascx" />
+    <Content Include="ErrorDeadWCF.aspx" />
     <Content Include="ErrorDeadWCF.html" />
     <Content Include="example.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="find.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="getSinger.aspx" />
+    <Content Include="gui_advanced.ascx" />
+    <Content Include="gui_currentList.ascx" />
+    <Content Include="gui_default.aspx" />
+    <Content Include="gui_find.ascx" />
+    <Content Include="gui_songNumber.ascx" />
+    <Content Include="gui_tune.ascx" />
+    <Content Include="gui_video.ascx" />
+    <Content Include="gui_volume.ascx" />
     <Content Include="images\background.jpg" />
+    <Content Include="images\mainmenu_chartsong.png" />
+    <Content Include="images\mainmenu_chorussong.png" />
+    <Content Include="images\mainmenu_emptyimage.png" />
+    <Content Include="images\mainmenu_favoritesong.png" />
+    <Content Include="images\mainmenu_findlang.png" />
+    <Content Include="images\mainmenu_findsinger.png" />
+    <Content Include="images\mainmenu_newsong.png" />
+    <Content Include="images\mainmenu_querysong.png" />
+    <Content Include="images\main_advanced.png" />
+    <Content Include="images\main_crazyktv.png" />
+    <Content Include="images\main_emptyimage.png" />
+    <Content Include="images\main_findsong.png" />
+    <Content Include="images\main_playlist.png" />
+    <Content Include="images\main_songnumber.png" />
+    <Content Include="images\singertype_default.png" />
+    <Content Include="images\singertype_female.png" />
+    <Content Include="images\singertype_foreignfemale.png" />
+    <Content Include="images\singertype_foreigngroup.png" />
+    <Content Include="images\singertype_foreignmale.png" />
+    <Content Include="images\singertype_group.png" />
+    <Content Include="images\singertype_male.png" />
+    <Content Include="images\singertype_other.png" />
     <Content Include="Scripts\hammer.js" />
     <Content Include="images\Arrow.gif" />
     <Content Include="images\Arrow.png" />
@@ -170,6 +202,62 @@
     </Compile>
     <Compile Include="currentList.ascx.designer.cs">
       <DependentUpon>currentList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="gui_advanced.ascx.cs">
+      <DependentUpon>gui_advanced.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_advanced.ascx.designer.cs">
+      <DependentUpon>gui_advanced.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="gui_currentList.ascx.cs">
+      <DependentUpon>gui_currentList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_currentList.ascx.designer.cs">
+      <DependentUpon>gui_currentList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="gui_default.aspx.cs">
+      <DependentUpon>gui_default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_default.aspx.designer.cs">
+      <DependentUpon>gui_default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gui_find.ascx.cs">
+      <DependentUpon>gui_find.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_find.ascx.designer.cs">
+      <DependentUpon>gui_find.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="gui_songNumber.ascx.cs">
+      <DependentUpon>gui_songNumber.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_songNumber.ascx.designer.cs">
+      <DependentUpon>gui_songNumber.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="gui_tune.ascx.cs">
+      <DependentUpon>gui_tune.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_tune.ascx.designer.cs">
+      <DependentUpon>gui_tune.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="gui_video.ascx.cs">
+      <DependentUpon>gui_video.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_video.ascx.designer.cs">
+      <DependentUpon>gui_video.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="gui_volume.ascx.cs">
+      <DependentUpon>gui_volume.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_volume.ascx.designer.cs">
+      <DependentUpon>gui_volume.ascx</DependentUpon>
     </Compile>
     <Compile Include="tui_default.aspx.cs">
       <DependentUpon>tui_default.aspx</DependentUpon>
@@ -297,6 +385,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\find.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\gui_advanced.ascx.resx" />
+    <Content Include="App_LocalResources\gui_advanced.ascx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\gui_currentList.ascx.resx" />
+    <Content Include="App_LocalResources\gui_currentList.ascx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\gui_default.aspx.resx" />
+    <Content Include="App_LocalResources\gui_default.aspx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\gui_find.ascx.resx" />
+    <Content Include="App_LocalResources\gui_find.ascx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\gui_songNumber.ascx.resx" />
+    <Content Include="App_LocalResources\gui_songNumber.ascx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\gui_tune.ascx.resx" />
+    <Content Include="App_LocalResources\gui_tune.ascx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\gui_video.ascx.resx" />
+    <Content Include="App_LocalResources\gui_video.ascx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\gui_volume.ascx.resx" />
+    <Content Include="App_LocalResources\gui_volume.ascx.zh-CHT.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
