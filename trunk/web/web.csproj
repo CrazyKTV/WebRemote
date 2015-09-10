@@ -98,7 +98,6 @@
     <Content Include="Scripts\jquery.dragsort.js" />
     <Content Include="Scripts\jquery.hammer.js" />
     <Content Include="Scripts\jquery.specialevent.hammer.js" />
-    <Content Include="js\~\jquery.blockUI.js" />
     <Content Include="css\layout.css" />
     <Content Include="css\overlay.css" />
     <Content Include="currentList.ascx" />
@@ -110,7 +109,6 @@
     <Content Include="images\Button1.jpg" />
     <Content Include="images\flag.png" />
     <Content Include="images\remote.png" />
-    <Content Include="js\~\jquery.data.js" />
     <Content Include="Scripts\jquery.watermark.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
