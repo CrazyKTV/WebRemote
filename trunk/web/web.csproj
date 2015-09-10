@@ -50,7 +50,7 @@
       <HintPath>libs\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SharpPieces.Web.Controls">
-      <HintPath>..\..\..\..\_MSmesh_\(my documents)\__PROJECTS__\CrazyKTV\trunk\web\libs\SharpPieces.Web.Controls.dll</HintPath>
+      <HintPath>libs\SharpPieces.Web.Controls.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
@@ -85,9 +85,7 @@
     <Content Include="find.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="getSinger.aspx" />
-    <Content Include="Gma.QrCodeNet.Encoding.dll" />
     <Content Include="Scripts\hammer.js" />
-    <Content Include="HtmlAgilityPack.dll" />
     <Content Include="images\Arrow.gif" />
     <Content Include="images\Arrow.png" />
     <Content Include="images\Arrow2.gif" />
@@ -118,12 +116,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Resources\QRimage.bmp" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Newtonsoft.Json.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="SharpPieces.Web.Controls.dll" />
     <Content Include="songNumber.ascx" />
     <Content Include="test2.html" />
     <Content Include="tune.ascx" />
