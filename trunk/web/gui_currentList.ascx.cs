@@ -134,7 +134,7 @@ namespace web
                     tcHeader.Add(new TableHeaderCell());
                     tcHeader[0].Attributes.Add("colspan", "5");
                     tcHeader[0].CssClass = "gridviewHeader";
-                    tcHeader[0].Text = "待播清單 (" + ((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value + ")";
+                    tcHeader[0].Text = "待播清單 (" + ((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value + ") [歌庫: " + GuiGlobal.AllSongDT.Rows.Count + "]";
                     break;
             }
         }

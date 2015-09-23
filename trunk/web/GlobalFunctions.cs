@@ -207,7 +207,10 @@ namespace web
         public static string DefaultButtonCssClass = "btn btn-success btn-lg";
         public static string ActiveButtonCssClass = "btn btn-primary btn-lg";
 
+        public static bool AllSongDTStatus = false;
         public static bool SingerTypeDTStatus = false;
+
+        public static DataTable AllSongDT = new DataTable();
         public static DataTable SingerTypeMaleDT = new DataTable();
         public static DataTable SingerTypeFemaleDT = new DataTable();
         public static DataTable SingerTypeGroupDT = new DataTable();

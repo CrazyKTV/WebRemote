@@ -19,6 +19,12 @@ namespace web
                     {
                         GlobalFunctions.setSingerImgFile();
                     }
+                    if (GuiGlobal.AllSongDTStatus == false)
+                    {
+                        string jsonText = CrazyKTVWCF.QuerySong(null, null, null, null, 0, 1000000, "Song_Id");
+                        GuiGlobal.AllSongDT = GlobalFunctions.JsontoDataTable(jsonText);
+                        GuiGlobal.AllSongDTStatus = true;
+                    }
                 }
             }
         }
