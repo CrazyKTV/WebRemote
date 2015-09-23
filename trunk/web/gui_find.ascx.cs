@@ -362,13 +362,36 @@ namespace web
         {
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "Singer";
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = Singer_Name;
-            string jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + Singer_Name.Trim() + "%'", page, rows, "Song_WordCount, Song_SongName"); //more than 2000 per rows will be super slow
+            string jsonText = "";
+            DataTable dt = new DataTable();
 
-            DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
-            DataView dv3 = new DataView(dt3);
-            //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
+            if (GuiGlobal.AllSongDTStatus == false)
+            {
+                jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + Singer_Name.Trim() + "%'", page, rows, "Song_WordCount, Song_SongName"); //more than 2000 per rows will be super slow
+                dt = GlobalFunctions.JsontoDataTable(jsonText);
+            }
+            else
+            {
+                dt = GuiGlobal.AllSongDT.Clone();
+                var query = from row in GuiGlobal.AllSongDT.AsEnumerable()
+                            where row.Field<string>("Song_Singer").Equals(Singer_Name) ||
+                                  row.Field<string>("Song_Singer").StartsWith(Singer_Name + "&") ||
+                                  row.Field<string>("Song_Singer").EndsWith("&" + Singer_Name)
+                            select row;
 
-            SongListGridView.DataSource = dv3;
+                if (query.Count<DataRow>() > 0)
+                {
+                    foreach (DataRow Row in query)
+                    {
+                        dt.ImportRow(Row);
+                    }
+                }
+            }
+                
+            DataView dv = new DataView(dt);
+            dv.Sort = "Song_WordCount, Song_SongName";
+
+            SongListGridView.DataSource = dv;
             SongListGridView.DataBind();
             
             findCaller.Value = "toTop";
