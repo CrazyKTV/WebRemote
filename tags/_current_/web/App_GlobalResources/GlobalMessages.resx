@@ -123,4 +123,10 @@
   <data name="directionrtl" xml:space="preserve">
     <value>rtl</value>
   </data>
+  <data name="QRimage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UrlWeb" xml:space="preserve">
+    <value />
+  </data>
 </root>

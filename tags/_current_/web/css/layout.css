@@ -76,14 +76,14 @@ img::selection 		{background: transparent;}
 img::-moz-selection	{background: transparent;}
 body {
     -webkit-tap-highlight-color: rgb(255,255,158);
-    background-image: url('/images/Basic.jpg');
+    background-image: url('/images/background.jpg');
     background-size: 100% auto;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center top;
     background-color: rgb(0,0,0);
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-family: Arial, Helvetica,sans-serif, DFKai-sb, 標楷體, stkaiti,华文楷体;
+    font-family: 'Source Han Sans TC', 'Microsoft JhengHei', Arial, Helvetica,sans-serif, DFKai-sb, 標楷體, stkaiti,华文楷体;
 }
 
 
@@ -98,10 +98,9 @@ cols    1     2      3      4      5      6      7      8      9      10
 px      68    160    252    344    436    528    620    712    804    896    */
 
 
-body
-{
-    width: 972px;
-    padding: 25px 5px 5px 5px;
+body {
+    width: 98%;
+    padding: 15px 1% 5px 1%;
     -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
@@ -168,9 +167,9 @@ height:30px;
     color: #FFFFFF;
     font-weight: bold; /*position:relative;*/
     display: block; /*float: left;*/ /*padding: 0px;*/
-    height: 38px;
+    height: 40px;
     width: auto;
-    min-width:250px;
+    min-width:295px;
     max-width:100%;
    /* background-color: #999;*/
     font-size: 95%;
@@ -206,9 +205,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaaaaa', end
     color: #FFFFFF;
     font-weight: bold; /*position:relative;*/
 
-    height: 38px;
+    height: 40px;
     width: auto;
-    min-width:250px;
+    min-width:295px;
     max-width:100%;
    /* background-color: #999;*/
     font-size: 95%;
@@ -510,24 +509,38 @@ color: #cc6633;
     color: #FF00FF;
 }
 
+.roundBox{
+		background-color: #999; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1NTU1NTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, rgba(170,170,170,1) 1%, rgba(85,85,85,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(170,170,170,1)), color-stop(100%,rgba(85,85,85,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(170,170,170,1) 1%,rgba(85,85,85,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(170,170,170,1) 1%,rgba(85,85,85,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(170,170,170,1) 1%,rgba(85,85,85,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(170,170,170,1) 1%,rgba(85,85,85,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaaaaa', endColorstr='#555555',GradientType=0 ); /* IE6-8 */
 
+}
 /****************default end******/
 
-
-/*		Tablet Layout: 768px.
+/*		Tablet Layout: 960px.
 		Gutters: 24px.
 		Outer margins: 28px.
 		Inherits styles from: Default Layout.
 -----------------------------------------------------------------
 cols    1     2      3      4      5      6      7      8
-px      68    160    252    344    436    528    620    712    */
-
+px      68    160    252    344    436    528    620    712    
+    
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    */
+
+@media only screen and (min-width: 321px) and (max-width: 991px) {
 	
 	body {
-		width: 760px;
-		padding: 5px 2px 5px;
-	}
+        width: 98%;
+        padding: 5px 1% 5px 0.5%;
+    }
 
     #LComputerOnlyMessage
     {
@@ -539,15 +552,17 @@ px      68    160    252    344    436    528    620    712    */
 
 
 
-/*		Mobile Layout: 320px.
+/*		Mobile Layout: 320px   and anything <=479px
 		Gutters: 24px.
 		Outer margins: 34px.
 		Inherits styles from: Default Layout.
 ---------------------------------------------
 cols    1     2      3
-px      68    160    252    */
+px      68    160    252    
+    
+    */
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 320px) {
 
     body {
         width: 310px;
@@ -577,45 +592,7 @@ px      68    160    252    */
 }
 
 
-/*		Wide Mobile Layout: 480px.
-		Gutters: 24px.
-		Outer margins: 22px.
-		Inherits styles from: Default Layout, Mobile Layout.
-------------------------------------------------------------
-cols    1     2      3      4      5
-px      68    160    252    344    436    */
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-
-    body {
-        width: 470px;
-        padding: 5px 2px 5px;
-    }
-
-    #LComputerOnlyMessage {
-        display: none;
-    }
-}
-
-/*		Small Tablet Portrait Layout: 600px.
-		Gutters: 24px.
-		Outer margins: 22px.
-		Inherits styles from: Default Layout, Mobile Layout.
-------------------------------------------------------------
-cols    1     2      3      4      5         6     7 
-px      68    160    252    344    436            */
-
-@media only screen and (min-width: 600px) and (max-width: 600px) {
-
-    body {
-        width: 590px;
-        padding: 5px 2px 5px;
-    }
-
-    #LComputerOnlyMessage {
-        display: none;
-    }
-}
 
 
 

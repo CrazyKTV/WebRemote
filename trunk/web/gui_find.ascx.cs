@@ -15,136 +15,26 @@ namespace web
             hideAllGridViewPanel();
             MainMenuPanel.Visible = true;
         }
-        //DataSet1 dset = new DataSet1();
-
-        //string findListOrder =  GlobalFunctions.FindListOrder;
 
         protected void LPageNumCount_PreRender(object sender, EventArgs e)
         {
             
-
-            //try
-            //{
-            //    if (GridView1.Rows.Count > 0)
-            //    {
-            //        LPageNumDisplay.Visible = true;
-            //        LPageNumCount.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        LPageNumDisplay.Visible = false;
-            //        LPageNumCount.Visible = false;
-            //    }
-
-            //    LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
-            //}
-            //catch
-            //{
-            //    LPageNumDisplay.Visible = false;
-            //    LPageNumCount.Visible = false;
-            //}
         }
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-            //hideAllGridViewPanel();
-
-            // if (GlobalFunctions.FindListOrder == "2") //order
-            // {
-            //SharpPieces.Web.Controls.ExtendedListItem eli1 = new SharpPieces.Web.Controls.ExtendedListItem("Song Name", "Song", SharpPieces.Web.Controls.ListItemGroupingType.None);
-            //SharpPieces.Web.Controls.ExtendedListItem eli2 = new SharpPieces.Web.Controls.ExtendedListItem("Singer", "Singer", SharpPieces.Web.Controls.ListItemGroupingType.None);
-            //SharpPieces.Web.Controls.ExtendedListItem eli3 = new SharpPieces.Web.Controls.ExtendedListItem("Word Count", "WordCount", SharpPieces.Web.Controls.ListItemGroupingType.None);
-
-            //eli1.Attributes.Add("meta:resourcekey", "ListItemResource1");
-            //eli1.Attributes.Add("meta:resourcekey", "ListItemResource2");
-            //eli1.Attributes.Add("meta:resourcekey", "ListItemResource3");
-
-            //ddSearchType.ExtendedItems.Add(eli1);
-            //ddSearchType.ExtendedItems.Add(eli2);
-            //ddSearchType.ExtendedItems.Add(eli3);
-
-
-            // }
-
-            //    SharpPieces.Web.Controls.ExtendedListItem eli = new SharpPieces.Web.Controls.ExtendedListItem();
-
-
-            //    ddSearchType.ExtendedItems.Insert ([0].Enabled = false;
-            //    ddSearchType.ExtendedItems[1].Enabled = false;
-            //    ddSearchType.ExtendedItems[2].Enabled = false;            
-            //}
-            //else {
-            //    ddSearchType.ExtendedItems[5].Enabled = false;
-            //    ddSearchType.ExtendedItems[6].Enabled = false;
-            //    ddSearchType.ExtendedItems[7].Enabled = false;   
-
-            //}
-
-            //////for broswer back button
-            //if (ScriptManagerProxy1.isinas.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
-            //{
-            //    ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
-            //}
-
-            //try
-            //{
-
-            //    //DataView dv = new DataView(dt);
-            //    ////dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
-
-            //    //GridView1.Rows.C = dv;
-
-
-            //    if (int.Parse(songDGpage.Value) >= 0)
-            //    {
-            //        LPageNumDisplay.Visible = true;
-            //        LPageNumCount.Visible = true;
-            //        BJump.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        LPageNumDisplay.Visible = false;
-            //        LPageNumCount.Visible = false;
-            //        BJump.Visible = false;
-            //    }
-            //    //LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
-            //    //int.Parse(LPageNumCount.Text.ToString().Trim())
-            //    songDGpage.Value = (int.Parse(LPageNumCount.Text) - 1).ToString();
-            //}
-            //catch {
-            //    LPageNumDisplay.Visible = false;
-            //    LPageNumCount.Visible = false;
-            //    songDGpage.Value = "0";
-            //    BJump.Visible = false;
-            //}
         }
 
 
-        protected void bSearch_Click(object sender, EventArgs e)
-        {
-            //findCaller.Value = "toTop";
-            //clean up data on display
-            GridView1.DataSource = null;
-            GridView1.DataBind();
-
-            int rowsPerPage = 100; // will be super slow if more than 2000
-            //int currentPageNumber = 0; //if rowPerPage is more than 1300, then this must be NULL or nothing will be returned, if condition try to search more than one word, eg 天天, then this value must be NULL
-
-            songList(0, rowsPerPage);
-
-            songDGpage.Value = "0";
-            LPageNumCount.Text = "1";
-        }
-
+/*
         private void songList(int page, int rows)
         {
             findCaller.Value = "toTop";
             //pre-set
             hideAllGridViewPanel();
-            Panel2.Visible = true;
+            SongListPanel.Visible = true;
 
 
             int currentPageNumber  = page;
@@ -172,7 +62,7 @@ namespace web
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "male".ToLower())
                 {
                     hideAllGridViewPanel();
-                    Panel4.Visible = true;
+                    SingerListPanel.Visible = true;
 
                     tSearch.Text = "";
                     jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=0", 0, 2000, "Singer_Strokes, Singer_Name");
@@ -190,7 +80,7 @@ namespace web
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "female".ToLower())
                 {
                     hideAllGridViewPanel();
-                    Panel4.Visible = true;
+                    SingerListPanel.Visible = true;
 
                     tSearch.Text = "";
                     jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=1", 0, 2000, "Singer_Strokes, Singer_Name");
@@ -207,7 +97,7 @@ namespace web
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Group".ToLower())
                 {
                     hideAllGridViewPanel();
-                    Panel4.Visible = true;
+                    SingerListPanel.Visible = true;
 
                     tSearch.Text = "";
                     jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=2", 0, 2000, "Singer_Strokes, Singer_Name");
@@ -366,138 +256,7 @@ namespace web
            
 
         }
-
-
-
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            findCaller.Value = "";
-            var data = GridView1.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get hidden Song_ID
-            var dataStr = GridView1.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[1]; //get hidden Song_Singer
-
-            if (e.CommandName.ToLower().Trim() == "Add".ToLower().Trim())
-            {
-                // Convert the row index stored in the CommandArgument
-                // property to an Integer.
-                int index = Convert.ToInt32(e.CommandArgument);
-
-                // Get the last name of the selected author from the appropriate
-                // cell in the GridView control.
-
-                //GridViewRow selectedRow = GridView1.Rows[index];
-                //TableCell Song_Id = selectedRow.Cells[1];
-                //CrazyKTVWCF.wcf_addsong(Song_Id.Text.Trim());
-
-                CrazyKTVWCF.wcf_addsong(data.ToString().Trim());
-                Panel2.Visible = true;
-            } else if (e.CommandName.ToLower().Trim() == "Insert".ToLower().Trim())
-            {
-                // Convert the row index stored in the CommandArgument
-                // property to an Integer.
-                int index = Convert.ToInt32(e.CommandArgument);
-
-                // Get the last name of the selected author from the appropriate
-                // cell in the GridView control.
-                //GridViewRow selectedRow = GridView1.Rows[index];
-                //TableCell Song_Id = selectedRow.Cells[1];
-                //CrazyKTVWCF.wcf_insertsong(Song_Id.Text.Trim());
-
-                CrazyKTVWCF.wcf_insertsong(data.ToString().Trim());
-                Panel2.Visible = true;
-            }
-            else if (e.CommandName.ToLower().Trim() == "Singer".ToLower().Trim())
-            {
-                //clean up data on display
-                GridView1.DataSource = null;
-                GridView1.DataBind();
-                hideAllGridViewPanel();
-                Panel2.Visible = true;
-                BNext.Visible = false;
-                BPrevious.Visible = false;
-                songDGpage.Value = "0";
-                LPageNumCount.Text = "1";
-
-                findCaller.Value = "toTop";
-                string _singer = dataStr.ToString().Trim(); // singer
-                // gvMode.Value = data.ToString();
-                tSearch.Text = _singer;
-                SingerSongList(0, 100, _singer);
-                ddSearchType.SelectedIndex = 1;
-            }
-
-
-
-
-        }
-
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridView1.PageIndex = e.NewPageIndex;            
-            GridView1.DataBind();
-        }
-
-        protected void GridView1_Sorting(object sender, GridViewSortEventArgs e)
-        {
-            //if (GridViewSortDirection == null)
-            //{
-            //    e.SortDirection = SortDirection.Descending;
-            //}
-            //else if (GridViewSortDirection == SortDirection.Ascending)
-            //{
-            //    e.SortDirection = SortDirection.Descending;
-            //}
-            //else if (GridViewSortDirection == SortDirection.Descending)
-            //{
-            //    e.SortDirection = SortDirection.Ascending;
-            //}
-
-            //GridViewSortDirection = e.SortDirection;
-        }
-
-        protected void BNext_Click(object sender, EventArgs e)
-        {
-            findCaller.Value = "toTop";
-            //clean up data on display
-            GridView1.DataSource = null;
-            GridView1.DataBind();
-
-            if (gvMode.Value.ToString().Trim().Length>0)
-            {
-                FSongList(1 + int.Parse(songDGpage.Value.ToString()), 100, gvMode.Value.ToString());
-            }
-            else
-            {
-                songList(1 + int.Parse(songDGpage.Value.ToString()), 100);
-            }
-
-
-            songDGpage.Value=(1 + int.Parse(songDGpage.Value.ToString())).ToString();
-            LPageNumCount.Text = (int.Parse(LPageNumCount.Text) + 1).ToString();
-
-            //LPageNumCount.Text = songDGpage.Value.ToString();
-        }
-
-        protected void BPrevious_Click(object sender, EventArgs e)
-        {
-            findCaller.Value = "toTop";
-            //clean up data on display
-            GridView1.DataSource = null;
-            GridView1.DataBind();
-
-            if (gvMode.Value.ToString().Trim().Length > 0)
-            {
-                FSongList(int.Parse(songDGpage.Value.ToString()) - 1, 100, gvMode.Value.ToString());
-            }
-            else
-            {
-                songList(int.Parse(songDGpage.Value.ToString()) - 1, 100);
-            }
-            
-
-            songDGpage.Value=(int.Parse(songDGpage.Value.ToString()) -1).ToString();
-            LPageNumCount.Text = (int.Parse(LPageNumCount.Text) - 1).ToString();
-            //LPageNumCount.Text = songDGpage.Value.ToString();
-        }
+        */
 
         //protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
         //{
@@ -506,7 +265,7 @@ namespace web
         //    GridView1.DataBind();
         //    tSearch.Text = "";
         //    hideAllGridViewPanel();
-        //    Panel2.Visible = true;
+        //    SongListPanel.Visible = true;
         //    BNext.Visible = false;
         //    BPrevious.Visible = false;
         //    songDGpage.Value = "0";
@@ -525,7 +284,7 @@ namespace web
         //    GridView1.DataBind();
         //    tSearch.Text = "";
         //    hideAllGridViewPanel();
-        //    Panel2.Visible = true;
+        //    SongListPanel.Visible = true;
         //    BNext.Visible = false;
         //    BPrevious.Visible = false;
         //    songDGpage.Value = "0";
@@ -554,34 +313,8 @@ namespace web
             DataView dv3 = new DataView(dt3);
             //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
 
-            GridView1.DataSource = dv3;
-            GridView1.DataBind();
-
-            if (dv3.Count == rows)
-            {
-                BNext.Visible = true;
-                if (page > 0)
-                {
-                    BPrevious.Visible = true;
-                }
-                else
-                {
-                    BPrevious.Visible = false;
-                }
-
-            }
-            else
-            {
-                BNext.Visible = false;
-                if (page > 0)
-                {
-                    BPrevious.Visible = true;
-                }
-                else
-                {
-                    BPrevious.Visible = false;
-                }
-            }
+            SongListGridView.DataSource = dv3;
+            SongListGridView.DataBind();
 
         }
 
@@ -593,12 +326,15 @@ namespace web
 
         protected void hideAllGridViewPanel()
         {
-            Panel1.Visible = false;
-            Panel2.Visible = false;
+            SongListPanel.Visible = false;
             Panel3.Visible = false;
-            Panel4.Visible = false;
+            SingerListPanel.Visible = false;
             MainMenuPanel.Visible = false;
-            SingerTypePanel.Visible = false;
+
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                SingerTypePanel.Visible = false;
+            }
         }
 
         //protected void SingerListView_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -608,7 +344,7 @@ namespace web
         //    GridView1.DataBind();
         //    tSearch.Text = "";
         //    hideAllGridViewPanel();
-        //    Panel2.Visible = true;
+        //    SongListPanel.Visible = true;
         //    BNext.Visible = false;
         //    BPrevious.Visible = false;
         //    songDGpage.Value = "0";
@@ -622,99 +358,22 @@ namespace web
 
         //}
 
-        protected void Bsinger_Click(object sender, EventArgs e) {
-            //clean up data on display
-            GridView1.DataSource = null;
-            GridView1.DataBind();
-            tSearch.Text = "";
-            hideAllGridViewPanel();
-            Panel2.Visible = true;
-            BNext.Visible = false;
-            BPrevious.Visible = false;
-            songDGpage.Value = "0";
-            LPageNumCount.Text = "1";
-
-           // var data = SingerListView.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
-            var data = ((Button)sender).Text.ToString();
-             gvMode.Value = data.ToString();
-            tSearch.Text = data.ToString();
-            SingerSongList(0, 100, data.ToString());
-            ddSearchType.SelectedIndex = 1;
-        }
-
         private void SingerSongList(int page, int rows, string Singer_Name)
         {
-            string   jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + Singer_Name.Trim() + "%'", page, rows, "Song_Singer, Song_SongName"); //more than 2000 per rows will be super slow
-                
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "Singer";
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = Singer_Name;
+            string jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + Singer_Name.Trim() + "%'", page, rows, "Song_WordCount, Song_SongName"); //more than 2000 per rows will be super slow
+
             DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
             DataView dv3 = new DataView(dt3);
             //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
 
-            GridView1.DataSource = dv3;
-            GridView1.DataBind();
+            SongListGridView.DataSource = dv3;
+            SongListGridView.DataBind();
             
-            if (dv3.Count == rows)
-            {
-                BNext.Visible = true;
-                if (page > 0)
-                {
-                    BPrevious.Visible = true;
-                }
-                else
-                {
-                    BPrevious.Visible = false;
-                }
-
-            }
-            else
-            {
-                BNext.Visible = false;
-                if (page > 0)
-                {
-                    BPrevious.Visible = true;
-                }
-                else
-                {
-                    BPrevious.Visible = false;
-                }
-            }
-
             findCaller.Value = "toTop";
         }
 
-        protected void BJump_Click(object sender, EventArgs e)
-        {
-
-
-            try
-            {
-                int _page = int.Parse(LPageNumCount.Text.ToString().Trim());
-                findCaller.Value = "toTop";
-                //clean up data on display
-                GridView1.DataSource = null;
-                GridView1.DataBind();
-
-                if (_page <= 0)
-                    _page = 1;
-
-                if (gvMode.Value.ToString().Trim().Length > 0)
-                {
-                    FSongList(_page - 1, 100, gvMode.Value.ToString());
-                }
-                else
-                {
-                    songList(_page - 1, 100);
-                }
-
-
-                songDGpage.Value = (_page - 1).ToString();
-
-            }
-            catch (Exception) { }
-
-
-            //LPageNumCount.Text = songDGpage.Value.ToString();
-        }
 
         protected void bSearch_PreRender(object sender, EventArgs e)
         {
@@ -726,96 +385,119 @@ namespace web
 
                 //GridView1.Rows.C = dv;
 
-                if (GridView1.Rows.Count > 0 || int.Parse(songDGpage.Value) > 0)
-                {
-                    LPageNumDisplay.Visible = true;
-                    LPageNumCount.Visible = true;
-                    BJump.Visible = true;
-                }
-                else
-                {
-                    LPageNumDisplay.Visible = false;
-                    LPageNumCount.Visible = false;
-                    BJump.Visible = false;
-                }
+
                 //LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
                 //int.Parse(LPageNumCount.Text.ToString().Trim())
-                songDGpage.Value = (int.Parse(LPageNumCount.Text) - 1).ToString();
             }
             catch
             {
-                LPageNumDisplay.Visible = false;
-                LPageNumCount.Visible = false;
-                songDGpage.Value = "0";
-                LPageNumCount.Text = "1";
-                BJump.Visible = false;
+
             }
         }
 
         protected void GridView2_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             //clean up data on display
-            GridView1.DataSource = null;
-            GridView1.DataBind();
-            tSearch.Text = "";
+            SongListGridView.DataSource = null;
+            SongListGridView.DataBind();
             hideAllGridViewPanel();
-            Panel2.Visible = true;
-            BNext.Visible = false;
-            BPrevious.Visible = false;
-            songDGpage.Value = "0";
-            LPageNumCount.Text = "1";
+            SongListPanel.Visible = true;
+
+
 
 
             //LocationID = Me.MyListView.DataKeys(currentItem.DataItemIndex)("LocationID")
 
             var data = this.GridView2.DataKeys[e.Item.DataItemIndex]["User_Id"]; //get DataKeyNames="User_ID"
-            gvMode.Value = data.ToString();
+
             FSongList(0, 100, data.ToString());
         }
 
-        protected void MainMenu_FindSingerButton_Click(object sender, ImageClickEventArgs e)
+        protected void MainMenu_FindSingerButton_Click(object sender, EventArgs e)
         {
             hideAllGridViewPanel();
             SingerTypePanel.Visible = true;
         }
 
-        protected void MainMenu_FindLangButton_Click(object sender, ImageClickEventArgs e)
+        protected void MainMenu_FindLangButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void MainMenu_QuerySongButton_Click(object sender, ImageClickEventArgs e)
+        protected void MainMenu_QuerySongButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void MainMenu_ChorusSongButton_Click(object sender, ImageClickEventArgs e)
+        protected void MainMenu_WordCountButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void MainMenu_ChartSongButton_Click(object sender, ImageClickEventArgs e)
+        protected void MainMenu_ChorusSongButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void MainMenu_NewSongButton_Click(object sender, ImageClickEventArgs e)
+        protected void MainMenu_TopSongButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void MainMenu_FavoriteSongButton_Click(object sender, ImageClickEventArgs e)
+        protected void MainMenu_NewSongButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void SingerTypeButton_Click(object sender, ImageClickEventArgs e)
+        protected void MainMenu_FavoriteSongButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void MainMenu_WordCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void MainMenu_SongNumberButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SingerTypeButton_Click(object sender, EventArgs e)
         {
             if (CrazyKTVWCF.checkWCF() == true)
             {
                 hideAllGridViewPanel();
-                Panel4.Visible = true;
-                int PageSize = GuiGlobal.SingerTypePageSize;
+                SingerListPanel.Visible = true;
+
+                int PageSize = 0;
+
+                if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+                {
+                    PageSize = GuiGlobal.SingerTypePageSize;
+                }
+                else
+                {
+                    if ((((HiddenField)this.Parent.FindControl("BrowserScreenMode")).Value == "Fullscreen"))
+                    {
+                        PageSize = GuiGlobal.SingerTypeFullscreenPageSize;
+                    }
+                    else
+                    {
+                        PageSize = GuiGlobal.SingerTypeDesktopPageSize;
+                    }
+
+                    SingerTypeMaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                    SingerTypeFemaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                    SingerTypeGroupDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                    SingerTypeForeignMaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                    SingerTypeForeignFemaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                    SingerTypeForeignGroupDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                    SingerTypeOtherDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                    ((LinkButton)sender).CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                }
+                    
                 SingerListDataPager.SetPageProperties(0, PageSize, true);
 
                 string jsonText = "";
@@ -824,51 +506,57 @@ namespace web
 
                 DataTable[] dtlist =
                 {
-                GuiGlobal.SingerTypeMaleDT,
-                GuiGlobal.SingerTypeFemaleDT,
-                GuiGlobal.SingerTypeGroupDT,
-                GuiGlobal.SingerTypeForeignMale,
-                GuiGlobal.SingerTypeForeignFemale,
-                GuiGlobal.SingerTypeForeignGroup,
-                GuiGlobal.SingerTypeOther
-            };
+                    GuiGlobal.SingerTypeMaleDT,
+                    GuiGlobal.SingerTypeFemaleDT,
+                    GuiGlobal.SingerTypeGroupDT,
+                    GuiGlobal.SingerTypeForeignMale,
+                    GuiGlobal.SingerTypeForeignFemale,
+                    GuiGlobal.SingerTypeForeignGroup,
+                    GuiGlobal.SingerTypeOther
+                };
 
-                switch (((ImageButton)sender).ID)
+                switch (((LinkButton)sender).ID)
                 {
                     case "SingerTypeMaleButton":
+                    case "SingerTypeMaleDesktopButton":
                         SingerType = "0";
                         SingerTypeIndex = 0;
                         break;
                     case "SingerTypeFemaleButton":
+                    case "SingerTypeFemaleDesktopButton":
                         SingerType = "1";
                         SingerTypeIndex = 1;
                         break;
                     case "SingerTypeGroupButton":
+                    case "SingerTypeGroupDesktopButton":
                         SingerType = "2";
                         SingerTypeIndex = 2;
                         break;
-                    case "SingerTypeForeignMaleShowButton":
                     case "SingerTypeForeignMaleButton":
+                    case "SingerTypeForeignMaleDesktopButton":
                         SingerType = "4";
                         SingerTypeIndex = 3;
                         break;
                     case "SingerTypeForeignFemaleButton":
+                    case "SingerTypeForeignFemaleDesktopButton":
                         SingerType = "5";
                         SingerTypeIndex = 4;
                         break;
                     case "SingerTypeForeignGroupButton":
+                    case "SingerTypeForeignGroupDesktopButton":
                         SingerType = "6";
                         SingerTypeIndex = 5;
                         break;
-                    case "SingerTypeOtherShowButton":
                     case "SingerTypeOtherButton":
+                    case "SingerTypeOtherDesktopButton":
                         SingerType = "7";
                         SingerTypeIndex = 6;
                         break;
                 }
+                ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = SingerTypeIndex.ToString();
 
                 List<string> ImgFormatList = new List<string>() { ".jpg", ".png", ".bmp", ".gif" };
-                jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=" + SingerType, 0, 2000, "Singer_Strokes, Singer_Name");
+                jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=" + SingerType, 0, GuiGlobal.QuerySongRows, "Singer_Strokes, Singer_Name");
                 DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
                 DataView dv3 = new DataView();
 
@@ -892,7 +580,6 @@ namespace web
                         }
                     }
 
-                    GuiGlobal.SingerTypeCurrentDT = dt3;
                     dv3 = new DataView(dt3);
                     switch (SingerTypeIndex)
                     {
@@ -921,7 +608,6 @@ namespace web
                 }
                 else
                 {
-                    GuiGlobal.SingerTypeCurrentDT = dtlist[SingerTypeIndex];
                     dv3 = new DataView(dtlist[SingerTypeIndex]);
                 }
 
@@ -930,40 +616,60 @@ namespace web
             }
         }
 
-        protected void SingerImageButton_Click(object sender, ImageClickEventArgs e)
+        protected void SingerListButton_Click(object sender, EventArgs e)
         {
             //clean up data on display
-            GridView1.DataSource = null;
-            GridView1.DataBind();
-            tSearch.Text = "";
+            SongListGridView.DataSource = null;
+            SongListGridView.DataBind();
+
             hideAllGridViewPanel();
-            Panel2.Visible = true;
+            SongListPanel.Visible = true;
 
-            BNext.Visible = false;
-            BPrevious.Visible = false;
-            songDGpage.Value = "0";
-            LPageNumCount.Text = "1";
-
-            // var data = SingerListView.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
-            var data = ((ImageButton)sender).AlternateText.ToString();
-            gvMode.Value = data.ToString();
-            tSearch.Text = data.ToString();
-            SingerSongList(0, 100, data.ToString());
-            ddSearchType.SelectedIndex = 1;
+            var data = ((LinkButton)sender).CommandArgument.ToString();
+            SingerSongList(0, GuiGlobal.QuerySongRows, data.ToString());
         }
 
         protected void SingerListView_PagePropertiesChanged(object sender, EventArgs e)
         {
             SingerListView.DataSource = null;
             SingerListView.DataBind();
-            hideAllGridViewPanel();
-            Panel4.Visible = true;
-            
-            int PageSize = GuiGlobal.SingerTypePageSize;
+
+            int PageSize = 0;
+
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                PageSize = GuiGlobal.SingerTypePageSize;
+            }
+            else
+            {
+                if ((((HiddenField)this.Parent.FindControl("BrowserScreenMode")).Value == "Fullscreen"))
+                {
+                    PageSize = GuiGlobal.SingerTypeFullscreenPageSize;
+                }
+                else
+                {
+                    PageSize = GuiGlobal.SingerTypeDesktopPageSize;
+                }
+            }
+                
             int StartRowIndex = SingerListDataPager.StartRowIndex;
             SingerListDataPager.SetPageProperties(StartRowIndex, PageSize, true);
-            
-            SingerListView.DataSource = GuiGlobal.SingerTypeCurrentDT;
+
+            DataTable[] dtlist =
+            {
+                    GuiGlobal.SingerTypeMaleDT,
+                    GuiGlobal.SingerTypeFemaleDT,
+                    GuiGlobal.SingerTypeGroupDT,
+                    GuiGlobal.SingerTypeForeignMale,
+                    GuiGlobal.SingerTypeForeignFemale,
+                    GuiGlobal.SingerTypeForeignGroup,
+                    GuiGlobal.SingerTypeOther
+            };
+
+            int SingerTypeIndex = Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value);
+
+            DataView dv = new DataView(dtlist[SingerTypeIndex]);
+            SingerListView.DataSource = dv;
             SingerListView.DataBind();
         }
 
@@ -980,6 +686,10 @@ namespace web
                         e.NewMaximumRows = e.Item.Pager.MaximumRows;
                     }
                     break;
+                case "Last":
+                    e.NewStartRowIndex = (Convert.ToInt32(e.CommandArgument) - 1) * e.Item.Pager.PageSize;
+                    e.NewMaximumRows = e.Item.Pager.MaximumRows;
+                    break;
                 case "Previous":
                     e.NewStartRowIndex = e.Item.Pager.StartRowIndex - e.Item.Pager.PageSize;
                     e.NewMaximumRows = e.Item.Pager.MaximumRows;
@@ -990,6 +700,120 @@ namespace web
                     break;
             }
         }
+
+        protected void SongListAddSong_Click(object sender, EventArgs e)
+        {
+            findCaller.Value = "";
+            LinkButton btn = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)btn.NamingContainer;
+
+            var data = SongListGridView.DataKeys[row.RowIndex].Value.ToString(); //get hiddent Song_ID
+            CrazyKTVWCF.wcf_addsong(data.ToString().Trim());
+            SongListPanel.Visible = true;
+        }
+
+        protected void SongListQuerySinger_Click(object sender, EventArgs e)
+        {
+            findCaller.Value = "";
+            //clean up data on display
+            SongListGridView.DataSource = null;
+            SongListGridView.DataBind();
+
+            hideAllGridViewPanel();
+            SongListPanel.Visible = true;
+
+            findCaller.Value = "toTop";
+            string singer = ((LinkButton)sender).Text.Trim();
+
+            SingerSongList(0, GuiGlobal.QuerySongRows, singer);
+        }
+
+        protected void SongListInsSong_Click(object sender, EventArgs e)
+        {
+            findCaller.Value = "";
+            LinkButton btn = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)btn.NamingContainer;
+            var data = SongListGridView.DataKeys[row.RowIndex].Value.ToString(); //get hiddent Song_ID
+
+            CrazyKTVWCF.wcf_insertsong(data.ToString().Trim());
+            SongListPanel.Visible = true;
+        }
+        protected void SongListGridView_PreRender(object sender, EventArgs e)
+        {
+            SongListGetData();
+        }
+
+        protected void SongListGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            SongListGridView.PageIndex = e.NewPageIndex;
+            SongListGridView.DataBind();
+        }
+
+        private void SongListGetData()
+        {
+            string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
+            string SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+
+            int PageSize = 0;
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                PageSize = GuiGlobal.SongListPageSize;
+            }
+            else
+            {
+                if ((((HiddenField)this.Parent.FindControl("BrowserScreenMode")).Value == "Fullscreen"))
+                {
+                    PageSize = GuiGlobal.SongListFullscreenPageSize;
+                }
+                else
+                {
+                    PageSize = GuiGlobal.SongListDesktopPageSize;
+                }
+            }
+
+            SongListGridView.PageSize = PageSize;
+
+            switch (SongQueryType)
+            {
+                case "Singer":
+                    SingerSongList(0, GuiGlobal.QuerySongRows, SongQueryValue);
+                    break;
+            }
+
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                if (SongListGridView.PageCount > 1)
+                {
+                    DropDownList ddlSelectPage = (DropDownList)SongListGridView.BottomPagerRow.FindControl("SongListddlSelectPage");
+                    for (int i = 0; i < SongListGridView.PageCount; i++)
+                    {
+                        ddlSelectPage.Items.Add(new ListItem((i + 1).ToString(), i.ToString()));
+                    }
+                    ddlSelectPage.SelectedIndex = SongListGridView.PageIndex;
+                }
+            }
+        }
+
+        protected void SongListddlSelectPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList ddlSelectPage = (DropDownList)SongListGridView.BottomPagerRow.FindControl("SongListddlSelectPage");
+
+            int pIndex = 0;
+            if (int.TryParse(ddlSelectPage.SelectedValue, out pIndex))
+            {
+                SongListGridView.PageIndex = pIndex;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
 
         //public SortDirection GridViewSortDirection
         //{

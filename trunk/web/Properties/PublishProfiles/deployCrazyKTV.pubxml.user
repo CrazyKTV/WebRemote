@@ -8,26 +8,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
     <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\__PROJECTS__\CrazyKTV\tags\_current_\web</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Ken\Documents\Visual Studio 2015\Projects\CrazyKTV_Web\tags\_current_\web</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="advanced.ascx">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_GlobalResources/GlobalMessages.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/advanced.ascx.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/advanced.ascx.zh-CHT.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/currentList.ascx.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/currentList.ascx.zh-CHT.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/default.aspx.resx">
       <publishTime>05/15/2015 23:43:33</publishTime>
@@ -39,64 +39,145 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/19/2013 21:26:01</publishTime>
     </File>
     <File Include="App_LocalResources/find.ascx.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/find.ascx.zh-CHT.resx">
-      <publishTime>05/16/2015 00:19:57</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_advanced.ascx.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_advanced.ascx.zh-CHT.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_currentList.ascx.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_currentList.ascx.zh-CHT.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_default.aspx.resx">
+      <publishTime>09/21/2015 14:37:49</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_default.aspx.zh-CHT.resx">
+      <publishTime>09/21/2015 14:38:08</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_find.ascx.resx">
+      <publishTime>09/21/2015 20:00:31</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_find.ascx.zh-CHT.resx">
+      <publishTime>09/21/2015 19:43:47</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_songNumber.ascx.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_songNumber.ascx.zh-CHT.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_tune.ascx.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_tune.ascx.zh-CHT.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_video.ascx.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_video.ascx.zh-CHT.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_volume.ascx.resx">
+      <publishTime>09/10/2015 11:03:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/gui_volume.ascx.zh-CHT.resx">
+      <publishTime>09/10/2015 11:03:51</publishTime>
     </File>
     <File Include="App_LocalResources/songNumber.ascx.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/songNumber.ascx.zh-CHT.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="App_LocalResources/tui_default.aspx.resx">
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="App_LocalResources/tui_default.aspx.zh-CHT.resx">
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/tune.ascx.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/tune.ascx.zh-CHT.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/video.ascx.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/video.ascx.zh-CHT.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/volume.ascx.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="App_LocalResources/volume.ascx.zh-CHT.resx">
-      <publishTime>05/15/2015 23:43:33</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="bin/AjaxControlToolkit.dll">
       <publishTime>01/26/2013 23:18:07</publishTime>
     </File>
     <File Include="bin/Gma.QrCodeNet.Encoding.dll">
-      <publishTime>05/15/2015 23:43:35</publishTime>
+      <publishTime>09/10/2015 09:03:19</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>05/15/2015 23:43:36</publishTime>
+      <publishTime>09/10/2015 09:03:19</publishTime>
     </File>
     <File Include="bin/SharpPieces.Web.Controls.dll">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:19</publishTime>
     </File>
     <File Include="bin/web.dll">
-      <publishTime>05/16/2015 00:19:58</publishTime>
+      <publishTime>09/22/2015 01:42:47</publishTime>
     </File>
     <File Include="ClassDiagram1.cd">
       <publishTime>02/25/2015 12:00:32</publishTime>
     </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="css/gui_button.css">
+      <publishTime>09/22/2015 01:41:17</publishTime>
+    </File>
+    <File Include="css/gui_layout.css">
+      <publishTime>09/21/2015 23:02:39</publishTime>
+    </File>
+    <File Include="css/gui_overlay.css">
+      <publishTime>09/10/2015 10:56:39</publishTime>
+    </File>
     <File Include="css/layout.css">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/15/2015 22:56:19</publishTime>
     </File>
     <File Include="css/layout2.css">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="css/overlay.css">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="currentList.ascx">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="DataSet1.xsc">
       <publishTime>01/22/2013 15:41:20</publishTime>
@@ -105,25 +186,70 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2013 08:36:47</publishTime>
     </File>
     <File Include="default.aspx">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/15/2015 13:43:22</publishTime>
+    </File>
+    <File Include="ErrorDeadWCF.ascx">
+      <publishTime>09/10/2015 11:15:01</publishTime>
+    </File>
+    <File Include="ErrorDeadWCF.aspx">
+      <publishTime>09/10/2015 11:15:01</publishTime>
     </File>
     <File Include="ErrorDeadWCF.html">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="example.aspx">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/10/2015 10:00:34</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="find.ascx">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>09/10/2015 09:10:24</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>09/10/2015 09:10:23</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>09/10/2015 09:10:23</publishTime>
     </File>
     <File Include="GenImage.ashx">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="getSinger.aspx">
-      <publishTime>05/15/2015 23:43:31</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="gui_advanced.ascx">
+      <publishTime>09/10/2015 11:08:44</publishTime>
+    </File>
+    <File Include="gui_currentList.ascx">
+      <publishTime>09/22/2015 00:02:23</publishTime>
+    </File>
+    <File Include="gui_default.aspx">
+      <publishTime>09/21/2015 17:13:53</publishTime>
+    </File>
+    <File Include="gui_find.ascx">
+      <publishTime>09/22/2015 01:37:21</publishTime>
+    </File>
+    <File Include="gui_songNumber.ascx">
+      <publishTime>09/10/2015 11:08:44</publishTime>
+    </File>
+    <File Include="gui_tune.ascx">
+      <publishTime>09/10/2015 11:08:44</publishTime>
+    </File>
+    <File Include="gui_video.ascx">
+      <publishTime>09/10/2015 11:08:44</publishTime>
+    </File>
+    <File Include="gui_volume.ascx">
+      <publishTime>09/10/2015 11:08:44</publishTime>
     </File>
     <File Include="hammer.js">
       <publishTime>05/15/2015 23:43:32</publishTime>
@@ -132,43 +258,145 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2015 23:43:32</publishTime>
     </File>
     <File Include="images/ajax-loader.gif">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/Arrow.gif">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/Arrow.png">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/Arrow2.gif">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/Arrow2.png">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="images/background.jpg">
+      <publishTime>09/16/2015 18:57:20</publishTime>
     </File>
     <File Include="images/Basic.jpg">
-      <publishTime>05/15/2015 23:43:35</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/Button.jpg">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/Button1.jpg">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/crazyktv.png">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/ErrorDeadWCF.jpg">
-      <publishTime>05/15/2015 23:43:36</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/favicon.ico">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
     </File>
     <File Include="images/flag.png">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="images/mainmenu_chartsong.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/mainmenu_chartsong_small.png">
+      <publishTime>09/16/2015 16:38:32</publishTime>
+    </File>
+    <File Include="images/mainmenu_chorussong.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/mainmenu_chorussong_small.png">
+      <publishTime>09/16/2015 14:55:38</publishTime>
+    </File>
+    <File Include="images/mainmenu_emptyimage.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/mainmenu_favoritesong.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/mainmenu_favoritesong_small.png">
+      <publishTime>09/16/2015 16:54:13</publishTime>
+    </File>
+    <File Include="images/mainmenu_findlang.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/mainmenu_findlang_small.png">
+      <publishTime>09/16/2015 14:38:45</publishTime>
+    </File>
+    <File Include="images/mainmenu_findsinger.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/mainmenu_findsinger_small.png">
+      <publishTime>09/16/2015 14:38:58</publishTime>
+    </File>
+    <File Include="images/mainmenu_newsong.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/mainmenu_newsong_small.png">
+      <publishTime>09/16/2015 16:18:49</publishTime>
+    </File>
+    <File Include="images/mainmenu_querysong.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/mainmenu_querysong_small.png">
+      <publishTime>09/16/2015 12:04:49</publishTime>
+    </File>
+    <File Include="images/mainmenu_songnumber.png">
+      <publishTime>09/16/2015 17:41:33</publishTime>
+    </File>
+    <File Include="images/mainmenu_songnumber_small.png">
+      <publishTime>09/21/2015 13:13:26</publishTime>
+    </File>
+    <File Include="images/mainmenu_wordcount.png">
+      <publishTime>09/21/2015 12:28:26</publishTime>
+    </File>
+    <File Include="images/mainmenu_wordcount_small.png">
+      <publishTime>09/21/2015 12:36:04</publishTime>
+    </File>
+    <File Include="images/main_advanced.png">
+      <publishTime>09/11/2015 19:21:16</publishTime>
+    </File>
+    <File Include="images/main_crazyktv.png">
+      <publishTime>09/11/2015 21:07:54</publishTime>
+    </File>
+    <File Include="images/main_emptyimage.png">
+      <publishTime>09/10/2015 11:07:56</publishTime>
+    </File>
+    <File Include="images/main_findsong.png">
+      <publishTime>09/11/2015 19:13:28</publishTime>
+    </File>
+    <File Include="images/main_playlist.png">
+      <publishTime>09/11/2015 19:17:21</publishTime>
+    </File>
+    <File Include="images/main_songnumber.png">
+      <publishTime>09/11/2015 19:19:50</publishTime>
     </File>
     <File Include="images/remote.png">
-      <publishTime>05/15/2015 23:43:34</publishTime>
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="images/singertype_default.png">
+      <publishTime>09/21/2015 22:26:44</publishTime>
+    </File>
+    <File Include="images/singertype_female.png">
+      <publishTime>09/21/2015 18:24:20</publishTime>
+    </File>
+    <File Include="images/singertype_foreignfemale.png">
+      <publishTime>09/21/2015 18:39:14</publishTime>
+    </File>
+    <File Include="images/singertype_foreigngroup.png">
+      <publishTime>09/21/2015 18:44:35</publishTime>
+    </File>
+    <File Include="images/singertype_foreignmale.png">
+      <publishTime>09/21/2015 18:37:59</publishTime>
+    </File>
+    <File Include="images/singertype_group.png">
+      <publishTime>09/21/2015 18:25:08</publishTime>
+    </File>
+    <File Include="images/singertype_male.png">
+      <publishTime>09/21/2015 18:11:14</publishTime>
+    </File>
+    <File Include="images/singertype_other.png">
+      <publishTime>09/21/2015 18:50:20</publishTime>
     </File>
     <File Include="jquery-1.8.3.min.js">
       <publishTime>02/07/2013 21:14:44</publishTime>
@@ -210,7 +438,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/20/2012 22:45:32</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>05/15/2015 23:43:32</publishTime>
+      <publishTime>09/18/2015 09:05:25</publishTime>
     </File>
     <File Include="Properties/Settings.settings">
       <publishTime>02/19/2013 21:26:23</publishTime>
@@ -218,26 +446,95 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="quo.js">
       <publishTime>02/21/2013 16:08:47</publishTime>
     </File>
+    <File Include="Scripts/bootstrap-toolkit.main.js">
+      <publishTime>09/21/2015 16:40:11</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-toolkit.min.js">
+      <publishTime>09/19/2015 11:08:48</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>09/10/2015 09:10:23</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>09/10/2015 09:10:23</publishTime>
+    </File>
+    <File Include="Scripts/hammer.js">
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="Scripts/html5shiv-printshiv.js">
+      <publishTime>09/18/2015 09:05:25</publishTime>
+    </File>
+    <File Include="Scripts/html5shiv-printshiv.min.js">
+      <publishTime>09/18/2015 09:05:25</publishTime>
+    </File>
+    <File Include="Scripts/html5shiv.js">
+      <publishTime>09/18/2015 09:05:25</publishTime>
+    </File>
+    <File Include="Scripts/html5shiv.min.js">
+      <publishTime>09/18/2015 09:05:24</publishTime>
+    </File>
+    <File Include="Scripts/IE9html5.js">
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.js">
+      <publishTime>09/10/2015 09:10:17</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>09/10/2015 09:10:17</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.map">
+      <publishTime>09/10/2015 09:10:16</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dragsort.js">
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="Scripts/jquery.hammer.js">
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="Scripts/jquery.specialevent.hammer.js">
+      <publishTime>09/10/2015 09:56:50</publishTime>
+    </File>
+    <File Include="Scripts/jquery.watermark.js">
+      <publishTime>09/10/2015 09:03:18</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>09/15/2015 14:42:13</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.js">
+      <publishTime>09/15/2015 14:42:13</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.min.js">
+      <publishTime>09/15/2015 14:42:13</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>09/15/2015 14:42:13</publishTime>
+    </File>
+    <File Include="singerimg/Put SingerIMG In Here.txt">
+      <publishTime>09/10/2015 11:06:20</publishTime>
+    </File>
     <File Include="songNumber.ascx">
-      <publishTime>05/15/2015 23:43:32</publishTime>
+      <publishTime>09/10/2015 09:03:19</publishTime>
     </File>
     <File Include="test2.html">
-      <publishTime>05/15/2015 23:43:32</publishTime>
+      <publishTime>09/18/2015 09:10:32</publishTime>
     </File>
     <File Include="touch.js">
       <publishTime>02/21/2013 15:50:12</publishTime>
     </File>
+    <File Include="tui_default.aspx">
+      <publishTime>09/18/2015 09:10:32</publishTime>
+    </File>
     <File Include="tune.ascx">
-      <publishTime>05/15/2015 23:43:32</publishTime>
+      <publishTime>09/10/2015 09:03:19</publishTime>
     </File>
     <File Include="video.ascx">
-      <publishTime>05/15/2015 23:43:32</publishTime>
+      <publishTime>09/10/2015 09:03:19</publishTime>
     </File>
     <File Include="volume.ascx">
-      <publishTime>05/15/2015 23:43:32</publishTime>
+      <publishTime>09/10/2015 09:03:19</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/16/2015 00:19:59</publishTime>
+      <publishTime>09/10/2015 11:42:15</publishTime>
     </File>
   </ItemGroup>
 </Project>

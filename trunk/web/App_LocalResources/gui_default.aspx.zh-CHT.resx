@@ -238,42 +238,81 @@
     <value>切歌</value>
   </data>
   <data name="BdBackwardResource1.Text" xml:space="preserve">
-    <value>快後</value>
+    <value>快退</value>
   </data>
-  <data name="BdColumeUpResource1.Text" xml:space="preserve">
-    <value>+音量</value>
+  <data name="BdVolumeUpResource1.Text" xml:space="preserve">
+    <value>大聲</value>
   </data>
   <data name="BdFemaleResource1.Text" xml:space="preserve">
-    <value>女調</value>
+    <value>♀女調</value>
   </data>
   <data name="BdForwardResource1.Text" xml:space="preserve">
-    <value>快前</value>
+    <value>快進</value>
   </data>
   <data name="BdKeyDownResource1.Text" xml:space="preserve">
-    <value>-Key</value>
+    <value>降調</value>
   </data>
   <data name="BdKeyUpResource1.Text" xml:space="preserve">
-    <value>+Key</value>
+    <value>升調</value>
   </data>
   <data name="BdMaleResource1.Text" xml:space="preserve">
-    <value>男調</value>
+    <value>♂男調</value>
   </data>
   <data name="BdMuteResource1.Text" xml:space="preserve">
-    <value>Txt</value>
+    <value>靜音</value>
   </data>
   <data name="BdPauseResource1.Text" xml:space="preserve">
     <value>暫停</value>
   </data>
   <data name="BdRepeatResource1.Text" xml:space="preserve">
-    <value>隨機</value>
+    <value>重複</value>
   </data>
   <data name="BdRestartResource1.Text" xml:space="preserve">
     <value>重播</value>
   </data>
   <data name="BdVolumeDownResource1.Text" xml:space="preserve">
-    <value>-音量</value>
+    <value>小聲</value>
   </data>
   <data name="BFindResource1.Text" xml:space="preserve">
     <value>點歌</value>
+  </data>
+  <data name="BdDefaultPitchResource1.Text" xml:space="preserve">
+    <value>原調</value>
+  </data>
+  <data name="BdFixedCHResource1.Text" xml:space="preserve">
+    <value>固定</value>
+  </data>
+  <data name="BdRandomResource1.Text" xml:space="preserve">
+    <value>隨機</value>
+  </data>
+  <data name="BdSongRecoedResource1.Text" xml:space="preserve">
+    <value>記錄</value>
+  </data>
+  <data name="MainMenu_TopSongButton_RES.Text" xml:space="preserve">
+    <value>排行</value>
+  </data>
+  <data name="MainMenu_ChorusSongButton_RES.Text" xml:space="preserve">
+    <value>合唱</value>
+  </data>
+  <data name="MainMenu_FavoriteSongButton_RES.Text" xml:space="preserve">
+    <value>最愛</value>
+  </data>
+  <data name="MainMenu_FindLangButton_RES.Text" xml:space="preserve">
+    <value>語系</value>
+  </data>
+  <data name="MainMenu_FindSinger_RES.Text" xml:space="preserve">
+    <value>歌星</value>
+  </data>
+  <data name="MainMenu_NewSongButton_RES.Text" xml:space="preserve">
+    <value>新進</value>
+  </data>
+  <data name="MainMenu_QuerySongButton_RES.Text" xml:space="preserve">
+    <value>搜尋</value>
+  </data>
+  <data name="MainMenu_WordCountButton_RES.Text" xml:space="preserve">
+    <value>字數</value>
+  </data>
+  <data name="MainMenu_SongNumberButton_RES.Text" xml:space="preserve">
+    <value>編號</value>
   </data>
 </root>

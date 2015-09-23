@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -38,16 +39,11 @@ namespace web
             //((ExtendedListItem)find.FindControl("NewSongs")).Value = "";
         }
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Form["ddlanguage"] == null)
             {
-                ddlanguage.SelectedValue = "zh-CHT";
-                ddActions.SelectedValue = "Waiting List";
-                gui_find.Visible = true;
-
-                
+                //gui_find.Visible = true;
                 //currentList1.Visible = true;
             }
 
@@ -65,9 +61,7 @@ namespace web
                 }
             }
 
-
-
-            GlobalFunctions.currentlang = ddlanguage.SelectedValue.ToString();
+            GlobalFunctions.currentlang = "zh-CHT";
             
             // if WCF is alive then continue with other process
             System.Threading.Thread.Sleep(150);  // to display "loading" icon for 0.15 second
@@ -89,7 +83,7 @@ namespace web
             //string state = e.State["historyPoint"];
             //ddActions.SelectedIndex = Convert.ToInt32(state);
         }
-        
+        /*
         protected void ddActions_SelectedIndexChanged(object sender, EventArgs e)
         {
             ////for broswer back button
@@ -146,6 +140,8 @@ namespace web
 
 
         }
+        */
+
 
         private void hideAllCU()
         {
@@ -153,7 +149,7 @@ namespace web
             gui_advanced.Visible = false;
             gui_volume.Visible = false;
             gui_video.Visible = false;
-            gui_currentList1.Visible = false;
+            gui_currentList.Visible = false;
             gui_songNumber.Visible = false;
             gui_find.Visible = false;
         }
@@ -165,18 +161,29 @@ namespace web
 
         }
 
+        protected void BFind_Click(object sender, EventArgs e)
+        {
+            hideAllCU();
+            gui_find.Visible = true;
+            ((HiddenField)gui_find.FindControl("findCaller")).Value = "toTop";
+        }
+
         protected void BCut_Click(object sender, EventArgs e)
         {
             CrazyKTVWCF.DoCrazyKTV_Action(null, "Cut");
             ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
         }
 
-        protected void BFind_Click(object sender, EventArgs e)
+        protected void BdFixedCH_Click(object sender, EventArgs e)
         {
-            hideAllCU();
-            gui_find.Visible = true;
-            ddActions.SelectedValue = "Find";
-            ((HiddenField)gui_find.FindControl("findCaller")).Value = "toTop";
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "Fixed");
+            ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdSongRecoed_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "SongRecoedList");
+            ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
         }
 
         protected void BdRestart_Click(object sender, EventArgs e)
@@ -191,15 +198,27 @@ namespace web
             ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
         }
 
+        protected void BdDefaultPitch_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "DefaultPitch");
+            ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
+        }
+
         protected void BdKeyUp_Click(object sender, EventArgs e)
         {
             CrazyKTVWCF.DoCrazyKTV_Control(1, "Pitch");
             ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
         }
 
+
         protected void BdRepeat_Click(object sender, EventArgs e)
+        {
+            CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
+            ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
+        }
+
+        protected void BdRandom_Click(object sender, EventArgs e)
         {            
-            //CrazyKTVWCF.DoCrazyKTV_Action(null, "Replay");
             CrazyKTVWCF.DoCrazyKTV_Control(null, "RandomSong");
             ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
         }
@@ -236,8 +255,8 @@ namespace web
 
         protected void BdMute_Click(object sender, EventArgs e)
         {
-            //CrazyKTVWCF.DoCrazyKTV_Control(null, "Mute");
-            CrazyKTVWCF.DoCrazyKTV_Action(null, "SongRecoedList");
+            CrazyKTVWCF.DoCrazyKTV_Control(null, "Mute");
+            //CrazyKTVWCF.DoCrazyKTV_Action(null, "SongRecoedList");
             ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
         }
 
@@ -247,16 +266,16 @@ namespace web
             ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
         }
 
-        protected void BdColumeUp_Click(object sender, EventArgs e)
+        protected void BdVolumeUp_Click(object sender, EventArgs e)
         {
             CrazyKTVWCF.DoCrazyKTV_Control(1, "Volume");
             ((HiddenField)gui_find.FindControl("findCaller")).Value = "";
         }
 
-        protected void PlayListButton_Click(object sender, ImageClickEventArgs e)
+        protected void PlayListButton_Click(object sender, EventArgs e)
         {
             hideAllCU();
-            if (CrazyKTVWCF.WCFlive) gui_currentList1.Visible = true;
+            if (CrazyKTVWCF.WCFlive) gui_currentList.Visible = true;
         }
 
         protected void FindSongButton_Click(object sender, ImageClickEventArgs e)
@@ -278,6 +297,71 @@ namespace web
             if (CrazyKTVWCF.WCFlive) gui_advanced.Visible = true;
         }
 
+        protected void hideAllfindDesktopPanel()
+        {
+            ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("Panel3")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("MainMenuPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("SingerTypePanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("SingerListPanel")).Visible = false;
+        }
 
+        protected void MainMenu_Desktop_Button_Click(object sender, EventArgs e)
+        {
+            MainMenu_FindSingerDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_FindLangDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_QuerySongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_WordCountDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_ChorusSongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_NewSongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_TopSongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_FavoriteSongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_SongNumberDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            ((LinkButton)sender).CssClass = "ControlButton " + GuiGlobal.ActiveButtonCssClass;
+
+            hideAllfindDesktopPanel();
+
+            switch (((LinkButton)sender).ID)
+            {
+                case "MainMenu_FindSingerDesktopButton":
+                    ((Panel)gui_findDesktop.FindControl("SingerTypePanel")).Visible = true;
+                    ((Panel)gui_findDesktop.FindControl("SingerListPanel")).Visible = true;
+                    break;
+                case "MainMenu_FindLangDesktopButton":
+                    break;
+                case "MainMenu_QuerySongDesktopButton":
+                    break;
+                case "MainMenu_WordCountDesktopButton":
+                    break;
+                case "MainMenu_ChorusSongDesktopButton":
+                    break;
+                case "MainMenu_NewSongDesktopButton":
+                    break;
+                case "MainMenu_TopSongDesktopButton":
+                    break;
+                case "MainMenu_FavoriteSongDesktopButton":
+                    break;
+                case "MainMenu_SongNumberDesktopButton":
+                    break;
+            }
+
+        }
+
+        protected void RefreshUpdatePanelButton_Click(object sender, EventArgs e)
+        {
+            if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                ((GridView)gui_currentListDesktop.FindControl("GridView1")).PageSize = (((HiddenField)this.FindControl("BrowserScreenMode")).Value == "Fullscreen") ? GuiGlobal.PlayListFullscreenPageSize : GuiGlobal.PlayListPageSize;
+                ((GridView)gui_currentList.FindControl("GridView1")).AllowPaging = true;
+                ((DataPager)gui_findDesktop.FindControl("SingerListDataPager")).PageSize = (((HiddenField)this.FindControl("BrowserScreenMode")).Value == "Fullscreen") ? GuiGlobal.SingerTypeFullscreenPageSize : GuiGlobal.SingerTypeDesktopPageSize;
+            }
+            else
+            {
+                ((GridView)gui_currentList.FindControl("GridView1")).PageSize = 1;
+                ((GridView)gui_currentList.FindControl("GridView1")).AllowPaging = false;
+                ((DataPager)gui_findDesktop.FindControl("SingerListDataPager")).PageSize = GuiGlobal.SingerTypePageSize;
+            }
+            
+        }
     }
 }

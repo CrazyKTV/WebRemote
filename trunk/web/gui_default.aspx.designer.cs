@@ -76,15 +76,6 @@ namespace web {
         protected global::System.Web.UI.WebControls.ImageButton FindSongButton;
         
         /// <summary>
-        /// SongNumberButton 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton SongNumberButton;
-        
-        /// <summary>
         /// AdvancedButton 控制項。
         /// </summary>
         /// <remarks>
@@ -94,49 +85,94 @@ namespace web {
         protected global::System.Web.UI.WebControls.ImageButton AdvancedButton;
         
         /// <summary>
-        /// MainEmptyImage 控制項。
+        /// MainMenu_FindSingerDesktopButton 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image MainEmptyImage;
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_FindSingerDesktopButton;
         
         /// <summary>
-        /// lFunctions 控制項。
+        /// MainMenu_FindLangDesktopButton 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lFunctions;
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_FindLangDesktopButton;
         
         /// <summary>
-        /// ddActions 控制項。
+        /// MainMenu_QuerySongDesktopButton 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddActions;
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_QuerySongDesktopButton;
         
         /// <summary>
-        /// lLanguage 控制項。
+        /// MainMenu_WordCountDesktopButton 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lLanguage;
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_WordCountDesktopButton;
         
         /// <summary>
-        /// ddlanguage 控制項。
+        /// MainMenu_ChorusSongDesktopButton 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlanguage;
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_ChorusSongDesktopButton;
+        
+        /// <summary>
+        /// MainMenu_NewSongDesktopButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_NewSongDesktopButton;
+        
+        /// <summary>
+        /// MainMenu_TopSongDesktopButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_TopSongDesktopButton;
+        
+        /// <summary>
+        /// MainMenu_FavoriteSongDesktopButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_FavoriteSongDesktopButton;
+        
+        /// <summary>
+        /// MainMenu_SongNumberDesktopButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_SongNumberDesktopButton;
+        
+        /// <summary>
+        /// ToggleFullScreenButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ToggleFullScreenButton;
         
         /// <summary>
         /// gui_songNumber 控制項。
@@ -148,13 +184,13 @@ namespace web {
         protected global::web.gui_songNumber gui_songNumber;
         
         /// <summary>
-        /// gui_currentList1 控制項。
+        /// gui_currentList 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::web.gui_currentList gui_currentList1;
+        protected global::web.gui_currentList gui_currentList;
         
         /// <summary>
         /// gui_video 控制項。
@@ -211,13 +247,31 @@ namespace web {
         protected global::System.Web.UI.UserControl wcferror;
         
         /// <summary>
+        /// gui_currentListDesktop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::web.gui_currentList gui_currentListDesktop;
+        
+        /// <summary>
+        /// gui_findDesktop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::web.gui_find gui_findDesktop;
+        
+        /// <summary>
         /// BChannel 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BChannel;
+        protected global::System.Web.UI.WebControls.LinkButton BChannel;
         
         /// <summary>
         /// BFind 控制項。
@@ -226,7 +280,7 @@ namespace web {
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BFind;
+        protected global::System.Web.UI.WebControls.LinkButton BFind;
         
         /// <summary>
         /// BCut 控制項。
@@ -235,61 +289,133 @@ namespace web {
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BCut;
+        protected global::System.Web.UI.WebControls.LinkButton BCut;
         
         /// <summary>
-        /// BdRestart 控制項。
+        /// BdPauseDesktop 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdRestart;
+        protected global::System.Web.UI.WebControls.LinkButton BdPauseDesktop;
         
         /// <summary>
-        /// BdKeyDown 控制項。
+        /// BCutDesktop 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdKeyDown;
+        protected global::System.Web.UI.WebControls.LinkButton BCutDesktop;
         
         /// <summary>
-        /// BdKeyUp 控制項。
+        /// BdRestartDesktop 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdKeyUp;
+        protected global::System.Web.UI.WebControls.LinkButton BdRestartDesktop;
         
         /// <summary>
-        /// BdRepeat 控制項。
+        /// BdRepeatDesktop 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdRepeat;
+        protected global::System.Web.UI.WebControls.LinkButton BdRepeatDesktop;
         
         /// <summary>
-        /// BdMale 控制項。
+        /// BdKeyDownDesktop 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdMale;
+        protected global::System.Web.UI.WebControls.LinkButton BdKeyDownDesktop;
         
         /// <summary>
-        /// BdFemale 控制項。
+        /// BdDefaultPitchDesktop 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdFemale;
+        protected global::System.Web.UI.WebControls.LinkButton BdDefaultPitchDesktop;
+        
+        /// <summary>
+        /// BdKeyUpDesktop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdKeyUpDesktop;
+        
+        /// <summary>
+        /// BdVolumeDownDesktop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdVolumeDownDesktop;
+        
+        /// <summary>
+        /// BdMuteDesktop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdMuteDesktop;
+        
+        /// <summary>
+        /// BdVolumeUpDesktop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdVolumeUpDesktop;
+        
+        /// <summary>
+        /// BdFixedCHDesktop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdFixedCHDesktop;
+        
+        /// <summary>
+        /// BChannelDesktop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BChannelDesktop;
+        
+        /// <summary>
+        /// BdFixedCH 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdFixedCH;
+        
+        /// <summary>
+        /// BdSongRecoed 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdSongRecoed;
         
         /// <summary>
         /// BdPause 控制項。
@@ -298,34 +424,61 @@ namespace web {
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdPause;
+        protected global::System.Web.UI.WebControls.LinkButton BdPause;
         
         /// <summary>
-        /// BdBackward 控制項。
+        /// BdRestart 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdBackward;
+        protected global::System.Web.UI.WebControls.LinkButton BdRestart;
         
         /// <summary>
-        /// BdForward 控制項。
+        /// BdRepeat 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdForward;
+        protected global::System.Web.UI.WebControls.LinkButton BdRepeat;
         
         /// <summary>
-        /// BdMute 控制項。
+        /// BdRandom 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdMute;
+        protected global::System.Web.UI.WebControls.LinkButton BdRandom;
+        
+        /// <summary>
+        /// BdKeyDown 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdKeyDown;
+        
+        /// <summary>
+        /// BdDefaultPitch 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdDefaultPitch;
+        
+        /// <summary>
+        /// BdKeyUp 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdKeyUp;
         
         /// <summary>
         /// BdVolumeDown 控制項。
@@ -334,16 +487,79 @@ namespace web {
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdVolumeDown;
+        protected global::System.Web.UI.WebControls.LinkButton BdVolumeDown;
         
         /// <summary>
-        /// BdColumeUp 控制項。
+        /// BdMute 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BdColumeUp;
+        protected global::System.Web.UI.WebControls.LinkButton BdMute;
+        
+        /// <summary>
+        /// BdVolumeUp 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BdVolumeUp;
+        
+        /// <summary>
+        /// BootstrapResponsiveMode 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField BootstrapResponsiveMode;
+        
+        /// <summary>
+        /// BrowserScreenMode 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField BrowserScreenMode;
+        
+        /// <summary>
+        /// CurrentSinerType 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSinerType;
+        
+        /// <summary>
+        /// CurrentSongQueryType 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryType;
+        
+        /// <summary>
+        /// CurrentSongQueryValue 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryValue;
+        
+        /// <summary>
+        /// RefreshUpdatePanelButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RefreshUpdatePanelButton;
         
         /// <summary>
         /// UpdateProgress1 控制項。

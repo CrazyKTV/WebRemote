@@ -348,10 +348,10 @@
   <data name="Panel1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="Panel2Resource1.GroupingText" xml:space="preserve">
+  <data name="SongListPanelResource1.GroupingText" xml:space="preserve">
     <value />
   </data>
-  <data name="Panel2Resource1.ToolTip" xml:space="preserve">
+  <data name="SongListPanelResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Panel3Resource1.GroupingText" xml:space="preserve">
@@ -413,5 +413,62 @@
   </data>
   <data name="BJumpResource1.Text" xml:space="preserve">
     <value>跳</value>
+  </data>
+  <data name="MainMenu_ChorusSongButton_RES.Text" xml:space="preserve">
+    <value>合唱歌曲</value>
+  </data>
+  <data name="MainMenu_FavoriteSongButton_RES.Text" xml:space="preserve">
+    <value>我的最愛</value>
+  </data>
+  <data name="MainMenu_FindLangButton_RES.Text" xml:space="preserve">
+    <value>語系點歌</value>
+  </data>
+  <data name="MainMenu_FindSingerButton_RES.Text" xml:space="preserve">
+    <value>歌星點歌</value>
+  </data>
+  <data name="MainMenu_NewSongButton_RES.Text" xml:space="preserve">
+    <value>新進歌曲</value>
+  </data>
+  <data name="MainMenu_QuerySongButton_RES.Text" xml:space="preserve">
+    <value>搜尋歌曲</value>
+  </data>
+  <data name="MainMenu_SongNumberButton_RES.Text" xml:space="preserve">
+    <value>編號點歌</value>
+  </data>
+  <data name="MainMenu_TopSongButton_RES.Text" xml:space="preserve">
+    <value>排行歌曲</value>
+  </data>
+  <data name="MainMenu_WordCountButton_RES.Text" xml:space="preserve">
+    <value>字數點歌</value>
+  </data>
+  <data name="SingerTypeFemaleButton_RES.Text" xml:space="preserve">
+    <value>女星</value>
+  </data>
+  <data name="SingerTypeForeignFemaleButton_RES.Text" xml:space="preserve">
+    <value>外國女星</value>
+  </data>
+  <data name="SingerTypeForeignFemaleDesktopButton_RES.Text" xml:space="preserve">
+    <value>外女</value>
+  </data>
+  <data name="SingerTypeForeignGroupButton_RES.Text" xml:space="preserve">
+    <value>外國團體</value>
+  </data>
+  <data name="SingerTypeForeignGroupDesktopButton_RES.Text" xml:space="preserve">
+    <value>外團</value>
+  </data>
+  <data name="SingerTypeForeignMaleButton_RES.Text" xml:space="preserve">
+    <value>外國男星</value>
+  </data>
+  <data name="SingerTypeForeignMaleDesktopButton_RES.Text" xml:space="preserve">
+    <value>外男</value>
+  </data>
+  <data name="SingerTypeGroupButton_RES.Text" xml:space="preserve">
+    <value>團體</value>
+  </data>
+  <data name="SingerTypeMaleButton_RES.Text" xml:space="preserve">
+    <value>男星</value>
+  </data>
+  <data name="SingerTypeOtherButton_RES.Text" xml:space="preserve">
+    <value>其它</value>
   </data>
 </root>

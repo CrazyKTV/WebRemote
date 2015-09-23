@@ -135,14 +135,14 @@
   <data name="BdBackwardResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="BdColumeUpResource1.Text" xml:space="preserve">
-    <value>+ VOL</value>
+  <data name="BdVolumeUpResource1.Text" xml:space="preserve">
+    <value>VOL+</value>
   </data>
-  <data name="BdColumeUpResource1.ToolTip" xml:space="preserve">
+  <data name="BdVolumeUpResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="BdFemaleResource1.Text" xml:space="preserve">
-    <value>Female</value>
+    <value>♀Female</value>
   </data>
   <data name="BdFemaleResource1.ToolTip" xml:space="preserve">
     <value />
@@ -154,25 +154,25 @@
     <value />
   </data>
   <data name="BdKeyDownResource1.Text" xml:space="preserve">
-    <value>-Flatten</value>
+    <value>Flatten</value>
   </data>
   <data name="BdKeyDownResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="BdKeyUpResource1.Text" xml:space="preserve">
-    <value>+Sharpen</value>
+    <value>Sharpen</value>
   </data>
   <data name="BdKeyUpResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="BdMaleResource1.Text" xml:space="preserve">
-    <value>Male</value>
+    <value>♂Male</value>
   </data>
   <data name="BdMaleResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="BdMuteResource1.Text" xml:space="preserve">
-    <value>Txt</value>
+    <value>Mute</value>
   </data>
   <data name="BdMuteResource1.ToolTip" xml:space="preserve">
     <value />
@@ -184,7 +184,7 @@
     <value />
   </data>
   <data name="BdRepeatResource1.Text" xml:space="preserve">
-    <value>Random</value>
+    <value>Repeat</value>
   </data>
   <data name="BdRepeatResource1.ToolTip" xml:space="preserve">
     <value />
@@ -196,7 +196,7 @@
     <value />
   </data>
   <data name="BdVolumeDownResource1.Text" xml:space="preserve">
-    <value>-VOL</value>
+    <value>VOL-</value>
   </data>
   <data name="BdVolumeDownResource1.ToolTip" xml:space="preserve">
     <value />
@@ -326,5 +326,44 @@
   </data>
   <data name="BCutResource1.OnClientClick" xml:space="preserve">
     <value>return confirm('Are you sure about skipping this song now?');</value>
+  </data>
+  <data name="BdDefaultPitchResource1.Text" xml:space="preserve">
+    <value>Default Pitch</value>
+  </data>
+  <data name="BdFixedCHResource1.Text" xml:space="preserve">
+    <value>Fixed Channel</value>
+  </data>
+  <data name="BdRandomResource1.Text" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="BdSongRecoedResource1.Text" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="MainMenu_TopSongButton_RES.Text" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="MainMenu_ChorusSongButton_RES.Text" xml:space="preserve">
+    <value>Chorus</value>
+  </data>
+  <data name="MainMenu_FavoriteSongButton_RES.Text" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="MainMenu_FindLangButton_RES.Text" xml:space="preserve">
+    <value>Lang</value>
+  </data>
+  <data name="MainMenu_FindSinger_RES.Text" xml:space="preserve">
+    <value>Singer</value>
+  </data>
+  <data name="MainMenu_NewSongButton_RES.Text" xml:space="preserve">
+    <value>New Songs</value>
+  </data>
+  <data name="MainMenu_QuerySongButton_RES.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="MainMenu_WordCountButton_RES.Text" xml:space="preserve">
+    <value>Word Count</value>
+  </data>
+  <data name="MainMenu_SongNumberButton_RES.Text" xml:space="preserve">
+    <value>Song Number</value>
   </data>
 </root>

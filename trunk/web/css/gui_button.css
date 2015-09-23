@@ -1,183 +1,161 @@
-﻿.Mainlogo {
+﻿div.tooltip-inner {
+    font-size: 16px;
+    background-color: #cf421b;
+}
+
+.MainImage {
     padding: 5px;
-    border-width: 0px;
-    border-style: none;
-    margin-top: 5px;
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    float: left; /*float: left;*/ /*padding: 0px;*/
-    max-width: 64px;
-    max-height: 64px;
-    width: 14vw;
-    height: 14vw;
-
-    font-size: 100%;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-
-background-color: #006006; /* Old browsers */
+    width: 64px;
 }
 
 
-.MainEmptyImage {
+.MainButton {
+    margin-top: 10px;
     padding: 5px;
-    border-width: 0px;
-    border-style: none;
-    margin-top: 0px;
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    float: left; /*float: left;*/ /*padding: 0px;*/
-    max-width: 64px;
-    max-height: 64px;
-    width: 14vw;
-    height: 14vw;
+    width: 48px;
 
-    font-size: 100%;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.MainButton:hover { background: #43A047; }
+
+
+.MainMinButton {
+    font-size: 16px;
+    color: #ececec
+}
+.MainMinButton:hover { color: #FFFFFF; }
+
+
+.MainMenuMinImage {
+    margin: 0px 2px 5px 0px ;
+    width: 16px;
 }
 
 
-.Mainbutton {
-    padding: 5px;
-    border-width: 0px;
-    border-style: none;
-    margin-top: 5px; 
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    display: inline; /*float: left;*/ /*padding: 0px;*/
-    max-width: 90px;
-    max-height: 64px;
-    width: 20vw;
-    height: 14vw;
-
-    font-size: 100%;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-
-background-color: #006006; /* Old browsers */
-}
-
-.Mainbutton:active { background-color: #ff6a00; }
-.Mainbutton:hover { background: #3071A9; }
-
-
-.MainMenuHideImage {
-    padding: 5px;
-    border-width: 0px;
-    border-style: none;
-    margin: 2px; 
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    display: inline; /*float: left;*/ /*padding: 0px;*/
-    max-width: 128px;
-    max-height: 128px;
-    width: 27vw;
-    height: 27vw;
-
-    font-size: 100%;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
+.ControlButton {
+    padding: 10px 5px;
+    margin: 10px 0px;
+    width: 100%;
+    text-shadow: black 1px 1px 2px;
 }
 
 
-.MainMenuShowImage {
-    padding: 5px;
-    border-width: 0px;
-    border-style: none;
-    margin: 2px; 
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    display: none; /*float: left;*/ /*padding: 0px;*/
-    max-width: 128px;
-    max-height: 128px;
-    width: 27vw;
-    height: 27vw;
-
-    font-size: 100%;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
+.GridViewButton {
+    padding: 4px 2px 4px 0px;
+    margin: 0px 5px;
+    width: 32px;
+    text-shadow: black 1px 1px 2px;
 }
 
+
+.GridViewPageButton {
+    margin-top: -4px;
+    padding: 0px 4px 0px 4px;
+    border: none;
+    text-shadow: black 1px 1px 2px;
+}
 
 .MainMenuButton {
     padding: 5px;
-    border-width: 0px;
-    border-style: none;
-    margin: 2px; 
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    display: inline; /*float: left;*/ /*padding: 0px;*/
-    max-width: 128px;
-    max-height: 128px;
-    width: 27vw;
-    height: 27vw;
-
-    font-size: 100%;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-
-background-color: #43A047; /* Old browsers */
+    margin: 0px;
+    width: 100%;
+    text-shadow: black 1px 1px 2px;
 }
 
-.MainMenuButton:active { background-color: #ff6a00; }
-.MainMenuButton:hover { background: #3071A9; }
+.MainMenuImage {
+    width: 100%;
+}
 
 
-.MainMenuShowButton {
+.MainMenuLabel {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.SingerListButton {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: black 1px 1px 2px;
+}
+
+.SingerListLabel {
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    
+    vertical-align: central;
+    font-size: 80%;
+}
+
+.SingerListBox {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+    background:#88d188;
+}
+.SingerListBox:after {
+    padding-top: 100%;
+    content: "";
+    display: block;
+}
+
+.SingerListImage {
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    max-width:100%;
+    width:100%;
+    height:100%;
+    margin:auto;
+}
+
+
+.SingerTypeListDiv {
+    float: left;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 6px;
+    width: 100%;
+    background-color: #5cb85c;
+
+    border: solid;
+    border-width: 2px;
+    border-color: #006600;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+.SingerListPagerDiv {
+    clear: both;
+    float: left;
     padding: 5px;
-    border-width: 0px;
-    border-style: none;
-    margin: 2px; 
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    display: none; /*float: left;*/ /*padding: 0px;*/
-    max-width: 128px;
-    max-height: 128px;
-    width: 27vw;
-    height: 27vw;
+    margin-top: 6px;
+    text-align: center;
+    font-weight: lighter;
+    width: 100%;
+    
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: #000000 1px 1px 2px;
 
-    font-size: 100%;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-
-background-color: #43A047; /* Old browsers */
+    border: solid;
+    border-width: 2px;
+    border-color: #006600;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
 }
 
-.MainMenuShowButton:active { background-color: #ff6a00; }
-.MainMenuShowButton:hover { background: #3071A9; }
 
 
-.MainMenuHideButton {
-    padding: 5px;
-    border-width: 0px;
-    border-style: none;
-    margin: 2px; 
-    color: #FFFFFF;
-    font-weight: bold; /*position:relative;*/
-    display: inline; /*float: left;*/ /*padding: 0px;*/
-    max-width: 128px;
-    max-height: 128px;
-    width: 27vw;
-    height: 27vw;
-
-    font-size: 100%;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-
-background-color: #43A047; /* Old browsers */
-}
-
-.MainMenuHideButton:active { background-color: #ff6a00; }
-.MainMenuHideButton:hover { background: #3071A9; }
 
 .SingerImageButton {
     padding: 0px;
@@ -291,86 +269,3 @@ background-color: #43A047; /* Old browsers */
 
 
 
-/* ===========================================
-        HVGA (480px * 320px) 
-        Screen Orientation: landscape
-=========================================== */
-@media only screen and (orientation: portrait) and (max-height: 480px) {
-    .Mainlogo {
-        display: none;
-    }
-
-}
-
-
-
-/* ===========================================
-        HVGA (480px * 320px) 
-        Screen Orientation: landscape
-=========================================== */
-@media only screen and (orientation: landscape) and (max-height: 320px) {
-    .Mainlogo {
-        width: 10vw;
-        height: 10vw;
-    }
-
-    .MainEmptyImage {
-        width: 10vw;
-        height: 10vw;
-    }
-
-    .Mainbutton {
-        width: 14vw;
-        height: 10vw;
-    }
-
-    .MainMenuShowImage {
-        display: inline;
-        width: 20vw;
-        height: 20vw;
-    }
-
-    .MainMenuHideImage {
-        display: none; 
-    }
-    
-    .MainMenuButton {
-        width: 20vw;
-        height: 20vw;
-    }
-    
-    .MainMenuShowButton {
-        display: inline; 
-        width: 20vw;
-        height: 20vw;
-    }
-    
-    .MainMenuHideButton {
-        display: none;
-    }
-
-    .SingerImageButton {
-        max-width: 107px;
-        width: 23vw;
-        height: 23vw;
-    }
-
-    .SingerNameButton {
-        max-width: 107px;
-        width: 23vw;
-        height: 23vw;
-    }
-
-    .PageButton {
-        max-width: 107px;
-        margin: 4px;
-        width: 23vw;
-        height: 23vw;
-    }
-
-    .PageButtonDisable {
-        max-width: 107px;
-        width: 23vw;
-        height: 23vw;
-    }
-}

@@ -136,7 +136,7 @@
     <value>設定:</value>
   </data>
   <data name="LsettingRefreshRateResource1.Text" xml:space="preserve">
-    <value>刷新列表時間 (ms): </value>
+    <value>刷新列表時間 (&#x1E;&#x1E;秒): </value>
   </data>
   <data name="LToFriendResource1.Text" xml:space="preserve">
     <value>讓朋友掃描下面QR就可以直接進入點歌系統:</value>

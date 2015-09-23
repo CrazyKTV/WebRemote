@@ -191,9 +191,23 @@ namespace web
     class GuiGlobal
     {
         public static int SingerTypePageSize = 60;
+        public static int SingerTypeDesktopPageSize = 18;
+        public static int SingerTypeFullscreenPageSize = 24;
+
+        public static int SongListPageSize = 500;
+        public static int SongListDesktopPageSize = 8;
+        public static int SongListFullscreenPageSize = 11;
+
+        public static int PlayListPageSize = 10;
+        public static int PlayListFullscreenPageSize = 13;
+
+
+        public static int QuerySongRows = 50000;
+
+        public static string DefaultButtonCssClass = "btn btn-success btn-lg";
+        public static string ActiveButtonCssClass = "btn btn-primary btn-lg";
 
         public static bool SingerTypeDTStatus = false;
-        public static DataTable SingerTypeCurrentDT = new DataTable();
         public static DataTable SingerTypeMaleDT = new DataTable();
         public static DataTable SingerTypeFemaleDT = new DataTable();
         public static DataTable SingerTypeGroupDT = new DataTable();

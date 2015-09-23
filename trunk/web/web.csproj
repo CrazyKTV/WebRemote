@@ -100,20 +100,28 @@
     <Content Include="gui_video.ascx" />
     <Content Include="gui_volume.ascx" />
     <Content Include="images\background.jpg" />
-    <Content Include="images\mainmenu_chartsong.png" />
+    <Content Include="images\mainmenu_topsong.png" />
+    <Content Include="images\mainmenu_topsong_small.png" />
     <Content Include="images\mainmenu_chorussong.png" />
-    <Content Include="images\mainmenu_emptyimage.png" />
+    <Content Include="images\mainmenu_chorussong_small.png" />
     <Content Include="images\mainmenu_favoritesong.png" />
+    <Content Include="images\mainmenu_favoritesong_small.png" />
     <Content Include="images\mainmenu_findlang.png" />
+    <Content Include="images\mainmenu_findlang_small.png" />
     <Content Include="images\mainmenu_findsinger.png" />
+    <Content Include="images\mainmenu_findsinger_small.png" />
     <Content Include="images\mainmenu_newsong.png" />
+    <Content Include="images\mainmenu_newsong_small.png" />
     <Content Include="images\mainmenu_querysong.png" />
+    <Content Include="images\mainmenu_querysong_small.png" />
+    <Content Include="images\mainmenu_songnumber.png" />
+    <Content Include="images\mainmenu_songnumber_small.png" />
+    <Content Include="images\mainmenu_wordcount.png" />
+    <Content Include="images\mainmenu_wordcount_small.png" />
     <Content Include="images\main_advanced.png" />
     <Content Include="images\main_crazyktv.png" />
-    <Content Include="images\main_emptyimage.png" />
     <Content Include="images\main_findsong.png" />
     <Content Include="images\main_playlist.png" />
-    <Content Include="images\main_songnumber.png" />
     <Content Include="images\singertype_default.png" />
     <Content Include="images\singertype_female.png" />
     <Content Include="images\singertype_foreignfemale.png" />
@@ -122,6 +130,12 @@
     <Content Include="images\singertype_group.png" />
     <Content Include="images\singertype_male.png" />
     <Content Include="images\singertype_other.png" />
+    <Content Include="libs\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="libs\HtmlAgilityPack.dll" />
+    <Content Include="libs\Newtonsoft.Json.dll" />
+    <Content Include="libs\SharpPieces.Web.Controls.dll" />
+    <Content Include="Scripts\bootstrap-toolkit.main.js" />
+    <Content Include="Scripts\bootstrap-toolkit.min.js" />
     <Content Include="Scripts\hammer.js" />
     <Content Include="images\Arrow.gif" />
     <Content Include="images\Arrow.png" />
@@ -130,14 +144,22 @@
     <Content Include="images\crazyktv.png" />
     <Content Include="images\ErrorDeadWCF.jpg" />
     <Content Include="images\favicon.ico" />
+    <Content Include="Scripts\html5shiv-printshiv.js" />
+    <Content Include="Scripts\html5shiv-printshiv.min.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Scripts\jquery.dragsort.js" />
     <Content Include="Scripts\jquery.hammer.js" />
     <Content Include="Scripts\jquery.specialevent.hammer.js" />
     <Content Include="css\layout.css" />
     <Content Include="css\overlay.css" />
     <Content Include="currentList.ascx" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="singerimg\Put SingerIMG In Here.txt" />
     <Content Include="tui_default.aspx" />
-    <Content Include="Scripts\IE9html5.js" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\Basic.jpg" />
     <Content Include="images\Button.jpg" />
@@ -335,8 +357,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\tui_default.aspx.resx" />
-    <Content Include="App_LocalResources\tui_default.aspx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\tui_default.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\tui_default.aspx.zh-CHT.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -363,7 +389,9 @@
     <Content Include="App_LocalResources\tune.ascx.zh-CHT.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\currentList.ascx.resx" />
+    <Content Include="App_LocalResources\currentList.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\currentList.ascx.zh-CHT.resx" />
@@ -384,15 +412,21 @@
     <Content Include="App_LocalResources\advanced.ascx.zh-CHT.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\find.ascx.resx" />
+    <Content Include="App_LocalResources\find.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\gui_advanced.ascx.resx" />
     <Content Include="App_LocalResources\gui_advanced.ascx.zh-CHT.resx" />
     <Content Include="App_LocalResources\gui_currentList.ascx.resx" />
     <Content Include="App_LocalResources\gui_currentList.ascx.zh-CHT.resx" />
-    <Content Include="App_LocalResources\gui_default.aspx.resx" />
-    <Content Include="App_LocalResources\gui_default.aspx.zh-CHT.resx" />
+    <Content Include="App_LocalResources\gui_default.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\gui_default.aspx.zh-CHT.resx">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_LocalResources\gui_find.ascx.resx" />
     <Content Include="App_LocalResources\gui_find.ascx.zh-CHT.resx" />
     <Content Include="App_LocalResources\gui_songNumber.ascx.resx" />
