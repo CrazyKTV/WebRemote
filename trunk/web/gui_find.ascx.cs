@@ -647,6 +647,7 @@ namespace web
 
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
+            SongListGridView.PageIndex = 0;
 
             var data = ((LinkButton)sender).CommandArgument.ToString();
             SingerSongList(0, GuiGlobal.QuerySongRows, data.ToString());
