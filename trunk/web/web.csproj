@@ -130,10 +130,6 @@
     <Content Include="images\singertype_group.png" />
     <Content Include="images\singertype_male.png" />
     <Content Include="images\singertype_other.png" />
-    <Content Include="libs\Gma.QrCodeNet.Encoding.dll" />
-    <Content Include="libs\HtmlAgilityPack.dll" />
-    <Content Include="libs\Newtonsoft.Json.dll" />
-    <Content Include="libs\SharpPieces.Web.Controls.dll" />
     <Content Include="Scripts\bootstrap-toolkit.main.js" />
     <Content Include="Scripts\bootstrap-toolkit.min.js" />
     <Content Include="Scripts\hammer.js" />
@@ -173,6 +169,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\Nightly Builds.pubxml" />
     <None Include="Resources\QRimage.bmp" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

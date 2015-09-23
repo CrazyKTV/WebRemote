@@ -16,12 +16,6 @@ namespace web
             MainMenuPanel.Visible = true;
         }
 
-        protected void LPageNumCount_PreRender(object sender, EventArgs e)
-        {
-            
-        }
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -318,12 +312,6 @@ namespace web
 
         }
 
-
-       //protected void LPageNumCount_PreRender(object sender, EventArgs e)
-        //{
-        //    //LPageNumCount.Text = (int.Parse(songDGpage.Value)+1).ToString();
-        //}
-
         protected void hideAllGridViewPanel()
         {
             SongListPanel.Visible = false;
@@ -336,27 +324,6 @@ namespace web
                 SingerTypePanel.Visible = false;
             }
         }
-
-        //protected void SingerListView_RowCommand(object sender, GridViewCommandEventArgs e)
-        //{
-        //    //clean up data on display
-        //    GridView1.DataSource = null;
-        //    GridView1.DataBind();
-        //    tSearch.Text = "";
-        //    hideAllGridViewPanel();
-        //    SongListPanel.Visible = true;
-        //    BNext.Visible = false;
-        //    BPrevious.Visible = false;
-        //    songDGpage.Value = "0";
-        //    LPageNumCount.Text = "1";
-
-        //    var data = SingerListView.DataKeys[Convert.ToInt32(e.CommandArgument)].Values[0]; //get DataKeyNames="Singer_Name"
-        //   // gvMode.Value = data.ToString();
-        //    tSearch.Text = data.ToString();
-        //    SingerSongList(0, 100, data.ToString());
-        //    ddSearchType.SelectedIndex = 1;
-
-        //}
 
         private void SingerSongList(int page, int rows, string Singer_Name)
         {
@@ -395,27 +362,6 @@ namespace web
             SongListGridView.DataBind();
             
             findCaller.Value = "toTop";
-        }
-
-
-        protected void bSearch_PreRender(object sender, EventArgs e)
-        {
-            try
-            {
-
-                //DataView dv = new DataView(dt);
-                ////dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
-
-                //GridView1.Rows.C = dv;
-
-
-                //LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
-                //int.Parse(LPageNumCount.Text.ToString().Trim())
-            }
-            catch
-            {
-
-            }
         }
 
         protected void GridView2_ItemCommand(object sender, ListViewCommandEventArgs e)
@@ -827,6 +773,11 @@ namespace web
             {
                 SongListGridView.PageIndex = pIndex;
             }
+        }
+
+        protected void SongLangButton_Click(object sender, EventArgs e)
+        {
+
         }
 
 
