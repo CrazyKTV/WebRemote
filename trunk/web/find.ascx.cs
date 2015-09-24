@@ -21,101 +21,13 @@ namespace web
 
         protected void LPageNumCount_PreRender(object sender, EventArgs e)
         {
-            
 
-            //try
-            //{
-            //    if (GridView1.Rows.Count > 0)
-            //    {
-            //        LPageNumDisplay.Visible = true;
-            //        LPageNumCount.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        LPageNumDisplay.Visible = false;
-            //        LPageNumCount.Visible = false;
-            //    }
-
-            //    LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
-            //}
-            //catch
-            //{
-            //    LPageNumDisplay.Visible = false;
-            //    LPageNumCount.Visible = false;
-            //}
         }
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           // if (GlobalFunctions.FindListOrder == "2") //order
-           // {
-                //SharpPieces.Web.Controls.ExtendedListItem eli1 = new SharpPieces.Web.Controls.ExtendedListItem("Song Name", "Song", SharpPieces.Web.Controls.ListItemGroupingType.None);
-                //SharpPieces.Web.Controls.ExtendedListItem eli2 = new SharpPieces.Web.Controls.ExtendedListItem("Singer", "Singer", SharpPieces.Web.Controls.ListItemGroupingType.None);
-                //SharpPieces.Web.Controls.ExtendedListItem eli3 = new SharpPieces.Web.Controls.ExtendedListItem("Word Count", "WordCount", SharpPieces.Web.Controls.ListItemGroupingType.None);
 
-                //eli1.Attributes.Add("meta:resourcekey", "ListItemResource1");
-                //eli1.Attributes.Add("meta:resourcekey", "ListItemResource2");
-                //eli1.Attributes.Add("meta:resourcekey", "ListItemResource3");
-
-                //ddSearchType.ExtendedItems.Add(eli1);
-                //ddSearchType.ExtendedItems.Add(eli2);
-                //ddSearchType.ExtendedItems.Add(eli3);
-
-
-           // }
-
-            //    SharpPieces.Web.Controls.ExtendedListItem eli = new SharpPieces.Web.Controls.ExtendedListItem();
-                
-                
-            //    ddSearchType.ExtendedItems.Insert ([0].Enabled = false;
-            //    ddSearchType.ExtendedItems[1].Enabled = false;
-            //    ddSearchType.ExtendedItems[2].Enabled = false;            
-            //}
-            //else {
-            //    ddSearchType.ExtendedItems[5].Enabled = false;
-            //    ddSearchType.ExtendedItems[6].Enabled = false;
-            //    ddSearchType.ExtendedItems[7].Enabled = false;   
-            
-            //}
-
-            //////for broswer back button
-            //if (ScriptManagerProxy1.isinas.IsInAsyncPostBack && !ScriptManager1.IsNavigating)
-            //{
-            //    ScriptManager1.AddHistoryPoint("historyPoint", ddActions.SelectedIndex.ToString(), ddActions.SelectedValue);
-            //}
-
-            //try
-            //{
-
-            //    //DataView dv = new DataView(dt);
-            //    ////dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
-
-            //    //GridView1.Rows.C = dv;
-
-
-            //    if (int.Parse(songDGpage.Value) >= 0)
-            //    {
-            //        LPageNumDisplay.Visible = true;
-            //        LPageNumCount.Visible = true;
-            //        BJump.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        LPageNumDisplay.Visible = false;
-            //        LPageNumCount.Visible = false;
-            //        BJump.Visible = false;
-            //    }
-            //    //LPageNumCount.Text = (int.Parse(songDGpage.Value) + 1).ToString();
-            //    //int.Parse(LPageNumCount.Text.ToString().Trim())
-            //    songDGpage.Value = (int.Parse(LPageNumCount.Text) - 1).ToString();
-            //}
-            //catch {
-            //    LPageNumDisplay.Visible = false;
-            //    LPageNumCount.Visible = false;
-            //    songDGpage.Value = "0";
-            //    BJump.Visible = false;
-            //}
         }
 
 

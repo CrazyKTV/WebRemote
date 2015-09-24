@@ -77,7 +77,7 @@ namespace web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //getDataToGv();
+            
         }
 
         protected void BIns_Click(object sender, EventArgs e)

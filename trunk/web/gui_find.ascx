@@ -192,7 +192,7 @@
             <asp:ListView ID="SingerListView" runat="server" DataKeyNames="Singer_Name,Singer_Type" OnPagePropertiesChanged="SingerListView_PagePropertiesChanged">
                 <ItemTemplate>
                     <div class ="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding: 0px 5px 10px 5px;">
-                        <asp:LinkButton ID="SingerListButton" runat="server" CssClass="SingerListButton btn btn-success btn-lg" OnClick="SingerListButton_Click" data-toggle="tooltip" data-placement="top" title='<%# Eval("Singer_Name").ToString() %>'>
+                        <asp:LinkButton ID="SingerListButton" runat="server" CssClass="SingerListButton btn btn-success btn-lg" OnClick="SingerListButton_Click">
                             <asp:Label runat="server" Text='<%# Eval("Singer_Name").ToString() %>' CssClass="SingerListLabel" Font-Size='<%# Eval("Singer_Name").ToString().Length > 5 ? FontUnit.Empty : FontUnit.Medium %>' />
                             <div class="SingerListBox">
                                 <asp:Image ImageUrl='<%# Eval("ImgFileUrl").ToString() %>' runat="server" CssClass="SingerListImage" />
@@ -201,7 +201,7 @@
                     </div>
                     <!-- Desktop / Tablet -->
                     <div class ="hidden-xs hidden-sm col-md-2 col-lg-2" style="padding: 5px 5px 5px 5px;">
-                        <asp:LinkButton ID="SingerListDesktopButton" runat="server" CssClass="SingerListButton btn btn-success btn-lg" OnClick="SingerListButton_Click" data-toggle="tooltip" data-placement="top" title='<%# Eval("Singer_Name").ToString() %>'>
+                        <asp:LinkButton ID="SingerListDesktopButton" runat="server" CssClass="SingerListButton btn btn-success btn-lg" OnClick="SingerListButton_Click">
                             <asp:Label runat="server" Text='<%# Eval("Singer_Name").ToString() %>' CssClass="SingerListLabel" Font-Size='<%# Eval("Singer_Name").ToString().Length > 5 ? FontUnit.Empty : FontUnit.Medium %>' />
                             <div class="SingerListBox">
                                 <asp:Image ImageUrl='<%# Eval("ImgFileUrl").ToString() %>' runat="server" CssClass="SingerListImage" />

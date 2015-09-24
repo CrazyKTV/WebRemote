@@ -290,8 +290,52 @@ namespace web
 
             DataView dv = new DataView(dt);
             dv.Sort = dvSortStr;
+            dt = dv.ToTable();
+            
+            // Desktop / Tablet Mode
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                if (dt.Rows.Count == 0 && GuiGlobal.AllSongDTStatus == false)
+                {
+                    DataColumn col = new DataColumn("Song_Id");
+                    dt.Columns.Add(col);
+                    col = new DataColumn("Song_Lang");
+                    dt.Columns.Add(col);
+                    col = new DataColumn("Song_SongName");
+                    dt.Columns.Add(col);
+                    col = new DataColumn("Song_Singer");
+                    dt.Columns.Add(col);
+                }
 
-            SongListGridView.DataSource = dv;
+                int CurPageSize = SongListGridView.PageSize;
+                if (dt.Rows.Count > CurPageSize)
+                {
+                    if (dt.Rows.Count % CurPageSize > 0)
+                    {
+                        int NewRowCount = CurPageSize - (dt.Rows.Count % CurPageSize);
+                        for (int i = 0; i < NewRowCount; i++)
+                        {
+                            DataRow row = dt.NewRow();
+                            row["Song_Lang"] = " ";
+                            dt.Rows.Add(row);
+                        }
+                    }
+                    SongListGridView.ShowFooter = false;
+                }
+                else
+                {
+                    int NewRowCount = CurPageSize - dt.Rows.Count;
+                    for (int i = 0; i < NewRowCount; i++)
+                    {
+                        DataRow row = dt.NewRow();
+                        row["Song_Lang"] = " ";
+                        dt.Rows.Add(row);
+                    }
+                    SongListGridView.ShowFooter = true;
+                }
+            }
+
+            SongListGridView.DataSource = dt;
             SongListGridView.DataBind();
 
             findCaller.Value = "toTop";
@@ -694,6 +738,7 @@ namespace web
 
             SongList(0, GuiGlobal.QuerySongRows, SongQueryType, SongQueryValue);
 
+            // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
                 if (SongListGridView.PageCount > 1)
