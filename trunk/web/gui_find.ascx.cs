@@ -57,58 +57,6 @@ namespace web
                     tSearch.Text = "";
                     jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_CreatDate >= '" + DateTime.Now.AddDays(-120).ToString("yyyy/MM/dd") + "'", currentPageNumber, rowsPerPage, "Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
                 }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "male".ToLower())
-                {
-                    hideAllGridViewPanel();
-                    SingerListPanel.Visible = true;
-
-                    tSearch.Text = "";
-                    jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=0", 0, 2000, "Singer_Strokes, Singer_Name");
-
-                    DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
-
-                    DataView dv3 = new DataView(dt3);
-                    //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
-
-                    SingerListView.DataSource = dv3;
-                    SingerListView.DataBind();
-                    //ddSearchType.SelectedIndex = 1;
-
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "female".ToLower())
-                {
-                    hideAllGridViewPanel();
-                    SingerListPanel.Visible = true;
-
-                    tSearch.Text = "";
-                    jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=1", 0, 2000, "Singer_Strokes, Singer_Name");
-
-                    DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
-
-                    DataView dv3 = new DataView(dt3);
-                    //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
-
-                    SingerListView.DataSource = dv3;
-                    SingerListView.DataBind();
-                    //ddSearchType.SelectedIndex = 1;
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Group".ToLower())
-                {
-                    hideAllGridViewPanel();
-                    SingerListPanel.Visible = true;
-
-                    tSearch.Text = "";
-                    jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=2", 0, 2000, "Singer_Strokes, Singer_Name");
-
-                    DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
-
-                    DataView dv3 = new DataView(dt3);
-                    //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
-
-                    SingerListView.DataSource = dv3;
-                    SingerListView.DataBind();
-                    //ddSearchType.SelectedIndex = 1;
-                }
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "chorus".ToLower())
                 {
                     jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=3", currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke, Song_SongName, Song_Singer, Song_CreatDate desc"); //more than 2000 per rows will be super slow
@@ -130,57 +78,6 @@ namespace web
                     jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_PlayCount >= 1 ", currentPageNumber, rowsPerPage, "Song_PlayCount desc, Song_CreatDate desc, Song_SongStroke, Song_SongName"); //more than 2000 per rows will be super slow
                     tSearch.Text = "";
                 }
-
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Mandarin".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("國語", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount, Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Taiwanese".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("台語", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Cantonese".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("粵語", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Japanese".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("日語", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "English".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("英語", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Haka".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("客語", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Local".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("原住民語", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Korean".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("韓語", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Kid".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("兒歌", null, null, null, currentPageNumber, rowsPerPage, "Song_WordCount,Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }
-                else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "OtherLangs".ToLower())
-                {
-                    jsonText = CrazyKTVWCF.QuerySong("其它", null, null, null, currentPageNumber, rowsPerPage, "Song_SongStroke,Song_SongName, Song_Singer"); //more than 2000 per rows will be super slow
-                    tSearch.Text = "";
-                }                    
                 else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Favorites".ToLower())
                 {
                     tSearch.Text = "";
@@ -742,6 +639,24 @@ namespace web
             CrazyKTVWCF.wcf_insertsong(data.ToString().Trim());
             SongListPanel.Visible = true;
         }
+
+        protected void SongListGridView_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            switch (e.Row.RowType)
+            {
+                case DataControlRowType.Header:
+
+                    TableCellCollection tcHeader = e.Row.Cells;
+                    tcHeader.Clear();
+
+                    tcHeader.Add(new TableHeaderCell());
+                    tcHeader[0].Attributes.Add("colspan", "5");
+                    tcHeader[0].CssClass = "gridviewHeader";
+                    tcHeader[0].Text = "歌曲列表";
+                    break;
+            }
+        }
+
         protected void SongListGridView_PreRender(object sender, EventArgs e)
         {
             SongListGetData();
@@ -943,26 +858,6 @@ namespace web
 
             SongList(0, GuiGlobal.QuerySongRows, "SongLang", data.ToString());
         }
-
-
-
-
-
-
-
-        //public SortDirection GridViewSortDirection
-        //{
-        //    //get
-        //    //{
-        //    //    if (ViewState["sortDirection"] == null)
-        //    //        ViewState["sortDirection"] = SortDirection.Ascending;
-        //    //    return (SortDirection)ViewState["sortDirection"];
-        //    //}
-        //    //set
-        //    //{
-        //    //    ViewState["sortDirection"] = value;
-        //    //}
-        //}
 
 
     }

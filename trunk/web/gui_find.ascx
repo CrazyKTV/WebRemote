@@ -108,48 +108,44 @@
             </div>
             <!-- Desktop / Tablet -->
             <div class="SingerTypeListDiv hidden-xs hidden-sm">
-                <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding: 0px;">
-                    <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding-left: 5px; padding-right: 5px;">
+                <div class ="hidden-xs hidden-sm col-md-12 col-lg-12" style="padding: 0px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
                         <asp:LinkButton ID="SingerTypeMaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
                             <asp:Image ImageUrl="images/singertype_male.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="男星" meta:resourcekey="SingerTypeMaleButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
-                    <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding-left: 5px; padding-right: 5px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
                         <asp:LinkButton ID="SingerTypeFemaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
                             <asp:Image ImageUrl="images/singertype_female.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="女星" meta:resourcekey="SingerTypeFemaleButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
-                    <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding-left: 5px; padding-right: 5px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
                         <asp:LinkButton ID="SingerTypeGroupDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
                             <asp:Image ImageUrl="images/singertype_group.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="團體" meta:resourcekey="SingerTypeGroupButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
-                </div>
-                <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding: 0px;">
-                    <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding-left: 5px; padding-right: 5px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
                         <asp:LinkButton ID="SingerTypeForeignMaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
                             <asp:Image ImageUrl="images/singertype_foreignmale.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="外男" meta:resourcekey="SingerTypeForeignMaleDesktopButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
-                    <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding-left: 5px; padding-right: 5px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
                         <asp:LinkButton ID="SingerTypeForeignFemaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
                             <asp:Image ImageUrl="images/singertype_foreignfemale.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="外女" meta:resourcekey="SingerTypeForeignFemaleDesktopButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
-                    <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding-left: 5px; padding-right: 5px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
                         <asp:LinkButton ID="SingerTypeForeignGroupDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
                             <asp:Image ImageUrl="images/singertype_foreigngroup.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="外團" meta:resourcekey="SingerTypeForeignGroupDesktopButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
-                </div>
-                <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding: 0px;">
-                    <div class ="hidden-xs hidden-sm col-md-4 col-lg-4" style="padding-left: 5px; padding-right: 5px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
                         <asp:LinkButton ID="SingerTypeOtherDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
                             <asp:Image ImageUrl="images/singertype_other.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="其它" meta:resourcekey="SingerTypeOtherButton_RES" CssClass="MainMenuLabel"/>
@@ -386,7 +382,7 @@
 
 
 <asp:Panel ID="SongListPanel" runat="server" Visible="False" meta:resourcekey="SongListPanelResource1">
-    <asp:GridView ID="SongListGridView" runat="server" DataKeyNames="Song_Id,Song_Singer" AutoGenerateColumns="False" BackColor="White" BorderColor="#006600" BorderStyle="Solid" BorderWidth="2px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowPaging="True" AllowSorting="True" PageSize="10" OnPageIndexChanging="SongListGridView_PageIndexChanging" OnPreRender="SongListGridView_PreRender"  EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" meta:resourcekey="GridView1Resource1">
+    <asp:GridView ID="SongListGridView" runat="server" DataKeyNames="Song_Id,Song_Singer" AutoGenerateColumns="False" BackColor="White" BorderColor="#006600" BorderStyle="Solid" BorderWidth="2px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowPaging="True" AllowSorting="True" PageSize="10" OnPageIndexChanging="SongListGridView_PageIndexChanging" OnPreRender="SongListGridView_PreRender" OnRowCreated="SongListGridView_RowCreated"  EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" meta:resourcekey="GridView1Resource1">
         <AlternatingRowStyle BackColor="#d9ffd9" />
         <Columns>
             <asp:TemplateField ShowHeader="False" ItemStyle-Width="44px">
