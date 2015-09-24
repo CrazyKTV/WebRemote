@@ -61,7 +61,7 @@ namespace web.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("國語,台語,粵語,客語,英語,選秀,心靈,賀年,兒歌,其它")]
+        [global::System.Configuration.DefaultSettingValueAttribute("國語,台語,粵語,日語,英語,客語,原住民語,韓語,兒歌,其它")]
         public string SongLangList {
             get {
                 return ((string)(this["SongLangList"]));
@@ -74,6 +74,15 @@ namespace web.Properties {
         public string SongLangListTemp {
             get {
                 return ((string)(this["SongLangListTemp"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("國語,台語,粵語,客語,英語,選秀,心靈,賀年,兒歌,其它")]
+        public string SongLangListTest {
+            get {
+                return ((string)(this["SongLangListTest"]));
             }
         }
     }

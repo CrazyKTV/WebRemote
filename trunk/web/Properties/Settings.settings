@@ -15,10 +15,13 @@
       <Value Profile="(Default)">180</Value>
     </Setting>
     <Setting Name="SongLangList" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">國語,台語,粵語,客語,英語,選秀,心靈,賀年,兒歌,其它</Value>
+      <Value Profile="(Default)">國語,台語,粵語,日語,英語,客語,原住民語,韓語,兒歌,其它</Value>
     </Setting>
     <Setting Name="SongLangListTemp" Type="System.String" Scope="Application">
       <Value Profile="(Default)">國語,台語,粵語,日語,英語,客語,原住民語,韓語,兒歌,其它</Value>
+    </Setting>
+    <Setting Name="SongLangListTest" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">國語,台語,粵語,客語,英語,選秀,心靈,賀年,兒歌,其它</Value>
     </Setting>
   </Settings>
 </SettingsFile>
