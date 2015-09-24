@@ -554,55 +554,59 @@ namespace web
                 }
                 ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = SingerTypeIndex.ToString();
 
-                List<string> ImgFormatList = new List<string>() { ".jpg", ".png", ".bmp", ".gif" };
-                jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=" + SingerType, 0, GuiGlobal.QuerySongRows, "Singer_Strokes, Singer_Name");
-                DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
                 DataView dv3 = new DataView();
 
-                if (dt3.Rows.Count != dtlist[SingerTypeIndex].Rows.Count)
+                if (GuiGlobal.SingerTypeDTStatus == false)
                 {
-                    dt3.Columns.Add("ImgFileUrl");
+                    List<string> ImgFormatList = new List<string>() { ".jpg", ".png", ".bmp", ".gif" };
+                    jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=" + SingerType, 0, GuiGlobal.QuerySongRows, "Singer_Strokes, Singer_Name");
+                    DataTable dt3 = GlobalFunctions.JsontoDataTable(jsonText);
 
-                    foreach (DataRow row in dt3.AsEnumerable())
+                    if (dt3.Rows.Count != dtlist[SingerTypeIndex].Rows.Count)
                     {
-                        foreach (string ImgFormat in ImgFormatList)
+                        dt3.Columns.Add("ImgFileUrl");
+
+                        foreach (DataRow row in dt3.AsEnumerable())
                         {
-                            if (File.Exists(Server.MapPath("/singerimg/" + row["Singer_Name"].ToString() + ImgFormat)))
+                            foreach (string ImgFormat in ImgFormatList)
                             {
-                                row["ImgFileUrl"] = "/singerimg/" + row["Singer_Name"].ToString() + ImgFormat;
-                                break;
+                                if (File.Exists(Server.MapPath("/singerimg/" + row["Singer_Name"].ToString() + ImgFormat)))
+                                {
+                                    row["ImgFileUrl"] = "/singerimg/" + row["Singer_Name"].ToString() + ImgFormat;
+                                    break;
+                                }
+                            }
+                            if (row["ImgFileUrl"].ToString() == "")
+                            {
+                                row["ImgFileUrl"] = "/images/singertype_default.png";
                             }
                         }
-                        if (row["ImgFileUrl"].ToString() == "")
-                        {
-                            row["ImgFileUrl"] = "/images/singertype_default.png";
-                        }
-                    }
 
-                    dv3 = new DataView(dt3);
-                    switch (SingerTypeIndex)
-                    {
-                        case 0:
-                            GuiGlobal.SingerTypeMaleDT = dt3;
-                            break;
-                        case 1:
-                            GuiGlobal.SingerTypeFemaleDT = dt3;
-                            break;
-                        case 2:
-                            GuiGlobal.SingerTypeGroupDT = dt3;
-                            break;
-                        case 3:
-                            GuiGlobal.SingerTypeForeignMale = dt3;
-                            break;
-                        case 4:
-                            GuiGlobal.SingerTypeForeignFemale = dt3;
-                            break;
-                        case 5:
-                            GuiGlobal.SingerTypeForeignGroup = dt3;
-                            break;
-                        case 6:
-                            GuiGlobal.SingerTypeOther = dt3;
-                            break;
+                        dv3 = new DataView(dt3);
+                        switch (SingerTypeIndex)
+                        {
+                            case 0:
+                                GuiGlobal.SingerTypeMaleDT = dt3;
+                                break;
+                            case 1:
+                                GuiGlobal.SingerTypeFemaleDT = dt3;
+                                break;
+                            case 2:
+                                GuiGlobal.SingerTypeGroupDT = dt3;
+                                break;
+                            case 3:
+                                GuiGlobal.SingerTypeForeignMale = dt3;
+                                break;
+                            case 4:
+                                GuiGlobal.SingerTypeForeignFemale = dt3;
+                                break;
+                            case 5:
+                                GuiGlobal.SingerTypeForeignGroup = dt3;
+                                break;
+                            case 6:
+                                GuiGlobal.SingerTypeOther = dt3;
+                                break;
+                        }
                     }
                 }
                 else
