@@ -315,4 +315,10 @@
   <data name="MainMenu_SongNumberButton_RES.Text" xml:space="preserve">
     <value>編號</value>
   </data>
+  <data name="lLoadingResource1.Text" xml:space="preserve">
+    <value>載入中...</value>
+  </data>
+  <data name="lLoadingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
 </root>

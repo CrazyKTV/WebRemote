@@ -73,9 +73,12 @@ namespace web
             }
 
             GlobalFunctions.currentlang = "zh-CHT";
-            
+
             // if WCF is alive then continue with other process
-            System.Threading.Thread.Sleep(150);  // to display "loading" icon for 0.15 second
+            if (GuiGlobal.AllSongDTStatus == false || GuiGlobal.SingerTypeDTStatus == false)
+            {
+                System.Threading.Thread.Sleep(150);  // to display "loading" icon for 0.15 second
+            }
         }
 
         protected void language_SelectedIndexChanged(object sender, EventArgs e)
