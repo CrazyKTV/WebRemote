@@ -190,6 +190,8 @@ namespace web
 
     class GuiGlobal
     {
+        public static List<string> SongLangList = new List<string>(Properties.Settings.Default.SongLangList.Split(','));
+
         public static int SingerTypePageSize = 60;
         public static int SingerTypeDesktopPageSize = 18;
         public static int SingerTypeFullscreenPageSize = 24;
@@ -201,8 +203,7 @@ namespace web
         public static int PlayListPageSize = 10;
         public static int PlayListFullscreenPageSize = 13;
 
-
-        public static int QuerySongRows = 50000;
+        public static int QuerySongRows = 100000;
 
         public static string DefaultButtonCssClass = "btn btn-success btn-lg";
         public static string ActiveButtonCssClass = "btn btn-primary btn-lg";

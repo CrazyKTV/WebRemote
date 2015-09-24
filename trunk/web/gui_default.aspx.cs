@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -309,11 +310,12 @@ namespace web
 
         protected void hideAllfindDesktopPanel()
         {
-            ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = false;
-            ((Panel)gui_findDesktop.FindControl("Panel3")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("MainMenuPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SingerTypePanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SingerListPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("SongLangPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("Panel3")).Visible = false;
         }
 
         protected void MainMenu_Desktop_Button_Click(object sender, EventArgs e)
@@ -338,6 +340,9 @@ namespace web
                     ((Panel)gui_findDesktop.FindControl("SingerListPanel")).Visible = true;
                     break;
                 case "MainMenu_FindLangDesktopButton":
+                    ((Panel)gui_findDesktop.FindControl("SongLangPanel")).Visible = true;
+                    ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = true;
+                    if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentSongLangSongList(); }
                     break;
                 case "MainMenu_QuerySongDesktopButton":
                     break;
@@ -355,6 +360,48 @@ namespace web
                     break;
             }
 
+        }
+
+        private void GetCurrentSongLangSongList()
+        {
+            //clean up data on display
+            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataSource = null;
+            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataBind();
+
+            string LangStr = GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.FindControl("CurrentSongLang")).Value)];
+
+            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = "SongLang";
+            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = LangStr;
+
+            string jsonText = "";
+            DataTable dt = new DataTable();
+
+            if (GuiGlobal.AllSongDTStatus == false)
+            {
+                jsonText = CrazyKTVWCF.QuerySong(LangStr, null, null, null, 0, GuiGlobal.QuerySongRows, "Song_WordCount,Song_SongStroke,Song_SongName,Song_Singer");
+                dt = GlobalFunctions.JsontoDataTable(jsonText);
+            }
+            else
+            {
+                dt = GuiGlobal.AllSongDT.Clone();
+                var query = from row in GuiGlobal.AllSongDT.AsEnumerable()
+                            where row.Field<string>("Song_Lang").Equals(LangStr)
+                            select row;
+
+                if (query.Count<DataRow>() > 0)
+                {
+                    foreach (DataRow Row in query)
+                    {
+                        dt.ImportRow(Row);
+                    }
+                }
+            }
+
+            DataView dv = new DataView(dt);
+            dv.Sort = "Song_WordCount, Song_SongStroke, Song_SongName, Song_Singer";
+
+            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataSource = dv;
+            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataBind();
         }
 
         protected void RefreshUpdatePanelButton_Click(object sender, EventArgs e)

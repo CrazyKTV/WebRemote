@@ -542,6 +542,7 @@
                 <asp:HiddenField ID="BootstrapResponsiveMode" runat="server" />
                 <asp:HiddenField ID="BrowserScreenMode" runat="server" />
                 <asp:HiddenField ID="CurrentSinerType" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentSongLang" runat="server" Value="0" />
                 <asp:HiddenField ID="CurrentSongQueryType" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryValue" runat="server" />
                 <asp:Button ID="RefreshUpdatePanelButton" runat="server" OnClick="RefreshUpdatePanelButton_Click" Style="display: none;" />

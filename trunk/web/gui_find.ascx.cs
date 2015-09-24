@@ -5,6 +5,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 using System.Data;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
+using System.Drawing.Imaging;
 
 namespace web
 {
@@ -314,55 +318,88 @@ namespace web
 
         protected void hideAllGridViewPanel()
         {
+            MainMenuPanel.Visible = false;
+            SingerListPanel.Visible = false;
             SongListPanel.Visible = false;
             Panel3.Visible = false;
-            SingerListPanel.Visible = false;
-            MainMenuPanel.Visible = false;
 
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
             {
                 SingerTypePanel.Visible = false;
+                SongLangPanel.Visible = false;
             }
         }
 
-        private void SingerSongList(int page, int rows, string Singer_Name)
+        private void SongList(int page, int rows, string QueryType, string QueryValue)
         {
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "Singer";
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = Singer_Name;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = QueryType;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+
             string jsonText = "";
+            string dvSortStr = "";
             DataTable dt = new DataTable();
 
             if (GuiGlobal.AllSongDTStatus == false)
             {
-                jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + Singer_Name.Trim() + "%'", page, rows, "Song_WordCount, Song_SongName"); //more than 2000 per rows will be super slow
+                switch (QueryType)
+                {
+                    case "Singer":
+                        jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_Singer like '%" + QueryValue.Trim() + "%'", page, rows, "Song_WordCount,Song_SongStroke,Song_SongName");
+                        dvSortStr = "Song_WordCount, Song_SongStroke, Song_SongName";
+                        break;
+                    case "SongLang":
+                        jsonText = CrazyKTVWCF.QuerySong(QueryValue, null, null, null, page, rows, "Song_WordCount,Song_SongStroke,Song_SongName,Song_Singer");
+                        dvSortStr = "Song_WordCount, Song_SongStroke, Song_SongName, Song_Singer";
+                        break;
+                }
                 dt = GlobalFunctions.JsontoDataTable(jsonText);
             }
             else
             {
                 dt = GuiGlobal.AllSongDT.Clone();
-                var query = from row in GuiGlobal.AllSongDT.AsEnumerable()
-                            where row.Field<string>("Song_Singer").Equals(Singer_Name) ||
-                                  row.Field<string>("Song_Singer").StartsWith(Singer_Name + "&") ||
-                                  row.Field<string>("Song_Singer").EndsWith("&" + Singer_Name)
-                            select row;
 
-                if (query.Count<DataRow>() > 0)
+                switch (QueryType)
                 {
-                    foreach (DataRow Row in query)
-                    {
-                        dt.ImportRow(Row);
-                    }
+                    case "Singer":
+                        dvSortStr = "Song_WordCount, Song_SongStroke, Song_SongName";
+                        var SingerQuery = from row in GuiGlobal.AllSongDT.AsEnumerable()
+                                    where row.Field<string>("Song_Singer").Equals(QueryValue) ||
+                                          row.Field<string>("Song_Singer").StartsWith(QueryValue + "&") ||
+                                          row.Field<string>("Song_Singer").EndsWith("&" + QueryValue)
+                                    select row;
+                        if (SingerQuery.Count<DataRow>() > 0)
+                        {
+                            foreach (DataRow row in SingerQuery)
+                            {
+                                dt.ImportRow(row);
+                            }
+                        }
+                        break;
+                    case "SongLang":
+                        dvSortStr = "Song_WordCount, Song_SongStroke, Song_SongName, Song_Singer";
+                        var SongLangQuery = from row in GuiGlobal.AllSongDT.AsEnumerable()
+                                    where row.Field<string>("Song_Lang").Equals(QueryValue)
+                                    select row;
+                        if (SongLangQuery.Count<DataRow>() > 0)
+                        {
+                            foreach (DataRow row in SongLangQuery)
+                            {
+                                dt.ImportRow(row);
+                            }
+                        }
+                        break;
                 }
             }
-                
+
             DataView dv = new DataView(dt);
-            dv.Sort = "Song_WordCount, Song_SongName";
+            dv.Sort = dvSortStr;
 
             SongListGridView.DataSource = dv;
             SongListGridView.DataBind();
-            
+
             findCaller.Value = "toTop";
         }
+
 
         protected void GridView2_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
@@ -382,55 +419,48 @@ namespace web
             FSongList(0, 100, data.ToString());
         }
 
-        protected void MainMenu_FindSingerButton_Click(object sender, EventArgs e)
+        protected void MainMenu_Button_Click(object sender, EventArgs e)
         {
-            hideAllGridViewPanel();
-            SingerTypePanel.Visible = true;
-        }
+            switch (((LinkButton)sender).ID)
+            {
+                case "MainMenu_FindSingerButton":
+                    hideAllGridViewPanel();
+                    SingerTypePanel.Visible = true;
+                    break;
+                case "MainMenu_FindLangButton":
+                    hideAllGridViewPanel();
+                    SongLangPanel.Visible = true;
+                    break;
+                case "MainMenu_QuerySongButton":
+                    hideAllGridViewPanel();
+                    
+                    break;
+                case "MainMenu_WordCountButton":
+                    hideAllGridViewPanel();
 
-        protected void MainMenu_FindLangButton_Click(object sender, EventArgs e)
-        {
+                    break;
+                case "MainMenu_ChorusSongButton":
+                    hideAllGridViewPanel();
 
-        }
+                    break;
+                case "MainMenu_TopSongButton":
+                    hideAllGridViewPanel();
 
-        protected void MainMenu_QuerySongButton_Click(object sender, EventArgs e)
-        {
+                    break;
+                case "MainMenu_NewSongButton":
+                    hideAllGridViewPanel();
 
-        }
+                    break;
+                case "MainMenu_FavoriteSongButton":
+                    hideAllGridViewPanel();
 
-        protected void MainMenu_WordCountButton_Click(object sender, EventArgs e)
-        {
+                    break;
+                case "MainMenu_SongNumberButton":
+                    hideAllGridViewPanel();
 
-        }
+                    break;
 
-        protected void MainMenu_ChorusSongButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void MainMenu_TopSongButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void MainMenu_NewSongButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void MainMenu_FavoriteSongButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void MainMenu_WordCount_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void MainMenu_SongNumberButton_Click(object sender, EventArgs e)
-        {
-
+            }
         }
 
         protected void SingerTypeButton_Click(object sender, EventArgs e)
@@ -595,8 +625,8 @@ namespace web
             SongListPanel.Visible = true;
             SongListGridView.PageIndex = 0;
 
-            var data = ((LinkButton)sender).CommandArgument.ToString();
-            SingerSongList(0, GuiGlobal.QuerySongRows, data.ToString());
+            var data = ((Label)((LinkButton)sender).Controls[0]).Text;
+            SongList(0, GuiGlobal.QuerySongRows, "Singer", data.ToString());
         }
 
         protected void SingerListView_PagePropertiesChanged(object sender, EventArgs e)
@@ -695,7 +725,7 @@ namespace web
             findCaller.Value = "toTop";
             string singer = ((LinkButton)sender).Text.Trim();
 
-            SingerSongList(0, GuiGlobal.QuerySongRows, singer);
+            SongList(0, GuiGlobal.QuerySongRows, "Singer", singer);
         }
 
         protected void SongListInsSong_Click(object sender, EventArgs e)
@@ -743,12 +773,7 @@ namespace web
 
             SongListGridView.PageSize = PageSize;
 
-            switch (SongQueryType)
-            {
-                case "Singer":
-                    SingerSongList(0, GuiGlobal.QuerySongRows, SongQueryValue);
-                    break;
-            }
+            SongList(0, GuiGlobal.QuerySongRows, SongQueryType, SongQueryValue);
 
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
@@ -775,14 +800,145 @@ namespace web
             }
         }
 
-        protected void SongLangButton_Click(object sender, EventArgs e)
+        protected void SongLangPanel_PreRender(object sender, EventArgs e)
         {
+            string LangImgFile = "";
 
+            System.Web.UI.WebControls.Image[] SongLangImage =
+            {
+                SongLang1Image,
+                SongLang2Image,
+                SongLang3Image,
+                SongLang4Image,
+                SongLang5Image,
+                SongLang6Image,
+                SongLang7Image,
+                SongLang8Image,
+                SongLang9Image,
+                SongLang10Image
+            };
+
+            System.Web.UI.WebControls.Image[] SongLangDesktopImage =
+            {
+                SongLang1DesktopImage,
+                SongLang2DesktopImage,
+                SongLang3DesktopImage,
+                SongLang4DesktopImage,
+                SongLang5DesktopImage,
+                SongLang6DesktopImage,
+                SongLang7DesktopImage,
+                SongLang8DesktopImage,
+                SongLang9DesktopImage,
+                SongLang10DesktopImage
+            };
+
+            System.Web.UI.WebControls.Label[] SongLangLabel =
+            {
+                SongLang1Label,
+                SongLang2Label,
+                SongLang3Label,
+                SongLang4Label,
+                SongLang5Label,
+                SongLang6Label,
+                SongLang7Label,
+                SongLang8Label,
+                SongLang9Label,
+                SongLang10Label
+            };
+
+            System.Web.UI.WebControls.Label[] SongLangDesktopLabel =
+            {
+                SongLang1DesktopLabel,
+                SongLang2DesktopLabel,
+                SongLang3DesktopLabel,
+                SongLang4DesktopLabel,
+                SongLang5DesktopLabel,
+                SongLang6DesktopLabel,
+                SongLang7DesktopLabel,
+                SongLang8DesktopLabel,
+                SongLang9DesktopLabel,
+                SongLang10DesktopLabel
+            };
+
+            for (int i = 0; i < GuiGlobal.SongLangList.Count; i++)
+            {
+                LangImgFile = "/images/langstr_" + GuiGlobal.SongLangList[i].Substring(0, 1) + ".png";
+                if (File.Exists(Server.MapPath(LangImgFile)))
+                {
+                    SongLangImage[i].ImageUrl = LangImgFile;
+                    SongLangDesktopImage[i].ImageUrl = LangImgFile;
+                }
+                else
+                {
+                    SongLangImage[i].ImageUrl = DrawLangImage(GuiGlobal.SongLangList[i].Substring(0, 1));
+                    SongLangDesktopImage[i].ImageUrl = LangImgFile;
+                }
+
+                if (GuiGlobal.SongLangList[i].Length > 2)
+                {
+                    SongLangLabel[i].Text = GuiGlobal.SongLangList[i].Substring(0,1) + GuiGlobal.SongLangList[i].Substring(GuiGlobal.SongLangList[i].Length - 1, 1);
+                    SongLangDesktopLabel[i].Text = GuiGlobal.SongLangList[i].Substring(0, 1) + GuiGlobal.SongLangList[i].Substring(GuiGlobal.SongLangList[i].Length - 1, 1);
+                }
+                else
+                {
+                    SongLangLabel[i].Text = GuiGlobal.SongLangList[i];
+                    SongLangDesktopLabel[i].Text = GuiGlobal.SongLangList[i];
+                }
+            }
         }
 
+        private string DrawLangImage(string LangStr)
+        {
+            Bitmap bitmap = new Bitmap(1, 1);
+            Font font = new Font("標楷體", 116, FontStyle.Bold, GraphicsUnit.Pixel);
+            Graphics graphics = Graphics.FromImage(bitmap);
+            int width = 128;
+            int height = 100;
+            bitmap = new Bitmap(bitmap, new Size(width, height));
+            graphics = Graphics.FromImage(bitmap);
+            graphics.Clear(Color.Transparent);
+            graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            graphics.DrawString(LangStr, font, new SolidBrush(Color.FromArgb(90, 0, 0, 0)), -12, -8);
+            graphics.DrawString(LangStr, font, new SolidBrush(Color.FromArgb(255, 255, 255)), -14, -10);
+            graphics.Flush();
+            graphics.Dispose();
+            string fileName = "langstr_" + LangStr + ".png";
+            bitmap.Save(Server.MapPath("/images/") + fileName, ImageFormat.Png);
+            return "/images/" + fileName;
+        }
 
+        protected void SongLangButton_Click(object sender, EventArgs e)
+        {
+            //clean up data on display
+            SongListGridView.DataSource = null;
+            SongListGridView.DataBind();
 
+            hideAllGridViewPanel();
+            SongListPanel.Visible = true;
+            SongListGridView.PageIndex = 0;
 
+            var data = ((Label)((LinkButton)sender).Controls[1]).Text;
+            ((HiddenField)this.Parent.FindControl("CurrentSongLang")).Value = GuiGlobal.SongLangList.IndexOf(data.ToString()).ToString();
+
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                SongLang1DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang2DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang3DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang4DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang5DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang6DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang7DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang8DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang9DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SongLang10DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                ((LinkButton)sender).CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+            }
+
+            SongList(0, GuiGlobal.QuerySongRows, "SongLang", data.ToString());
+        }
 
 
 
