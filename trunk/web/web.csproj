@@ -86,11 +86,11 @@
     <Content Include="ErrorDeadWCF.ascx" />
     <Content Include="ErrorDeadWCF.aspx" />
     <Content Include="ErrorDeadWCF.html" />
-    <Content Include="example.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="find.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="getSinger.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="gui_advanced.ascx" />
     <Content Include="gui_currentList.ascx" />
     <Content Include="gui_default.aspx" />
@@ -199,10 +199,6 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="example.aspx.cs">
-      <DependentUpon>example.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="find.ascx.cs">
       <DependentUpon>find.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,6 +217,9 @@
     </Compile>
     <Compile Include="currentList.ascx.designer.cs">
       <DependentUpon>currentList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="gui_advanced.ascx.cs">
       <DependentUpon>gui_advanced.ascx</DependentUpon>

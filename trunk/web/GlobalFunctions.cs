@@ -179,7 +179,6 @@ namespace web
                         break;
                 }
             }
-            GuiGlobal.SingerTypeDTStatus = true;
         }
 
 
