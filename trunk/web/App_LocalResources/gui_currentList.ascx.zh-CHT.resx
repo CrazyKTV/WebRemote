@@ -204,4 +204,22 @@
   <data name="ButtonFieldResource5.OnClientClick" xml:space="preserve">
     <value>return confirm('確認刪歌?');</value>
   </data>
+  <data name="CurPage_Label_After_RES.Text" xml:space="preserve">
+    <value>頁</value>
+  </data>
+  <data name="CurPage_Label_Before_RES.Text" xml:space="preserve">
+    <value>第</value>
+  </data>
+  <data name="PageCount_Label_After_RES.Text" xml:space="preserve">
+    <value>頁</value>
+  </data>
+  <data name="PageCount_Label_Before_RES.Text" xml:space="preserve">
+    <value> / 共</value>
+  </data>
+  <data name="SelectPage_Label_After_RES.Text" xml:space="preserve">
+    <value>頁</value>
+  </data>
+  <data name="SelectPage_Label_Before_RES.Text" xml:space="preserve">
+    <value>到</value>
+  </data>
 </root>

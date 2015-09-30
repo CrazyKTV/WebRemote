@@ -76,44 +76,18 @@
 
             });
 
-            function toggleFullScreen() {
-                if (!document.fullscreenElement &&    // alternative standard method
-                    !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  // current working methods
-                    if (document.documentElement.requestFullscreen) {
-                        document.documentElement.requestFullscreen();
-                    } else if (document.documentElement.msRequestFullscreen) {
-                        document.documentElement.msRequestFullscreen();
-                    } else if (document.documentElement.mozRequestFullScreen) {
-                        document.documentElement.mozRequestFullScreen();
-                    } else if (document.documentElement.webkitRequestFullscreen) {
-                        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-                    }
-                } else {
-                    if (document.exitFullscreen) {
-                        document.exitFullscreen();
-                    } else if (document.msExitFullscreen) {
-                        document.msExitFullscreen();
-                    } else if (document.mozCancelFullScreen) {
-                        document.mozCancelFullScreen();
-                    } else if (document.webkitExitFullscreen) {
-                        document.webkitExitFullscreen();
-                    }
-                }
-            }
-
             var AfterPostBack = function () {
                 // You write your code here to assign Data
                 if ($('#ddlanguage').val() == "en-US")
                 { $('#tSearch').watermark('All Songs'); }
                 else { $('#tSearch').watermark('全部歌曲'); }
 
-                if ($('#findCaller').val() == "toTop") {
+                if ($('#gui_find_ScrolltoTop').val() == "True") {
                     $("html, body").animate({ scrollTop: 0 }, "slow");
-                    //return false;
+                    $('#gui_find_ScrolltoTop').val("False")
                 }
 
                 $(document).ready(function () {
-                    $('[data-toggle="tooltip"]').tooltip();
                     if ($('#Showsuball').val() == "0")
                     { Hidesuball(); }
                     else { Showsuball(); }
@@ -206,19 +180,29 @@
                             <div id="HeaderVisibleDiv">
                                 <div class ="container">
                                     <div class="row">
-                                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                             <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1" style="padding: 0px;">
                                                 <asp:Image ID="CrazyKTVLogo" ImageUrl="images/main_crazyktv.png" runat="server" CssClass="MainImage"/>
                                             </div>
-                                            <div class="col-xs-3 col-sm-3 hidden-md hidden-lg">
-                                                <asp:ImageButton ID="PlayListButton" ImageUrl="images/main_playlist.png" runat="server" CssClass="MainButton"  OnClick="PlayListButton_Click"/>
+                                            <div class="col-xs-3 col-sm-3 hidden-md hidden-lg" style="padding-left: 3px; padding-right: 3px;">
+                                                <asp:LinkButton ID="MainMenu_PlayListButton" runat="server" CssClass="MainButton btn btn-success btn-lg" OnClick="MainMenu_PlayListButton_Click">
+                                                    <asp:Image ImageUrl="images/main_playlist.png" runat="server" CssClass="MainMenuMin24Image"/>
+                                                    <asp:Label runat="server" Text="待播"  CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
+                                                </asp:LinkButton>
                                             </div>
-                                            <div class="col-xs-3 col-sm-3 hidden-md hidden-lg">
-                                                <asp:ImageButton ID="FindSongButton" ImageUrl="images/main_findsong.png" runat="server" CssClass="MainButton" OnClick="FindSongButton_Click"/>
+                                            <div class="col-xs-3 col-sm-3 hidden-md hidden-lg" style="padding-left: 3px; padding-right: 3px;">
+                                                <asp:LinkButton ID="MainMenu_FindSongButton" runat="server" CssClass="MainButton btn btn-success btn-lg" OnClick="MainMenu_FindSongButton_Click">
+                                                    <asp:Image ImageUrl="images/main_findsong.png" runat="server" CssClass="MainMenuMin24Image"/>
+                                                    <asp:Label runat="server" Text="點歌"  CssClass="MainMenuLabel" meta:resourcekey="MainMenu_FindSongButton_RES" />
+                                                </asp:LinkButton>
                                             </div>
-                                            <div class="col-xs-3 col-sm-3 hidden-md hidden-lg">
-                                                <asp:ImageButton ID="AdvancedButton" ImageUrl="images/main_advanced.png" runat="server" CssClass="MainButton" OnClick="AdvancedButton_Click"/>
+                                            <div class="col-xs-3 col-sm-3 hidden-md hidden-lg" style="padding-left: 3px; padding-right: 3px;">
+                                                <asp:LinkButton ID="MainMenu_AdvancedButton" runat="server" CssClass="MainButton btn btn-success btn-lg" OnClick="MainMenu_AdvancedButton_Click">
+                                                    <asp:Image ImageUrl="images/main_advanced.png" runat="server" CssClass="MainMenuMin24Image"/>
+                                                    <asp:Label runat="server" Text="進階"  CssClass="MainMenuLabel" meta:resourcekey="MainMenu_AdvancedButton_RES" />
+                                                </asp:LinkButton>
                                             </div>
+
                                             <!-- Desktop / Tablet -->
                                             <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 3px; padding-right: 3px;">
                                                 <asp:LinkButton ID="MainMenu_FindSingerDesktopButton" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="MainMenu_Desktop_Button_Click">
@@ -275,11 +259,6 @@
                                                 </asp:LinkButton>
                                             </div>
                                         </div>
-                                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="padding: 0px;">
-                                            <asp:LinkButton ID="ToggleFullScreenButton" runat="server" CssClass="MainMinButton navbar-right" OnClientClick="javascript:toggleFullScreen()" style="text-shadow: black 1px 1px 2px;">
-                                                <span class="glyphicon glyphicon-fullscreen"></span>
-                                            </asp:LinkButton>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -289,7 +268,7 @@
                 
                 <article id="mainarea">
                     <section>
-                        <div class="spacerToTop"/>
+                        <div class="hidden-md hidden-lg" style="margin-top: 70px;"></div>
                         <div class="container">
                             <div class ="row">
                                 <div class="hidden-md hidden-lg">
@@ -305,26 +284,20 @@
                             </div>
                         </div>
                         <!-- Desktop / Tablet -->
+                        <div class="hidden-xs hidden-sm" style="margin-top: 78px;"></div>
                         <div class="container">
                             <div class ="row">
                                 <div class="hidden-xs hidden-sm col-md-5 col-lg-5" style="padding-left: 5px; padding-right: 5px;">
                                         <uc2:gui_currentList ID="gui_currentListDesktop" runat="server" Visible="true" />
-
-                                    
-                                    
-                                    
                                 </div>
-                            
                                 <div class="hidden-xs hidden-sm col-md-7 col-lg-7" style="padding-left: 5px; padding-right: 5px;">
                                     <uc0:gui_find runat="server" ID="gui_findDesktop" Visible="true" />
                                 </div>
-                            
-                            
-                                
+    
                             </div>
                         </div>
 
-                        <div class="spacerToFooter" />
+                        <div class="spacerToFooter"></div>
                     </section>
                 </article>
 
@@ -334,92 +307,92 @@
                             <div class="row">
                                 <div class="col-xs-11 col-sm-11 col-md-12 col-lg-12" style="padding-left: 5px; padding-right: 5px;">
                                     <div class="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BChannel" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BChannel_Click">
+                                        <asp:LinkButton ID="BChannel" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-user"></span>
                                             <asp:Label runat="server" Text="導唱" meta:resourcekey="BChannelResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BFind" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BFind_Click">
+                                        <asp:LinkButton ID="BFind" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-th-list"></span>
-                                            <asp:Label runat="server" Text="點歌" meta:resourcekey="BFindResource1"/>
+                                            <asp:Label runat="server" Text="列表" meta:resourcekey="BFindResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BCut" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');" style="text-shadow: black 1px 1px 2px;">
+                                        <asp:LinkButton ID="BCut" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click" OnClientClick="return confirm('確認切歌?');" style="text-shadow: black 1px 1px 2px;">
                                             <span class="glyphicon glyphicon-ban-circle"></span>
                                             <asp:Label runat="server" Text="切歌" meta:resourcekey="BCutResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <!-- Desktop / Tablet -->
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdPauseDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdPause_Click">
+                                        <asp:LinkButton ID="BdPauseDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-pause"></span>
                                             <asp:Label runat="server" Text="暫停" meta:resourcekey="BdPauseResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BCutDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BCut_Click" OnClientClick="return confirm('確認切歌?');" style="text-shadow: black 1px 1px 2px;">
+                                        <asp:LinkButton ID="BCutDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click" OnClientClick="return confirm('確認切歌?');" style="text-shadow: black 1px 1px 2px;">
                                             <span class="glyphicon glyphicon-ban-circle"></span>
                                             <asp:Label runat="server" Text="切歌" meta:resourcekey="BCutResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdRestartDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdRestart_Click">
+                                        <asp:LinkButton ID="BdRestartDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-repeat"></span>
                                             <asp:Label runat="server" Text="重播" meta:resourcekey="BdRestartResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdRepeatDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdRepeat_Click">
+                                        <asp:LinkButton ID="BdRepeatDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-refresh"></span>
                                             <asp:Label runat="server" Text="重複" meta:resourcekey="BdRepeatResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdKeyDownDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdKeyDown_Click">
+                                        <asp:LinkButton ID="BdKeyDownDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-arrow-down"></span>
                                             <asp:Label runat="server" Text="降調" meta:resourcekey="BdKeyDownResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdDefaultPitchDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdDefaultPitch_Click">
+                                        <asp:LinkButton ID="BdDefaultPitchDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-music"></span>
                                             <asp:Label runat="server" Text="原調" meta:resourcekey="BdDefaultPitchResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdKeyUpDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdKeyUp_Click">
+                                        <asp:LinkButton ID="BdKeyUpDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-arrow-up"></span>
                                             <asp:Label runat="server" Text="升調" meta:resourcekey="BdKeyUpResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdVolumeDownDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdVolumeDown_Click">
+                                        <asp:LinkButton ID="BdVolumeDownDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-volume-down"></span>
                                             <asp:Label runat="server" Text="小聲" meta:resourcekey="BdVolumeDownResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdMuteDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdMute_Click">
+                                        <asp:LinkButton ID="BdMuteDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-volume-off"></span>
                                             <asp:Label runat="server" Text="靜音" meta:resourcekey="BdMuteResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdVolumeUpDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdVolumeUp_Click">
+                                        <asp:LinkButton ID="BdVolumeUpDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-volume-up"></span>
                                             <asp:Label runat="server" Text="大聲" meta:resourcekey="BdVolumeUpResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdFixedCHDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdFixedCH_Click">
+                                        <asp:LinkButton ID="BdFixedCHDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-lock"></span>
                                             <asp:Label runat="server" Text="固定" meta:resourcekey="BdFixedCHResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BChannelDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BChannel_Click">
+                                        <asp:LinkButton ID="BChannelDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-user"></span>
                                             <asp:Label runat="server" Text="導唱" meta:resourcekey="BChannelResource1"/>
                                         </asp:LinkButton>
@@ -437,19 +410,19 @@
                                 <div class="row">
                                     <div class="col-xs-11 col-sm-11 col-md-11" style="padding-left: 5px; padding-right: 5px;">
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdFixedCH" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdFixedCH_Click">
+                                            <asp:LinkButton ID="BdFixedCH" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-lock"></span>
                                                 <asp:Label runat="server" Text="固定" meta:resourcekey="BdFixedCHResource1"/>
                                             </asp:LinkButton>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdSongRecoed" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdSongRecoed_Click">
+                                            <asp:LinkButton ID="BdSongRecoed" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-log-in"></span>
                                                 <asp:Label runat="server" Text="記錄" meta:resourcekey="BdSongRecoedResource1"/>
                                             </asp:LinkButton>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdPause" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdPause_Click">
+                                            <asp:LinkButton ID="BdPause" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-pause"></span>
                                                 <asp:Label runat="server" Text="暫停" meta:resourcekey="BdPauseResource1"/>
                                             </asp:LinkButton>
@@ -462,19 +435,19 @@
                                 <div class="row">
                                     <div class="col-xs-11 col-sm-11 col-md-11" style="padding-left: 5px; padding-right: 5px;">
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdRestart" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdRestart_Click">
+                                            <asp:LinkButton ID="BdRestart" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-repeat"></span>
                                                 <asp:Label runat="server" Text="重播" meta:resourcekey="BdRestartResource1"/>
                                             </asp:LinkButton>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdRepeat" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdRepeat_Click">
+                                            <asp:LinkButton ID="BdRepeat" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-refresh"></span>
                                                 <asp:Label runat="server" Text="重複" meta:resourcekey="BdRepeatResource1"/>
                                             </asp:LinkButton>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdRandom" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdRandom_Click">
+                                            <asp:LinkButton ID="BdRandom" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-random"></span>
                                                 <asp:Label runat="server" Text="隨機" meta:resourcekey="BdRandomResource1"/>
                                             </asp:LinkButton>
@@ -487,19 +460,19 @@
                                 <div class="row">
                                     <div class="col-xs-11 col-sm-11 col-md-11" style="padding-left: 5px; padding-right: 5px;">
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdKeyDown" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdKeyDown_Click">
+                                            <asp:LinkButton ID="BdKeyDown" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-arrow-down"></span>
                                                 <asp:Label runat="server" Text="降調" meta:resourcekey="BdKeyDownResource1"/>
                                             </asp:LinkButton>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdDefaultPitch" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdDefaultPitch_Click">
+                                            <asp:LinkButton ID="BdDefaultPitch" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-music"></span>
                                                 <asp:Label runat="server" Text="原調" meta:resourcekey="BdDefaultPitchResource1"/>
                                             </asp:LinkButton>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdKeyUp" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdKeyUp_Click">
+                                            <asp:LinkButton ID="BdKeyUp" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-arrow-up"></span>
                                                 <asp:Label runat="server" Text="升調" meta:resourcekey="BdKeyUpResource1"/>
                                             </asp:LinkButton>
@@ -512,19 +485,19 @@
                                 <div class="row">
                                     <div class="col-xs-11 col-sm-11 col-md-11" style="padding-left: 5px; padding-right: 5px;">
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdVolumeDown" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdVolumeDown_Click">
+                                            <asp:LinkButton ID="BdVolumeDown" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-volume-down"></span>
                                                 <asp:Label runat="server" Text="小聲" meta:resourcekey="BdVolumeDownResource1"/>
                                             </asp:LinkButton>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdMute" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdMute_Click">
+                                            <asp:LinkButton ID="BdMute" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-volume-off"></span>
                                                 <asp:Label runat="server" Text="靜音" meta:resourcekey="BdMuteResource1"/>
                                             </asp:LinkButton>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 5px; padding-right: 5px;">
-                                            <asp:LinkButton ID="BdVolumeUp" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="BdVolumeUp_Click">
+                                            <asp:LinkButton ID="BdVolumeUp" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                                 <span class="glyphicon glyphicon-volume-up"></span>
                                                 <asp:Label runat="server" Text="大聲" meta:resourcekey="BdVolumeUpResource1"/>
                                             </asp:LinkButton>
@@ -540,11 +513,15 @@
                 </nav>
                 
                 <asp:HiddenField ID="BootstrapResponsiveMode" runat="server" />
-                <asp:HiddenField ID="BrowserScreenMode" runat="server" />
+                <asp:HiddenField ID="WindowWidth" runat="server" />
                 <asp:HiddenField ID="CurrentSinerType" runat="server" Value="0" />
                 <asp:HiddenField ID="CurrentSongLang" runat="server" Value="0" />
                 <asp:HiddenField ID="CurrentSongQueryType" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryValue" runat="server" />
+                <asp:HiddenField ID="CurrentSongQueryFilterList" runat="server" />
+                <asp:HiddenField ID="CurrentSongQueryFilterValue" runat="server" />
+                <asp:HiddenField ID="PlayListGridViewPageSize" runat="server" Value="10" />
+                <asp:HiddenField ID="SingerListViewPageSize" runat="server" Value="10" />
                 <asp:Button ID="RefreshUpdatePanelButton" runat="server" OnClick="RefreshUpdatePanelButton_Click" Style="display: none;" />
                 
                 <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">

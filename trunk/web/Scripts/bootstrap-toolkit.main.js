@@ -16,17 +16,17 @@
 
         if (viewport.is('md')) {
             MyForm.BootstrapResponsiveMode.value = 'Desktop_MD';
+            MyForm.PlayListGridViewPageSize.value = Math.floor(($(window).height() - 222) / 49.2);
+            MyForm.SingerListViewPageSize.value = Math.floor(($(window).height() - 292) / 107) * 6;
         }
 
         if (viewport.is('lg')) {
             MyForm.BootstrapResponsiveMode.value = 'Desktop_LG';
+            MyForm.PlayListGridViewPageSize.value = Math.floor(($(window).height() - 222) / 49.2);
+            MyForm.SingerListViewPageSize.value = Math.floor(($(window).height() - 292) / 136) * 6;
         }
-
-        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-            MyForm.BrowserScreenMode.value = 'Window';
-        } else {
-            MyForm.BrowserScreenMode.value = 'Fullscreen';
-        }
+        
+        MyForm.WindowWidth.value = $(window).width();
         document.getElementById("RefreshUpdatePanelButton").click();
     });
 
@@ -43,18 +43,26 @@
 
             if (viewport.is('md')) {
                 MyForm.BootstrapResponsiveMode.value = 'Desktop_MD';
+                MyForm.PlayListGridViewPageSize.value = Math.floor(($(window).height() - 222) / 49.2);
+                MyForm.SingerListViewPageSize.value = Math.floor(($(window).height() - 292) / 107) * 6;
             }
 
             if (viewport.is('lg')) {
                 MyForm.BootstrapResponsiveMode.value = 'Desktop_LG';
+                MyForm.PlayListGridViewPageSize.value = Math.floor(($(window).height() - 222) / 49.2);
+                MyForm.SingerListViewPageSize.value = Math.floor(($(window).height() - 292) / 136) * 6;
             }
 
-            if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-                MyForm.BrowserScreenMode.value = 'Window';
-            } else {
-                MyForm.BrowserScreenMode.value = 'Fullscreen';
+            if (viewport.is('md') || viewport.is('lg')) {
+                MyForm.WindowWidth.value = $(window).width();
+                document.getElementById("RefreshUpdatePanelButton").click();
             }
-            document.getElementById("RefreshUpdatePanelButton").click();
+            else {
+                if (parseInt(MyForm.WindowWidth.value) != $(window).width()) {
+                    MyForm.WindowWidth.value = $(window).width();
+                    document.getElementById("RefreshUpdatePanelButton").click();
+                }
+            }
         })
     );
     

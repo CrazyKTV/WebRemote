@@ -11,11 +11,13 @@ namespace web
             string jsonText = CrazyKTVWCF.ViewSong(0, GuiGlobal.QuerySongRows);
             DataTable dt = GlobalFunctions.JsontoDataTable(jsonText);
 
-            int CurPageSize = (((HiddenField)this.Parent.FindControl("BrowserScreenMode")).Value == "Fullscreen") ? GuiGlobal.PlayListFullscreenPageSize : GuiGlobal.PlayListPageSize;
+            int CurPageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("PlayListGridViewPageSize")).Value);
 
             // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
+                GridView1.PageSize = CurPageSize;
+
                 if (dt.Rows.Count == 0)
                 {
                     DataColumn col = new DataColumn("Song_Id");
@@ -40,6 +42,8 @@ namespace web
                             dt.Rows.Add(row);
                         }
                     }
+
+                    GridView1.AllowPaging = true;
                     GridView1.ShowFooter = false;
                 }
                 else
@@ -54,6 +58,12 @@ namespace web
                     GridView1.ShowFooter = true;
                 }
             }
+            else
+            {
+                GridView1.PageSize = 1;
+                GridView1.AllowPaging = false;
+                GridView1.ShowFooter = false;
+            }
 
             DataView dv = new DataView(dt);
             //dv.Sort = "Song_Singer asc, Song_SongName asc, Song_Id asc";
@@ -65,7 +75,7 @@ namespace web
             {
                 if (dt.Rows.Count > CurPageSize)
                 {
-                    DropDownList ddlSelectPage = (DropDownList)GridView1.BottomPagerRow.FindControl("ddlSelectPage");
+                    DropDownList ddlSelectPage = (DropDownList)GridView1.BottomPagerRow.FindControl("SelectPage_DropDownList");
                     for (int i = 0; i < GridView1.PageCount; i++)
                     {
                         ddlSelectPage.Items.Add(new ListItem((i + 1).ToString(), i.ToString()));
@@ -145,9 +155,9 @@ namespace web
             GridView1.DataBind();
         }
 
-        protected void ddlSelectPage_SelectedIndexChanged(object sender, EventArgs e)
+        protected void SelectPage_DropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DropDownList ddlSelectPage = (DropDownList)GridView1.BottomPagerRow.FindControl("ddlSelectPage");
+            DropDownList ddlSelectPage = (DropDownList)GridView1.BottomPagerRow.FindControl("SelectPage_DropDownList");
 
             int pIndex = 0;
             if (int.TryParse(ddlSelectPage.SelectedValue, out pIndex))

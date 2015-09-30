@@ -204,4 +204,22 @@
   <data name="ButtonFieldResource5.OnClientClick" xml:space="preserve">
     <value>return confirm(' Delete this song?');</value>
   </data>
+  <data name="CurPage_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CurPage_Label_Before_RES.Text" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="PageCount_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageCount_Label_Before_RES.Text" xml:space="preserve">
+    <value> of </value>
+  </data>
+  <data name="SelectPage_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SelectPage_Label_Before_RES.Text" xml:space="preserve">
+    <value>GoTo</value>
+  </data>
 </root>

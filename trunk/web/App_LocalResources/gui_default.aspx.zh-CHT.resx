@@ -274,7 +274,7 @@
     <value>小聲</value>
   </data>
   <data name="BFindResource1.Text" xml:space="preserve">
-    <value>點歌</value>
+    <value>列表</value>
   </data>
   <data name="BdDefaultPitchResource1.Text" xml:space="preserve">
     <value>原調</value>
@@ -320,5 +320,14 @@
   </data>
   <data name="lLoadingResource1.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="MainMenu_AdvancedButton_RES.Text" xml:space="preserve">
+    <value>進階</value>
+  </data>
+  <data name="MainMenu_FindSongButton_RES.Text" xml:space="preserve">
+    <value>點歌</value>
+  </data>
+  <data name="MainMenu_PlayListButton_RES.Text" xml:space="preserve">
+    <value>待播</value>
   </data>
 </root>

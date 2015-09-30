@@ -1,33 +1,35 @@
-﻿.MainImage {
+﻿
+
+
+/* Button & Image */
+/* ================================================================== */
+.MainImage {
     padding: 5px;
     width: 64px;
 }
 
 
 .MainButton {
-    margin-top: 10px;
-    padding: 5px;
-    width: 48px;
+    padding: 2px;
+    margin-top: 4px;
+    width: 60px;
+    text-shadow: black 1px 1px 2px;
 
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
 }
-.MainButton:hover { background: #43A047; }
 
 
-.MainMinButton {
-    font-size: 16px;
-    color: #ececec
+.MainMenuMin24Image {
+    margin: 0px 0px 0px 0px ;
+    width: 24px;
 }
-.MainMinButton:hover { color: #FFFFFF; }
-
 
 .MainMenuMinImage {
     margin: 0px 2px 5px 0px ;
     width: 16px;
 }
-
 
 .ControlButton {
     padding: 10px 5px;
@@ -36,21 +38,6 @@
     text-shadow: black 1px 1px 2px;
 }
 
-
-.GridViewButton {
-    padding: 4px 2px 4px 0px;
-    margin: 0px 5px;
-    width: 32px;
-    text-shadow: black 1px 1px 2px;
-}
-
-
-.GridViewPageButton {
-    margin-top: -4px;
-    padding: 0px 4px 0px 4px;
-    border: none;
-    text-shadow: black 1px 1px 2px;
-}
 
 .MainMenuButton {
     padding: 5px;
@@ -70,6 +57,7 @@
     text-align: center;
 }
 
+
 .SingerListButton {
     padding: 0px;
     margin: 0px;
@@ -87,6 +75,7 @@
     vertical-align: central;
     font-size: 80%;
 }
+
 
 .SingerListBox {
     position: relative;
@@ -113,10 +102,147 @@
 }
 
 
-.SingerTypeListDiv {
+
+/* GridView */
+/* ================================================================== */
+.gridview {
+    width: 100%;
+}
+
+
+.gridviewRows {
+    padding: 5px 2px 5px 2px;
+}
+
+
+.gridviewHeader {
+    height: 34px;
+    text-align: center;
+    font-weight: lighter;
+
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: #000000 1px 1px 2px;
+}
+
+
+.gridviewPager {
+    height: 38px;
+    text-align: center;
+    font-weight: lighter;
+
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: #000000 1px 1px 2px;
+}
+
+
+.GridViewButton {
+    padding: 4px 2px 4px 0px;
+    margin: 0px 5px;
+    width: 32px;
+    text-shadow: black 1px 1px 2px;
+}
+
+
+.GridViewPageButton {
+    padding: 4px;
+    margin: 1px 5px 0px 5px;
+    border: none;
+    text-shadow: black 1px 1px 2px;
+}
+
+
+.GridViewFilterRows {
+    height: 49.2px;
+}
+
+
+.GridViewFilterButton {
+    padding: 4px;
+    width: 80%;
+
+    text-shadow: black 1px 1px 2px;
+}
+
+
+.GridViewPageText {
+    vertical-align: middle;
+    margin: -2px 4px 0px 4px;
+}
+
+
+.gi-big {
+    font-size: 1.3em;
+}
+
+
+
+/* GridView Data*/
+/* ================================================================== */
+.dgSongID {
+    width: auto;
+    padding-left: 8PX;
+    padding-right: 8px;
+    text-align: right;
+    font-size: 95%;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+.dgSong
+{
+    width: auto;
+    word-wrap: break-word;
+    text-align: left;
+    padding-right: 4px;
+    font-size: 95%;
+    color: #000000;
+}
+
+
+.dgSinger
+{
+    width: auto;
+    word-wrap: break-word;
+    text-align: left;
+    padding-right: 4px;
+    font-size: 87%;
+    color: #993300;
+}
+.dgSingerbutton:hover
+{
+    text-decoration:none;
+    color: #337ab7;
+}
+
+
+.dgLang
+{
+    width: auto;
+    padding-left: 8PX;
+    padding-right: 8px;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+
+/* Div */
+/* ================================================================== */
+.spacerToFooter {
+    height: 70px;
+    display: block;
+}
+
+
+.SubMenuArea {
     float: left;
     padding: 10px 0px 10px 0px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     width: 100%;
     background-color: #5cb85c;
 
@@ -128,13 +254,14 @@
     -webkit-border-radius: 6px;
 }
 
-.SingerListPagerDiv {
+
+.SingerListPagerArea {
     clear: both;
     float: left;
     padding: 5px;
-    margin-top: 6px;
+    margin-top: 5px;
     text-align: center;
-    font-weight: lighter;
+    font-weight: bold;
     width: 100%;
     
     background-color: #5cb85c;
@@ -148,6 +275,15 @@
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
 }
+
+
+
+
+
+
+
+
+
 
 
 

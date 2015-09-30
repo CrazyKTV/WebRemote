@@ -58,31 +58,31 @@ namespace web {
         protected global::System.Web.UI.WebControls.Image CrazyKTVLogo;
         
         /// <summary>
-        /// PlayListButton 控制項。
+        /// MainMenu_PlayListButton 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton PlayListButton;
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_PlayListButton;
         
         /// <summary>
-        /// FindSongButton 控制項。
+        /// MainMenu_FindSongButton 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton FindSongButton;
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_FindSongButton;
         
         /// <summary>
-        /// AdvancedButton 控制項。
+        /// MainMenu_AdvancedButton 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton AdvancedButton;
+        protected global::System.Web.UI.WebControls.LinkButton MainMenu_AdvancedButton;
         
         /// <summary>
         /// MainMenu_FindSingerDesktopButton 控制項。
@@ -164,15 +164,6 @@ namespace web {
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton MainMenu_SongNumberDesktopButton;
-        
-        /// <summary>
-        /// ToggleFullScreenButton 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ToggleFullScreenButton;
         
         /// <summary>
         /// gui_songNumber 控制項。
@@ -517,13 +508,13 @@ namespace web {
         protected global::System.Web.UI.WebControls.HiddenField BootstrapResponsiveMode;
         
         /// <summary>
-        /// BrowserScreenMode 控制項。
+        /// WindowWidth 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField BrowserScreenMode;
+        protected global::System.Web.UI.WebControls.HiddenField WindowWidth;
         
         /// <summary>
         /// CurrentSinerType 控制項。
@@ -560,6 +551,42 @@ namespace web {
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryValue;
+        
+        /// <summary>
+        /// CurrentSongQueryFilterList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryFilterList;
+        
+        /// <summary>
+        /// CurrentSongQueryFilterValue 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryFilterValue;
+        
+        /// <summary>
+        /// PlayListGridViewPageSize 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField PlayListGridViewPageSize;
+        
+        /// <summary>
+        /// SingerListViewPageSize 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField SingerListViewPageSize;
         
         /// <summary>
         /// RefreshUpdatePanelButton 控制項。

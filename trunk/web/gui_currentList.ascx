@@ -14,6 +14,7 @@
             <ContentTemplate>
                 <asp:Timer ID="Timer1" runat="server" Interval="180000" OnTick="Timer1_Tick" OnPreRender="Timer1_PreRender" ></asp:Timer>
                 <asp:Panel ID="Panel1" runat="server" meta:resourcekey="Panel1Resource1">
+                    <div class="hidden-md hidden-lg" style="margin-top: 5px;"></div>
                     <asp:GridView ID="GridView1" runat="server" DataKeyNames="Song_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="#006600" BorderStyle="Solid" BorderWidth="2px" CellPadding="3" CssClass="gridview" ForeColor="Black" GridLines="Vertical" AllowPaging="True" AllowSorting="True" PageSize="1" OnPageIndexChanging="GridView1_PageIndexChanging"  EnableSortingAndPagingCallbacks="True" ShowHeaderWhenEmpty="True" meta:resourcekey="GridView1Resource1" OnPreRender="GridView1_PreRender" OnRowCreated="GridView1_RowCreated" PagerStyle-Wrap="True">
                         <AlternatingRowStyle BackColor="#d9ffd9"/>
                         <Columns>
@@ -56,27 +57,44 @@
     
                         <PagerTemplate>
                             <asp:LinkButton ID="FirstPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="First">
-                                <span class="glyphicon glyphicon-step-backward"></span>
+                                <span class="glyphicon glyphicon-fast-backward gi-big"></span>
                             </asp:LinkButton>
                             <asp:LinkButton ID="PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
-                                <span class="glyphicon glyphicon-backward"></span>
+                                <span class="glyphicon glyphicon-backward gi-big"></span>
                             </asp:LinkButton>
-                            
-                            第<asp:Label ID="lblcurPage" runat="server" Text='<%# ((GridView)Container.Parent.Parent).PageIndex+1 %>' />頁 /
-                            共<asp:Label ID="lblPageCount" runat="server" Text='<%# ((GridView)Container.Parent.Parent).PageCount %>' />頁
+
+                            <div class="GridViewPageText" style="display: inline-block;">
+                                <div class="hidden-xs hidden-sm">
+                                    <asp:Label ID="CurPage_Label_Before" runat="server" Text="第" meta:resourcekey="CurPage_Label_Before_RES" />
+                                    <asp:Label ID="CurPage_Label" runat="server" Text='<%# ((GridView)Container.Parent.Parent).PageIndex+1 %>' />
+                                    <asp:Label ID="CurPage_Label_After" runat="server" Text="頁" meta:resourcekey="CurPage_Label_After_RES" />
+                    
+                                    <asp:Label ID="PageCount_Label_Before" runat="server" Text=" / 共" meta:resourcekey="PageCount_Label_Before_RES" />
+                                    <asp:Label ID="PageCount_Label" runat="server" Text='<%# ((GridView)Container.Parent.Parent).PageCount %>' />
+                                    <asp:Label ID="PageCount_Label_After" runat="server" Text="頁" meta:resourcekey="PageCount_Label_After_RES" />
+                                </div>
+                            </div>
     
                             <asp:LinkButton ID="NextPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
-                                <span class="glyphicon glyphicon-forward"></span>
+                                <span class="glyphicon glyphicon-forward gi-big"></span>
                             </asp:LinkButton>
                             <asp:LinkButton ID="LastPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Last">
-                                <span class="glyphicon glyphicon-fast-forward"></span>
+                                <span class="glyphicon glyphicon-fast-forward gi-big"></span>
                             </asp:LinkButton>
 
-                            到 <asp:DropDownList ID="ddlSelectPage" runat="server" CssClass="GridViewPageButton btn btn-primary dropdown-toggle" AutoPostBack="True" OnSelectedIndexChanged="ddlSelectPage_SelectedIndexChanged" /> 頁
+                            <div class="hidden-xs hidden-sm hidden-md" style="display: inline-block;">
+                                <div class="GridViewPageText" style="display: inline-block;">
+                                    <asp:Label ID="SelectPage_Label_Before" runat="server" Text="到" meta:resourcekey="SelectPage_Label_Before_RES" />
+                                </div>
+                                <asp:DropDownList ID="SelectPage_DropDownList" runat="server" CssClass="GridViewPageButton btn btn-primary" AutoPostBack="True" OnSelectedIndexChanged="SelectPage_DropDownList_SelectedIndexChanged" />
+                                <div class="GridViewPageText" style="display: inline-block;">
+                                    <asp:Label ID="SelectPage_Label_After" runat="server" Text="頁" meta:resourcekey="SelectPage_Label_After_RES" />
+                                </div>
+                            </div>
                         </PagerTemplate>
 
-                        <FooterStyle CssClass="gridviewPager" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle CssClass="gridviewHeader" Font-Bold="True" ForeColor="White" />
+                        <FooterStyle CssClass="gridviewPager" Font-Bold="True" ForeColor="White" />
                         <PagerStyle CssClass="gridviewPager" Font-Bold="True" ForeColor="White" />
                         <RowStyle CssClass="gridviewRows" />
                         <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />

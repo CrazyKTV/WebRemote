@@ -516,4 +516,40 @@
   <data name="SingerTypeOtherButton_RES.Text" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="SongList_CurPage_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SongList_CurPage_Label_Before_RES.Text" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="SongList_PageCount_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SongList_PageCount_Label_Before_RES.Text" xml:space="preserve">
+    <value> of </value>
+  </data>
+  <data name="SongList_SelectPage_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SongList_SelectPage_Label_Before_RES.Text" xml:space="preserve">
+    <value>GoTo</value>
+  </data>
+  <data name="SingerList_CurPage_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SingerList_CurPage_Label_Before_RES.Text" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="SingerList_PageCount_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SingerList_PageCount_Label_Before_RES.Text" xml:space="preserve">
+    <value> of </value>
+  </data>
+  <data name="SingerList_SelectPage_Label_After_RES.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SingerList_SelectPage_Label_Before_RES.Text" xml:space="preserve">
+    <value>GoTo</value>
+  </data>
 </root>

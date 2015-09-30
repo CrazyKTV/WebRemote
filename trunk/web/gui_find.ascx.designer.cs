@@ -22,6 +22,15 @@ namespace web {
         protected global::System.Web.UI.ScriptManagerProxy ScriptManagerProxy1;
         
         /// <summary>
+        /// ScrolltoTop 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ScrolltoTop;
+        
+        /// <summary>
         /// Panel3 控制項。
         /// </summary>
         /// <remarks>
@@ -859,12 +868,12 @@ namespace web {
         protected global::System.Web.UI.WebControls.GridView SongListGridView;
         
         /// <summary>
-        /// findCaller 控制項。
+        /// SongListFilterGridView 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField findCaller;
+        protected global::System.Web.UI.WebControls.GridView SongListFilterGridView;
     }
 }

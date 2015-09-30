@@ -192,16 +192,7 @@ namespace web
         public static List<string> SongLangList = new List<string>(Properties.Settings.Default.SongLangList.Split(','));
 
         public static int SingerTypePageSize = 60;
-        public static int SingerTypeDesktopPageSize = 18;
-        public static int SingerTypeFullscreenPageSize = 24;
-
-        public static int SongListPageSize = 500;
-        public static int SongListDesktopPageSize = 8;
-        public static int SongListFullscreenPageSize = 11;
-
-        public static int PlayListPageSize = 10;
-        public static int PlayListFullscreenPageSize = 13;
-
+        public static int SongListPageSize = 200;
         public static int QuerySongRows = 100000;
 
         public static string DefaultButtonCssClass = "btn btn-success btn-lg";

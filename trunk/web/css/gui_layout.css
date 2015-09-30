@@ -16,8 +16,7 @@ article, aside, canvas, details, figure, figcaption, hgroup,
 menu, footer, header, nav, section, summary, time, mark, audio, video {
 	margin: 0 auto;
 	padding: 0;
-	border: 0;
-
+	border: none;
 }
 
 article, aside, canvas, figure, figure img, figcaption, hgroup,
@@ -25,7 +24,7 @@ footer, header, nav, section, audio, video {
 	display: block;
 }
 
-a img {border: 0;}
+a img {border: none ;}
 
 
 
@@ -88,23 +87,6 @@ body {
 
 
 
-
-.dropdown1
-{
-    font-size: 90%;
-    top: 2px;
-    vertical-align: top;
-}
-
-.dropdown2 {
-    font-size: 100%;
-}
-
-.displayBlock {
-    display:block;
-}
-
-
 .tSongNumber{
 font-size: 130%;
 height:30px;
@@ -138,38 +120,11 @@ height:30px;
 }
 
 
-.gridview {
-    width: 100%;
-}
-
-.gridviewRows {
-    padding: 5px 2px 5px 2px;
-}
-
-.gridviewHeader {
-    padding: 5px;
-    text-align: center;
-    font-weight: lighter;
-
-    background-color: #5cb85c;
-    color: rgb(255, 255, 255);
-    text-shadow: #000000 1px 1px 2px;
-}
-
-.gridviewPager {
-    height:32px;
-    text-align: center;
-    font-weight: lighter;
-
-    background-color: #5cb85c;
-    color: rgb(255, 255, 255);
-    text-shadow: #000000 1px 1px 2px;
-}
 
 
 
-.gridviewContent {
-}
+
+
 
 
 #HeaderVisibleDiv {
@@ -194,62 +149,11 @@ height:30px;
 }
 
 
-.spacerToTop {
-    margin-top: 75px;
-    display: block;
-}
 
 
-.spacerToFooter {
-    height: 75px;
-    display: block;
-}
 
-.dgSongID {
-    width: auto;
-    padding-left: 8PX;
-    padding-right: 8px;
-    text-align: right;
-    font-size: 95%;
-    font-weight: bold;
-    color: #000000;
-}
 
-.dgSong
-{
-    width: auto;
-    word-wrap: break-word;
-    text-align: left;
-    padding-right: 4px;
-    font-size: 95%;
-    color: #000000;
-}
 
-.dgSinger
-{
-    width: auto;
-    word-wrap: break-word;
-    text-align: left;
-    padding-right: 4px;
-    font-size: 87%;
-    color: #993300;
-}
-.dgSingerbutton:hover
-{
-    text-decoration:none;
-    color: #337ab7;
-}
-
-.dgLang
-{
-    width: auto;
-    padding-left: 8PX;
-    padding-right: 8px;
-    text-align: center;
-    font-size: 100%;
-    font-weight: bold;
-    color: #000000;
-}
 
 .hideThis {
     color:#000;
