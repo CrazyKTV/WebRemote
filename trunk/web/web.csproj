@@ -132,7 +132,6 @@
     <Content Include="images\singertype_other.png" />
     <Content Include="Scripts\bootstrap-toolkit.main.js" />
     <Content Include="Scripts\bootstrap-toolkit.min.js" />
-    <Content Include="Scripts\hammer.js" />
     <Content Include="images\Arrow.gif" />
     <Content Include="images\Arrow.png" />
     <Content Include="images\Arrow2.gif" />
@@ -140,13 +139,13 @@
     <Content Include="images\crazyktv.png" />
     <Content Include="images\ErrorDeadWCF.jpg" />
     <Content Include="images\favicon.ico" />
+    <Content Include="Scripts\hammer.js" />
+    <Content Include="Scripts\hammer.min.js" />
     <Content Include="Scripts\html5shiv-printshiv.js" />
     <Content Include="Scripts\html5shiv-printshiv.min.js" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Scripts\jquery.dragsort.js" />
-    <Content Include="Scripts\jquery.hammer.js" />
-    <Content Include="Scripts\jquery.specialevent.hammer.js" />
     <Content Include="css\layout.css" />
     <Content Include="css\overlay.css" />
     <Content Include="currentList.ascx" />
@@ -171,6 +170,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\Nightly Builds.pubxml" />
     <None Include="Resources\QRimage.bmp" />
+    <Content Include="Scripts\hammer.min.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

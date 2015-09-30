@@ -30,7 +30,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--Mobile specific meta goodness-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
     <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
 
     <link href="Content/bootstrap.min.css" rel="stylesheet" /> 
@@ -45,8 +45,7 @@
 
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/hammer.js"></script>
-    <script src="Scripts/jquery.specialevent.hammer.js"></script>
+    <script src="Scripts/hammer.min.js"></script>
 
     <meta charset="utf-8" />
     <title>CrazyKTV</title>
@@ -119,23 +118,19 @@
                 }
 
                 //touch events
+                var BottomVisibleDiv = document.getElementById("BottomVisibleDiv");
+                var suball = document.getElementById("suball");
 
-                function hammerLog(event) {
-                    event.preventDefault();
+                var mc1 = new Hammer.Manager(BottomVisibleDiv);
+                mc1.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_VERTICAL, threshold: 5 }));
+                var mc2 = new Hammer.Manager(suball);
+                mc2.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_VERTICAL, threshold: 5 }));
+                var mcall = Hammer.merge(mc1, mc2);
 
-                    if (event.direction == "down") {
-                        Hidesuball();
-                    }
-                    else if (event.direction == "up")
-                        {
-                        Showsuball();
-                     }
-                }
+                mcall.on("swipeup", function (ev) { Showsuball(); });
+                mcall.on("swipedown", function (ev) { Hidesuball(); });
+                //touch events END
 
-                $("#BottomVisibleDiv").children('*').on('swipe', hammerLog);
-                $("#BottomVisibleDiv").on('swipe', hammerLog);
-                $("#suball").children('*').on('swipe', hammerLog);
-                $("#suball").on('swipe', hammerLog);
                 return false;
             }
         </script>

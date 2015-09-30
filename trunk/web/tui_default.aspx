@@ -42,8 +42,7 @@
 
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery.watermark.js"></script>
-    <script src="Scripts/hammer.js"></script>
-    <script src="Scripts/jquery.specialevent.hammer.js"></script>
+    <script src="Scripts/hammer.min.js"></script>
 
     <meta charset="utf-8" />
     <title>CrazyKTV</title>
@@ -162,46 +161,19 @@
 
 
                 //touch events
+                var BottomVisibleDiv = document.getElementById("alwaysVisibleDiv");
+                var suball = document.getElementById("suball");
 
-                function hammerLog(event) {
-                    event.preventDefault();
-                    //$output.prepend( "Type: " + event.type + ", Fingers: " + event.touches.length + ", Direction: " + event.direction + "<br/>" );
-                    //$('#output').prepend("Type: " + event.type + ", Fingers: " + event.touches.length + ", Direction: " + event.direction + ", scale:" + event.scale + "<br/>");
+                var mc1 = new Hammer.Manager(BottomVisibleDiv);
+                mc1.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_VERTICAL, threshold: 5 }));
+                var mc2 = new Hammer.Manager(suball);
+                mc2.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_VERTICAL, threshold: 5 }));
+                var mcall = Hammer.merge(mc1, mc2);
 
-                    //alert("testaa");
-                   // Showsuball();
-
-                    if (event.direction == "down") {
-                        Hidesuball();
-                    }
-                    else if (event.direction == "up")
-                        {
-                        Showsuball();
-                     }
-
-                }
-
-
-                //var actions = 'hold tap swipe doubletap transformstart transform transformend dragstart drag dragend release';
-                //var actions = 'swipe';
-
-                //register each DOM jquery events
-                //$("#alwaysVisibleDiv").find("*").on('tap', hammerLog);
-                $("#alwaysVisibleDiv").children('*').on('swipe', hammerLog);
-                $("#alwaysVisibleDiv").on('swipe', hammerLog);
-                $("#suball").children('*').on('swipe', hammerLog);
-                $("#suball").on('swipe', hammerLog);
-                
-                //$("*").on('tap', hammerLog);
-
-                /*	
-				(function ($) {
-                    $("*").on(actions, hammerLog);
-                }(jQuery));
-				*/
-
-
+                mcall.on("swipeup", function (ev) { Showsuball(); });
+                mcall.on("swipedown", function (ev) { Hidesuball(); });
                 //touch events END
+
 
                 return false;
 
