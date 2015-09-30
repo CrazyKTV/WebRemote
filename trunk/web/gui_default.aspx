@@ -45,7 +45,6 @@
 
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="Scripts/jquery.watermark.js"></script>
     <script src="Scripts/hammer.js"></script>
     <script src="Scripts/jquery.specialevent.hammer.js"></script>
 
@@ -78,10 +77,6 @@
 
             var AfterPostBack = function () {
                 // You write your code here to assign Data
-                if ($('#ddlanguage').val() == "en-US")
-                { $('#tSearch').watermark('All Songs'); }
-                else { $('#tSearch').watermark('全部歌曲'); }
-
                 if ($('#gui_find_ScrolltoTop').val() == "True") {
                     $("html, body").animate({ scrollTop: 0 }, "slow");
                     $('#gui_find_ScrolltoTop').val("False")
@@ -122,32 +117,6 @@
                     $("#suball").css("display", "none");
                     $('#Showsuball').val("0");
                 }
-
-
-                $('#ddSearchType').change(function () {
-                    var _value = $('#ddSearchType').val();
-                    if (_value == "Song" || _value == "Singer" || _value == "WordCount") {
-                        $('#tSearch').show();
-                    }
-                    else if (_value.toLowerCase().indexOf("---") >= 0) {
-                        $('#tSearch').hide();
-                    }
-                    else {
-                        $('#tSearch').hide();
-                        $('#bSearch').click();
-                    }
-
-                });
-
-                $('#ddSearchType').ready(function () {
-                    var _value = $('#ddSearchType').val();
-                    if (_value == "Song" || _value == "Singer" || _value == "WordCount") {
-                        $('#tSearch').show();
-                    }
-                    else {
-                        $('#tSearch').hide();
-                    }
-                });
 
                 //touch events
 
