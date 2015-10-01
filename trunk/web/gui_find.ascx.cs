@@ -618,6 +618,7 @@ namespace web
             //clean up data on display
             SongListGridView.DataSource = null;
             SongListGridView.DataBind();
+            SongListGridView.PageIndex = 0;
             SongListFilterGridView.DataSource = null;
             SongListFilterGridView.DataBind();
             SongListFilterGridView.PageIndex = 0;
@@ -626,7 +627,6 @@ namespace web
 
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
-            SongListGridView.PageIndex = 0;
 
             var data = ((Label)((LinkButton)sender).Controls[0]).Text;
             SongList(0, GuiGlobal.QuerySongRows, "Singer", data.ToString());
@@ -747,11 +747,76 @@ namespace web
             //clean up data on display
             SongListGridView.DataSource = null;
             SongListGridView.DataBind();
+            SongListGridView.PageIndex = 0;
+            SongListFilterGridView.DataSource = null;
+            SongListFilterGridView.DataBind();
+            SongListFilterGridView.PageIndex = 0;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = "";
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = "";
 
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
 
             string singer = ((LinkButton)sender).Text.Trim();
+
+            // Desktop / Tablet Mode
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                SongLangPanel.Visible = false;
+                SingerTypePanel.Visible = true;
+                int PageSize = 0;
+                PageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("SingerListViewPageSize")).Value);
+                int StartRowIndex = 0;
+                SingerListDataPager.SetPageProperties(StartRowIndex, PageSize, true);
+
+                SingerTypeMaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SingerTypeFemaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SingerTypeGroupDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SingerTypeForeignMaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SingerTypeForeignFemaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SingerTypeForeignGroupDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                SingerTypeOtherDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+
+                switch (GuiGlobal.SingerType[GuiGlobal.SingerName.IndexOf(singer)])
+                {
+                    case "0":
+                        SingerTypeMaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                        ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = "0";
+                        break;
+                    case "1":
+                        SingerTypeFemaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                        ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = "1";
+                        break;
+                    case "2":
+                        SingerTypeGroupDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                        ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = "2";
+                        break;
+                    case "3":
+                        SingerTypeForeignMaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                        ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = "3";
+                        break;
+                    case "4":
+                        SingerTypeForeignFemaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                        ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = "4";
+                        break;
+                    case "5":
+                        SingerTypeForeignGroupDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                        ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = "5";
+                        break;
+                    case "6":
+                        SingerTypeOtherDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                        ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = "6";
+                        break;
+                }
+
+                
+                ((LinkButton)this.Parent.FindControl("MainMenu_FindLangDesktopButton")).CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+                ((LinkButton)this.Parent.FindControl("MainMenu_FindSingerDesktopButton")).CssClass = "ControlButton " + GuiGlobal.ActiveButtonCssClass;
+            }
+
+
+
+            
 
             SongList(0, GuiGlobal.QuerySongRows, "Singer", singer);
         }
@@ -955,6 +1020,7 @@ namespace web
             //clean up data on display
             SongListGridView.DataSource = null;
             SongListGridView.DataBind();
+            SongListGridView.PageIndex = 0;
             SongListFilterGridView.DataSource = null;
             SongListFilterGridView.DataBind();
             SongListFilterGridView.PageIndex = 0;
@@ -963,11 +1029,11 @@ namespace web
 
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
-            SongListGridView.PageIndex = 0;
 
             var data = ((Label)((LinkButton)sender).Controls[1]).Text;
             ((HiddenField)this.Parent.FindControl("CurrentSongLang")).Value = GuiGlobal.SongLangList.IndexOf(data.ToString()).ToString();
 
+            // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
                 SongLang1DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;

@@ -130,6 +130,8 @@ namespace web
             string jsonText = "";
             List<string> SingerTypeList = new List<string>() { "0", "1", "2", "4", "5", "6", "7" };
             List<string> ImgFormatList = new List<string>() { ".jpg", ".png", ".bmp", ".gif" };
+            GuiGlobal.SingerName = new List<string>();
+            GuiGlobal.SingerType = new List<string>();
 
             foreach (string SingerType in SingerTypeList)
             {
@@ -140,6 +142,9 @@ namespace web
 
                 foreach (DataRow row in dt.AsEnumerable())
                 {
+                    GuiGlobal.SingerName.Add(row["Singer_Name"].ToString());
+                    GuiGlobal.SingerType.Add(SingerTypeList.IndexOf(SingerType).ToString());
+
                     foreach (string ImgFormat in ImgFormatList)
                     {
                         if (File.Exists(HttpContext.Current.Server.MapPath("/singerimg/" + row["Singer_Name"].ToString() + ImgFormat)))
@@ -200,6 +205,9 @@ namespace web
 
         public static bool AllSongDTStatus = false;
         public static bool SingerTypeDTStatus = false;
+
+        public static List<string> SingerName = new List<string>();
+        public static List<string> SingerType = new List<string>();
 
         public static DataTable AllSongDT = new DataTable();
         public static DataTable SingerTypeMaleDT = new DataTable();
