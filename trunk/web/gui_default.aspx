@@ -43,7 +43,7 @@
         <script src="Scripts/html5shiv.min.js"></script>
     <![endif]-->
 
-    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery-1.11.3.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/hammer.min.js"></script>
 

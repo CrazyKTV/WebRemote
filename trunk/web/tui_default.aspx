@@ -40,7 +40,7 @@
     <![endif]-->
 
 
-    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery.watermark.js"></script>
     <script src="Scripts/hammer.min.js"></script>
 

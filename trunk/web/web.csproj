@@ -145,6 +145,9 @@
     <Content Include="Scripts\html5shiv-printshiv.min.js" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\html5shiv.min.js" />
+    <None Include="Scripts\jquery-1.11.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Scripts\jquery.dragsort.js" />
     <Content Include="css\layout.css" />
     <Content Include="css\overlay.css" />
@@ -171,11 +174,8 @@
     <None Include="Properties\PublishProfiles\Nightly Builds.pubxml" />
     <None Include="Resources\QRimage.bmp" />
     <Content Include="Scripts\hammer.min.map" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="songNumber.ascx" />
     <Content Include="test2.html" />
     <Content Include="tune.ascx" />
@@ -339,7 +339,7 @@
     </Content>
     <Content Include="GenImage.ashx" />
     <None Include="Properties\PublishProfiles\deployCrazyKTV.pubxml" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jquery-1.11.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
