@@ -526,7 +526,7 @@ namespace web
                         QuerySong_QueryName_TextBox.Text = "";
                     }
                     break;
-                case "MainMenu_WordCountButton":
+                case "MainMenu_SongStrokeDesktopButton":
                     hideAllGridViewPanel();
 
                     break;

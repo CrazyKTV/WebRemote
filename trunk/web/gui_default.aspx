@@ -188,9 +188,9 @@
                                                 </asp:LinkButton>
                                             </div>
                                             <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 3px; padding-right: 3px;">
-                                                <asp:LinkButton ID="MainMenu_WordCountDesktopButton" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="MainMenu_Desktop_Button_Click">
-                                                    <asp:Image ImageUrl="images/mainmenu_wordcount_small.png" runat="server" CssClass="MainMenuMinImage"/>
-                                                    <asp:Label runat="server" Text="字數" meta:resourcekey="MainMenu_WordCountButton_RES"/>
+                                                <asp:LinkButton ID="MainMenu_SongStrokeDesktopButton" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="MainMenu_Desktop_Button_Click">
+                                                    <asp:Image ImageUrl="images/mainmenu_songstroke_small.png" runat="server" CssClass="MainMenuMinImage"/>
+                                                    <asp:Label runat="server" Text="筆劃" meta:resourcekey="MainMenu_SongStrokeButton_RES"/>
                                                 </asp:LinkButton>
                                             </div>
                                             <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 3px; padding-right: 3px;">

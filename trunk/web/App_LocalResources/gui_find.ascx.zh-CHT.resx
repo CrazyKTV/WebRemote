@@ -438,8 +438,8 @@
   <data name="MainMenu_TopSongButton_RES.Text" xml:space="preserve">
     <value>排行歌曲</value>
   </data>
-  <data name="MainMenu_WordCountButton_RES.Text" xml:space="preserve">
-    <value>字數點歌</value>
+  <data name="MainMenu_SongStrokeDesktopButton_RES.Text" xml:space="preserve">
+    <value>筆劃點歌</value>
   </data>
   <data name="SingerTypeFemaleButton_RES.Text" xml:space="preserve">
     <value>女星</value>

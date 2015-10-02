@@ -309,8 +309,8 @@
   <data name="MainMenu_QuerySongButton_RES.Text" xml:space="preserve">
     <value>搜尋</value>
   </data>
-  <data name="MainMenu_WordCountButton_RES.Text" xml:space="preserve">
-    <value>字數</value>
+  <data name="MainMenu_SongStrokeButton_RES.Text" xml:space="preserve">
+    <value>筆劃</value>
   </data>
   <data name="MainMenu_SongNumberButton_RES.Text" xml:space="preserve">
     <value>編號</value>

@@ -116,8 +116,8 @@
     <Content Include="images\mainmenu_querysong_small.png" />
     <Content Include="images\mainmenu_songnumber.png" />
     <Content Include="images\mainmenu_songnumber_small.png" />
-    <Content Include="images\mainmenu_wordcount.png" />
-    <Content Include="images\mainmenu_wordcount_small.png" />
+    <Content Include="images\mainmenu_songstroke.png" />
+    <Content Include="images\mainmenu_songstroke_small.png" />
     <Content Include="images\main_advanced.png" />
     <Content Include="images\main_crazyktv.png" />
     <Content Include="images\main_findsong.png" />

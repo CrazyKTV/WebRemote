@@ -42,9 +42,9 @@
         </div>
         <div class="row">
             <div class ="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding: 5px;">
-                <asp:LinkButton ID="MainMenu_WordCountButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="MainMenu_Button_Click">
-                    <asp:Image ImageUrl="images/mainmenu_wordcount.png" runat="server" CssClass="MainMenuImage"/>
-                    <asp:Label runat="server" Text="字數點歌" meta:resourcekey="MainMenu_WordCountButton_RES" CssClass="MainMenuLabel"/>
+                <asp:LinkButton ID="MainMenu_SongStrokeDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="MainMenu_Button_Click">
+                    <asp:Image ImageUrl="images/mainmenu_songstroke.png" runat="server" CssClass="MainMenuImage"/>
+                    <asp:Label runat="server" Text="筆劃點歌" meta:resourcekey="MainMenu_SongStrokeDesktopButton_RES" CssClass="MainMenuLabel"/>
                 </asp:LinkButton>
             </div>
             <div class ="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding: 5px;">

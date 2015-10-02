@@ -483,8 +483,8 @@
   <data name="MainMenu_TopSongButton_RES.Text" xml:space="preserve">
     <value>-Top-</value>
   </data>
-  <data name="MainMenu_WordCountButton_RES.Text" xml:space="preserve">
-    <value>-Word Count-</value>
+  <data name="MainMenu_SongStrokeDesktopButton_RES.Text" xml:space="preserve">
+    <value>-Stroke-</value>
   </data>
   <data name="SingerTypeFemaleButton_RES.Text" xml:space="preserve">
     <value>Female</value>

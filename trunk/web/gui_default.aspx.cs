@@ -259,7 +259,7 @@ namespace web
             MainMenu_FindSingerDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
             MainMenu_FindLangDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
             MainMenu_QuerySongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
-            MainMenu_WordCountDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
+            MainMenu_SongStrokeDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
             MainMenu_ChorusSongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
             MainMenu_NewSongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
             MainMenu_TopSongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
@@ -285,7 +285,7 @@ namespace web
                     ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = true;
                     if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentQuerySongSongList(); }
                     break;
-                case "MainMenu_WordCountDesktopButton":
+                case "MainMenu_SongStrokeDesktopButton":
                     break;
                 case "MainMenu_ChorusSongDesktopButton":
                     break;
