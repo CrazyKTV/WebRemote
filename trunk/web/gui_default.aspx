@@ -34,6 +34,7 @@
     <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
 
     <link href="Content/bootstrap.min.css" rel="stylesheet" /> 
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" /> 
     <link href="css/gui_layout.css" rel="stylesheet" />
     <link href="css/gui_button.css" rel="stylesheet" />
     <link href="css/gui_overlay.css" rel="stylesheet" />
@@ -480,6 +481,7 @@
                 <asp:HiddenField ID="WindowWidth" runat="server" />
                 <asp:HiddenField ID="CurrentSinerType" runat="server" Value="0" />
                 <asp:HiddenField ID="CurrentSongLang" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentQuerySong" runat="server" Value="尚未搜尋歌曲" />
                 <asp:HiddenField ID="CurrentSongQueryType" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryValue" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryFilterList" runat="server" />

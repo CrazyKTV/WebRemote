@@ -552,4 +552,13 @@
   <data name="SingerList_SelectPage_Label_Before_RES.Text" xml:space="preserve">
     <value>GoTo</value>
   </data>
+  <data name="QuerySong_SingerName_RadioButton_RES.Text" xml:space="preserve">
+    <value>SingerName</value>
+  </data>
+  <data name="QuerySong_SongName_RadioButton_RES.Text" xml:space="preserve">
+    <value>SongName</value>
+  </data>
+  <data name="QuerySong_Title_Label_RES.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
 </root>

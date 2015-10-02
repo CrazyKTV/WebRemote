@@ -149,8 +149,15 @@
     padding: 4px;
     margin: 1px 5px 0px 5px;
     border: none;
+    
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
     text-shadow: black 1px 1px 2px;
 }
+.GridViewPageButton:hover, .GridViewPageButton:focus {
+    color: rgb(255, 255, 255);
+}
+
 
 
 .GridViewFilterRows {
@@ -276,6 +283,17 @@
     -webkit-border-radius: 6px;
 }
 
+
+
+/* Common */
+/* ================================================================== */
+.alignCenter {
+    text-align: center;
+}
+
+.textshadow {
+    text-shadow: black 1px 1px 2px;
+}
 
 
 

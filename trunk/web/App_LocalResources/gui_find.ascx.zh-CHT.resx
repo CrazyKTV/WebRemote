@@ -507,4 +507,13 @@
   <data name="SingerList_SelectPage_Label_Before_RES.Text" xml:space="preserve">
     <value>到</value>
   </data>
+  <data name="QuerySong_SingerName_RadioButton_RES.Text" xml:space="preserve">
+    <value>歌星名稱</value>
+  </data>
+  <data name="QuerySong_SongName_RadioButton_RES.Text" xml:space="preserve">
+    <value>歌曲名稱</value>
+  </data>
+  <data name="QuerySong_Title_Label_RES.Text" xml:space="preserve">
+    <value>搜尋</value>
+  </data>
 </root>

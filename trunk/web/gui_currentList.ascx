@@ -1,10 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="gui_currentList.ascx.cs" Inherits="web.gui_currentList" %>
 
 <link href="Content/bootstrap.min.css" rel="stylesheet" /> 
+<link href="Content/bootstrap-theme.min.css" rel="stylesheet" /> 
 <link href="css/gui_layout.css" rel="stylesheet" />
 <link href="css/gui_button.css" rel="stylesheet" />
-
-<script src="Scripts/bootstrap.min.js"></script>
 
 <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server" />
 
@@ -56,10 +55,10 @@
                         </Columns>
     
                         <PagerTemplate>
-                            <asp:LinkButton ID="FirstPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="First">
+                            <asp:LinkButton ID="FirstPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="First">
                                 <span class="glyphicon glyphicon-fast-backward gi-big"></span>
                             </asp:LinkButton>
-                            <asp:LinkButton ID="PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
+                            <asp:LinkButton ID="PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
                                 <span class="glyphicon glyphicon-backward gi-big"></span>
                             </asp:LinkButton>
 
@@ -75,10 +74,10 @@
                                 </div>
                             </div>
     
-                            <asp:LinkButton ID="NextPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
+                            <asp:LinkButton ID="NextPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
                                 <span class="glyphicon glyphicon-forward gi-big"></span>
                             </asp:LinkButton>
-                            <asp:LinkButton ID="LastPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Last">
+                            <asp:LinkButton ID="LastPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Last">
                                 <span class="glyphicon glyphicon-fast-forward gi-big"></span>
                             </asp:LinkButton>
 

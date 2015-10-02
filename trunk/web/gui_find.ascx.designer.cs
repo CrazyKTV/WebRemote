@@ -850,6 +850,69 @@ namespace web {
         protected global::System.Web.UI.WebControls.Label SongLang10Label;
         
         /// <summary>
+        /// QuerySongPanel 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel QuerySongPanel;
+        
+        /// <summary>
+        /// QuerySong_SongName_RadioButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton QuerySong_SongName_RadioButton;
+        
+        /// <summary>
+        /// QuerySong_SingerName_RadioButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton QuerySong_SingerName_RadioButton;
+        
+        /// <summary>
+        /// QuerySong_QueryName_TextBox 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox QuerySong_QueryName_TextBox;
+        
+        /// <summary>
+        /// QuerySong_SongName_Desktop_RadioButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton QuerySong_SongName_Desktop_RadioButton;
+        
+        /// <summary>
+        /// QuerySong_SingerName_Desktop_RadioButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton QuerySong_SingerName_Desktop_RadioButton;
+        
+        /// <summary>
+        /// QuerySong_QueryName_Desktop_TextBox 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox QuerySong_QueryName_Desktop_TextBox;
+        
+        /// <summary>
         /// SongListPanel 控制項。
         /// </summary>
         /// <remarks>

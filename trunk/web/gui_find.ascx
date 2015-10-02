@@ -1,10 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="gui_find.ascx.cs" Inherits="web.gui_find" %>
 
 <link href="Content/bootstrap.min.css" rel="stylesheet" /> 
+<link href="Content/bootstrap-theme.min.css" rel="stylesheet" /> 
 <link href="css/gui_layout.css" rel="stylesheet" />
 <link href="css/gui_button.css" rel="stylesheet" />
-
-<script src="Scripts/bootstrap.min.js"></script>
 
 <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server" />
 <asp:HiddenField ID="ScrolltoTop" runat="server" />
@@ -110,43 +109,43 @@
             <div class="SubMenuArea hidden-xs hidden-sm">
                 <div class ="hidden-xs hidden-sm col-md-12 col-lg-12" style="padding: 0px;">
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SingerTypeMaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-primary btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SingerTypeMaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-primary btn-lg" OnClick="SingerTypeButton_Click">
                             <asp:Image ImageUrl="images/singertype_male.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="男星" meta:resourcekey="SingerTypeMaleButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SingerTypeFemaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SingerTypeFemaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click">
                             <asp:Image ImageUrl="images/singertype_female.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="女星" meta:resourcekey="SingerTypeFemaleButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SingerTypeGroupDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SingerTypeGroupDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click">
                             <asp:Image ImageUrl="images/singertype_group.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="團體" meta:resourcekey="SingerTypeGroupButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SingerTypeForeignMaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SingerTypeForeignMaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click">
                             <asp:Image ImageUrl="images/singertype_foreignmale.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="外男" meta:resourcekey="SingerTypeForeignMaleDesktopButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SingerTypeForeignFemaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SingerTypeForeignFemaleDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click">
                             <asp:Image ImageUrl="images/singertype_foreignfemale.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="外女" meta:resourcekey="SingerTypeForeignFemaleDesktopButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SingerTypeForeignGroupDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SingerTypeForeignGroupDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click">
                             <asp:Image ImageUrl="images/singertype_foreigngroup.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="外團" meta:resourcekey="SingerTypeForeignGroupDesktopButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SingerTypeOtherDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SingerTypeOtherDesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SingerTypeButton_Click">
                             <asp:Image ImageUrl="images/singertype_other.png" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label runat="server" Text="其它" meta:resourcekey="SingerTypeOtherButton_RES" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
@@ -216,10 +215,10 @@
                     <asp:TemplatePagerField OnPagerCommand="SingerListDataPager_OnPagerCommand">
                         <PagerTemplate>
                             <div class="SingerListPagerArea">
-                                <asp:LinkButton ID="SingerList_FirstPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="First">
+                                <asp:LinkButton ID="SingerList_FirstPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="First">
                                     <span class="glyphicon glyphicon-fast-backward gi-big"></span>
                                 </asp:LinkButton>
-                                <asp:LinkButton ID="SingerList_PreviewPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Previous">
+                                <asp:LinkButton ID="SingerList_PreviewPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Previous">
                                     <span class="glyphicon glyphicon-backward gi-big"></span>
                                 </asp:LinkButton>
 
@@ -243,10 +242,10 @@
                                     </div>
                                 </div>
 
-                                <asp:LinkButton ID="SingerList_NextPage_Button" runat="server" CssClass='<%# (Container.StartRowIndex + Container.PageSize) < Container.TotalRowCount ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Next">
+                                <asp:LinkButton ID="SingerList_NextPage_Button" runat="server" CssClass='<%# (Container.StartRowIndex + Container.PageSize) < Container.TotalRowCount ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Next">
                                     <span class="glyphicon glyphicon-forward gi-big"></span>
                                 </asp:LinkButton>
-                                <asp:LinkButton ID="SingerList_LastPage_Button" runat="server" CssClass='<%# (Container.StartRowIndex + Container.PageSize) < Container.TotalRowCount ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Last" CommandArgument="<%# Math.Ceiling ((double)Container.TotalRowCount / Container.PageSize) %>">
+                                <asp:LinkButton ID="SingerList_LastPage_Button" runat="server" CssClass='<%# (Container.StartRowIndex + Container.PageSize) < Container.TotalRowCount ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Last" CommandArgument="<%# Math.Ceiling ((double)Container.TotalRowCount / Container.PageSize) %>">
                                     <span class="glyphicon glyphicon-fast-forward gi-big"></span>
                                 </asp:LinkButton>
 
@@ -295,61 +294,61 @@
             <div class="SubMenuArea hidden-xs hidden-sm">
                 <div class ="hidden-xs hidden-sm col-md-12 col-lg-12" style="padding: 0px;">
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang1DesktopButton" runat="server" CssClass="MainMenuButton btn btn-primary btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang1DesktopButton" runat="server" CssClass="MainMenuButton btn btn-primary btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang1DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang1DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel" />
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang2DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang2DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang2DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang2DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang3DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang3DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang3DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang3DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang4DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang4DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang4DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang4DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang5DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang5DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang5DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang5DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang6DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang6DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang6DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang6DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang7DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang7DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang7DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang7DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang8DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang8DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang8DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang8DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang9DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang9DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang9DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang9DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
                     </div>
                     <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
-                        <asp:LinkButton ID="SongLang10DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click" BorderStyle="None">
+                        <asp:LinkButton ID="SongLang10DesktopButton" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="SongLangButton_Click">
                             <asp:Image ID="SongLang10DesktopImage" runat="server" CssClass="MainMenuImage"/>
                             <asp:Label ID="SongLang10DesktopLabel" runat="server" Text="" CssClass="MainMenuLabel"/>
                         </asp:LinkButton>
@@ -409,6 +408,56 @@
 </asp:Panel>
 
 
+<asp:Panel ID="QuerySongPanel" runat="server" Visible="false" meta:resourcekey="SingerPanelResource1" cssclass="alignCenter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="SubMenuArea hidden-md hidden-lg">
+                <div class ="col-xs-3 col-sm-3 hidden-md hidden-lg" style="padding-left: 5px; padding-right: 5px;">
+                    <asp:Image ImageUrl="images/mainmenu_querysong.png" runat="server" CssClass="MainImage"/>
+                    <asp:Label runat="server" Text="搜尋" meta:resourcekey="QuerySong_Title_Label_RES" CssClass="MainMenuLabel textshadow"/>
+                </div>
+                <div class="col-xs-9 col-sm-9 hidden-md hidden-lg" style="padding-left: 0px; text-align: left;">
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col-xs-12 col-sm-12 hidden-md hidden-lg" style="padding-left: 5px; padding-right: 5px;">
+                            <asp:RadioButton ID="QuerySong_SongName_RadioButton" runat="server" Text="歌曲名稱" meta:resourcekey="QuerySong_SongName_RadioButton_RES" CssClass="GridViewPageButton" GroupName="QuerySongRadioGroup" AutoPostBack="true" OnCheckedChanged="QuerySong_RadioButton_CheckedChanged" Checked="True" />
+                            <asp:RadioButton ID="QuerySong_SingerName_RadioButton" runat="server" Text="歌星名稱" meta:resourcekey="QuerySong_SingerName_RadioButton_RES" CssClass="GridViewPageButton" GroupName="QuerySongRadioGroup" AutoPostBack="true" OnCheckedChanged="QuerySong_RadioButton_CheckedChanged" />
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+                            <asp:TextBox ID="QuerySong_QueryName_TextBox" runat="server" CssClass="form-control" Font-Size="Large" AutoPostBack="true" OnTextChanged="QuerySong_QueryName_TextBox_TextChanged"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Desktop / Tablet -->
+            <div class="SubMenuArea hidden-xs hidden-sm">
+                <div class ="hidden-xs hidden-sm col-md-12 col-lg-12" style="padding: 0px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding: 1.27px 5px 1.27px 5px;">
+                        <asp:Image ImageUrl="images/mainmenu_querysong.png" runat="server" CssClass="MainMenuImage"/>
+                        <asp:Label runat="server" Text="搜尋" meta:resourcekey="QuerySong_Title_Label_RES" CssClass="MainMenuLabel textshadow"/>
+                    </div>
+                    <div class ="hidden-xs hidden-sm col-md-10 col-lg-10" style="padding-left: 5px; padding-right: 5px; text-align: left;">
+                        <div class="row">
+                            <div class="hidden-xs hidden-sm col-md-12 col-lg-12" style="padding-left: 5px; padding-right: 5px;">
+                                <asp:RadioButton ID="QuerySong_SongName_Desktop_RadioButton" runat="server" Text="歌曲名稱" meta:resourcekey="QuerySong_SongName_RadioButton_RES" CssClass="GridViewPageButton" GroupName="QuerySongDesktopRadioGroup" AutoPostBack="true" OnCheckedChanged="QuerySong_RadioButton_CheckedChanged" Checked="True" />
+                                <asp:RadioButton ID="QuerySong_SingerName_Desktop_RadioButton" runat="server" Text="歌星名稱" meta:resourcekey="QuerySong_SingerName_RadioButton_RES" CssClass="GridViewPageButton" GroupName="QuerySongDesktopRadioGroup" AutoPostBack="true" OnCheckedChanged="QuerySong_RadioButton_CheckedChanged" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 5px;">
+                            <div class="hidden-xs hidden-sm col-md-12 col-lg-12">
+                                <asp:TextBox ID="QuerySong_QueryName_Desktop_TextBox" runat="server" CssClass="form-control" Font-Size="Large" AutoPostBack="true" OnTextChanged="QuerySong_QueryName_TextBox_TextChanged"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Panel>
+
+
 <asp:Panel ID="SongListPanel" runat="server" Visible="False" meta:resourcekey="SongListPanelResource1">
     <div class="hidden-md hidden-lg" style="margin-top: 5px;"></div>
     <div class="hidden-xs hidden-sm hidden-lg" style="margin-top: 7px;"></div>
@@ -452,10 +501,10 @@
         </Columns>
                 
         <PagerTemplate>
-            <asp:LinkButton ID="SongList_FirstPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="First">
+            <asp:LinkButton ID="SongList_FirstPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="First">
                 <span class="glyphicon glyphicon-fast-backward gi-big"></span>
             </asp:LinkButton>
-            <asp:LinkButton ID="SongList_PreviewPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
+            <asp:LinkButton ID="SongList_PreviewPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
                 <span class="glyphicon glyphicon-backward gi-big"></span>
             </asp:LinkButton>
 
@@ -479,10 +528,10 @@
                 </div>
             </div>
 
-            <asp:LinkButton ID="SongList_NextPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
+            <asp:LinkButton ID="SongList_NextPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
                 <span class="glyphicon glyphicon-forward gi-big"></span>
             </asp:LinkButton>
-            <asp:LinkButton ID="SongList_LastPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Last">
+            <asp:LinkButton ID="SongList_LastPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Last">
                 <span class="glyphicon glyphicon-fast-forward gi-big"></span>
             </asp:LinkButton>
 
@@ -521,10 +570,10 @@
             </Columns>
             
             <PagerTemplate>
-                <asp:LinkButton ID="SongList_Filter_PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
+                <asp:LinkButton ID="SongList_Filter_PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
                     <span class="glyphicon glyphicon-backward gi-big"></span>
                 </asp:LinkButton>
-                <asp:LinkButton ID="SongList_Filter_NextPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-success btn-lg" : "GridViewPageButton btn btn-success btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
+                <asp:LinkButton ID="SongList_Filter_NextPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
                     <span class="glyphicon glyphicon-forward gi-big"></span>
                 </asp:LinkButton>
             </PagerTemplate>
