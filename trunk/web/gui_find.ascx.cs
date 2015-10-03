@@ -217,6 +217,7 @@ namespace web
         {
             MainMenuPanel.Visible = false;
             SingerListPanel.Visible = false;
+            MobileFilterPanel.Visible = false;
             SongListPanel.Visible = false;
             Panel3.Visible = false;
 
@@ -340,11 +341,7 @@ namespace web
                                     }
                                     dt.ImportRow(row);
                                 }
-
-                                if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
-                                {
-                                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = string.Join(",", list);
-                                }
+                                ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = string.Join(",", list);
                             }
                         }
                         break;
@@ -923,6 +920,7 @@ namespace web
                 case DataControlRowType.Header:
                     string SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
                     if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                        
                     TableCellCollection tcHeader = e.Row.Cells;
                     tcHeader.Clear();
 
@@ -1113,10 +1111,11 @@ namespace web
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = "";
 
             hideAllGridViewPanel();
-            SongListPanel.Visible = true;
 
             var data = ((Label)((LinkButton)sender).Controls[1]).Text;
             ((HiddenField)this.Parent.FindControl("CurrentSongLang")).Value = GuiGlobal.SongLangList.IndexOf(data.ToString()).ToString();
+
+            SongList(0, GuiGlobal.QuerySongRows, "SongLang", data.ToString());
 
             // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
@@ -1132,9 +1131,19 @@ namespace web
                 SongLang9DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
                 SongLang10DesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
                 ((LinkButton)sender).CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                SongListPanel.Visible = true;
             }
-
-            SongList(0, GuiGlobal.QuerySongRows, "SongLang", data.ToString());
+            else
+            {
+                if (SongListGridView.Rows.Count > 0)
+                {
+                    MobileFilterPanel.Visible = true;
+                }
+                else
+                {
+                    SongListPanel.Visible = true;
+                }
+            }
         }
 
 
@@ -1369,6 +1378,78 @@ namespace web
         {
             if (((TextBox)sender).Text != "") QuerySong_GetData();
            ((TextBox)sender).Focus();
+        }
+
+
+        protected void MobileFilter_ListView_PreRender(object sender, EventArgs e)
+        {
+            // Mobile Mode
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                DataTable dt = new DataTable();
+                DataColumn col = new DataColumn("FilterText", typeof(string));
+                dt.Columns.Add(col);
+                col = new DataColumn("FilterImgUrl", typeof(string));
+                dt.Columns.Add(col);
+                col = new DataColumn("FilterSort", typeof(Int32));
+                dt.Columns.Add(col);
+
+                string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
+                string SongQueryFilterValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value;
+                string SongQueryFilterList = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
+                string FilterImgUrl = "";
+
+                List<string> list = new List<string>(SongQueryFilterList.Split(','));
+                foreach (string liststr in list)
+                {
+                    DataRow row = dt.NewRow();
+                    switch (SongQueryType)
+                    {
+                        case "SongLang":
+                            FilterImgUrl = "/images/mainmenu_findlang.png";
+                            if (liststr == "全部" || liststr == "")
+                            {
+                                row["FilterText"] = liststr;
+                                row["FilterImgUrl"] = FilterImgUrl;
+                                row["FilterSort"] = -1;
+                            }
+                            else
+                            {
+                                row["FilterText"] = liststr + "字部";
+                                row["FilterImgUrl"] = FilterImgUrl;
+                                row["FilterSort"] = Convert.ToInt32(liststr);
+                            }
+                            break;
+                    }
+                    dt.Rows.Add(row);
+                }
+
+                DataView dv = new DataView(dt);
+                dv.Sort = "FilterSort";
+                dt = dv.ToTable();
+
+                MobileFilter_ListView.DataSource = dt;
+                MobileFilter_ListView.DataBind();
+            }
+        }
+
+        protected void MobileFilter_Button_Click(object sender, EventArgs e)
+        {
+            string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
+            string SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+            
+            switch (SongQueryType)
+            {
+                case "SongLang":
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((Label)((LinkButton)sender).Controls[1]).Text.Replace("字部", "");
+                    break;
+            }
+            
+            SongListGridView.PageIndex = 0;
+            SongList(0, GuiGlobal.QuerySongRows, SongQueryType, SongQueryValue);
+
+            hideAllGridViewPanel();
+            SongListPanel.Visible = true;
         }
     }
 }

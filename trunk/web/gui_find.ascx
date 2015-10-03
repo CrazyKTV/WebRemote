@@ -408,7 +408,25 @@
 </asp:Panel>
 
 
-<asp:Panel ID="QuerySongPanel" runat="server" Visible="false" meta:resourcekey="SingerPanelResource1" cssclass="alignCenter">
+<asp:Panel ID="MobileFilterPanel" runat="server" Visible="False">
+    <div class="container-fluid">
+        <div class="row">
+            <asp:ListView ID="MobileFilter_ListView" runat="server" DataKeyNames="FilterText" OnPreRender="MobileFilter_ListView_PreRender">
+                <ItemTemplate>
+                    <div class ="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding: 5px;">
+                        <asp:LinkButton ID="MobileFilter_Button" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="MobileFilter_Button_Click">
+                            <asp:Image ID="MobileFilter_Image" runat="server" ImageUrl='<%# Eval("FilterImgUrl").ToString() %>' CssClass="MainMenuImage"/>
+                            <asp:Label ID="MobileFilter_Label" runat="server" Text='<%# Eval("FilterText").ToString() %>' CssClass="MainMenuLabel"/>
+                        </asp:LinkButton>
+                    </div>
+                </ItemTemplate>
+            </asp:ListView>
+        </div>
+    </div>
+</asp:Panel>
+
+
+<asp:Panel ID="QuerySongPanel" runat="server" Visible="false" cssclass="alignCenter">
     <div class="container-fluid">
         <div class="row">
             <div class="SubMenuArea hidden-md hidden-lg">

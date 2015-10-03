@@ -237,6 +237,7 @@ namespace web
             ((Panel)gui_find.FindControl("MainMenuPanel")).Visible = false;
             ((Panel)gui_find.FindControl("SingerTypePanel")).Visible = false;
             ((Panel)gui_find.FindControl("SingerListPanel")).Visible = false;
+            ((Panel)gui_find.FindControl("MobileFilterPanel")).Visible = false;
             ((Panel)gui_find.FindControl("SongLangPanel")).Visible = false;
             ((Panel)gui_find.FindControl("QuerySongPanel")).Visible = false;
             ((Panel)gui_find.FindControl("SongListPanel")).Visible = false;
@@ -248,6 +249,7 @@ namespace web
             ((Panel)gui_findDesktop.FindControl("MainMenuPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SingerTypePanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SingerListPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("MobileFilterPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SongLangPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("QuerySongPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = false;
