@@ -258,6 +258,16 @@ namespace web
 
         protected void MainMenu_Desktop_Button_Click(object sender, EventArgs e)
         {
+            //clean up data on display
+            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataSource = null;
+            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataBind();
+            ((GridView)gui_findDesktop.FindControl("SongListGridView")).PageIndex = 0;
+            ((GridView)gui_findDesktop.FindControl("SongListFilterGridView")).DataSource = null;
+            ((GridView)gui_findDesktop.FindControl("SongListFilterGridView")).DataBind();
+            ((GridView)gui_findDesktop.FindControl("SongListFilterGridView")).PageIndex = 0;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = "";
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = "";
+
             MainMenu_FindSingerDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
             MainMenu_FindLangDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
             MainMenu_QuerySongDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
@@ -274,6 +284,7 @@ namespace web
             switch (((LinkButton)sender).ID)
             {
                 case "MainMenu_FindSingerDesktopButton":
+                    ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = "Singer";
                     ((Panel)gui_findDesktop.FindControl("SingerTypePanel")).Visible = true;
                     ((Panel)gui_findDesktop.FindControl("SingerListPanel")).Visible = true;
                     break;
@@ -288,6 +299,9 @@ namespace web
                     if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentQuerySongSongList(); }
                     break;
                 case "MainMenu_SongStrokeDesktopButton":
+                    ((Panel)gui_findDesktop.FindControl("SongLangPanel")).Visible = true;
+                    ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = true;
+                    if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentSongStrokeSongList(); }
                     break;
                 case "MainMenu_ChorusSongDesktopButton":
                     break;
@@ -300,80 +314,6 @@ namespace web
                 case "MainMenu_SongNumberDesktopButton":
                     break;
             }
-
-        }
-
-        private void GetCurrentSongList(string QueryType, string QueryValue)
-        {
-            //clean up data on display
-            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataSource = null;
-            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataBind();
-            ((GridView)gui_findDesktop.FindControl("SongListGridView")).PageIndex = 0;
-            ((GridView)gui_findDesktop.FindControl("SongListFilterGridView")).DataSource = null;
-            ((GridView)gui_findDesktop.FindControl("SongListFilterGridView")).DataBind();
-            ((GridView)gui_findDesktop.FindControl("SongListFilterGridView")).PageIndex = 0;
-            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = "";
-            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = "";
-
-            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
-            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
-
-            string dvSortStr = "";
-            DataTable dt = new DataTable();
-            dt = GuiGlobal.AllSongDT.Clone();
-
-            switch (QueryType)
-            {
-                case "SongLang":
-                    dvSortStr = "Song_WordCount, Song_SongStroke, Song_SongName, Song_Singer";
-                    var SongLangQuery = from row in GuiGlobal.AllSongDT.AsEnumerable()
-                                where row.Field<string>("Song_Lang").Equals(QueryValue)
-                                select row;
-
-                    if (SongLangQuery.Count<DataRow>() > 0)
-                    {
-                        foreach (DataRow Row in SongLangQuery)
-                        {
-                            dt.ImportRow(Row);
-                        }
-                    }
-                    break;
-                case "SongName":
-                    dvSortStr = "Song_WordCount, Song_SongStroke, Song_SongName, Song_Singer";
-                    var SongNameQuery = from row in GuiGlobal.AllSongDT.AsEnumerable()
-                                        where row.Field<string>("Song_SongName").Contains(QueryValue)
-                                        select row;
-
-                    if (SongNameQuery.Count<DataRow>() > 0)
-                    {
-                        foreach (DataRow Row in SongNameQuery)
-                        {
-                            dt.ImportRow(Row);
-                        }
-                    }
-                    break;
-                case "SingerName":
-                    dvSortStr = "Song_Singer, Song_WordCount, Song_SongStroke, Song_SongName";
-                    var SingerNameQuery = from row in GuiGlobal.AllSongDT.AsEnumerable()
-                                          where row.Field<string>("Song_Singer").Contains(QueryValue)
-                                          select row;
-
-                    if (SingerNameQuery.Count<DataRow>() > 0)
-                    {
-                        foreach (DataRow Row in SingerNameQuery)
-                        {
-                            dt.ImportRow(Row);
-                        }
-                    }
-                    break;
-            }
-
-            DataView dv = new DataView(dt);
-            dv.Sort = dvSortStr;
-            dt = dv.ToTable();
-
-            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataSource = dt;
-            ((GridView)gui_findDesktop.FindControl("SongListGridView")).DataBind();
         }
 
         private void GetCurrentSongLangSongList()
@@ -381,12 +321,16 @@ namespace web
             string QueryType = "SongLang";
             string QueryValue = GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.FindControl("CurrentSongLang")).Value)];
 
-            GetCurrentSongList(QueryType, QueryValue);
+            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
+            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
         }
 
         private void GetCurrentQuerySongSongList()
         {
             string QueryType = "";
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = "";
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = "";
+
             if (((RadioButton)gui_findDesktop.FindControl("QuerySong_SongName_Desktop_RadioButton")).Checked)
             {
                 QueryType = "SongName";
@@ -397,8 +341,20 @@ namespace web
             }
             string QueryValue = ((HiddenField)this.FindControl("CurrentQuerySong")).Value;
 
-            GetCurrentSongList(QueryType, QueryValue);
+            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
+            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
         }
+
+        private void GetCurrentSongStrokeSongList()
+        {
+            string QueryType = "SongStroke";
+            string QueryValue = GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.FindControl("CurrentSongStrokeLang")).Value)];
+
+            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
+            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+        }
+
+
 
         protected void RefreshUpdatePanelButton_Click(object sender, EventArgs e)
         {

@@ -482,7 +482,8 @@
                 <asp:HiddenField ID="CurrentSinerType" runat="server" Value="0" />
                 <asp:HiddenField ID="CurrentSongLang" runat="server" Value="0" />
                 <asp:HiddenField ID="CurrentQuerySong" runat="server" Value="尚未搜尋歌曲" />
-                <asp:HiddenField ID="CurrentSongStroke" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentSongStroke" runat="server" Value="1" />
+                <asp:HiddenField ID="CurrentSongStrokeLang" runat="server" Value="0" />
                 <asp:HiddenField ID="CurrentSongQueryType" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryValue" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryFilterList" runat="server" />
