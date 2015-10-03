@@ -267,6 +267,7 @@ namespace web
             ((GridView)gui_findDesktop.FindControl("SongListFilterGridView")).PageIndex = 0;
             ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = "";
             ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = "";
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = "0";
 
             MainMenu_FindSingerDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
             MainMenu_FindLangDesktopButton.CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
@@ -323,6 +324,10 @@ namespace web
 
             ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
             ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+            ((HiddenField)this.FindControl("CurrentSongQueryPage")).Value = ((HiddenField)this.FindControl("CurrentSongLangPage")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentSongLangFilterList")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentSongLangFilterValue")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentSongLangFilterPage")).Value;
         }
 
         private void GetCurrentQuerySongSongList()
@@ -343,6 +348,10 @@ namespace web
 
             ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
             ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+            ((HiddenField)this.FindControl("CurrentSongQueryPage")).Value = ((HiddenField)this.FindControl("CurrentQuerySongPage")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentQuerySongFilterList")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentQuerySongFilterValue")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentQuerySongFilterPage")).Value;
         }
 
         private void GetCurrentSongStrokeSongList()
@@ -352,6 +361,10 @@ namespace web
 
             ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
             ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+            ((HiddenField)this.FindControl("CurrentSongQueryPage")).Value = ((HiddenField)this.FindControl("CurrentSongStrokePage")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentSongStrokeFilterList")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentSongStrokeFilterValue")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentSongStrokeFilterPage")).Value;
         }
 
 

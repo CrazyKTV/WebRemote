@@ -480,14 +480,33 @@
                 <asp:HiddenField ID="BootstrapResponsiveMode" runat="server" />
                 <asp:HiddenField ID="WindowWidth" runat="server" />
                 <asp:HiddenField ID="CurrentSinerType" runat="server" Value="0" />
+                
                 <asp:HiddenField ID="CurrentSongLang" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentSongLangPage" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentSongLangFilterList" runat="server" />
+                <asp:HiddenField ID="CurrentSongLangFilterValue" runat="server" />
+                <asp:HiddenField ID="CurrentSongLangFilterPage" runat="server" Value="0" />
+
                 <asp:HiddenField ID="CurrentQuerySong" runat="server" Value="尚未搜尋歌曲" />
-                <asp:HiddenField ID="CurrentSongStroke" runat="server" Value="1" />
+                <asp:HiddenField ID="CurrentQuerySongPage" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentQuerySongFilterList" runat="server" />
+                <asp:HiddenField ID="CurrentQuerySongFilterValue" runat="server" />
+                <asp:HiddenField ID="CurrentQuerySongFilterPage" runat="server" Value="0" />
+                
                 <asp:HiddenField ID="CurrentSongStrokeLang" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentSongStrokePage" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentSongStrokeFilterList" runat="server" />
+                <asp:HiddenField ID="CurrentSongStrokeFilterValue" runat="server" />
+                <asp:HiddenField ID="CurrentSongStrokeFilterPage" runat="server" Value="0" />
+                
                 <asp:HiddenField ID="CurrentSongQueryType" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryValue" runat="server" />
+                <asp:HiddenField ID="CurrentSongQueryPage" runat="server" Value="0" />
+                
                 <asp:HiddenField ID="CurrentSongQueryFilterList" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryFilterValue" runat="server" />
+                <asp:HiddenField ID="CurrentSongQueryFilterPage" runat="server" Value="0" />
+                
                 <asp:HiddenField ID="PlayListGridViewPageSize" runat="server" Value="10" />
                 <asp:HiddenField ID="SingerListViewPageSize" runat="server" Value="10" />
                 <asp:Button ID="RefreshUpdatePanelButton" runat="server" OnClick="RefreshUpdatePanelButton_Click" Style="display: none;" />

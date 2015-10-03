@@ -212,6 +212,21 @@ namespace web
             }
         }
 
+        protected void CleanUpData()
+        {
+            //clean up data on display
+            SongListGridView.DataSource = null;
+            SongListGridView.DataBind();
+            SongListGridView.PageIndex = 0;
+            SongListFilterGridView.DataSource = null;
+            SongListFilterGridView.DataBind();
+            SongListFilterGridView.PageIndex = 0;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = "0";
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = "";
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = "";
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterPage")).Value = "0";
+        }
+
         protected void MainMenu_Button_Click(object sender, EventArgs e)
         {
             string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
@@ -551,14 +566,7 @@ namespace web
         protected void SongListQuerySinger_Click(object sender, EventArgs e)
         {
             //clean up data on display
-            SongListGridView.DataSource = null;
-            SongListGridView.DataBind();
-            SongListGridView.PageIndex = 0;
-            SongListFilterGridView.DataSource = null;
-            SongListFilterGridView.DataBind();
-            SongListFilterGridView.PageIndex = 0;
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = "";
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = "";
+            CleanUpData();
 
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
@@ -669,13 +677,6 @@ namespace web
             SongListGetData();
         }
 
-        protected void SongListGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            ScrolltoTop.Value = "True";
-            SongListGridView.PageIndex = e.NewPageIndex;
-            SongListGridView.DataBind();
-        }
-
         private void SongListGetData()
         {
             string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
@@ -694,6 +695,7 @@ namespace web
             else
             {
                 PageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("PlayListGridViewPageSize")).Value) - 2;
+                SongListGridView.PageIndex = Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value);
             }
 
             SongListGridView.PageSize = PageSize;
@@ -715,6 +717,35 @@ namespace web
             }
         }
 
+        protected void SongListGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ScrolltoTop.Value = "True";
+            SongListGridView.PageIndex = e.NewPageIndex;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = e.NewPageIndex.ToString();
+
+            // Desktop / Tablet Mode
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
+
+                switch (SongQueryType)
+                {
+                    case "SongLang":
+                        ((HiddenField)this.Parent.FindControl("CurrentSongLangPage")).Value = e.NewPageIndex.ToString();
+                        break;
+                    case "SongName":
+                    case "SingerName":
+                        ((HiddenField)this.Parent.FindControl("CurrentQuerySongPage")).Value = e.NewPageIndex.ToString();
+                        break;
+                    case "SongStroke":
+                        ((HiddenField)this.Parent.FindControl("CurrentSongStrokePage")).Value = e.NewPageIndex.ToString();
+                        break;
+                }
+            }
+
+            SongListGridView.DataBind();
+        }
+
         protected void SongList_SelectPage_DropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             DropDownList ddlSelectPage = (DropDownList)SongListGridView.BottomPagerRow.FindControl("SongList_SelectPage_DropDownList");
@@ -723,6 +754,27 @@ namespace web
             if (int.TryParse(ddlSelectPage.SelectedValue, out pIndex))
             {
                 SongListGridView.PageIndex = pIndex;
+                ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = pIndex.ToString();
+
+                // Desktop / Tablet Mode
+                if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+                {
+                    string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
+
+                    switch (SongQueryType)
+                    {
+                        case "SongLang":
+                            ((HiddenField)this.Parent.FindControl("CurrentSongLangPage")).Value = pIndex.ToString();
+                            break;
+                        case "SongName":
+                        case "SingerName":
+                            ((HiddenField)this.Parent.FindControl("CurrentQuerySongPage")).Value = pIndex.ToString();
+                            break;
+                        case "SongStroke":
+                            ((HiddenField)this.Parent.FindControl("CurrentSongStrokePage")).Value = pIndex.ToString();
+                            break;
+                    }
+                }
             }
         }
 
@@ -881,14 +933,7 @@ namespace web
         protected void SingerListButton_Click(object sender, EventArgs e)
         {
             //clean up data on display
-            SongListGridView.DataSource = null;
-            SongListGridView.DataBind();
-            SongListGridView.PageIndex = 0;
-            SongListFilterGridView.DataSource = null;
-            SongListFilterGridView.DataBind();
-            SongListFilterGridView.PageIndex = 0;
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = "";
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = "";
+            CleanUpData();
 
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
@@ -1143,14 +1188,7 @@ namespace web
         protected void SongLangButton_Click(object sender, EventArgs e)
         {
             //clean up data on display
-            SongListGridView.DataSource = null;
-            SongListGridView.DataBind();
-            SongListGridView.PageIndex = 0;
-            SongListFilterGridView.DataSource = null;
-            SongListFilterGridView.DataBind();
-            SongListFilterGridView.PageIndex = 0;
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = "";
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = "";
+            CleanUpData();
 
             hideAllGridViewPanel();
 
@@ -1162,9 +1200,17 @@ namespace web
             {
                 case "SongLang":
                     ((HiddenField)this.Parent.FindControl("CurrentSongLang")).Value = GuiGlobal.SongLangList.IndexOf(data.ToString()).ToString();
+                    ((HiddenField)this.Parent.FindControl("CurrentSongLangPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongLangFilterList")).Value = "";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongLangFilterValue")).Value = "";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongLangFilterPage")).Value = "0";
                     break;
                 case "SongStroke":
                     ((HiddenField)this.Parent.FindControl("CurrentSongStrokeLang")).Value = GuiGlobal.SongLangList.IndexOf(data.ToString()).ToString();
+                    ((HiddenField)this.Parent.FindControl("CurrentSongStrokePage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongStrokeFilterList")).Value = "";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongStrokeFilterValue")).Value = "";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongStrokeFilterPage")).Value = "0";
                     break;
             }
 
@@ -1277,6 +1323,7 @@ namespace web
 
                     int CurPageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("PlayListGridViewPageSize")).Value) - 2;
                     SongListFilterGridView.PageSize = CurPageSize;
+                    SongListFilterGridView.PageIndex = Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterPage")).Value);
 
                     DataView dv = new DataView(dt);
                     dv.Sort = "FilterSort";
@@ -1393,7 +1440,25 @@ namespace web
 
         protected void SongListFilterGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
+
             SongListFilterGridView.PageIndex = e.NewPageIndex;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterPage")).Value = e.NewPageIndex.ToString();
+
+            switch (SongQueryType)
+            {
+                case "SongLang":
+                    ((HiddenField)this.Parent.FindControl("CurrentSongLangFilterPage")).Value = e.NewPageIndex.ToString();
+                    break;
+                case "SongName":
+                case "SingerName":
+                    ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterPage")).Value = e.NewPageIndex.ToString();
+                    break;
+                case "SongStroke":
+                    ((HiddenField)this.Parent.FindControl("CurrentSongStrokeFilterPage")).Value = e.NewPageIndex.ToString();
+                    break;
+            }
+
             SongListFilterGridView.DataBind();
         }
 
@@ -1409,15 +1474,35 @@ namespace web
             switch (SongQueryType)
             {
                 case "Singer":
-                case "SingerName":
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text;
                     break;
                 case "SongLang":
-                case "SongName":
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongLangPage")).Value = "0";
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
+                    ((HiddenField)this.Parent.FindControl("CurrentSongLangFilterList")).Value = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
+                    ((HiddenField)this.Parent.FindControl("CurrentSongLangFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
+                    break;
+                case "SongName":
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentQuerySongPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
+                    ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterList")).Value = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
+                    ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
+                    break;
+                case "SingerName":
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentQuerySongPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text;
+                    ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterList")).Value = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
+                    ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterValue")).Value = ((LinkButton)sender).Text;
                     break;
                 case "SongStroke":
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongStrokePage")).Value = "0";
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text.Trim('劃');
+                    ((HiddenField)this.Parent.FindControl("CurrentSongStrokeFilterList")).Value = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
+                    ((HiddenField)this.Parent.FindControl("CurrentSongStrokeFilterValue")).Value = ((LinkButton)sender).Text.Trim('劃');
                     break;
             }
             SongListGridView.PageIndex = 0;
@@ -1427,15 +1512,7 @@ namespace web
         private void QuerySong_GetData()
         {
             //clean up data on display
-            SongListGridView.DataSource = null;
-            SongListGridView.DataBind();
-            SongListGridView.PageIndex = 0;
-            SongListFilterGridView.DataSource = null;
-            SongListFilterGridView.DataBind();
-            SongListFilterGridView.PageIndex = 0;
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = "";
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = "";
-            
+            CleanUpData();
 
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
@@ -1473,6 +1550,10 @@ namespace web
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
                 if (QuerySong_QueryName_Desktop_TextBox.Text != "") QuerySong_GetData();
+                ((HiddenField)this.Parent.FindControl("CurrentQuerySongPage")).Value = "0";
+                ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterList")).Value = "";
+                ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterValue")).Value = "";
+                ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterPage")).Value = "0";
             }
             else
             {

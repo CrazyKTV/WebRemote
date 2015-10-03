@@ -535,6 +535,42 @@ namespace web {
         protected global::System.Web.UI.WebControls.HiddenField CurrentSongLang;
         
         /// <summary>
+        /// CurrentSongLangPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongLangPage;
+        
+        /// <summary>
+        /// CurrentSongLangFilterList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongLangFilterList;
+        
+        /// <summary>
+        /// CurrentSongLangFilterValue 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongLangFilterValue;
+        
+        /// <summary>
+        /// CurrentSongLangFilterPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongLangFilterPage;
+        
+        /// <summary>
         /// CurrentQuerySong 控制項。
         /// </summary>
         /// <remarks>
@@ -544,13 +580,40 @@ namespace web {
         protected global::System.Web.UI.WebControls.HiddenField CurrentQuerySong;
         
         /// <summary>
-        /// CurrentSongStroke 控制項。
+        /// CurrentQuerySongPage 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField CurrentSongStroke;
+        protected global::System.Web.UI.WebControls.HiddenField CurrentQuerySongPage;
+        
+        /// <summary>
+        /// CurrentQuerySongFilterList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentQuerySongFilterList;
+        
+        /// <summary>
+        /// CurrentQuerySongFilterValue 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentQuerySongFilterValue;
+        
+        /// <summary>
+        /// CurrentQuerySongFilterPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentQuerySongFilterPage;
         
         /// <summary>
         /// CurrentSongStrokeLang 控制項。
@@ -560,6 +623,42 @@ namespace web {
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField CurrentSongStrokeLang;
+        
+        /// <summary>
+        /// CurrentSongStrokePage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongStrokePage;
+        
+        /// <summary>
+        /// CurrentSongStrokeFilterList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongStrokeFilterList;
+        
+        /// <summary>
+        /// CurrentSongStrokeFilterValue 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongStrokeFilterValue;
+        
+        /// <summary>
+        /// CurrentSongStrokeFilterPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongStrokeFilterPage;
         
         /// <summary>
         /// CurrentSongQueryType 控制項。
@@ -580,6 +679,15 @@ namespace web {
         protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryValue;
         
         /// <summary>
+        /// CurrentSongQueryPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryPage;
+        
+        /// <summary>
         /// CurrentSongQueryFilterList 控制項。
         /// </summary>
         /// <remarks>
@@ -596,6 +704,15 @@ namespace web {
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryFilterValue;
+        
+        /// <summary>
+        /// CurrentSongQueryFilterPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryFilterPage;
         
         /// <summary>
         /// PlayListGridViewPageSize 控制項。
