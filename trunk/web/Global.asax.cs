@@ -26,6 +26,12 @@ namespace web
                 {
                     string jsonText = CrazyKTVWCF.QuerySong(null, null, null, null, 0, 1000000, "Song_Id");
                     GuiGlobal.AllSongDT = GlobalFunctions.JsontoDataTable(jsonText);
+
+                    System.Threading.Thread.Sleep(500);
+
+                    jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=3", 0, 1000000, "Song_Id");
+                    GuiGlobal.ChorusSongDT = GlobalFunctions.JsontoDataTable(jsonText);
+
                     GuiGlobal.AllSongDTStatus = true;
                 }
             }
@@ -48,7 +54,7 @@ namespace web
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            Response.Redirect("/ErrorDeadWCF.aspx");
+            //Response.Redirect("/ErrorDeadWCF.aspx");
         }
 
         protected void Session_End(object sender, EventArgs e)

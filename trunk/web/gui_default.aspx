@@ -498,6 +498,12 @@
                 <asp:HiddenField ID="CurrentSongStrokeFilterList" runat="server" />
                 <asp:HiddenField ID="CurrentSongStrokeFilterValue" runat="server" />
                 <asp:HiddenField ID="CurrentSongStrokeFilterPage" runat="server" Value="0" />
+
+                <asp:HiddenField ID="CurrentChorusSongLang" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentChorusSongPage" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentChorusSongFilterList" runat="server" />
+                <asp:HiddenField ID="CurrentChorusSongFilterValue" runat="server" />
+                <asp:HiddenField ID="CurrentChorusSongFilterPage" runat="server" Value="0" />
                 
                 <asp:HiddenField ID="CurrentSongQueryType" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryValue" runat="server" />

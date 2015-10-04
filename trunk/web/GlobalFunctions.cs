@@ -210,6 +210,7 @@ namespace web
         public static List<string> SingerType = new List<string>();
 
         public static DataTable AllSongDT = new DataTable();
+        public static DataTable ChorusSongDT = new DataTable();
         public static DataTable SingerTypeMaleDT = new DataTable();
         public static DataTable SingerTypeFemaleDT = new DataTable();
         public static DataTable SingerTypeGroupDT = new DataTable();

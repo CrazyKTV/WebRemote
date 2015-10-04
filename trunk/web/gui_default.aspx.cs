@@ -305,6 +305,9 @@ namespace web
                     if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentSongStrokeSongList(); }
                     break;
                 case "MainMenu_ChorusSongDesktopButton":
+                    ((Panel)gui_findDesktop.FindControl("SongLangPanel")).Visible = true;
+                    ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = true;
+                    if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentChorusSongSongList(); }
                     break;
                 case "MainMenu_NewSongDesktopButton":
                     break;
@@ -365,6 +368,19 @@ namespace web
             ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentSongStrokeFilterList")).Value;
             ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentSongStrokeFilterValue")).Value;
             ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentSongStrokeFilterPage")).Value;
+        }
+
+        private void GetCurrentChorusSongSongList()
+        {
+            string QueryType = "ChorusSong";
+            string QueryValue = GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.FindControl("CurrentChorusSongLang")).Value)];
+
+            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
+            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+            ((HiddenField)this.FindControl("CurrentSongQueryPage")).Value = ((HiddenField)this.FindControl("CurrentChorusSongPage")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentChorusSongFilterList")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentChorusSongFilterValue")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentChorusSongFilterPage")).Value;
         }
 
 
