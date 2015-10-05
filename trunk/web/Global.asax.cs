@@ -21,16 +21,27 @@ namespace web
                 {
                     GlobalFunctions.setSingerImgFile();
                     GuiGlobal.SingerTypeDTStatus = true;
+                    System.Threading.Thread.Sleep(200);
                 }
                 if (GuiGlobal.AllSongDTStatus == false)
                 {
                     string jsonText = CrazyKTVWCF.QuerySong(null, null, null, null, 0, 1000000, "Song_Id");
                     GuiGlobal.AllSongDT = GlobalFunctions.JsontoDataTable(jsonText);
-
-                    System.Threading.Thread.Sleep(500);
+                    System.Threading.Thread.Sleep(200);
 
                     jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=3", 0, 1000000, "Song_Id");
                     GuiGlobal.ChorusSongDT = GlobalFunctions.JsontoDataTable(jsonText);
+                    System.Threading.Thread.Sleep(200);
+
+                    foreach (string langstr in GuiGlobal.SongLangList)
+                    {
+                        jsonText = CrazyKTVWCF.QuerySong(langstr, null, null, null, 0, GuiGlobal.MaxNewSongRows, "Song_CreatDate desc, Song_SongName");
+                        GuiGlobal.NewSongDT.Merge(GlobalFunctions.JsontoDataTable(jsonText));
+                        System.Threading.Thread.Sleep(200);
+                    }
+
+
+
 
                     GuiGlobal.AllSongDTStatus = true;
                 }

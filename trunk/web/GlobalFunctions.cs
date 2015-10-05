@@ -197,7 +197,8 @@ namespace web
         public static List<string> SongLangList = new List<string>(Properties.Settings.Default.SongLangList.Split(','));
 
         public static int SingerTypePageSize = 60;
-        public static int SongListPageSize = 200;
+        public static int SongListPageSize = 250;
+        public static int MaxNewSongRows = 500;
         public static int QuerySongRows = 100000;
 
         public static string DefaultButtonCssClass = "btn btn-success btn-lg";
@@ -211,6 +212,9 @@ namespace web
 
         public static DataTable AllSongDT = new DataTable();
         public static DataTable ChorusSongDT = new DataTable();
+        public static DataTable NewSongDT = new DataTable();
+
+
         public static DataTable SingerTypeMaleDT = new DataTable();
         public static DataTable SingerTypeFemaleDT = new DataTable();
         public static DataTable SingerTypeGroupDT = new DataTable();

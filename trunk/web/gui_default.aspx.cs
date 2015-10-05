@@ -310,6 +310,9 @@ namespace web
                     if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentChorusSongSongList(); }
                     break;
                 case "MainMenu_NewSongDesktopButton":
+                    ((Panel)gui_findDesktop.FindControl("SongLangPanel")).Visible = true;
+                    ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = true;
+                    if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentNewSongSongList(); }
                     break;
                 case "MainMenu_TopSongDesktopButton":
                     break;
@@ -383,7 +386,18 @@ namespace web
             ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentChorusSongFilterPage")).Value;
         }
 
+        private void GetCurrentNewSongSongList()
+        {
+            string QueryType = "NewSong";
+            string QueryValue = GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.FindControl("CurrentNewSongLang")).Value)];
 
+            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
+            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+            ((HiddenField)this.FindControl("CurrentSongQueryPage")).Value = ((HiddenField)this.FindControl("CurrentNewSongPage")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentNewSongFilterList")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentNewSongFilterValue")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentNewSongFilterPage")).Value;
+        }
 
         protected void RefreshUpdatePanelButton_Click(object sender, EventArgs e)
         {
