@@ -315,6 +315,9 @@ namespace web
                     if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentNewSongSongList(); }
                     break;
                 case "MainMenu_TopSongDesktopButton":
+                    ((Panel)gui_findDesktop.FindControl("SongLangPanel")).Visible = true;
+                    ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = true;
+                    if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentTopSongSongList(); }
                     break;
                 case "MainMenu_FavoriteSongDesktopButton":
                     break;
@@ -397,6 +400,19 @@ namespace web
             ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentNewSongFilterList")).Value;
             ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentNewSongFilterValue")).Value;
             ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentNewSongFilterPage")).Value;
+        }
+
+        private void GetCurrentTopSongSongList()
+        {
+            string QueryType = "TopSong";
+            string QueryValue = GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.FindControl("CurrentTopSongLang")).Value)];
+
+            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
+            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+            ((HiddenField)this.FindControl("CurrentSongQueryPage")).Value = ((HiddenField)this.FindControl("CurrentTopSongPage")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentTopSongFilterList")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentTopSongFilterValue")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentTopSongFilterPage")).Value;
         }
 
         protected void RefreshUpdatePanelButton_Click(object sender, EventArgs e)

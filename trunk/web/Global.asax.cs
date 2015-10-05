@@ -40,6 +40,12 @@ namespace web
                         System.Threading.Thread.Sleep(200);
                     }
 
+                    foreach (string langstr in GuiGlobal.SongLangList)
+                    {
+                        jsonText = CrazyKTVWCF.QuerySong(langstr, null, null, "Song_PlayCount >= 1", 0, GuiGlobal.MaxTopSongRows, "Song_PlayCount desc, Song_SongName");
+                        GuiGlobal.TopSongDT.Merge(GlobalFunctions.JsontoDataTable(jsonText));
+                        System.Threading.Thread.Sleep(200);
+                    }
 
 
 

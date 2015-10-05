@@ -199,6 +199,7 @@ namespace web
         public static int SingerTypePageSize = 60;
         public static int SongListPageSize = 250;
         public static int MaxNewSongRows = 500;
+        public static int MaxTopSongRows = 500;
         public static int QuerySongRows = 100000;
 
         public static string DefaultButtonCssClass = "btn btn-success btn-lg";
@@ -213,6 +214,7 @@ namespace web
         public static DataTable AllSongDT = new DataTable();
         public static DataTable ChorusSongDT = new DataTable();
         public static DataTable NewSongDT = new DataTable();
+        public static DataTable TopSongDT = new DataTable();
 
 
         public static DataTable SingerTypeMaleDT = new DataTable();

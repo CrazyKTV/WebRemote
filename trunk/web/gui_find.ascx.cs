@@ -27,16 +27,6 @@ namespace web
 
 
         /*
-                        else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "NewSongs".ToLower())
-                        {
-                            tSearch.Text = "";
-                            jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_CreatDate >= '" + DateTime.Now.AddDays(-120).ToString("yyyy/MM/dd") + "'", currentPageNumber, rowsPerPage, "Song_CreatDate desc, Song_SongName"); //more than 2000 per rows will be super slow
-                        }
-                        else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "toporder".ToLower())
-                        {
-                            jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_PlayCount >= 1 ", currentPageNumber, rowsPerPage, "Song_PlayCount desc, Song_CreatDate desc, Song_SongStroke, Song_SongName"); //more than 2000 per rows will be super slow
-                            tSearch.Text = "";
-                        }
                         else if (ddSearchType.SelectedValue.ToString().Trim().ToLower() == "Favorites".ToLower())
                         {
                             tSearch.Text = "";
@@ -172,8 +162,8 @@ namespace web
                     SongLangPanel.Visible = true;
                     break;
                 case "MainMenu_TopSongButton":
-                    hideAllGridViewPanel();
-
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "TopSong";
+                    SongLangPanel.Visible = true;
                     break;
                 case "MainMenu_FavoriteSongButton":
                     hideAllGridViewPanel();
@@ -488,6 +478,48 @@ namespace web
                         }
                     }
                     break;
+                case "TopSong":
+                    dvSortStr = "";
+                    var TopSongQuery = from row in GuiGlobal.TopSongDT.AsEnumerable()
+                                       where row.Field<string>("Song_Lang").Equals(QueryValue)
+                                       select row;
+
+                    if (TopSongQuery.Count<DataRow>() > 0)
+                    {
+                        if (QueryFilterList != "")
+                        {
+                            foreach (DataRow row in TopSongQuery)
+                            {
+                                if (QueryFilterValue == "全部" || QueryFilterValue == "")
+                                {
+                                    dt.ImportRow(row);
+                                }
+                                else
+                                {
+                                    if (row["Song_WordCount"].ToString().Equals(QueryFilterValue))
+                                    {
+                                        dt.ImportRow(row);
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            List<string> list = new List<string>();
+                            list.Add("全部");
+
+                            foreach (DataRow row in TopSongQuery)
+                            {
+                                if (list.IndexOf(row["Song_WordCount"].ToString()) < 0)
+                                {
+                                    list.Add(row["Song_WordCount"].ToString());
+                                }
+                                dt.ImportRow(row);
+                            }
+                            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = string.Join(",", list);
+                        }
+                    }
+                    break;
 
             }
 
@@ -735,6 +767,9 @@ namespace web
                     case "NewSong":
                         ((HiddenField)this.Parent.FindControl("CurrentNewSongPage")).Value = e.NewPageIndex.ToString();
                         break;
+                    case "TopSong":
+                        ((HiddenField)this.Parent.FindControl("CurrentTopSongPage")).Value = e.NewPageIndex.ToString();
+                        break;
                 }
             }
             SongListGridView.DataBind();
@@ -772,6 +807,9 @@ namespace web
                             break;
                         case "NewSong":
                             ((HiddenField)this.Parent.FindControl("CurrentNewSongPage")).Value = pIndex.ToString();
+                            break;
+                        case "TopSong":
+                            ((HiddenField)this.Parent.FindControl("CurrentTopSongPage")).Value = pIndex.ToString();
                             break;
                     }
                 }
@@ -1164,6 +1202,9 @@ namespace web
                         case "NewSong":
                             if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentNewSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
                             break;
+                        case "TopSong":
+                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentTopSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                            break;
                     }
                 }
             }
@@ -1232,6 +1273,13 @@ namespace web
                     ((HiddenField)this.Parent.FindControl("CurrentNewSongFilterValue")).Value = "";
                     ((HiddenField)this.Parent.FindControl("CurrentNewSongFilterPage")).Value = "0";
                     break;
+                case "TopSong":
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongLang")).Value = GuiGlobal.SongLangList.IndexOf(data.ToString()).ToString();
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongFilterList")).Value = "";
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongFilterValue")).Value = "";
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongFilterPage")).Value = "0";
+                    break;
             }
 
             SongList(0, GuiGlobal.QuerySongRows, SongQueryType, data.ToString());
@@ -1269,6 +1317,9 @@ namespace web
                             break;
                         case "NewSong":
                             if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentNewSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                            break;
+                        case "TopSong":
+                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentTopSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
                             break;
                     }
                 }
@@ -1320,6 +1371,7 @@ namespace web
                             case "SongName":
                             case "ChorusSong":
                             case "NewSong":
+                            case "TopSong":
                                 if (liststr == "全部" || liststr == "")
                                 {
                                     row["FilterText"] = liststr;
@@ -1405,6 +1457,7 @@ namespace web
                             case "SongName":
                             case "ChorusSong":
                             case "NewSong":
+                            case "TopSong":
                                 tcHeader[0].Text = "字數";
                                 break;
                             case "SongStroke":
@@ -1434,6 +1487,7 @@ namespace web
                                 case "SongName":
                                 case "ChorusSong":
                                 case "NewSong":
+                                case "TopSong":
                                     if (((LinkButton)lb.Controls[0].Controls[1]).Text == SongQueryFilterValue + "字")
                                     {
                                         ((LinkButton)lb.Controls[0].Controls[1]).CssClass = "GridViewFilterButton " + GuiGlobal.ActiveButtonCssClass;
@@ -1495,6 +1549,9 @@ namespace web
                 case "NewSong":
                     ((HiddenField)this.Parent.FindControl("CurrentNewSongFilterPage")).Value = e.NewPageIndex.ToString();
                     break;
+                case "TopSong":
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongFilterPage")).Value = e.NewPageIndex.ToString();
+                    break;
             }
 
             SongListFilterGridView.DataBind();
@@ -1555,6 +1612,13 @@ namespace web
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
                     ((HiddenField)this.Parent.FindControl("CurrentNewSongFilterList")).Value = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
                     ((HiddenField)this.Parent.FindControl("CurrentNewSongFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
+                    break;
+                case "TopSong":
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongPage")).Value = "0";
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongFilterList")).Value = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
+                    ((HiddenField)this.Parent.FindControl("CurrentTopSongFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
                     break;
             }
             SongListGridView.PageIndex = 0;
@@ -1648,6 +1712,7 @@ namespace web
                         case "SongLang":
                         case "ChorusSong":
                         case "NewSong":
+                        case "TopSong":
                             FilterImgUrl = "/images/langstr_" + SongQueryValue.Substring(0, 1) + ".png";
                             if (liststr == "全部" || liststr == "")
                             {
@@ -1700,6 +1765,7 @@ namespace web
                 case "SongLang":
                 case "ChorusSong":
                 case "NewSong":
+                case "TopSong":
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((Label)((LinkButton)sender).Controls[1]).Text.Replace("字部", "");
                     break;
                 case "SongStroke":
