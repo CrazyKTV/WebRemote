@@ -8,16 +8,6 @@
 <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server" />
 <asp:HiddenField ID="ScrolltoTop" runat="server" />
 
-<asp:Panel ID="Panel3" runat="server" Visible="False" meta:resourcekey="Panel3Resource1" cssclass="alignCenter">
-
-    <asp:ListView ID="GridView2" runat="server" DataKeyNames="User_Id,User_Name" OnItemCommand="GridView2_ItemCommand">
-              <ItemTemplate>
-                   <asp:Button CssClass="button1columns" ID="Bfavorite"   runat="server" Text='<%# Eval("User_Name").ToString() %>' Visible="true" />
-        </ItemTemplate>
-    </asp:ListView>
-
-</asp:Panel>
-
 <asp:Panel ID="MainMenuPanel" runat="server" Visible="true" meta:resourcekey="MainMenuPanelResource1" cssclass="alignCenter">
     <div class="container-fluid">
         <div class="row">
@@ -468,12 +458,147 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 </asp:Panel>
+
+
+<asp:Panel ID="FavoriteSongPanel" runat="server" Visible="false" cssclass="alignCenter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class ="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding: 5px;">
+                <asp:LinkButton ID="FavoriteSong_User_Button" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="FavoriteSong_Button_Click">
+                    <asp:Image ImageUrl="images/singertype_male.png" runat="server" CssClass="MainMenuImage"/>
+                    <asp:Label runat="server" Text="用戶" meta:resourcekey="FavoriteSong_User_Button_RES" CssClass="MainMenuLabel"/>
+                </asp:LinkButton>
+            </div>
+            <div class ="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding: 5px;">
+                <asp:LinkButton ID="FavoriteSong_History_Button" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="FavoriteSong_Button_Click">
+                    <asp:Image ImageUrl="images/favoritesong_history.png" runat="server" CssClass="MainMenuImage"/>
+                    <asp:Label runat="server" Text="歷史" meta:resourcekey="FavoriteSong_History_Button_RES" CssClass="MainMenuLabel"/>
+                </asp:LinkButton>
+            </div>
+            <div class ="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding: 5px;">
+                <asp:LinkButton ID="FavoriteSong_Cashbox_Button" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="FavoriteSong_Button_Click">
+                    <asp:Image ImageUrl="images/favoritesong_cashbox.png" runat="server" CssClass="MainMenuImage"/>
+                    <asp:Label runat="server" Text="錢櫃" meta:resourcekey="FavoriteSong_Cashbox_Button_RES" CssClass="MainMenuLabel"/>
+                </asp:LinkButton>
+            </div>
+            <!-- Desktop / Tablet -->
+            <div class="SubMenuArea hidden-xs hidden-sm">
+                <div class ="hidden-xs hidden-sm col-md-12 col-lg-12" style="padding: 0px;">
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
+                        <asp:LinkButton ID="FavoriteSong_Desktop_User_Button" runat="server" CssClass="MainMenuButton btn btn-primary btn-lg" OnClick="FavoriteSong_Button_Click">
+                            <asp:Image ImageUrl="images/singertype_male.png" runat="server" CssClass="MainMenuImage"/>
+                            <asp:Label runat="server" Text="用戶" meta:resourcekey="FavoriteSong_User_Button_RES" CssClass="MainMenuLabel"/>
+                        </asp:LinkButton>
+                    </div>
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
+                        <asp:LinkButton ID="FavoriteSong_Desktop_History_Button" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="FavoriteSong_Button_Click">
+                            <asp:Image ImageUrl="images/favoritesong_history.png" runat="server" CssClass="MainMenuImage"/>
+                            <asp:Label runat="server" Text="歷史" meta:resourcekey="FavoriteSong_History_Button_RES" CssClass="MainMenuLabel"/>
+                        </asp:LinkButton>
+                    </div>
+                    <div class ="hidden-xs hidden-sm col-md-1 col-lg-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">
+                        <asp:LinkButton ID="FavoriteSong_Desktop_Cashbox_Button" runat="server" CssClass="MainMenuButton btn btn-success btn-lg" OnClick="FavoriteSong_Button_Click">
+                            <asp:Image ImageUrl="images/favoritesong_cashbox.png" runat="server" CssClass="MainMenuImage"/>
+                            <asp:Label runat="server" Text="錢櫃" meta:resourcekey="FavoriteSong_Cashbox_Button_RES" CssClass="MainMenuLabel"/>
+                        </asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Panel>
+
+
+<asp:Panel ID="FavoriteListPanel" runat="server" Visible="False">
+    <div class="container-fluid">
+        <div class="row">
+            <asp:ListView ID="FavoriteListView" runat="server" DataKeyNames="User_Id, User_Name" OnPreRender="FavoriteListView_PreRender">
+                <ItemTemplate>
+                    <div class ="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding: 5px;">
+                        <asp:LinkButton ID="FavoriteListButton" runat="server" CssClass="SingerListButton btn btn-success btn-lg" OnClick="FavoriteListButton_Click" CommandArgument='<%# Eval("User_Id").ToString() %>'>
+                            <asp:Label runat="server" Text='<%# Eval("User_Name").ToString().Replace("錢櫃", "") %>' CssClass="SingerListLabel" Font-Size='<%# Eval("User_Name").ToString().Replace("錢櫃", "").Length > 5 ? FontUnit.Empty : FontUnit.Medium %>' />
+                            <div class="SingerListBox">
+                                <asp:Image ImageUrl='<%# Eval("ImgFileUrl").ToString() %>' runat="server" CssClass="SingerListImage" />
+                            </div>
+                        </asp:LinkButton>
+                    </div>
+                    <!-- Desktop / Tablet -->
+                    <div class ="hidden-xs hidden-sm col-md-2 col-lg-2" style="padding: 5px 5px 5px 5px;">
+                        <asp:LinkButton ID="FavoriteListDesktopButton" runat="server" CssClass="SingerListButton btn btn-success btn-lg" OnClick="FavoriteListButton_Click" CommandArgument='<%# Eval("User_Id").ToString() %>'>
+                            <asp:Label runat="server" Text='<%# Eval("User_Name").ToString().Replace("錢櫃", "") %>' CssClass="SingerListLabel" Font-Size='<%# Eval("User_Name").ToString().Replace("錢櫃", "").Length > 5 ? FontUnit.Empty : FontUnit.Medium %>' />
+                            <div class="SingerListBox">
+                                <asp:Image ImageUrl='<%# Eval("ImgFileUrl").ToString() %>' runat="server" CssClass="SingerListImage" />
+                            </div>
+                        </asp:LinkButton>
+                    </div>
+                </ItemTemplate>
+            </asp:ListView>
+            
+            <asp:DataPager ID="FavoriteListDataPager" runat="server" PagedControlID="FavoriteListView">
+                <Fields>
+                    <asp:TemplatePagerField OnPagerCommand="FavoriteListDataPager_OnPagerCommand">
+                        <PagerTemplate>
+                            <div class="SingerListPagerArea">
+                                <asp:LinkButton ID="FavoriteList_FirstPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="First">
+                                    <span class="glyphicon glyphicon-fast-backward gi-big"></span>
+                                </asp:LinkButton>
+                                <asp:LinkButton ID="FavoriteList_PreviewPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Previous">
+                                    <span class="glyphicon glyphicon-backward gi-big"></span>
+                                </asp:LinkButton>
+
+                                <div class="GridViewPageText" style="display: inline-block;">
+                                    <div class="hidden-md hidden-lg">
+                                        <asp:Label ID="FavoriteList_CurPage_Label_Before" runat="server" Text="第" meta:resourcekey="SingerList_CurPage_Label_Before_RES" />
+                                        <asp:Label ID="FavoriteList_CurPage_Label" runat="server" Text='<%# Container.TotalRowCount>0 ? (Container.StartRowIndex / Container.PageSize) + 1 : 0 %>' />
+
+                                        <asp:Label ID="FavoriteList_PageCount_Label_Before" runat="server" Text=" / " />
+                                        <asp:Label ID="FavoriteList_PageCount_Label" runat="server" Text='<%# Math.Ceiling ((double)Container.TotalRowCount / Container.PageSize) %>' />
+                                        <asp:Label ID="FavoriteList_PageCount_Label_After" runat="server" Text="頁" meta:resourcekey="SingerList_PageCount_Label_After_RES" />
+                                    </div>
+                                    <div class="hidden-xs hidden-sm">
+                                        <asp:Label ID="FavoriteList_Desktop_CurPage_Label_Before" runat="server" Text="第" meta:resourcekey="SingerList_CurPage_Label_Before_RES" />
+                                        <asp:Label ID="FavoriteList_Desktop_CurPage_Label" runat="server" Text='<%# Container.TotalRowCount>0 ? (Container.StartRowIndex / Container.PageSize) + 1 : 0 %>' />
+                                        <asp:Label ID="FavoriteList_Desktop_CurPage_Label_After" runat="server" Text="頁" meta:resourcekey="SingerList_CurPage_Label_After_RES" />
+                    
+                                        <asp:Label ID="FavoriteList_Desktop_PageCount_Label_Before" runat="server" Text=" / 共" meta:resourcekey="SingerList_PageCount_Label_Before_RES" />
+                                        <asp:Label ID="FavoriteList_Desktop_PageCount_Label" runat="server" Text='<%# Math.Ceiling ((double)Container.TotalRowCount / Container.PageSize) %>' />
+                                        <asp:Label ID="FavoriteList_Desktop_PageCount_Label_After" runat="server" Text="頁" meta:resourcekey="SingerList_PageCount_Label_After_RES" />
+                                    </div>
+                                </div>
+
+                                <asp:LinkButton ID="FavoriteList_NextPage_Button" runat="server" CssClass='<%# (Container.StartRowIndex + Container.PageSize) < Container.TotalRowCount ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Next">
+                                    <span class="glyphicon glyphicon-forward gi-big"></span>
+                                </asp:LinkButton>
+                                <asp:LinkButton ID="FavoriteList_LastPage_Button" runat="server" CssClass='<%# (Container.StartRowIndex + Container.PageSize) < Container.TotalRowCount ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Last" CommandArgument="<%# Math.Ceiling ((double)Container.TotalRowCount / Container.PageSize) %>">
+                                    <span class="glyphicon glyphicon-fast-forward gi-big"></span>
+                                </asp:LinkButton>
+
+                                <div class="hidden-xs hidden-sm" style="display: inline-block;">
+                                    <div class="GridViewPageText" style="display: inline-block;">
+                                        <asp:Label ID="FavoriteList_SelectPage_Label_Before" runat="server" Text="到" meta:resourcekey="SingerList_SelectPage_Label_Before_RES" />
+                                    </div>
+                                    <asp:DropDownList ID="FavoriteList_SelectPage_DropDownList" runat="server" CssClass="GridViewPageButton btn btn-primary" AutoPostBack="True" OnSelectedIndexChanged="FavoriteList_SelectPage_DropDownList_SelectedIndexChanged" />
+                                    <div class="GridViewPageText" style="display: inline-block;">
+                                        <asp:Label ID="FavoriteList_SelectPage_Label_After" runat="server" Text="頁" meta:resourcekey="SingerList_SelectPage_Label_After_RES" />
+                                    </div>
+                                </div>
+                            </div>        
+                        </PagerTemplate>
+                    </asp:TemplatePagerField>
+                </Fields>
+            </asp:DataPager>
+        </div>
+    </div>
+    <div class="hidden-md hidden-lg spacerToFooter"></div>
+</asp:Panel>
+
+
+
 
 
 <asp:Panel ID="SongListPanel" runat="server" Visible="False" meta:resourcekey="SongListPanelResource1">

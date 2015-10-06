@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Drawing.Imaging;
+using System.Web;
 
 namespace web
 {
@@ -44,12 +45,6 @@ namespace web
                             GridView2.DataBind();
 
                         }
-
-                */
-
-
-
-
 
 
         // 我的最愛
@@ -90,19 +85,29 @@ namespace web
 
         }
 
+                */
+
+
+
+
+
+
+
+
         protected void hideAllGridViewPanel()
         {
             MainMenuPanel.Visible = false;
             SingerListPanel.Visible = false;
             MobileFilterPanel.Visible = false;
+            FavoriteListPanel.Visible = false;
             SongListPanel.Visible = false;
-            Panel3.Visible = false;
 
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
             {
                 SingerTypePanel.Visible = false;
                 SongLangPanel.Visible = false;
                 QuerySongPanel.Visible = false;
+                FavoriteSongPanel.Visible = false;
             }
         }
 
@@ -166,8 +171,8 @@ namespace web
                     SongLangPanel.Visible = true;
                     break;
                 case "MainMenu_FavoriteSongButton":
-                    hideAllGridViewPanel();
-
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "FavoriteSong";
+                    FavoriteSongPanel.Visible = true;
                     break;
                 case "MainMenu_SongNumberButton":
                     hideAllGridViewPanel();
@@ -520,6 +525,76 @@ namespace web
                         }
                     }
                     break;
+                case "FavoriteSong":
+                    dvSortStr = "Song_WordCount, Song_SongStroke, Song_SongName, Song_Singer";
+
+                    CrazyKTVWCF.FavoriteLogin(QueryValue); //need to login first to see favoritesongs
+                    string jsonText = CrazyKTVWCF.FavoriteSong(QueryValue, 0, GuiGlobal.QuerySongRows);
+                    DataTable FavoriteSongDT = GlobalFunctions.JsontoDataTable(jsonText);
+
+                    if (FavoriteSongDT.Rows.Count > 0)
+                    {
+                        if (QueryFilterList != "")
+                        {
+                            foreach (DataRow row in FavoriteSongDT.AsEnumerable())
+                            {
+                                if (QueryFilterValue == "全部" || QueryFilterValue == "")
+                                {
+                                    dt.ImportRow(row);
+                                }
+                                else
+                                {
+                                    switch (((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value)
+                                    {
+                                        case "錢櫃英語排行榜":
+                                        case "錢櫃粵語排行榜":
+                                        case "錢櫃日語排行榜":
+                                            if (row["Song_WordCount"].ToString().Equals(QueryFilterValue))
+                                            {
+                                                dt.ImportRow(row);
+                                            }
+                                            break;
+                                        default:
+                                            if (row["Song_Lang"].ToString().Equals(QueryFilterValue))
+                                            {
+                                                dt.ImportRow(row);
+                                            }
+                                            break;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            List<string> list = new List<string>();
+                            list.Add("全部");
+
+                            foreach (DataRow row in FavoriteSongDT.AsEnumerable())
+                            {
+                                switch (((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value)
+                                {
+                                    case "錢櫃英語排行榜":
+                                    case "錢櫃粵語排行榜":
+                                    case "錢櫃日語排行榜":
+                                        if (list.IndexOf(row["Song_WordCount"].ToString()) < 0)
+                                        {
+                                            list.Add(row["Song_WordCount"].ToString());
+                                        }
+                                        break;
+                                    default:
+                                        if (list.IndexOf(row["Song_Lang"].ToString()) < 0)
+                                        {
+                                            list.Add(row["Song_Lang"].ToString());
+                                        }
+                                        break;
+                                }
+                                dt.ImportRow(row);
+                            }
+                            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value = string.Join(",", list);
+                        }
+                    }
+                    break;
+
 
             }
 
@@ -672,14 +747,20 @@ namespace web
                     string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
                     string SongQueryValue = "";
 
-                    if (SongQueryType == "SongName" || SongQueryType == "SingerName")
+                    switch (SongQueryType)
                     {
-                        SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentQuerySong")).Value;
-                    }
-                    else
-                    {
-                        SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
-                        if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                        case "SongName":
+                        case "SingerName":
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentQuerySong")).Value;
+                            break;
+                        case "FavoriteSong":
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value;
+                            if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                            break;
+                        default:
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+                            if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                            break;
                     }
 
                     TableCellCollection tcHeader = e.Row.Cells;
@@ -981,7 +1062,7 @@ namespace web
             SongList(0, GuiGlobal.QuerySongRows, "Singer", data.ToString());
         }
 
-        private void SingerListGetData()
+        protected void SingerListView_PreRender(object sender, EventArgs e)
         {
             SingerListView.DataSource = null;
             SingerListView.DataBind();
@@ -1031,11 +1112,6 @@ namespace web
                     ddlSelectPage.SelectedIndex = SingerListDataPager.StartRowIndex / PageSize;
                 }
             }
-        }
-
-        protected void SingerListView_PreRender(object sender, EventArgs e)
-        {
-            SingerListGetData();
         }
 
         protected void SingerListDataPager_OnPagerCommand(object sender, DataPagerCommandEventArgs e)
@@ -1395,6 +1471,30 @@ namespace web
                                     row["FilterSort"] = Convert.ToInt32(liststr);
                                 }
                                 break;
+                            case "FavoriteSong":
+                                switch (((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value)
+                                {
+                                    case "錢櫃英語排行榜":
+                                    case "錢櫃粵語排行榜":
+                                    case "錢櫃日語排行榜":
+                                        if (liststr == "全部" || liststr == "")
+                                        {
+                                            row["FilterText"] = liststr;
+                                            row["FilterSort"] = -1;
+                                        }
+                                        else
+                                        {
+                                            row["FilterText"] = liststr + "字";
+                                            row["FilterSort"] = Convert.ToInt32(liststr);
+                                        }
+                                        break;
+                                    default:
+                                        row["FilterText"] = liststr;
+                                        row["FilterSort"] = GuiGlobal.SongLangList.IndexOf(liststr) + 1;
+                                        break;
+                                }
+                                break;
+
                         }
                         
                         
@@ -1463,6 +1563,19 @@ namespace web
                             case "SongStroke":
                                 tcHeader[0].Text = "筆劃";
                                 break;
+                            case "FavoriteSong":
+                                switch (((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value)
+                                {
+                                    case "錢櫃英語排行榜":
+                                    case "錢櫃粵語排行榜":
+                                    case "錢櫃日語排行榜":
+                                        tcHeader[0].Text = "字數";
+                                        break;
+                                    default:
+                                        tcHeader[0].Text = "語系";
+                                        break;
+                                }
+                                break;
                         }
                     }
 
@@ -1507,6 +1620,34 @@ namespace web
                                         ((LinkButton)lb.Controls[0].Controls[1]).CssClass = "GridViewFilterButton " + GuiGlobal.DefaultButtonCssClass;
                                     }
                                     break;
+                                case "FavoriteSong":
+                                    switch (((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value)
+                                    {
+                                        case "錢櫃英語排行榜":
+                                        case "錢櫃粵語排行榜":
+                                        case "錢櫃日語排行榜":
+                                            if (((LinkButton)lb.Controls[0].Controls[1]).Text == SongQueryFilterValue + "字")
+                                            {
+                                                ((LinkButton)lb.Controls[0].Controls[1]).CssClass = "GridViewFilterButton " + GuiGlobal.ActiveButtonCssClass;
+                                            }
+                                            else
+                                            {
+                                                ((LinkButton)lb.Controls[0].Controls[1]).CssClass = "GridViewFilterButton " + GuiGlobal.DefaultButtonCssClass;
+                                            }
+                                            break;
+                                        default:
+                                            if (((LinkButton)lb.Controls[0].Controls[1]).Text == SongQueryFilterValue)
+                                            {
+                                                ((LinkButton)lb.Controls[0].Controls[1]).CssClass = "GridViewFilterButton " + GuiGlobal.ActiveButtonCssClass;
+                                            }
+                                            else
+                                            {
+                                                ((LinkButton)lb.Controls[0].Controls[1]).CssClass = "GridViewFilterButton " + GuiGlobal.DefaultButtonCssClass;
+                                            }
+                                            break;
+                                    }
+                                    break;
+
                             }
                         }
                     }
@@ -1620,12 +1761,27 @@ namespace web
                     ((HiddenField)this.Parent.FindControl("CurrentTopSongFilterList")).Value = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
                     ((HiddenField)this.Parent.FindControl("CurrentTopSongFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
                     break;
+                case "FavoriteSong":
+                    switch (((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value)
+                    {
+                        case "錢櫃英語排行榜":
+                        case "錢櫃粵語排行榜":
+                        case "錢櫃日語排行榜":
+                            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text.Trim('字');
+                            break;
+                        default:
+                            ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((LinkButton)sender).Text;
+                            break;
+                    }
+                    break;
+
+
             }
             SongListGridView.PageIndex = 0;
             SongList(0, GuiGlobal.QuerySongRows, SongQueryType, SongQueryValue);
         }
 
-        private void QuerySong_GetData()
+        private void QuerySongGetData()
         {
             //clean up data on display
             CleanUpData();
@@ -1665,7 +1821,7 @@ namespace web
         {
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
-                if (QuerySong_QueryName_Desktop_TextBox.Text != "") QuerySong_GetData();
+                if (QuerySong_QueryName_Desktop_TextBox.Text != "") QuerySongGetData();
                 ((HiddenField)this.Parent.FindControl("CurrentQuerySongPage")).Value = "0";
                 ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterList")).Value = "";
                 ((HiddenField)this.Parent.FindControl("CurrentQuerySongFilterValue")).Value = "";
@@ -1673,13 +1829,13 @@ namespace web
             }
             else
             {
-                if (QuerySong_QueryName_TextBox.Text != "") QuerySong_GetData();
+                if (QuerySong_QueryName_TextBox.Text != "") QuerySongGetData();
             }
         }
 
         protected void QuerySong_QueryName_TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (((TextBox)sender).Text != "") QuerySong_GetData();
+            if (((TextBox)sender).Text != "") QuerySongGetData();
            ((TextBox)sender).Focus();
         }
 
@@ -1779,5 +1935,235 @@ namespace web
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
         }
+
+        protected void FavoriteSong_Button_Click(object sender, EventArgs e)
+        {
+            //clean up data on display
+            CleanUpData();
+
+            hideAllGridViewPanel();
+            FavoriteListPanel.Visible = true;
+
+            // Desktop / Tablet Mode
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                FavoriteSong_Desktop_User_Button.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                FavoriteSong_Desktop_History_Button.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                FavoriteSong_Desktop_Cashbox_Button.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
+                ((LinkButton)sender).CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+            }
+
+            switch (((LinkButton)sender).ID)
+            {
+                case "FavoriteSong_User_Button":
+                case "FavoriteSong_Desktop_User_Button":
+                    ((HiddenField)this.Parent.FindControl("CurrentFavoriteSongType")).Value = "User";
+                    break;
+                case "FavoriteSong_History_Button":
+                case "FavoriteSong_Desktop_History_Button":
+                    ((HiddenField)this.Parent.FindControl("CurrentFavoriteSongType")).Value = "History";
+                    break;
+                case "FavoriteSong_Cashbox_Button":
+                case "FavoriteSong_Desktop_Cashbox_Button":
+                    ((HiddenField)this.Parent.FindControl("CurrentFavoriteSongType")).Value = "Cashbox";
+                    break;
+            }
+        }
+
+        protected void FavoriteListView_PreRender(object sender, EventArgs e)
+        {
+            int PageSize = 0;
+
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                PageSize = GuiGlobal.SingerTypePageSize;
+            }
+            else
+            {
+                PageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("SingerListViewPageSize")).Value);
+            }
+
+            int StartRowIndex = FavoriteListDataPager.StartRowIndex;
+            FavoriteListDataPager.SetPageProperties(StartRowIndex, PageSize, true);
+
+            FavoriteSongGetData();
+
+            // Desktop / Tablet Mode
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                if (FavoriteListDataPager.TotalRowCount > PageSize)
+                {
+                    int PageCount = Convert.ToInt32(Math.Ceiling((double)FavoriteListDataPager.TotalRowCount / PageSize));
+                    DropDownList ddlSelectPage = (DropDownList)FavoriteListDataPager.Controls[0].FindControl("FavoriteList_SelectPage_DropDownList");
+                    for (int i = 0; i < PageCount; i++)
+                    {
+                        ddlSelectPage.Items.Add(new ListItem((i + 1).ToString(), i.ToString()));
+                    }
+                    ddlSelectPage.SelectedIndex = FavoriteListDataPager.StartRowIndex / PageSize;
+                }
+            }
+        }
+
+        private void FavoriteSongGetData()
+        {
+            FavoriteListView.DataSource = null;
+            FavoriteListView.DataBind();
+
+            List<string> Filterlist = new List<string>();
+            List<string> ImgFormatList = new List<string>() { ".jpg", ".png", ".bmp", ".gif" };
+            string FavoriteSongType = ((HiddenField)this.Parent.FindControl("CurrentFavoriteSongType")).Value;
+
+            string jsonText = CrazyKTVWCF.FavoriteUser(0, GuiGlobal.QuerySongRows);
+            DataTable dt = GlobalFunctions.JsontoDataTable(jsonText);
+            DataColumn col = new DataColumn("ImgFileUrl", typeof(string));
+            dt.Columns.Add(col);
+
+            DataTable listdt = new DataTable();
+            listdt = dt.Clone();
+
+            if (dt.Rows.Count > 0)
+            {
+                switch (FavoriteSongType)
+                {
+                    case "User":
+                        Filterlist = new List<string>() { "上次播放", "今日播放", "錢櫃" };
+                        foreach (DataRow row in dt.AsEnumerable())
+                        {
+                            if (!row["User_Name"].ToString().ContainsAny(Filterlist.ToArray()))
+                            {
+                                foreach (string ImgFormat in ImgFormatList)
+                                {
+                                    if (File.Exists(HttpContext.Current.Server.MapPath("/userimg/" + row["User_Name"].ToString() + ImgFormat)))
+                                    {
+                                        row["ImgFileUrl"] = "/userimg/" + row["User_Name"].ToString() + ImgFormat;
+                                        break;
+                                    }
+                                }
+                                if (row["ImgFileUrl"].ToString() == "")
+                                {
+                                    row["ImgFileUrl"] = "/images/singertype_default.png";
+                                }
+                                listdt.ImportRow(row);
+                            }
+                        }
+                        break;
+                    case "History":
+                        Filterlist = new List<string>() { "上次播放", "今日播放" };
+                        foreach (DataRow row in dt.AsEnumerable())
+                        {
+                            if (row["User_Name"].ToString().ContainsAny(Filterlist.ToArray()))
+                            {
+                                switch (row["User_Name"].ToString())
+                                {
+                                    case "上次播放":
+                                        row["ImgFileUrl"] = "/images/favoritesong_lastplayed.png";
+                                        break;
+                                    case "今日播放":
+                                        row["ImgFileUrl"] = "/images/favoritesong_todaylist.png";
+                                        break;
+                                }
+                                listdt.ImportRow(row);
+                            }
+                        }
+                        break;
+                    case "Cashbox":
+                        Filterlist = new List<string>() { "錢櫃" };
+                        foreach (DataRow row in dt.AsEnumerable())
+                        {
+                            if (row["User_Name"].ToString().ContainsAny(Filterlist.ToArray()))
+                            {
+                                switch (row["User_Name"].ToString())
+                                {
+                                    case "錢櫃新歌排行榜":
+                                    case "錢櫃點播總排行":
+                                    case "錢櫃英語排行榜":
+                                    case "錢櫃粵語排行榜":
+                                    case "錢櫃日語排行榜":
+                                        row["ImgFileUrl"] = "/images/favoritesong_topsong.png";
+                                        break;
+                                    default:
+                                        row["ImgFileUrl"] = "/images/favoritesong_newsong.png";
+                                        break;
+                                }
+                                listdt.ImportRow(row);
+                            }
+                        }
+                        break;
+                }
+            }
+
+            FavoriteListView.DataSource = listdt;
+            FavoriteListView.DataBind();
+        }
+
+        protected void FavoriteListDataPager_OnPagerCommand(object sender, DataPagerCommandEventArgs e)
+        {
+            // Check which button raised the event
+            switch (e.CommandName)
+            {
+                case "Next":
+                    int newIndex = e.Item.Pager.StartRowIndex + e.Item.Pager.PageSize;
+                    if (newIndex <= e.TotalRowCount)
+                    {
+                        e.NewStartRowIndex = newIndex;
+                        e.NewMaximumRows = e.Item.Pager.MaximumRows;
+                    }
+                    break;
+                case "Last":
+                    e.NewStartRowIndex = (Convert.ToInt32(e.CommandArgument) - 1) * e.Item.Pager.PageSize;
+                    e.NewMaximumRows = e.Item.Pager.MaximumRows;
+                    break;
+                case "Previous":
+                    e.NewStartRowIndex = e.Item.Pager.StartRowIndex - e.Item.Pager.PageSize;
+                    e.NewMaximumRows = e.Item.Pager.MaximumRows;
+                    break;
+                case "First":
+                    e.NewStartRowIndex = 0;
+                    e.NewMaximumRows = e.Item.Pager.MaximumRows;
+                    break;
+            }
+            ScrolltoTop.Value = "True";
+        }
+
+        protected void FavoriteList_SelectPage_DropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
+            {
+                DropDownList ddlSelectPage = (DropDownList)FavoriteListDataPager.Controls[0].FindControl("FavoriteList_SelectPage_DropDownList");
+
+                int PageSize = 0;
+
+                PageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("SingerListViewPageSize")).Value);
+                int StartRowIndex = Convert.ToInt32(ddlSelectPage.SelectedValue) * PageSize;
+                FavoriteListDataPager.SetPageProperties(StartRowIndex, PageSize, true);
+            }
+        }
+
+        protected void FavoriteListButton_Click(object sender, EventArgs e)
+        {
+            //clean up data on display
+            CleanUpData();
+
+            hideAllGridViewPanel();
+            SongListPanel.Visible = true;
+
+            var data = ((LinkButton)sender).CommandArgument;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = data.ToString();
+
+            string FavoriteSongType = ((HiddenField)this.Parent.FindControl("CurrentFavoriteSongType")).Value;
+            if (FavoriteSongType == "Cashbox")
+            {
+                ((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value = "錢櫃" + ((Label)((LinkButton)sender).Controls[0]).Text;
+            }
+            else
+            {
+                ((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value = ((Label)((LinkButton)sender).Controls[0]).Text;
+            }
+
+            SongList(0, GuiGlobal.QuerySongRows, "FavoriteSong", data.ToString());
+        }
+
+
+
     }
 }

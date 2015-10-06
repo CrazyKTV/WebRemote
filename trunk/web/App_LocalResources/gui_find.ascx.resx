@@ -561,4 +561,13 @@
   <data name="QuerySong_Title_Label_RES.Text" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="FavoriteSong_Cashbox_Button_RES.Text" xml:space="preserve">
+    <value>Cashbox</value>
+  </data>
+  <data name="FavoriteSong_History_Button_RES.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="FavoriteSong_User_Button_RES.Text" xml:space="preserve">
+    <value>User</value>
+  </data>
 </root>

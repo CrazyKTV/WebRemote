@@ -517,6 +517,9 @@
                 <asp:HiddenField ID="CurrentTopSongFilterValue" runat="server" />
                 <asp:HiddenField ID="CurrentTopSongFilterPage" runat="server" Value="0" />
                 
+                <asp:HiddenField ID="CurrentFavoriteSongType" runat="server" Value="User" />
+                <asp:HiddenField ID="CurrentFavoriteUserName" runat="server" />
+
                 <asp:HiddenField ID="CurrentSongQueryType" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryValue" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryPage" runat="server" Value="0" />

@@ -87,6 +87,11 @@
     <Content Include="ErrorDeadWCF.aspx" />
     <Content Include="ErrorDeadWCF.html" />
     <Content Include="favicon.ico" />
+    <Content Include="images\favoritesong_lastplayed.png" />
+    <Content Include="images\favoritesong_newsong.png" />
+    <Content Include="images\favoritesong_todaylist.png" />
+    <Content Include="images\favoritesong_topsong.png" />
+    <Content Include="userimg\Put UserIMG In Here.txt" />
     <Content Include="find.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="getSinger.aspx" />
@@ -100,6 +105,8 @@
     <Content Include="gui_video.ascx" />
     <Content Include="gui_volume.ascx" />
     <Content Include="images\background.jpg" />
+    <Content Include="images\favoritesong_cashbox.png" />
+    <Content Include="images\favoritesong_history.png" />
     <Content Include="images\mainmenu_topsong.png" />
     <Content Include="images\mainmenu_topsong_small.png" />
     <Content Include="images\mainmenu_chorussong.png" />
@@ -199,6 +206,7 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="find.ascx.cs">
       <DependentUpon>find.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

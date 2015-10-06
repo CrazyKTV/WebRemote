@@ -507,6 +507,15 @@
   <data name="SingerList_SelectPage_Label_Before_RES.Text" xml:space="preserve">
     <value>到</value>
   </data>
+  <data name="FavoriteSong_Cashbox_Button_RES.Text" xml:space="preserve">
+    <value>錢櫃</value>
+  </data>
+  <data name="FavoriteSong_History_Button_RES.Text" xml:space="preserve">
+    <value>歷史</value>
+  </data>
+  <data name="FavoriteSong_User_Button_RES.Text" xml:space="preserve">
+    <value>用戶</value>
+  </data>
   <data name="QuerySong_SingerName_RadioButton_RES.Text" xml:space="preserve">
     <value>歌星名稱</value>
   </data>

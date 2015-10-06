@@ -240,8 +240,9 @@ namespace web
             ((Panel)gui_find.FindControl("MobileFilterPanel")).Visible = false;
             ((Panel)gui_find.FindControl("SongLangPanel")).Visible = false;
             ((Panel)gui_find.FindControl("QuerySongPanel")).Visible = false;
+            ((Panel)gui_find.FindControl("FavoriteSongPanel")).Visible = false;
+            ((Panel)gui_find.FindControl("FavoriteListPanel")).Visible = false;
             ((Panel)gui_find.FindControl("SongListPanel")).Visible = false;
-            ((Panel)gui_find.FindControl("Panel3")).Visible = false;
         }
 
         protected void hideAllfindDesktopPanel()
@@ -252,8 +253,9 @@ namespace web
             ((Panel)gui_findDesktop.FindControl("MobileFilterPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SongLangPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("QuerySongPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("FavoriteSongPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("FavoriteListPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = false;
-            ((Panel)gui_findDesktop.FindControl("Panel3")).Visible = false;
         }
 
         protected void MainMenu_Desktop_Button_Click(object sender, EventArgs e)
@@ -320,6 +322,9 @@ namespace web
                     if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentTopSongSongList(); }
                     break;
                 case "MainMenu_FavoriteSongDesktopButton":
+                    ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = "FavoriteSong";
+                    ((Panel)gui_findDesktop.FindControl("FavoriteSongPanel")).Visible = true;
+                    ((Panel)gui_findDesktop.FindControl("FavoriteListPanel")).Visible = true;
                     break;
                 case "MainMenu_SongNumberDesktopButton":
                     break;
