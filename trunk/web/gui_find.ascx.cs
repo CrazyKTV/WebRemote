@@ -186,6 +186,7 @@ namespace web
         {
             string QueryFilterList = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterList")).Value;
             string QueryFilterValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value;
+
             string dvSortStr = "";
 
             DataTable dt = new DataTable();
@@ -1915,7 +1916,7 @@ namespace web
         {
             string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
             string SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
-            
+
             switch (SongQueryType)
             {
                 case "SongLang":
@@ -1928,7 +1929,7 @@ namespace web
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((Label)((LinkButton)sender).Controls[1]).Text.Replace("劃", "");
                     break;
             }
-            
+
             SongListGridView.PageIndex = 0;
             SongList(0, GuiGlobal.QuerySongRows, SongQueryType, SongQueryValue);
 
@@ -1938,20 +1939,26 @@ namespace web
 
         protected void FavoriteSong_Button_Click(object sender, EventArgs e)
         {
-            //clean up data on display
-            CleanUpData();
-
             hideAllGridViewPanel();
             FavoriteListPanel.Visible = true;
+
+            int PageSize = 0;
 
             // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
+                PageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("SingerListViewPageSize")).Value);
                 FavoriteSong_Desktop_User_Button.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
                 FavoriteSong_Desktop_History_Button.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
                 FavoriteSong_Desktop_Cashbox_Button.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
                 ((LinkButton)sender).CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
             }
+            else
+            {
+                PageSize = GuiGlobal.SingerTypePageSize;
+            }
+
+            FavoriteListDataPager.SetPageProperties(0, PageSize, true);
 
             switch (((LinkButton)sender).ID)
             {
