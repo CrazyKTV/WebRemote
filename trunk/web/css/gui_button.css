@@ -173,6 +173,20 @@
 }
 
 
+.GridViewFilterPageButton {
+    padding: 4px;
+    margin: 1px 0px 0px 0px;
+    border: none;
+    
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: black 1px 1px 2px;
+}
+.GridViewFilterPageButton:hover, .GridViewFilterPageButton:focus {
+    color: rgb(255, 255, 255);
+}
+
+
 .GridViewPageText {
     vertical-align: middle;
     margin: -2px 4px 0px 4px;

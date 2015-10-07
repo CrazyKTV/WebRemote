@@ -241,11 +241,11 @@
 
                                 <div class="hidden-xs hidden-sm" style="display: inline-block;">
                                     <div class="GridViewPageText" style="display: inline-block;">
-                                        <asp:Label ID="SingerList_SelectPage_Label_Before" runat="server" Text="到" meta:resourcekey="SingerList_SelectPage_Label_Before_RES" />
+                                        <asp:Label ID="SingerList_SelectPage_Label_Before" runat="server" Text="到" meta:resourcekey="SingerList_SelectPage_Label_Before_RES" Visible='<%# Container.TotalRowCount > Container.PageSize ? true : false %>' />
                                     </div>
-                                    <asp:DropDownList ID="SingerList_SelectPage_DropDownList" runat="server" CssClass="GridViewPageButton btn btn-primary" AutoPostBack="True" OnSelectedIndexChanged="SingerList_SelectPage_DropDownList_SelectedIndexChanged" />
+                                    <asp:DropDownList ID="SingerList_SelectPage_DropDownList" runat="server" CssClass="GridViewPageButton btn btn-primary" AutoPostBack="True" OnSelectedIndexChanged="SingerList_SelectPage_DropDownList_SelectedIndexChanged" Visible='<%# Container.TotalRowCount > Container.PageSize ? true : false %>' />
                                     <div class="GridViewPageText" style="display: inline-block;">
-                                        <asp:Label ID="SingerList_SelectPage_Label_After" runat="server" Text="頁" meta:resourcekey="SingerList_SelectPage_Label_After_RES" />
+                                        <asp:Label ID="SingerList_SelectPage_Label_After" runat="server" Text="頁" meta:resourcekey="SingerList_SelectPage_Label_After_RES" Visible='<%# Container.TotalRowCount > Container.PageSize ? true : false %>' />
                                     </div>
                                 </div>
                             </div>        
@@ -580,11 +580,11 @@
 
                                 <div class="hidden-xs hidden-sm" style="display: inline-block;">
                                     <div class="GridViewPageText" style="display: inline-block;">
-                                        <asp:Label ID="FavoriteList_SelectPage_Label_Before" runat="server" Text="到" meta:resourcekey="SingerList_SelectPage_Label_Before_RES" />
+                                        <asp:Label ID="FavoriteList_SelectPage_Label_Before" runat="server" Text="到" meta:resourcekey="SingerList_SelectPage_Label_Before_RES" Visible='<%# Container.TotalRowCount > Container.PageSize ? true : false %>' />
                                     </div>
-                                    <asp:DropDownList ID="FavoriteList_SelectPage_DropDownList" runat="server" CssClass="GridViewPageButton btn btn-primary" AutoPostBack="True" OnSelectedIndexChanged="FavoriteList_SelectPage_DropDownList_SelectedIndexChanged" />
+                                    <asp:DropDownList ID="FavoriteList_SelectPage_DropDownList" runat="server" CssClass="GridViewPageButton btn btn-primary" AutoPostBack="True" OnSelectedIndexChanged="FavoriteList_SelectPage_DropDownList_SelectedIndexChanged" Visible='<%# Container.TotalRowCount > Container.PageSize ? true : false %>' />
                                     <div class="GridViewPageText" style="display: inline-block;">
-                                        <asp:Label ID="FavoriteList_SelectPage_Label_After" runat="server" Text="頁" meta:resourcekey="SingerList_SelectPage_Label_After_RES" />
+                                        <asp:Label ID="FavoriteList_SelectPage_Label_After" runat="server" Text="頁" meta:resourcekey="SingerList_SelectPage_Label_After_RES" Visible='<%# Container.TotalRowCount > Container.PageSize ? true : false %>' />
                                     </div>
                                 </div>
                             </div>        
@@ -678,7 +678,7 @@
                 <span class="glyphicon glyphicon-fast-forward gi-big"></span>
             </asp:LinkButton>
 
-            <div class="hidden-xs hidden-sm" style="display: inline-block;">
+            <div class="hidden-xs hidden-sm hidden-md" style="display: inline-block;">
                 <div class="GridViewPageText" style="display: inline-block;">
                     <asp:Label ID="SongList_SelectPage_Label_Before" runat="server" Text="到" meta:resourcekey="SongList_SelectPage_Label_Before_RES" />
                 </div>
@@ -713,12 +713,20 @@
             </Columns>
             
             <PagerTemplate>
-                <asp:LinkButton ID="SongList_Filter_PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
-                    <span class="glyphicon glyphicon-backward gi-big"></span>
-                </asp:LinkButton>
-                <asp:LinkButton ID="SongList_Filter_NextPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
-                    <span class="glyphicon glyphicon-forward gi-big"></span>
-                </asp:LinkButton>
+                <div class ="container-fluid">
+                    <div class ="row">
+                        <div class="col-md-6 col-lg-6" style="padding:0px;">
+                            <asp:LinkButton ID="SongList_Filter_PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewFilterPageButton btn btn-lg" : "GridViewFilterPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
+                                <span class="glyphicon glyphicon-backward gi-big"></span>
+                            </asp:LinkButton>
+                        </div>
+                        <div class="col-md-6 col-lg-6" style="padding:0px;">
+                            <asp:LinkButton ID="SongList_Filter_NextPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=((GridView)Container.Parent.Parent).PageCount-1 ? "GridViewFilterPageButton btn btn-lg" : "GridViewFilterPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Next">
+                                <span class="glyphicon glyphicon-forward gi-big"></span>
+                            </asp:LinkButton>
+                        </div>
+                    </div>
+                </div>
             </PagerTemplate>
 
             <HeaderStyle CssClass="gridviewHeader" Font-Bold="True" ForeColor="White" />
