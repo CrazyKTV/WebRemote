@@ -570,4 +570,16 @@
   <data name="FavoriteSong_User_Button_RES.Text" xml:space="preserve">
     <value>User</value>
   </data>
+  <data name="SongNumber_Clear_Button_RES.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="SongNumber_InsertSong_Button_RES.Text" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="SongNumber_OrderSong_Button_RES.Text" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="SongNumber_Title_Label_RES.Text" xml:space="preserve">
+    <value>Number</value>
+  </data>
 </root>

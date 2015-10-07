@@ -606,13 +606,13 @@
                     <div class ="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding-left: 5px; padding-right: 5px;">
                         <div class="row">
                             <asp:Image ImageUrl="images/mainmenu_songnumber.png" runat="server" CssClass="MainImage"/>
-                            <asp:Label runat="server" Text="編號" meta:resourcekey="SongNumber_Title_Label_RES" CssClass="MainMenuLabel textshadow"/>
+                            <asp:Label runat="server" Text="編號" CssClass="MainMenuLabel textshadow" meta:resourcekey="SongNumber_Title_Label_RES" />
                         </div>
                         <div class="row" style="margin-top: 8px;">
                             <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 5px; padding-right: 5px;">
                                 <asp:LinkButton ID="SongNumber_OrderSong_Button" runat="server" CssClass="SongNumberButton btn btn-success btn-lg" OnClick="SongNumber_OrderSong_Button_Click">
                                     <span class="glyphicon glyphicon-plus"></span>
-                                    <asp:Label runat="server" Text="點播" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
+                                    <asp:Label runat="server" Text="點播" CssClass="MainMenuLabel" meta:resourcekey="SongNumber_OrderSong_Button_RES" />
                                 </asp:LinkButton>
                             </div>
                         </div>
@@ -620,7 +620,7 @@
                             <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 5px; padding-right: 5px;">
                                 <asp:LinkButton ID="SongNumber_InsertSong_Button" runat="server" CssClass="SongNumberButton btn btn-success btn-lg" OnClick="SongNumber_InsertSong_Button_Click">
                                     <span class="glyphicon glyphicon-retweet gi-big"></span>
-                                    <asp:Label runat="server" Text="插播" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
+                                    <asp:Label runat="server" Text="插播" CssClass="MainMenuLabel" meta:resourcekey="SongNumber_InsertSong_Button_RES" />
                                 </asp:LinkButton>
                             </div>
                         </div>
@@ -628,7 +628,7 @@
                             <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 5px; padding-right: 5px;">
                                 <asp:LinkButton ID="SongNumber_Clear_Button" runat="server" CssClass="SongNumberButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
                                     <span class="glyphicon glyphicon-remove gi-big"></span>
-                                    <asp:Label runat="server" Text="清除" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
+                                    <asp:Label runat="server" Text="清除" CssClass="MainMenuLabel" meta:resourcekey="SongNumber_Clear_Button_RES" />
                                 </asp:LinkButton>
                             </div>
                         </div>

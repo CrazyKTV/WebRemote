@@ -525,4 +525,16 @@
   <data name="QuerySong_Title_Label_RES.Text" xml:space="preserve">
     <value>搜尋</value>
   </data>
+  <data name="SongNumber_Clear_Button_RES.Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="SongNumber_InsertSong_Button_RES.Text" xml:space="preserve">
+    <value>插播</value>
+  </data>
+  <data name="SongNumber_OrderSong_Button_RES.Text" xml:space="preserve">
+    <value>點播</value>
+  </data>
+  <data name="SongNumber_Title_Label_RES.Text" xml:space="preserve">
+    <value>編號</value>
+  </data>
 </root>
