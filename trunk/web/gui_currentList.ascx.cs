@@ -96,7 +96,7 @@ namespace web
             GridViewRow row = (GridViewRow)btn.NamingContainer;
 
             var data = GridView1.DataKeys[row.RowIndex].Value.ToString(); //get hiddent Song_ID
-            CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "Insert");
+            CrazyKTVWCF.DoCrazyKTV_Action(data.ToString().Trim(), "InsertV");
         }
 
         protected void BDel_Click(object sender, EventArgs e)

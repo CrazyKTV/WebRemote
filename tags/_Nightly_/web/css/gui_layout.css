@@ -1,0 +1,220 @@
+﻿/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://opensource.org/licenses/mit-license.php	*/
+
+
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: none ;}
+
+
+
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 123px;
+	line-height: 132px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 76px;
+	line-height: 84px;
+	letter-spacing: -1px;
+}
+
+.large, h2 {
+	font-size: 47px;
+	line-height: 48px;
+}
+
+.bigger, h3 {
+	font-size: 29px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	font-size: 25px;
+	line-height: 30px;
+}
+
+body {
+	font: 18px/24px "Times New Roman", Times, serif;
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+/* Selection colours (easy to forget) */
+
+::selection 	 	{background: rgb(255,255,158);}
+::-moz-selection 	{background: rgb(255,255,158);}
+img::selection 		{background: transparent;}
+img::-moz-selection	{background: transparent;}
+body {
+    -webkit-tap-highlight-color: rgb(255,255,158);
+    background-image: url('/images/background.jpg');
+    background-repeat: repeat;
+    background-position: center top;
+    background-color: rgb(48,48,48);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: 'Source Han Sans TC', 'Microsoft JhengHei', Arial, Helvetica, sans-serif, DFKai-sb, 標楷體, stkaiti,华文楷体;
+}
+
+
+
+
+.tSongNumber{
+font-size: 130%;
+height:30px;
+}
+
+.textbox2 {
+    /*font-size: 90%;*/
+    min-width:10%;
+    max-width:70%;
+    display:inline;
+	font-size: 100%;
+}
+
+.textboxWaterMark {
+    color: #CCCCCC;
+}
+
+
+
+.label1 {
+    font-size: 85%;
+    top: 2px;
+    vertical-align: top;
+}
+
+
+.label2 {
+    font-size: 90%;
+}
+
+
+
+
+
+
+
+
+
+#HeaderVisibleDiv {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+
+#BottomVisibleDiv {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+.arrowSpacer {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.00)
+}
+
+
+
+
+
+
+
+
+.hideThis {
+    color:#000;
+}
+
+/*.hideGridColumn
+{
+    display:none;
+}*/
+
+
+/*.button1Text
+{
+    position: relative; top:-40px; left:50px;
+    display:block;
+    width:120px;
+
+}*/
+
+
+
+
+
+#mainarea {
+    width:100%;
+    float:left;
+    display:block;
+
+
+
+    /*position: relative;
+    margin-top: 50px;
+    display:block;*/
+}
+
+#LComputerOnlyMessage
+{
+    display: block;
+    font-size: medium;
+    font-weight: bold;
+    color: #FF00FF;
+}
+
+
+
+/****************default end******/
+
+/* XS */
+@media (max-width: 767px) {
+
+}
+
+/* SM */
+@media (min-width: 768px) and (max-width: 983px) {
+
+}
+
+/* MD */
+@media (min-width: 984px) and (max-width: 1199px) {
+
+}
+
+/* LG */
+@media (min-width: 1200px) {
+
+}

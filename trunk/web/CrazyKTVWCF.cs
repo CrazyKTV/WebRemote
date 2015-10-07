@@ -147,7 +147,7 @@ namespace web
             DoCrazyKTV_Action(songID, "Insert");
             return true;
         }
-        
+
         /// <summary>
         /// Does the crazy KT v_ control.
         /// </summary>

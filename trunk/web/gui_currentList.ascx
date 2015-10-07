@@ -20,7 +20,7 @@
                             <asp:TemplateField ShowHeader="False" ItemStyle-Width="44px">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="BIns" runat="server" CssClass='<%# Eval("Song_SongName").ToString()!="" ? "GridViewButton btn btn-success btn-lg" : "GridViewButton btn btn-success btn-lg disabled" %>' OnClick="BIns_Click">
-                                        <span class="glyphicon glyphicon-arrow-up"></span>
+                                        <span class="glyphicon glyphicon-retweet"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>

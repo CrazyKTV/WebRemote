@@ -36,8 +36,6 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" /> 
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" /> 
     <link href="css/gui_layout.css" rel="stylesheet" />
-    <link href="css/gui_button.css" rel="stylesheet" />
-    <link href="css/gui_overlay.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
         <script src="Scripts/respond.min.js"></script>
@@ -64,7 +62,6 @@
         <script src="Scripts/bootstrap-toolkit.main.js"></script>
 
         <script type="text/javascript">
-
             $(document).ready(function () {
                 AfterPostBack();
                 // You are calling this function the page loads for the first time
@@ -152,19 +149,19 @@
                                             <div class="col-xs-3 col-sm-3 hidden-md hidden-lg" style="padding-left: 3px; padding-right: 3px;">
                                                 <asp:LinkButton ID="MainMenu_PlayListButton" runat="server" CssClass="MainButton btn btn-success btn-lg" OnClick="MainMenu_PlayListButton_Click">
                                                     <asp:Image ImageUrl="images/main_playlist.png" runat="server" CssClass="MainMenuMin24Image"/>
-                                                    <asp:Label runat="server" Text="待播"  CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
+                                                    <asp:Label runat="server" Text="待播" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
                                                 </asp:LinkButton>
                                             </div>
                                             <div class="col-xs-3 col-sm-3 hidden-md hidden-lg" style="padding-left: 3px; padding-right: 3px;">
                                                 <asp:LinkButton ID="MainMenu_FindSongButton" runat="server" CssClass="MainButton btn btn-success btn-lg" OnClick="MainMenu_FindSongButton_Click">
                                                     <asp:Image ImageUrl="images/main_findsong.png" runat="server" CssClass="MainMenuMin24Image"/>
-                                                    <asp:Label runat="server" Text="點歌"  CssClass="MainMenuLabel" meta:resourcekey="MainMenu_FindSongButton_RES" />
+                                                    <asp:Label runat="server" Text="點歌" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_FindSongButton_RES" />
                                                 </asp:LinkButton>
                                             </div>
                                             <div class="col-xs-3 col-sm-3 hidden-md hidden-lg" style="padding-left: 3px; padding-right: 3px;">
                                                 <asp:LinkButton ID="MainMenu_AdvancedButton" runat="server" CssClass="MainButton btn btn-success btn-lg" OnClick="MainMenu_AdvancedButton_Click">
                                                     <asp:Image ImageUrl="images/main_advanced.png" runat="server" CssClass="MainMenuMin24Image"/>
-                                                    <asp:Label runat="server" Text="進階"  CssClass="MainMenuLabel" meta:resourcekey="MainMenu_AdvancedButton_RES" />
+                                                    <asp:Label runat="server" Text="進階" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_AdvancedButton_RES" />
                                                 </asp:LinkButton>
                                             </div>
 
@@ -253,7 +250,7 @@
                         <div class="container">
                             <div class ="row">
                                 <div class="hidden-xs hidden-sm col-md-5 col-lg-5" style="padding-left: 5px; padding-right: 5px;">
-                                        <uc2:gui_currentList ID="gui_currentListDesktop" runat="server" Visible="true" />
+                                    <uc2:gui_currentList ID="gui_currentListDesktop" runat="server" Visible="true" />
                                 </div>
                                 <div class="hidden-xs hidden-sm col-md-7 col-lg-7" style="padding-left: 5px; padding-right: 5px;">
                                     <uc0:gui_find runat="server" ID="gui_findDesktop" Visible="true" />
@@ -520,6 +517,12 @@
                 <asp:HiddenField ID="CurrentFavoriteSongType" runat="server" Value="User" />
                 <asp:HiddenField ID="CurrentFavoriteUserName" runat="server" />
 
+                <asp:HiddenField ID="CurrentSongNumber" runat="server" Value="請輸入歌曲編號" />
+                <asp:HiddenField ID="CurrentSongNumberPage" runat="server" Value="0" />
+                <asp:HiddenField ID="CurrentSongNumberFilterList" runat="server" />
+                <asp:HiddenField ID="CurrentSongNumberFilterValue" runat="server" />
+                <asp:HiddenField ID="CurrentSongNumberFilterPage" runat="server" Value="0" />
+
                 <asp:HiddenField ID="CurrentSongQueryType" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryValue" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryPage" runat="server" Value="0" />
@@ -532,15 +535,7 @@
                 <asp:HiddenField ID="SingerListViewPageSize" runat="server" Value="10" />
                 <asp:Button ID="RefreshUpdatePanelButton" runat="server" OnClick="RefreshUpdatePanelButton_Click" Style="display: none;" />
                 
-                <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
-                    <ProgressTemplate>
-                        <div class="overlay" />
-                        <div class="overlayContent" id="overlayContent1">
-                            <h2><asp:Label ID="lLoading" runat="server" Text="Loading..." meta:resourcekey="lLoadingResource1"/></h2>
-                            <img src="/images/ajax-loader.gif" alt="Loading" />
-                        </div>
-                    </ProgressTemplate>
-                </asp:UpdateProgress>
+
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>

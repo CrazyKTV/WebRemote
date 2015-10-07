@@ -24,9 +24,7 @@ footer, header, nav, section, audio, video {
 	display: block;
 }
 
-a img {border: none ;}
-
-
+a img {border: none;}
 
 /*	Typography presets
 	------------------	*/
@@ -86,49 +84,333 @@ body {
 
 
 
-
-.tSongNumber{
-font-size: 130%;
-height:30px;
-}
-
-.textbox2 {
-    /*font-size: 90%;*/
-    min-width:10%;
-    max-width:70%;
-    display:inline;
-	font-size: 100%;
-}
-
-.textboxWaterMark {
-    color: #CCCCCC;
+/* Material Icon Font */
+/* ================================================================== */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(/fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  
 
-.label1 {
-    font-size: 85%;
-    top: 2px;
-    vertical-align: top;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.material-icons.md-24 { font-size: 24px; height: 23.4px; vertical-align: middle; }
+
+
+
+/* Button & Image */
+/* ================================================================== */
+.MainImage {
+    padding: 5px;
+    width: 64px;
 }
 
 
-.label2 {
-    font-size: 90%;
+.MainButton {
+    padding: 2px;
+    margin-top: 4px;
+    width: 60px;
+    text-shadow: black 1px 1px 2px;
+
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+
+.MainMenuMin24Image {
+    margin: 0px 0px 0px 0px ;
+    width: 24px;
+}
+
+
+.MainMenuMinImage {
+    margin: 0px 2px 5px 0px ;
+    width: 16px;
+}
+
+
+.ControlButton {
+    padding: 10px 5px;
+    margin: 10px 0px;
+    width: 100%;
+    text-shadow: black 1px 1px 2px;
+}
+
+
+.MainMenuButton {
+    padding: 5px;
+    margin: 0px;
+    width: 100%;
+    text-shadow: black 1px 1px 2px;
+}
+
+
+.MainMenuImage {
+    width: 100%;
+}
+
+
+.MainMenuLabel {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+
+.SingerListButton {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: black 1px 1px 2px;
+}
+
+
+.SingerListLabel {
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    
+    vertical-align: central;
+    font-size: 80%;
+}
+
+
+.SingerListBox {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+    background:#88d188;
+}
+.SingerListBox:after {
+    padding-top: 100%;
+    content: "";
+    display: block;
+}
+
+
+.SingerListImage {
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    max-width:100%;
+    width:100%;
+    height:100%;
+    margin:auto;
+}
+
+
+.SongNumberButton {
+    padding: 5px;
+    margin: 8px;
+    width: 54px;
+    text-shadow: black 1px 1px 2px;
+
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
 }
 
 
 
+/* GridView */
+/* ================================================================== */
+.gridview {
+    width: 100%;
+}
+
+
+.gridviewRows {
+    padding: 5px 2px 5px 2px;
+}
+
+
+.gridviewHeader {
+    height: 34px;
+    text-align: center;
+    font-weight: lighter;
+
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: #000000 1px 1px 2px;
+}
+
+
+.gridviewPager {
+    height: 38px;
+    text-align: center;
+    font-weight: lighter;
+
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: #000000 1px 1px 2px;
+}
+
+
+.GridViewButton {
+    padding: 4px 2px 4px 0px;
+    margin: 0px 5px;
+    width: 32px;
+    text-shadow: black 1px 1px 2px;
+}
+
+
+.GridViewPageButton {
+    padding: 4px;
+    margin: 1px 5px 0px 5px;
+    border: none;
+    
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: black 1px 1px 2px;
+}
+.GridViewPageButton:hover, .GridViewPageButton:focus {
+    color: rgb(255, 255, 255);
+}
 
 
 
+.GridViewFilterRows {
+    height: 49.2px;
+}
+
+
+.GridViewFilterButton {
+    padding: 4px;
+    width: 80%;
+
+    text-shadow: black 1px 1px 2px;
+}
+
+
+.GridViewFilterPageButton {
+    padding: 4px;
+    margin: 1px 0px 0px 0px;
+    border: none;
+    
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: black 1px 1px 2px;
+}
+.GridViewFilterPageButton:hover, .GridViewFilterPageButton:focus {
+    color: rgb(255, 255, 255);
+}
+
+
+.GridViewPageText {
+    vertical-align: middle;
+    margin: -2px 4px 0px 4px;
+}
+
+
+.gi-big {
+    font-size: 1.3em;
+    font-weight: bold;
+}
 
 
 
+/* GridView Data*/
+/* ================================================================== */
+.dgSongID {
+    width: auto;
+    padding-left: 8PX;
+    padding-right: 8px;
+    text-align: right;
+    font-size: 95%;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+.dgSong
+{
+    width: auto;
+    word-wrap: break-word;
+    text-align: left;
+    padding-right: 4px;
+    font-size: 95%;
+    color: #000000;
+}
+
+
+.dgSinger
+{
+    width: auto;
+    word-wrap: break-word;
+    text-align: left;
+    padding-right: 4px;
+    font-size: 87%;
+    color: #993300;
+}
+.dgSingerbutton:hover
+{
+    text-decoration:none;
+    color: #337ab7;
+}
+
+
+.dgLang
+{
+    width: auto;
+    padding-left: 8PX;
+    padding-right: 8px;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+
+/* Div & Span*/
+/* ================================================================== */
 #HeaderVisibleDiv {
     position: fixed;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.95);
+}
+
+
+.spacerToFooter {
+    height: 70px;
+    display: block;
 }
 
 
@@ -137,6 +419,7 @@ height:30px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.70);
 }
+
 
 .arrowSpacer {
     width: 100%;
@@ -147,52 +430,61 @@ height:30px;
 }
 
 
-
-
-
-
-
-
-.hideThis {
-    color:#000;
-}
-
-/*.hideGridColumn
-{
-    display:none;
-}*/
-
-
-/*.button1Text
-{
-    position: relative; top:-40px; left:50px;
-    display:block;
-    width:120px;
-
-}*/
-
-
-
-
-
 #mainarea {
     width:100%;
     float:left;
     display:block;
-
-
-
-    /*position: relative;
-    margin-top: 50px;
-    display:block;*/
 }
 
-#LComputerOnlyMessage
-{
-    display: block;
-    font-size: medium;
+
+.SubMenuArea {
+    float: left;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 5px;
+    width: 100%;
+    background-color: #5cb85c;
+
+    border: solid;
+    border-width: 2px;
+    border-color: #006600;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+
+.SingerListPagerArea {
+    clear: both;
+    float: left;
+    padding: 5px;
+    margin-top: 5px;
+    text-align: center;
     font-weight: bold;
-    color: #FF00FF;
+    width: 100%;
+    
+    background-color: #5cb85c;
+    color: rgb(255, 255, 255);
+    text-shadow: #000000 1px 1px 2px;
+
+    border: solid;
+    border-width: 2px;
+    border-color: #006600;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+
+
+/* Common */
+/* ================================================================== */
+.alignCenter {
+    text-align: center;
+}
+
+
+.textshadow {
+    text-shadow: black 1px 1px 2px;
 }
 
 

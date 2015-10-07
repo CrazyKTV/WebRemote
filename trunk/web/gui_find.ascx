@@ -3,7 +3,6 @@
 <link href="Content/bootstrap.min.css" rel="stylesheet" /> 
 <link href="Content/bootstrap-theme.min.css" rel="stylesheet" /> 
 <link href="css/gui_layout.css" rel="stylesheet" />
-<link href="css/gui_button.css" rel="stylesheet" />
 
 <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server" />
 <asp:HiddenField ID="ScrolltoTop" runat="server" />
@@ -433,7 +432,7 @@
                     </div>
                     <div class="row" style="margin-top: 10px;">
                         <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
-                            <asp:TextBox ID="QuerySong_QueryName_TextBox" runat="server" CssClass="form-control" Font-Size="Large" AutoPostBack="true" OnTextChanged="QuerySong_QueryName_TextBox_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="QuerySong_QueryName_TextBox" runat="server" CssClass="form-control" Font-Size="Large" AutoPostBack="true" OnTextChanged="QuerySong_QueryName_TextBox_TextChanged" />
                         </div>
                     </div>
                 </div>
@@ -598,6 +597,119 @@
 </asp:Panel>
 
 
+<asp:Panel ID="SongNumberPanel" runat="server" Visible="false" cssclass="alignCenter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class ="hidden-xs hidden-sm col-md-3 col-lg-3"></div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="padding: 0px;">
+                <div class="SubMenuArea" style="padding-bottom: 5px;">
+                    <div class ="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding-left: 5px; padding-right: 5px;">
+                        <div class="row">
+                            <asp:Image ImageUrl="images/mainmenu_songnumber.png" runat="server" CssClass="MainImage"/>
+                            <asp:Label runat="server" Text="編號" meta:resourcekey="SongNumber_Title_Label_RES" CssClass="MainMenuLabel textshadow"/>
+                        </div>
+                        <div class="row" style="margin-top: 8px;">
+                            <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 5px; padding-right: 5px;">
+                                <asp:LinkButton ID="SongNumber_OrderSong_Button" runat="server" CssClass="SongNumberButton btn btn-success btn-lg" OnClick="SongNumber_OrderSong_Button_Click">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    <asp:Label runat="server" Text="點播" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 5px; padding-right: 5px;">
+                                <asp:LinkButton ID="SongNumber_InsertSong_Button" runat="server" CssClass="SongNumberButton btn btn-success btn-lg" OnClick="SongNumber_InsertSong_Button_Click">
+                                    <span class="glyphicon glyphicon-retweet gi-big"></span>
+                                    <asp:Label runat="server" Text="插播" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 5px; padding-right: 5px;">
+                                <asp:LinkButton ID="SongNumber_Clear_Button" runat="server" CssClass="SongNumberButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon glyphicon-remove gi-big"></span>
+                                    <asp:Label runat="server" Text="清除" CssClass="MainMenuLabel" meta:resourcekey="MainMenu_PlayListButton_RES" />
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                        <div class="row" style="margin-top: 5px;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <asp:TextBox ID="SongNumber_QueryNumber_TextBox" runat="server" CssClass="form-control" Font-Size="Large" AutoPostBack="true" MaxLength="6" OnTextChanged="SongNumber_QueryNumber_TextBox_TextChanged" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number1_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">1</span>
+                                </asp:LinkButton>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number2_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">2</span>
+                                </asp:LinkButton>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number3_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">3</span>
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number4_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">4</span>
+                                </asp:LinkButton>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number5_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">5</span>
+                                </asp:LinkButton>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number6_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">6</span>
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number7_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">7</span>
+                                </asp:LinkButton>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number8_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">8</span>
+                                </asp:LinkButton>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_Number9_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">9</span>
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <asp:LinkButton ID="SongNumber_Number0_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="glyphicon gi-big">0</span>
+                                </asp:LinkButton>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <asp:LinkButton ID="SongNumber_BackSpace_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
+                                    <span class="material-icons md-24">backspace</span>
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Panel>
+
+
 
 
 
@@ -637,7 +749,7 @@
             <asp:TemplateField ShowHeader="False" ItemStyle-Width="44px">
                 <ItemTemplate>
                     <asp:LinkButton ID="SongListInsSong" runat="server" CssClass='<%# Eval("Song_SongName").ToString()!="" ? "GridViewButton btn btn-success btn-lg" : "GridViewButton btn btn-success btn-lg disabled" %>' OnClick="SongListInsSong_Click">
-                        <span class="glyphicon glyphicon-arrow-up"></span>
+                        <span class="glyphicon glyphicon-retweet"></span>
                     </asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>

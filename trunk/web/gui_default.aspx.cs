@@ -222,19 +222,22 @@ namespace web
         protected void MainMenu_PlayListButton_Click(object sender, EventArgs e)
         {
             hideAllCU();
+            hideAllfindPanel();
             if (CrazyKTVWCF.WCFlive) gui_currentList.Visible = true;
         }
 
         protected void MainMenu_FindSongButton_Click(object sender, EventArgs e)
         {
             hideAllCU();
-            gui_find.EnableMainMenuPanel();
+            hideAllfindPanel();
+            ((Panel)gui_find.FindControl("MainMenuPanel")).Visible = true;
             if (CrazyKTVWCF.WCFlive) gui_find.Visible = true;
         }
 
         protected void MainMenu_AdvancedButton_Click(object sender, EventArgs e)
         {
             hideAllCU();
+            hideAllfindPanel();
             if (CrazyKTVWCF.WCFlive) gui_advanced.Visible = true;
         }
 
@@ -248,6 +251,7 @@ namespace web
             ((Panel)gui_find.FindControl("QuerySongPanel")).Visible = false;
             ((Panel)gui_find.FindControl("FavoriteSongPanel")).Visible = false;
             ((Panel)gui_find.FindControl("FavoriteListPanel")).Visible = false;
+            ((Panel)gui_find.FindControl("SongNumberPanel")).Visible = false;
             ((Panel)gui_find.FindControl("SongListPanel")).Visible = false;
         }
 
@@ -261,6 +265,7 @@ namespace web
             ((Panel)gui_findDesktop.FindControl("QuerySongPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("FavoriteSongPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("FavoriteListPanel")).Visible = false;
+            ((Panel)gui_findDesktop.FindControl("SongNumberPanel")).Visible = false;
             ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = false;
         }
 
@@ -333,6 +338,9 @@ namespace web
                     ((Panel)gui_findDesktop.FindControl("FavoriteListPanel")).Visible = true;
                     break;
                 case "MainMenu_SongNumberDesktopButton":
+                    ((Panel)gui_findDesktop.FindControl("SongNumberPanel")).Visible = true;
+                    ((Panel)gui_findDesktop.FindControl("SongListPanel")).Visible = true;
+                    if (((HiddenField)this.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop")) { GetCurrentSongNumberSongList(); }
                     break;
             }
         }
@@ -424,6 +432,19 @@ namespace web
             ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentTopSongFilterList")).Value;
             ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentTopSongFilterValue")).Value;
             ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentTopSongFilterPage")).Value;
+        }
+
+        private void GetCurrentSongNumberSongList()
+        {
+            string QueryType = "SongNumber";
+            string QueryValue = ((HiddenField)this.FindControl("CurrentSongNumber")).Value;
+
+            ((HiddenField)this.FindControl("CurrentSongQueryType")).Value = QueryType;
+            ((HiddenField)this.FindControl("CurrentSongQueryValue")).Value = QueryValue;
+            ((HiddenField)this.FindControl("CurrentSongQueryPage")).Value = ((HiddenField)this.FindControl("CurrentSongNumberPage")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterList")).Value = ((HiddenField)this.FindControl("CurrentSongNumberFilterList")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterValue")).Value = ((HiddenField)this.FindControl("CurrentSongNumberFilterValue")).Value;
+            ((HiddenField)this.FindControl("CurrentSongQueryFilterPage")).Value = ((HiddenField)this.FindControl("CurrentSongNumberFilterPage")).Value;
         }
 
         protected void RefreshUpdatePanelButton_Click(object sender, EventArgs e)

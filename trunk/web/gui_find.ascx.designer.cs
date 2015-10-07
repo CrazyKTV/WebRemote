@@ -1003,6 +1003,150 @@ namespace web {
         protected global::System.Web.UI.WebControls.DataPager FavoriteListDataPager;
         
         /// <summary>
+        /// SongNumberPanel 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SongNumberPanel;
+        
+        /// <summary>
+        /// SongNumber_OrderSong_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_OrderSong_Button;
+        
+        /// <summary>
+        /// SongNumber_InsertSong_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_InsertSong_Button;
+        
+        /// <summary>
+        /// SongNumber_Clear_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Clear_Button;
+        
+        /// <summary>
+        /// SongNumber_QueryNumber_TextBox 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SongNumber_QueryNumber_TextBox;
+        
+        /// <summary>
+        /// SongNumber_Number1_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number1_Button;
+        
+        /// <summary>
+        /// SongNumber_Number2_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number2_Button;
+        
+        /// <summary>
+        /// SongNumber_Number3_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number3_Button;
+        
+        /// <summary>
+        /// SongNumber_Number4_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number4_Button;
+        
+        /// <summary>
+        /// SongNumber_Number5_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number5_Button;
+        
+        /// <summary>
+        /// SongNumber_Number6_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number6_Button;
+        
+        /// <summary>
+        /// SongNumber_Number7_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number7_Button;
+        
+        /// <summary>
+        /// SongNumber_Number8_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number8_Button;
+        
+        /// <summary>
+        /// SongNumber_Number9_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number9_Button;
+        
+        /// <summary>
+        /// SongNumber_Number0_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_Number0_Button;
+        
+        /// <summary>
+        /// SongNumber_BackSpace_Button 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SongNumber_BackSpace_Button;
+        
+        /// <summary>
         /// SongListPanel 控制項。
         /// </summary>
         /// <remarks>

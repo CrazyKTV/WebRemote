@@ -823,6 +823,51 @@ namespace web {
         protected global::System.Web.UI.WebControls.HiddenField CurrentFavoriteUserName;
         
         /// <summary>
+        /// CurrentSongNumber 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongNumber;
+        
+        /// <summary>
+        /// CurrentSongNumberPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongNumberPage;
+        
+        /// <summary>
+        /// CurrentSongNumberFilterList 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongNumberFilterList;
+        
+        /// <summary>
+        /// CurrentSongNumberFilterValue 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongNumberFilterValue;
+        
+        /// <summary>
+        /// CurrentSongNumberFilterPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField CurrentSongNumberFilterPage;
+        
+        /// <summary>
         /// CurrentSongQueryType 控制項。
         /// </summary>
         /// <remarks>
@@ -902,14 +947,5 @@ namespace web {
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button RefreshUpdatePanelButton;
-        
-        /// <summary>
-        /// UpdateProgress1 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgress1;
     }
 }
