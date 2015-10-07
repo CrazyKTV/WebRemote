@@ -52,7 +52,7 @@
     <title>CrazyKTV</title>
 </head>
 
-<body dir='<asp:Literal ID="Literal1" runat="server" Text="<%$Resources: GlobalMessages, directionltr %>"></asp:Literal>' ondragstart="return false">
+<body id="body" runat="server" dir='<asp:Literal ID="Literal1" runat="server" Text="<%$Resources: GlobalMessages, directionltr %>"></asp:Literal>'>
 
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableHistory="True">

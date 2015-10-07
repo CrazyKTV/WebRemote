@@ -48,6 +48,12 @@ namespace web
                 //currentList1.Visible = true;
             }
 
+            if (!IsPostBack)
+            {
+                this.body.Attributes.Add("ondragstart", "return false");
+                this.body.Attributes.Add("onSelectStart", "return false");
+                this.body.Attributes.Add("style", "-moz-user-select:none;");
+            }
 
 
             GlobalFunctions.currentlang = "zh-CHT";
