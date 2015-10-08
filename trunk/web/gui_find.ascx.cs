@@ -634,7 +634,7 @@ namespace web
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
 
-            string singer = ((LinkButton)sender).Text.Trim();
+            string SingerName = ((LinkButton)sender).Text.Trim();
 
             // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
@@ -654,7 +654,7 @@ namespace web
                 SingerTypeForeignGroupDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
                 SingerTypeOtherDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
 
-                switch (GuiGlobal.SingerType[GuiGlobal.SingerName.IndexOf(singer)])
+                switch (GuiGlobal.SingerType[GuiGlobal.SingerName.IndexOf(SingerName)])
                 {
                     case "0":
                         SingerTypeMaleDesktopButton.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
@@ -685,15 +685,16 @@ namespace web
                         ((HiddenField)this.Parent.FindControl("CurrentSinerType")).Value = "6";
                         break;
                 }
-
-
                 ((LinkButton)this.Parent.FindControl("MainMenu_FindLangDesktopButton")).CssClass = "ControlButton " + GuiGlobal.DefaultButtonCssClass;
                 ((LinkButton)this.Parent.FindControl("MainMenu_FindSingerDesktopButton")).CssClass = "ControlButton " + GuiGlobal.ActiveButtonCssClass;
             }
+            else
+            {
+                ScrolltoTop.Value = "True";
+            }
 
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "Singer";
-            ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = singer;
-            SongList(0, GuiGlobal.QuerySongRows, "Singer", singer);
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = SingerName;
         }
 
         protected void SongListInsSong_Click(object sender, EventArgs e)
@@ -714,18 +715,55 @@ namespace web
                 case DataControlRowType.Header:
                     string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
                     string SongQueryValue = "";
+                    string TitleName = "歌曲列表";
 
                     switch (SongQueryType)
                     {
+                        case "Singer":
+                            TitleName = "歌星名稱";
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+                            if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                            break;
+                        case "SongLang":
+                            TitleName = "歌曲語系";
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+                            if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                            break;
                         case "SongName":
-                        case "SingerName":
+                            TitleName = "歌曲名稱";
                             SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentQuerySong")).Value;
                             break;
+                        case "SingerName":
+                            TitleName = "歌星名稱";
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentQuerySong")).Value;
+                            break;
+                        case "SongStroke":
+                            TitleName = "歌曲筆劃";
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+                            if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                            break;
+                        case "ChorusSong":
+                            TitleName = "合唱歌曲";
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+                            if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                            break;
+                        case "NewSong":
+                            TitleName = "新進歌曲";
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+                            if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                            break;
+                        case "TopSong":
+                            TitleName = "排行歌曲";
+                            SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+                            if (SongQueryValue == "") SongQueryValue = "尚無資料";
+                            break;
                         case "FavoriteSong":
+                            TitleName = "我的最愛";
                             SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value;
                             if (SongQueryValue == "") SongQueryValue = "尚無資料";
                             break;
                         case "SongNumber":
+                            TitleName = "歌曲編號";
                             SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongNumber")).Value;
                             break;
                         default:
@@ -740,7 +778,7 @@ namespace web
                     tcHeader.Add(new TableHeaderCell());
                     tcHeader[0].Attributes.Add("colspan", "5");
                     tcHeader[0].CssClass = "gridviewHeader";
-                    tcHeader[0].Text = "歌曲列表 (" + SongQueryValue + ")";
+                    tcHeader[0].Text = TitleName + " (" + SongQueryValue + ")";
                     break;
             }
         }
@@ -805,7 +843,6 @@ namespace web
 
         protected void SongListGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            ScrolltoTop.Value = "True";
             SongListGridView.PageIndex = e.NewPageIndex;
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value = e.NewPageIndex.ToString();
 
@@ -839,6 +876,10 @@ namespace web
                         ((HiddenField)this.Parent.FindControl("CurrentSongNumberPage")).Value = e.NewPageIndex.ToString();
                         break;
                 }
+            }
+            else
+            {
+                ScrolltoTop.Value = "True";
             }
             SongListGridView.DataBind();
         }
@@ -1048,8 +1089,8 @@ namespace web
             SongListPanel.Visible = true;
             
             var data = ((Label)((LinkButton)sender).Controls[0]).Text;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "Singer";
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = data.ToString();
-            SongList(0, GuiGlobal.QuerySongRows, "Singer", data.ToString());
         }
 
         protected void SingerListView_PreRender(object sender, EventArgs e)
@@ -1130,7 +1171,11 @@ namespace web
                     e.NewMaximumRows = e.Item.Pager.MaximumRows;
                     break;
             }
-            ScrolltoTop.Value = "True";
+
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                ScrolltoTop.Value = "True";
+            }
         }
 
         protected void SingerList_SelectPage_DropDownList_SelectedIndexChanged(object sender, EventArgs e)
@@ -1348,8 +1393,6 @@ namespace web
                     break;
             }
 
-            SongList(0, GuiGlobal.QuerySongRows, SongQueryType, data.ToString());
-
             // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
@@ -1393,6 +1436,7 @@ namespace web
             }
             else
             {
+                SongList(0, GuiGlobal.QuerySongRows, SongQueryType, data.ToString());
                 if (SongListGridView.Rows.Count > 0)
                 {
                     MobileFilterPanel.Visible = true;
@@ -1713,9 +1757,11 @@ namespace web
                 case "SongName":
                 case "SingerName":
                     SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentQuerySong")).Value;
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = SongQueryValue;
                     break;
                 case "SongNumber":
                     SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongNumber")).Value;
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = SongQueryValue;
                     break;
             }
 
@@ -1796,7 +1842,6 @@ namespace web
 
             }
             SongListGridView.PageIndex = 0;
-            SongList(0, GuiGlobal.QuerySongRows, SongQueryType, SongQueryValue);
         }
 
         private void QuerySongGetData()
@@ -1810,12 +1855,12 @@ namespace web
                 if (QuerySong_SongName_Desktop_RadioButton.Checked)
                 {
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "SongName";
-                    SongList(0, GuiGlobal.QuerySongRows, "SongName", QuerySong_QueryName_Desktop_TextBox.Text);
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = QuerySong_QueryName_Desktop_TextBox.Text;
                 }
                 else
                 {
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "SingerName";
-                    SongList(0, GuiGlobal.QuerySongRows, "SingerName", QuerySong_QueryName_Desktop_TextBox.Text);
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = QuerySong_QueryName_Desktop_TextBox.Text;
                 }
             }
             else
@@ -1824,12 +1869,12 @@ namespace web
                 if (QuerySong_SongName_RadioButton.Checked)
                 {
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "SongName";
-                    SongList(0, GuiGlobal.QuerySongRows, "SongName", QuerySong_QueryName_TextBox.Text);
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = QuerySong_QueryName_TextBox.Text;
                 }
                 else
                 {
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "SingerName";
-                    SongList(0, GuiGlobal.QuerySongRows, "SingerName", QuerySong_QueryName_TextBox.Text);
+                    ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = QuerySong_QueryName_TextBox.Text;
                 }
             }
             SongListPanel.Visible = true;
@@ -1944,9 +1989,7 @@ namespace web
                     ((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterValue")).Value = ((Label)((LinkButton)sender).Controls[1]).Text.Replace("劃", "");
                     break;
             }
-
             SongListGridView.PageIndex = 0;
-            SongList(0, GuiGlobal.QuerySongRows, SongQueryType, SongQueryValue);
 
             hideAllGridViewPanel();
             SongListPanel.Visible = true;
@@ -2144,7 +2187,10 @@ namespace web
                     e.NewMaximumRows = e.Item.Pager.MaximumRows;
                     break;
             }
-            ScrolltoTop.Value = "True";
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                ScrolltoTop.Value = "True";
+            }
         }
 
         protected void FavoriteList_SelectPage_DropDownList_SelectedIndexChanged(object sender, EventArgs e)
@@ -2170,6 +2216,7 @@ namespace web
             SongListPanel.Visible = true;
 
             var data = ((LinkButton)sender).CommandArgument;
+            ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "FavoriteSong";
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = data.ToString();
 
             string FavoriteSongType = ((HiddenField)this.Parent.FindControl("CurrentFavoriteSongType")).Value;
@@ -2181,8 +2228,6 @@ namespace web
             {
                 ((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value = ((Label)((LinkButton)sender).Controls[0]).Text;
             }
-
-            SongList(0, GuiGlobal.QuerySongRows, "FavoriteSong", data.ToString());
         }
 
         protected void SongNumber_OrderSong_Button_Click(object sender, EventArgs e)
