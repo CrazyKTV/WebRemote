@@ -294,15 +294,15 @@
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BdRestartDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
-                                            <span class="glyphicon glyphicon-repeat"></span>
-                                            <asp:Label runat="server" Text="重播" meta:resourcekey="BdRestartResource1"/>
-                                        </asp:LinkButton>
-                                    </div>
-                                    <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
                                         <asp:LinkButton ID="BdRepeatDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
                                             <span class="glyphicon glyphicon-refresh"></span>
                                             <asp:Label runat="server" Text="重複" meta:resourcekey="BdRepeatResource1"/>
+                                        </asp:LinkButton>
+                                    </div>
+                                    <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">
+                                        <asp:LinkButton ID="BdRandomDesktop" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
+                                            <span class="glyphicon glyphicon-random"></span>
+                                            <asp:Label runat="server" Text="隨機" meta:resourcekey="BdRandomResource1"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="hidden-xs hidden-sm col-md-1 col-lg-1" style="padding-left: 5px; padding-right: 5px;">

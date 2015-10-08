@@ -211,6 +211,7 @@ namespace web
                     CrazyKTVWCF.DoCrazyKTV_Action(null, "SongRecoedList");
                     break;
                 case "BdRandom":
+                case "BdRandomDesktop":
                     CrazyKTVWCF.DoCrazyKTV_Control(null, "RandomSong");
                     break;
             }
