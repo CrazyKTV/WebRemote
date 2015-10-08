@@ -98,10 +98,7 @@
     <Content Include="gui_currentList.ascx" />
     <Content Include="gui_default.aspx" />
     <Content Include="gui_find.ascx" />
-    <Content Include="gui_songNumber.ascx" />
-    <Content Include="gui_tune.ascx" />
     <Content Include="gui_video.ascx" />
-    <Content Include="gui_volume.ascx" />
     <Content Include="images\background.jpg" />
     <Content Include="images\favoritesong_cashbox.png" />
     <Content Include="images\favoritesong_history.png" />
@@ -259,33 +256,12 @@
     <Compile Include="gui_find.ascx.designer.cs">
       <DependentUpon>gui_find.ascx</DependentUpon>
     </Compile>
-    <Compile Include="gui_songNumber.ascx.cs">
-      <DependentUpon>gui_songNumber.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="gui_songNumber.ascx.designer.cs">
-      <DependentUpon>gui_songNumber.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="gui_tune.ascx.cs">
-      <DependentUpon>gui_tune.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="gui_tune.ascx.designer.cs">
-      <DependentUpon>gui_tune.ascx</DependentUpon>
-    </Compile>
     <Compile Include="gui_video.ascx.cs">
       <DependentUpon>gui_video.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="gui_video.ascx.designer.cs">
       <DependentUpon>gui_video.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="gui_volume.ascx.cs">
-      <DependentUpon>gui_volume.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="gui_volume.ascx.designer.cs">
-      <DependentUpon>gui_volume.ascx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="tui_default.aspx.cs">

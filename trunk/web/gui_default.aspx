@@ -1,13 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gui_default.aspx.cs" Inherits="web.gui_default" Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 
-<%@ Register Src="~/gui_songNumber.ascx" TagPrefix="uc1" TagName="gui_songNumber" %>
-<%@ Register Src="~/gui_currentList.ascx" TagName="gui_currentList" TagPrefix="uc2" %>
+<%@ Register Src="~/gui_currentList.ascx" TagName="gui_currentList" TagPrefix="uc0" %>
+<%@ Register Src="~/gui_find.ascx" TagPrefix="uc1" TagName="gui_find" %>
+<%@ Register Src="~/gui_advanced.ascx" TagPrefix="uc2" TagName="gui_advanced" %>
 <%@ Register Src="~/gui_video.ascx" TagPrefix="uc3" TagName="gui_video" %>
-<%@ Register Src="~/gui_volume.ascx" TagPrefix="uc4" TagName="gui_volume" %>
-<%@ Register Src="~/gui_find.ascx" TagPrefix="uc0" TagName="gui_find" %>
-<%@ Register Src="~/gui_tune.ascx" TagPrefix="uc5" TagName="gui_tune" %>
-<%@ Register Src="~/gui_advanced.ascx" TagPrefix="uc6" TagName="gui_advanced" %>
-<%@ Register Src="~/ErrorDeadWCF.ascx" TagPrefix="uc7" TagName="wcferror" %>
+<%@ Register Src="~/ErrorDeadWCF.ascx" TagPrefix="uc4" TagName="wcferror" %>
 
 
 
@@ -234,14 +231,11 @@
                         <div class="container">
                             <div class ="row">
                                 <div class="hidden-md hidden-lg">
-                                    <uc1:gui_songNumber runat="server" ID="gui_songNumber" Visible="False" />
-                                    <uc2:gui_currentList ID="gui_currentList" runat="server" Visible="False" />
+                                    <uc0:gui_currentList ID="gui_currentList" runat="server" Visible="False" />
+                                    <uc1:gui_find runat="server" ID="gui_find" Visible="true" />
+                                    <uc2:gui_advanced runat="server" ID="gui_advanced" Visible="False" />
                                     <uc3:gui_video runat="server" ID="gui_video" Visible="False" />
-                                    <uc4:gui_volume runat="server" ID="gui_volume" Visible="False" />
-                                    <uc5:gui_tune runat="server" ID="gui_tune" Visible="False" />
-                                    <uc6:gui_advanced runat="server" ID="gui_advanced" Visible="False" />
-                                    <uc0:gui_find runat="server" ID="gui_find" Visible="true" />
-                                    <uc7:wcferror runat="server" ID="wcferror" Visible="False" />
+                                    <uc4:wcferror runat="server" ID="wcferror" Visible="False" />
                                 </div>
                             </div>
                         </div>
@@ -250,10 +244,10 @@
                         <div class="container">
                             <div class ="row">
                                 <div class="hidden-xs hidden-sm col-md-5 col-lg-5" style="padding-left: 5px; padding-right: 5px;">
-                                    <uc2:gui_currentList ID="gui_currentListDesktop" runat="server" Visible="true" />
+                                    <uc0:gui_currentList ID="gui_currentListDesktop" runat="server" Visible="true" />
                                 </div>
                                 <div class="hidden-xs hidden-sm col-md-7 col-lg-7" style="padding-left: 5px; padding-right: 5px;">
-                                    <uc0:gui_find runat="server" ID="gui_findDesktop" Visible="true" />
+                                    <uc1:gui_find runat="server" ID="gui_findDesktop" Visible="true" />
                                 </div>
     
                             </div>

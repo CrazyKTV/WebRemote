@@ -143,12 +143,9 @@ namespace web
 
         private void hideAllCU()
         {
-            gui_tune.Visible = false;
             gui_advanced.Visible = false;
-            gui_volume.Visible = false;
             gui_video.Visible = false;
             gui_currentList.Visible = false;
-            gui_songNumber.Visible = false;
             gui_find.Visible = false;
         }
 

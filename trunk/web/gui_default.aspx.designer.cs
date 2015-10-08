@@ -175,15 +175,6 @@ namespace web {
         protected global::System.Web.UI.WebControls.LinkButton MainMenu_SongNumberDesktopButton;
         
         /// <summary>
-        /// gui_songNumber 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::web.gui_songNumber gui_songNumber;
-        
-        /// <summary>
         /// gui_currentList 控制項。
         /// </summary>
         /// <remarks>
@@ -193,31 +184,13 @@ namespace web {
         protected global::web.gui_currentList gui_currentList;
         
         /// <summary>
-        /// gui_video 控制項。
+        /// gui_find 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::web.gui_video gui_video;
-        
-        /// <summary>
-        /// gui_volume 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::web.gui_volume gui_volume;
-        
-        /// <summary>
-        /// gui_tune 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::web.gui_tune gui_tune;
+        protected global::web.gui_find gui_find;
         
         /// <summary>
         /// gui_advanced 控制項。
@@ -229,13 +202,13 @@ namespace web {
         protected global::web.gui_advanced gui_advanced;
         
         /// <summary>
-        /// gui_find 控制項。
+        /// gui_video 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::web.gui_find gui_find;
+        protected global::web.gui_video gui_video;
         
         /// <summary>
         /// wcferror 控制項。
