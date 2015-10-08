@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -157,12 +155,6 @@ namespace web
                 case "BChannelDesktop":
                     CrazyKTVWCF.DoCrazyKTV_Control(null, "Channel");
                     break;
-                case "BFind":
-                    hideAllCU();
-                    hideAllfindPanel();
-                    gui_find.Visible = true;
-                    ((Panel)gui_find.FindControl("SongListPanel")).Visible = true;
-                    break;
                 case "BCut":
                 case "BCutDesktop":
                     CrazyKTVWCF.DoCrazyKTV_Action(null, "Cut");
@@ -217,11 +209,59 @@ namespace web
             }
         }
 
+        protected void Control_Return_Button_Click(object sender, EventArgs e)
+        {
+
+            string MobilePreviousPage = ((HiddenField)this.FindControl("MobilePreviousPage")).Value;
+
+            if (MobilePreviousPage != "")
+            {
+                hideAllCU();
+                hideAllfindPanel();
+                gui_find.Visible = true;
+            }
+
+            switch (MobilePreviousPage)
+            {
+                case "MainMenuPanel":
+                    ((Panel)gui_find.FindControl("MainMenuPanel")).Visible = true;
+                    break;
+                case "SingerTypePanel":
+                    ((Panel)gui_find.FindControl("SingerTypePanel")).Visible = true;
+                    ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "MainMenuPanel";
+                    break;
+                case "SingerListPanel":
+                    ((Panel)gui_find.FindControl("SingerListPanel")).Visible = true;
+                    ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "SingerTypePanel";
+                    break;
+                case "SongLangPanel":
+                    ((Panel)gui_find.FindControl("SongLangPanel")).Visible = true;
+                    ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "MainMenuPanel";
+                    break;
+                case "MobileFilterPanel":
+                    ((Panel)gui_find.FindControl("MobileFilterPanel")).Visible = true;
+                    ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "SongLangPanel";
+                    break;
+                case "FavoriteSongPanel":
+                    ((Panel)gui_find.FindControl("FavoriteSongPanel")).Visible = true;
+                    ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "MainMenuPanel";
+                    break;
+                case "FavoriteListPanel":
+                    ((Panel)gui_find.FindControl("FavoriteListPanel")).Visible = true;
+                    ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "FavoriteSongPanel";
+                    break;
+            }
+
+            ((HiddenField)gui_find.FindControl("ScrolltoTop")).Value = "True";
+
+        }
+
         protected void MainMenu_PlayListButton_Click(object sender, EventArgs e)
         {
             hideAllCU();
             hideAllfindPanel();
             if (CrazyKTVWCF.WCFlive) gui_currentList.Visible = true;
+            ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "";
         }
 
         protected void MainMenu_FindSongButton_Click(object sender, EventArgs e)
@@ -230,6 +270,7 @@ namespace web
             hideAllfindPanel();
             ((Panel)gui_find.FindControl("MainMenuPanel")).Visible = true;
             if (CrazyKTVWCF.WCFlive) gui_find.Visible = true;
+            ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "";
         }
 
         protected void MainMenu_AdvancedButton_Click(object sender, EventArgs e)
@@ -237,6 +278,7 @@ namespace web
             hideAllCU();
             hideAllfindPanel();
             if (CrazyKTVWCF.WCFlive) gui_advanced.Visible = true;
+            ((HiddenField)this.FindControl("MobilePreviousPage")).Value = "";
         }
 
         protected void hideAllfindPanel()
@@ -458,5 +500,7 @@ namespace web
             }
             
         }
+
+
     }
 }

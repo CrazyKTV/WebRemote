@@ -207,7 +207,7 @@
                                 <asp:LinkButton ID="SingerList_FirstPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="First">
                                     <span class="glyphicon glyphicon-fast-backward gi-big"></span>
                                 </asp:LinkButton>
-                                <asp:LinkButton ID="SingerList_PreviewPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Previous">
+                                <asp:LinkButton ID="SingerList_PreviousPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Previous">
                                     <span class="glyphicon glyphicon-backward gi-big"></span>
                                 </asp:LinkButton>
 
@@ -546,7 +546,7 @@
                                 <asp:LinkButton ID="FavoriteList_FirstPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="First">
                                     <span class="glyphicon glyphicon-fast-backward gi-big"></span>
                                 </asp:LinkButton>
-                                <asp:LinkButton ID="FavoriteList_PreviewPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Previous">
+                                <asp:LinkButton ID="FavoriteList_PreviousPage_Button" runat="server" CssClass='<%# Container.StartRowIndex > 0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Previous">
                                     <span class="glyphicon glyphicon-backward gi-big"></span>
                                 </asp:LinkButton>
 
@@ -759,7 +759,7 @@
             <asp:LinkButton ID="SongList_FirstPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="First">
                 <span class="glyphicon glyphicon-fast-backward gi-big"></span>
             </asp:LinkButton>
-            <asp:LinkButton ID="SongList_PreviewPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
+            <asp:LinkButton ID="SongList_PreviousPage_Button" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
                 <span class="glyphicon glyphicon-backward gi-big"></span>
             </asp:LinkButton>
 
@@ -828,7 +828,7 @@
                 <div class ="container-fluid">
                     <div class ="row">
                         <div class="col-md-6 col-lg-6" style="padding:0px;">
-                            <asp:LinkButton ID="SongList_Filter_PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewFilterPageButton btn btn-lg" : "GridViewFilterPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
+                            <asp:LinkButton ID="SongList_Filter_PreviousPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewFilterPageButton btn btn-lg" : "GridViewFilterPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
                                 <span class="glyphicon glyphicon-backward gi-big"></span>
                             </asp:LinkButton>
                         </div>

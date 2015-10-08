@@ -269,9 +269,9 @@
                                         </asp:LinkButton>
                                     </div>
                                     <div class="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding-left: 5px; padding-right: 5px;">
-                                        <asp:LinkButton ID="BFind" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="CrazyKTV_ControlButton_Click">
-                                            <span class="glyphicon glyphicon-th-list"></span>
-                                            <asp:Label runat="server" Text="列表" meta:resourcekey="BFindResource1"/>
+                                        <asp:LinkButton ID="Control_Return_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="Control_Return_Button_Click">
+                                            <span class="glyphicon glyphicon-repeat textmirror" style="font-weight:bold;"></span>
+                                            <asp:Label runat="server" Text="返回" meta:resourcekey="Control_Return_Button_Res"/>
                                         </asp:LinkButton>
                                     </div>
                                     <div class="col-xs-4 col-sm-4 hidden-md hidden-lg" style="padding-left: 5px; padding-right: 5px;">
@@ -524,6 +524,8 @@
                 <asp:HiddenField ID="CurrentSongQueryFilterList" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryFilterValue" runat="server" />
                 <asp:HiddenField ID="CurrentSongQueryFilterPage" runat="server" Value="0" />
+                
+                <asp:HiddenField ID="MobilePreviousPage" runat="server" />
                 
                 <asp:HiddenField ID="PlayListGridViewPageSize" runat="server" Value="10" />
                 <asp:HiddenField ID="SingerListViewPageSize" runat="server" Value="10" />

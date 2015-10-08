@@ -273,9 +273,6 @@
   <data name="BdVolumeDownResource1.Text" xml:space="preserve">
     <value>小聲</value>
   </data>
-  <data name="BFindResource1.Text" xml:space="preserve">
-    <value>列表</value>
-  </data>
   <data name="BdDefaultPitchResource1.Text" xml:space="preserve">
     <value>原調</value>
   </data>
@@ -329,5 +326,8 @@
   </data>
   <data name="MainMenu_PlayListButton_RES.Text" xml:space="preserve">
     <value>待播</value>
+  </data>
+  <data name="Control_Return_Button_Res.Text" xml:space="preserve">
+    <value>返回</value>
   </data>
 </root>

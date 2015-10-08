@@ -201,12 +201,6 @@
   <data name="BdVolumeDownResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="BFindResource1.Text" xml:space="preserve">
-    <value>List</value>
-  </data>
-  <data name="BFindResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="ddActionsResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -374,5 +368,8 @@
   </data>
   <data name="MainMenu_PlayListButton_RES.Text" xml:space="preserve">
     <value>Waiting List</value>
+  </data>
+  <data name="Control_Return_Button_Res.Text" xml:space="preserve">
+    <value>Return</value>
   </data>
 </root>

@@ -56,6 +56,8 @@ namespace web
         protected void MainMenu_Button_Click(object sender, EventArgs e)
         {
             string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
+            ((HiddenField)this.Parent.FindControl("MobilePreviousPage")).Value = "MainMenuPanel";
+
             hideAllGridViewPanel();
             switch (((LinkButton)sender).ID)
             {
@@ -943,6 +945,7 @@ namespace web
                 if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
                 {
                     PageSize = GuiGlobal.SingerTypePageSize;
+                    ((HiddenField)this.Parent.FindControl("MobilePreviousPage")).Value = "SingerTypePanel";
                 }
                 else
                 {
@@ -1091,6 +1094,11 @@ namespace web
             var data = ((Label)((LinkButton)sender).Controls[0]).Text;
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value = "Singer";
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = data.ToString();
+
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                ((HiddenField)this.Parent.FindControl("MobilePreviousPage")).Value = "SingerListPanel";
+            }
         }
 
         protected void SingerListView_PreRender(object sender, EventArgs e)
@@ -1436,6 +1444,8 @@ namespace web
             }
             else
             {
+                ((HiddenField)this.Parent.FindControl("MobilePreviousPage")).Value = "SongLangPanel";
+
                 SongList(0, GuiGlobal.QuerySongRows, SongQueryType, data.ToString());
                 if (SongListGridView.Rows.Count > 0)
                 {
@@ -1976,6 +1986,7 @@ namespace web
         {
             string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
             string SongQueryValue = ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value;
+            ((HiddenField)this.Parent.FindControl("MobilePreviousPage")).Value = "MobileFilterPanel";
 
             switch (SongQueryType)
             {
@@ -2013,6 +2024,7 @@ namespace web
             }
             else
             {
+                ((HiddenField)this.Parent.FindControl("MobilePreviousPage")).Value = "FavoriteSongPanel";
                 PageSize = GuiGlobal.SingerTypePageSize;
             }
 
@@ -2227,6 +2239,11 @@ namespace web
             else
             {
                 ((HiddenField)this.Parent.FindControl("CurrentFavoriteUserName")).Value = ((Label)((LinkButton)sender).Controls[0]).Text;
+            }
+
+            if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Mobile"))
+            {
+                ((HiddenField)this.Parent.FindControl("MobilePreviousPage")).Value = "FavoriteListPanel";
             }
         }
 

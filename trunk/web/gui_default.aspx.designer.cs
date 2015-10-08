@@ -247,13 +247,13 @@ namespace web {
         protected global::System.Web.UI.WebControls.LinkButton BChannel;
         
         /// <summary>
-        /// BFind 控制項。
+        /// Control_Return_Button 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BFind;
+        protected global::System.Web.UI.WebControls.LinkButton Control_Return_Button;
         
         /// <summary>
         /// BCut 控制項。
@@ -893,6 +893,15 @@ namespace web {
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField CurrentSongQueryFilterPage;
+        
+        /// <summary>
+        /// MobilePreviousPage 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField MobilePreviousPage;
         
         /// <summary>
         /// PlayListGridViewPageSize 控制項。

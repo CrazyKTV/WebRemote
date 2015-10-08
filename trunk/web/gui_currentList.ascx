@@ -58,7 +58,7 @@
                             <asp:LinkButton ID="FirstPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="First">
                                 <span class="glyphicon glyphicon-fast-backward gi-big"></span>
                             </asp:LinkButton>
-                            <asp:LinkButton ID="PreviewPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
+                            <asp:LinkButton ID="PreviousPageButton" runat="server" CssClass='<%# ((GridView)Container.Parent.Parent).PageIndex!=0 ? "GridViewPageButton btn btn-lg" : "GridViewPageButton btn btn-lg disabled" %>' BorderStyle="None" CommandName="Page" CommandArgument="Prev">
                                 <span class="glyphicon glyphicon-backward gi-big"></span>
                             </asp:LinkButton>
 
