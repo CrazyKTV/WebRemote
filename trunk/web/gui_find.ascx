@@ -698,7 +698,7 @@
                             </div>
                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                 <asp:LinkButton ID="SongNumber_BackSpace_Button" runat="server" CssClass="ControlButton btn btn-success btn-lg" OnClick="SongNumber_Number_Button_Click">
-                                    <span class="material-icons md-24">backspace</span>
+                                    <span class="materialicons materialicons-backspace gi-big"></span>
                                 </asp:LinkButton>
                             </div>
                         </div>
