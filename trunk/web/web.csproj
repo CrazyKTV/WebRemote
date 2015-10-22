@@ -89,6 +89,8 @@
     <Content Include="images\favoritesong_newsong.png" />
     <Content Include="images\favoritesong_todaylist.png" />
     <Content Include="images\favoritesong_topsong.png" />
+    <Content Include="images\interface_gui.png" />
+    <Content Include="images\interface_tui.png" />
     <Content Include="images\wcferror.png" />
     <Content Include="userimg\Put UserIMG In Here.txt" />
     <Content Include="find.ascx" />

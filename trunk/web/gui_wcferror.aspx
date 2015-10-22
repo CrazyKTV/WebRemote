@@ -63,7 +63,7 @@
                         <div class="overlay" />
                         <div class="overlayContent" id="overlayContent1">
                             <h2>
-                                <asp:Label ID="lLoading" runat="server" Text="Loading..." meta:resourcekey="lLoadingResource1"></asp:Label></h2>
+                                <asp:Label ID="lLoading" runat="server" Text="載入中..." meta:resourcekey="lLoadingResource1"></asp:Label></h2>
                             <img src="/images/ajax-loader.gif" alt="Loading" />
                         </div>
                     </ProgressTemplate>
