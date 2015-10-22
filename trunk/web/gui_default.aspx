@@ -96,7 +96,8 @@
                 
                 function Showsuball() {
                     $("#suball").css("display", "block");
-                    $("#BottomVisibleDiv").animate({ bottom: ($("#BottomVisibleDiv").height() / 5) - ($("#BottomVisibleDiv").height() / 5) + 'px' }, "fast");
+                    $("#BottomVisibleDiv").css("bottom", "0px")
+                    $("#suball").css("height", ($("#BChannel").height() * 5) + 10 * 5 + 'px');
                     $("#down").css("display", "inline-block");
                     $("#up").css("display", "none");
                     $('#Showsuball').val("1");
@@ -105,7 +106,6 @@
                 function Hidesuball()
                 {
                     $("#BottomVisibleDiv").css("bottom", "0px")
-                    //$("#BottomVisibleDiv").animate({ bottom: '-0px' }, "fast");
                     $("#up").css("display", "inline-block");
                     $("#down").css("display", "none");
                     $("#suball").css("display", "none");
