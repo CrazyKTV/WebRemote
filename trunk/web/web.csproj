@@ -83,12 +83,13 @@
     <Content Include="default.aspx" />
     <Content Include="ErrorDeadWCF.ascx" />
     <Content Include="ErrorDeadWCF.aspx" />
-    <Content Include="ErrorDeadWCF.html" />
     <Content Include="favicon.ico" />
+    <Content Include="gui_wcferror.aspx" />
     <Content Include="images\favoritesong_lastplayed.png" />
     <Content Include="images\favoritesong_newsong.png" />
     <Content Include="images\favoritesong_todaylist.png" />
     <Content Include="images\favoritesong_topsong.png" />
+    <Content Include="images\wcferror.png" />
     <Content Include="userimg\Put UserIMG In Here.txt" />
     <Content Include="find.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -263,6 +264,13 @@
     <Compile Include="gui_video.ascx.designer.cs">
       <DependentUpon>gui_video.ascx</DependentUpon>
     </Compile>
+    <Compile Include="gui_wcferror.aspx.cs">
+      <DependentUpon>gui_wcferror.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gui_wcferror.aspx.designer.cs">
+      <DependentUpon>gui_wcferror.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="tui_default.aspx.cs">
       <DependentUpon>tui_default.aspx</DependentUpon>
@@ -326,6 +334,7 @@
     <Content Include="GenImage.ashx" />
     <None Include="Properties\PublishProfiles\deployCrazyKTV.pubxml" />
     <Content Include="Scripts\jquery-1.11.3.min.map" />
+    <Content Include="Scripts\jquery.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -125,7 +125,7 @@ namespace web
             return _value;
         }
 
-        public static void setSingerImgFile()
+        public static bool GetSingerTypeDT()
         {
             string jsonText = "";
             List<string> SingerTypeList = new List<string>() { "0", "1", "2", "4", "5", "6", "7" };
@@ -135,9 +135,11 @@ namespace web
 
             foreach (string SingerType in SingerTypeList)
             {
-                jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=" + SingerType, 0, 2000, "Singer_Strokes, Singer_Name");
+                jsonText = CrazyKTVWCF.QuerySinger("Singer_Type=" + SingerType, 0, GuiGlobal.QuerySongRows, "Singer_Strokes, Singer_Name");
                 DataTable dt = new DataTable();
                 dt = GlobalFunctions.JsontoDataTable(jsonText);
+                if (dt == null) return false;
+
                 dt.Columns.Add("ImgFileUrl");
 
                 foreach (DataRow row in dt.AsEnumerable())
@@ -184,9 +186,39 @@ namespace web
                         break;
                 }
             }
+
+            return true;
         }
 
+        public static bool GetAllSongDT()
+        {
+            string jsonText = CrazyKTVWCF.QuerySong(null, null, null, null, 0, 1000000, "Song_Id");
+            GuiGlobal.AllSongDT = GlobalFunctions.JsontoDataTable(jsonText);
+            if (GuiGlobal.AllSongDT == null) return false;
+            System.Threading.Thread.Sleep(200);
 
+            jsonText = CrazyKTVWCF.QuerySong(null, null, null, "Song_SingerType=3", 0, 1000000, "Song_Id");
+            GuiGlobal.ChorusSongDT = GlobalFunctions.JsontoDataTable(jsonText);
+            if (GuiGlobal.ChorusSongDT == null) return false;
+            System.Threading.Thread.Sleep(200);
+
+            foreach (string langstr in GuiGlobal.SongLangList)
+            {
+                jsonText = CrazyKTVWCF.QuerySong(langstr, null, null, null, 0, GuiGlobal.MaxNewSongRows, "Song_CreatDate desc, Song_SongName");
+                if (GlobalFunctions.JsontoDataTable(jsonText) == null) return false;
+                GuiGlobal.NewSongDT.Merge(GlobalFunctions.JsontoDataTable(jsonText));
+                System.Threading.Thread.Sleep(200);
+            }
+
+            foreach (string langstr in GuiGlobal.SongLangList)
+            {
+                jsonText = CrazyKTVWCF.QuerySong(langstr, null, null, "Song_PlayCount >= 1", 0, GuiGlobal.MaxTopSongRows, "Song_PlayCount desc, Song_SongName");
+                if (GlobalFunctions.JsontoDataTable(jsonText) == null) return false;
+                GuiGlobal.TopSongDT.Merge(GlobalFunctions.JsontoDataTable(jsonText));
+                System.Threading.Thread.Sleep(200);
+            }
+            return true;
+        }
 
 
     }
