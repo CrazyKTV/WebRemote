@@ -821,6 +821,8 @@ namespace web
                 {
                     PageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("PlayListGridViewPageSize")).Value) - 2;
                 }
+                if (PageSize < 1) PageSize = 1;
+
                 SongListGridView.PageIndex = Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongQueryPage")).Value);
             }
 
@@ -1555,6 +1557,7 @@ namespace web
                     {
                         CurPageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("PlayListGridViewPageSize")).Value) - 2;
                     }
+                    if (CurPageSize < 1) CurPageSize = 1;
                     
                     SongListFilterGridView.PageSize = CurPageSize;
                     SongListFilterGridView.PageIndex = Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongQueryFilterPage")).Value);

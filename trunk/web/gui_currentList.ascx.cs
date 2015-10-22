@@ -12,6 +12,7 @@ namespace web
             DataTable dt = GlobalFunctions.JsontoDataTable(jsonText);
 
             int CurPageSize = Convert.ToInt32(((HiddenField)this.Parent.FindControl("PlayListGridViewPageSize")).Value);
+            if (CurPageSize < 1) CurPageSize = 1;
 
             // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))

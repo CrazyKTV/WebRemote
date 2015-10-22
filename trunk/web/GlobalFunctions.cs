@@ -197,7 +197,7 @@ namespace web
         public static List<string> SongLangList = new List<string>(Properties.Settings.Default.SongLangList.Split(','));
 
         public static int SingerTypePageSize = 60;
-        public static int SongListPageSize = 250;
+        public static int SongListPageSize = 100;
         public static int MaxNewSongRows = 500;
         public static int MaxTopSongRows = 500;
         public static int QuerySongRows = 100000;
