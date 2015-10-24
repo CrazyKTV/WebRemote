@@ -1275,11 +1275,18 @@ namespace web
                     SongLangImage[i].ImageUrl = DrawLangImage(GuiGlobal.SongLangList[i].Substring(0, 1));
                     SongLangDesktopImage[i].ImageUrl = LangImgFile;
                 }
-
-                if (GuiGlobal.SongLangList[i].Length > 2)
+                if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
                 {
-                    SongLangLabel[i].Text = GuiGlobal.SongLangList[i].Substring(0, 1) + GuiGlobal.SongLangList[i].Substring(GuiGlobal.SongLangList[i].Length - 1, 1);
-                    SongLangDesktopLabel[i].Text = GuiGlobal.SongLangList[i].Substring(0, 1) + GuiGlobal.SongLangList[i].Substring(GuiGlobal.SongLangList[i].Length - 1, 1);
+                    if (GuiGlobal.SongLangList[i].Length > 2)
+                    {
+                        SongLangLabel[i].Text = GuiGlobal.SongLangList[i].Substring(0, 1) + GuiGlobal.SongLangList[i].Substring(GuiGlobal.SongLangList[i].Length - 1, 1);
+                        SongLangDesktopLabel[i].Text = GuiGlobal.SongLangList[i].Substring(0, 1) + GuiGlobal.SongLangList[i].Substring(GuiGlobal.SongLangList[i].Length - 1, 1);
+                    }
+                    else
+                    {
+                        SongLangLabel[i].Text = GuiGlobal.SongLangList[i];
+                        SongLangDesktopLabel[i].Text = GuiGlobal.SongLangList[i];
+                    }
                 }
                 else
                 {
@@ -1306,25 +1313,35 @@ namespace web
                     SongLang10DesktopButton
                 };
 
+                string langstr = "";
                 foreach (LinkButton lb in SongLangDesktopButton)
                 {
+                    if (GuiGlobal.SongLangList.IndexOf(((Label)lb.Controls[1]).Text) < 0)
+                    {
+                        langstr = GuiGlobal.SongLangList.Find(lang => lang.Substring(0, 1) + lang.Substring(lang.Length - 1, 1) == ((Label)lb.Controls[1]).Text);
+                    }
+                    else
+                    {
+                        langstr = ((Label)lb.Controls[1]).Text;
+                    }
+
                     lb.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
                     switch (SongQueryType)
                     {
                         case "SongLang":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongLang")).Value)] == langstr) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
                             break;
                         case "SongStroke":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongStrokeLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongStrokeLang")).Value)] == langstr) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
                             break;
                         case "ChorusSong":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentChorusSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentChorusSongLang")).Value)] == langstr) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
                             break;
                         case "NewSong":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentNewSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentNewSongLang")).Value)] == langstr) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
                             break;
                         case "TopSong":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentTopSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
+                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentTopSongLang")).Value)] == langstr) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
                             break;
                     }
                 }
@@ -1362,6 +1379,13 @@ namespace web
 
             string SongQueryType = ((HiddenField)this.Parent.FindControl("CurrentSongQueryType")).Value;
             var data = ((Label)((LinkButton)sender).Controls[1]).Text;
+
+            if (GuiGlobal.SongLangList.IndexOf(data.ToString()) < 0)
+            {
+                string langstr = GuiGlobal.SongLangList.Find(lang => lang.Substring(0, 1) + lang.Substring(lang.Length - 1, 1) == data.ToString());
+                data = langstr;
+            }
+
             ((HiddenField)this.Parent.FindControl("CurrentSongQueryValue")).Value = data.ToString();
 
             switch (SongQueryType)
@@ -1406,42 +1430,6 @@ namespace web
             // Desktop / Tablet Mode
             if (((HiddenField)this.Parent.FindControl("BootstrapResponsiveMode")).Value.Contains("Desktop"))
             {
-                LinkButton[] SongLangDesktopButton =
-                {
-                    SongLang1DesktopButton,
-                    SongLang2DesktopButton,
-                    SongLang3DesktopButton,
-                    SongLang4DesktopButton,
-                    SongLang5DesktopButton,
-                    SongLang6DesktopButton,
-                    SongLang7DesktopButton,
-                    SongLang8DesktopButton,
-                    SongLang9DesktopButton,
-                    SongLang10DesktopButton
-                };
-
-                foreach (LinkButton lb in SongLangDesktopButton)
-                {
-                    lb.CssClass = "MainMenuButton " + GuiGlobal.DefaultButtonCssClass;
-                    switch (SongQueryType)
-                    {
-                        case "SongLang":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
-                            break;
-                        case "SongStroke":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentSongStrokeLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
-                            break;
-                        case "ChorusSong":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentChorusSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
-                            break;
-                        case "NewSong":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentNewSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
-                            break;
-                        case "TopSong":
-                            if (GuiGlobal.SongLangList[Convert.ToInt32(((HiddenField)this.Parent.FindControl("CurrentTopSongLang")).Value)] == ((Label)lb.Controls[1]).Text) lb.CssClass = "MainMenuButton " + GuiGlobal.ActiveButtonCssClass;
-                            break;
-                    }
-                }
                 SongListPanel.Visible = true;
             }
             else
