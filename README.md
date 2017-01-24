@@ -29,3 +29,6 @@
 
 編號點歌:
 ![編號點歌](https://raw.githubusercontent.com/wiki/KenLuoTW/CrazyKTV_WebRemote/images/WebRemote09.png)
+
+手機點歌:
+![手機點歌](https://raw.githubusercontent.com/wiki/KenLuoTW/CrazyKTV_WebRemote/images/WebRemote10.png)
